@@ -1,0 +1,8 @@
+id,name,import_attribute_values,type,is_storable,categ_id/id,uom_id/id,list_price,standard_price,default_code,invoice_policy
+andina.var_canasta_p_dulce,Canasta Andina de Regalo,Tamaño:Pequeña,consu,True,andina.categ_terminados,uom.product_uom_unit,45.00,26.50,CAN-P-DUL,order
+andina.var_canasta_m_dulce,Canasta Andina de Regalo,Tamaño:Mediana,consu,True,andina.categ_terminados,uom.product_uom_unit,78.00,44.20,CAN-M-DUL,order
+andina.var_canasta_g_dulce,Canasta Andina de Regalo,Tamaño:Grande,consu,True,andina.categ_terminados,uom.product_uom_unit,135.00,79.90,CAN-G-DUL,order
+andina.var_pack_50_quinua,Pack Degustación Snacks,"Presentación:Bolsa 50 g,Sabor:Quinua",consu,True,andina.categ_snacks,uom.product_uom_unit,4.50,2.10,PACK-50-QUI,order
+andina.var_pack_50_kiwicha,Pack Degustación Snacks,"Presentación:Bolsa 50 g,Sabor:Kiwicha",consu,True,andina.categ_snacks,uom.product_uom_unit,4.20,1.95,PACK-50-KIW,order
+andina.var_pack_100_quinua,Pack Degustación Snacks,"Presentación:Bolsa 100 g,Sabor:Quinua",consu,True,andina.categ_snacks,uom.product_uom_unit,7.88,3.68,PACK-100-QUI,order
+andina.var_pack_100_kiwicha,Pack Degustación Snacks,"Presentación:Bolsa 100 g,Sabor:Kiwicha",consu,True,andina.categ_snacks,uom.product_uom_unit,7.35,3.41,PACK-100-KIW,order

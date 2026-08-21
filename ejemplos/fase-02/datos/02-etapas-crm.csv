@@ -1,0 +1,6 @@
+id,name,sequence,is_won,fold,rotting_threshold_days,requirements
+andina.stage_nuevo,Nuevo,1,False,False,15,"Contacto registrado con datos completos (empresa, persona, canal de origen)."
+andina.stage_calificado,Calificado,2,False,False,20,"Confirmado: necesidad real, presupuesto estimado y persona que decide identificada."
+andina.stage_propuesta,Propuesta enviada,3,False,False,15,Cotización enviada por el sistema y recibida por el cliente (correo abierto o confirmado).
+andina.stage_negociacion,Negociación,4,False,False,10,"El cliente respondió con objeciones de precio, plazo o condiciones. Hay contrapropuesta."
+andina.stage_ganado,Ganado,5,True,False,0,Cotización firmada o pedido confirmado.

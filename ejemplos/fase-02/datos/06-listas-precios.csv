@@ -1,0 +1,5 @@
+id,name,currency_id/id,sequence
+andina.pl_mayorista,Mayorista B2B,base.PEN,5
+andina.pl_export,Exportación USD,base.USD,10
+andina.pl_promo,Promoción Fin de Año,base.PEN,3
+andina.pl_tienda,Tienda / Público,base.PEN,20

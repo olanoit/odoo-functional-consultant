@@ -1,0 +1,21 @@
+id,name,type,partner_id/id,expected_revenue,probability,date_deadline,priority,stage_id/id,team_id/id,tag_ids/id
+andina.opp_001,Reposición trimestral conservas,opportunity,andina.cli_001,48500,70,2026-09-15,2,andina.stage_negociacion,andina.team_b2b,andina.ctag_referido
+andina.opp_002,Ingreso a 12 tiendas Arequipa,opportunity,andina.cli_002,32000,50,2026-09-30,2,andina.stage_propuesta,andina.team_b2b,
+andina.opp_003,Licitación abastecimiento norte,opportunity,andina.cli_003,96000,40,2026-10-20,3,andina.stage_calificado,andina.team_b2b,andina.ctag_licitacion
+andina.opp_004,Pedido inicial bodega,opportunity,andina.cli_004,1800,60,2026-09-05,0,andina.stage_propuesta,andina.team_retail,
+andina.opp_005,Línea gourmet para Cusco,opportunity,andina.cli_005,12400,35,2026-10-10,1,andina.stage_calificado,andina.team_retail,andina.ctag_feria
+andina.opp_006,Marca propia Miraflores,opportunity,andina.cli_006,58000,45,2026-11-15,3,andina.stage_calificado,andina.team_b2b,andina.ctag_marcapropia
+andina.opp_007,Exportación piloto a Chile,opportunity,andina.cli_007,145000,25,2026-12-15,3,andina.stage_nuevo,andina.team_b2b,andina.ctag_exportacion
+andina.opp_008,Ampliación línea naturista,opportunity,andina.cli_008,9600,65,2026-09-20,1,andina.stage_propuesta,andina.team_retail,
+andina.opp_009,Distribución zona norte,opportunity,andina.cli_009,41000,55,2026-10-05,2,andina.stage_negociacion,andina.team_b2b,
+andina.opp_010,Reposición mensual sierra centro,opportunity,andina.cli_010,27500,75,2026-09-12,2,andina.stage_negociacion,andina.team_b2b,andina.ctag_referido
+andina.opp_011,Café orgánico: línea desayunos,opportunity,andina.cli_011,8200,40,2026-10-25,1,andina.stage_calificado,andina.team_retail,
+andina.opp_012,Amenities para hotel,opportunity,andina.cli_012,15600,30,2026-11-05,1,andina.stage_nuevo,andina.team_retail,andina.ctag_feria
+andina.opp_013,Insumos para carta de postres,opportunity,andina.cli_013,11200,50,2026-09-28,1,andina.stage_propuesta,andina.team_retail,
+andina.opp_014,Apertura Piura centro,opportunity,andina.cli_014,36000,45,2026-10-18,2,andina.stage_calificado,andina.team_b2b,
+andina.opp_015,Tienda en línea: catálogo completo,opportunity,andina.cli_015,22000,60,2026-09-22,2,andina.stage_propuesta,andina.team_online,
+andina.opp_016,Distribución Puno y frontera,opportunity,andina.cli_016,29800,35,2026-11-20,2,andina.stage_calificado,andina.team_b2b,
+andina.opp_017,Ingreso mercado selva,opportunity,andina.cli_017,33400,30,2026-12-01,2,andina.stage_nuevo,andina.team_b2b,andina.ctag_reactivacion
+andina.opp_018,Reposición Tacna,opportunity,andina.cli_018,14700,70,2026-09-08,1,andina.stage_negociacion,andina.team_retail,
+andina.opp_019,Exportación Bolivia vía Desaguadero,opportunity,andina.cli_019,187000,20,2027-01-15,3,andina.stage_nuevo,andina.team_b2b,andina.ctag_exportacion
+andina.opp_020,Pack corporativo fin de año,opportunity,andina.cli_021,76500,55,2026-11-30,3,andina.stage_propuesta,andina.team_b2b,andina.ctag_marcapropia

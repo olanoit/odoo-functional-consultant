@@ -1,0 +1,9 @@
+id,pricelist_id/id,applied_on,categ_id/id,product_tmpl_id/id,min_quantity,base,compute_price,percent_price,fixed_price,date_start,date_end
+andina.plr_may_global,andina.pl_mayorista,3_global,,,0,list_price,percentage,15,,,
+andina.plr_may_cons100,andina.pl_mayorista,2_product_category,andina.categ_conservas,,100,list_price,percentage,22,,,
+andina.plr_may_cons500,andina.pl_mayorista,2_product_category,andina.categ_conservas,,500,list_price,percentage,28,,,
+andina.plr_may_snack200,andina.pl_mayorista,2_product_category,andina.categ_snacks,,200,list_price,percentage,25,,,
+andina.plr_may_agu400,andina.pl_mayorista,1_product,,andina.prod_002,1000,list_price,fixed,,8.50,,
+andina.plr_exp_global,andina.pl_export,3_global,,,0,list_price,percentage,5,,,
+andina.plr_promo_snacks,andina.pl_promo,2_product_category,andina.categ_snacks,,0,list_price,percentage,20,,2026-12-01 00:00:00,2026-12-31 23:59:59
+andina.plr_promo_bebidas,andina.pl_promo,2_product_category,andina.categ_bebidas,,0,list_price,percentage,15,,2026-12-01 00:00:00,2026-12-31 23:59:59

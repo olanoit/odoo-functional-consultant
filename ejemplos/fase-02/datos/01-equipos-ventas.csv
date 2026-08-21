@@ -1,0 +1,4 @@
+id,name,sequence,use_leads,use_opportunities
+andina.team_b2b,Mayorista B2B,5,True,True
+andina.team_retail,Tienda Retail,10,False,True
+andina.team_online,Canal Online,15,True,True
