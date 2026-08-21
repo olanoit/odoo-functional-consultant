@@ -1,0 +1,6 @@
+id,name,code,costs_hour,time_start,time_stop,time_efficiency,oee_target
+andina.wc_recepcion,Área de recepción y lavado,REC-01,18.00,10,15,95,85
+andina.wc_pulpeado,Línea de pulpeado y pasteurizado,PUL-01,42.50,20,30,90,85
+andina.wc_cocina,Cocina de almíbar,COC-01,35.00,15,20,92,90
+andina.wc_envasado,Línea de envasado y sellado,ENV-01,56.00,25,25,88,90
+andina.wc_etiquetado,Etiquetado y empaque,ETI-01,22.00,10,10,95,92

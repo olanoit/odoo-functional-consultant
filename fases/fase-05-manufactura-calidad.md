@@ -8,6 +8,13 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-05/`](../ejemplos/fase-05/README.md)**: 3 semielaborados,
+5 centros de trabajo con costo/hora, 4 listas de materiales (estructura de 3 niveles + un kit),
+**laboratorio de costeo** con el cálculo resuelto paso a paso y guía de producción, subcontratación,
+calidad, mantenimiento y PLM.
+
 ## 1. Resultados de aprendizaje
 
 1. Modelar productos fabricados con LdM multinivel, variantes y **kits (LdM tipo conjunto)**.

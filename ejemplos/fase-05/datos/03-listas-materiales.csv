@@ -1,0 +1,16 @@
+id,product_tmpl_id/id,product_qty,type,code,bom_line_ids/product_id/id,bom_line_ids/product_qty,operation_ids/name,operation_ids/workcenter_id/id,operation_ids/time_cycle_manual
+andina.bom_pulpa,andina.prod_sem_pulpa,100,normal,LDM-PULPA,andina.prod_049,120,Lavado y selección,andina.wc_recepcion,45
+,,,,,andina.prod_058,0.4,Pulpeado y pasteurizado,andina.wc_pulpeado,90
+andina.bom_almibar,andina.prod_sem_almibar,200,normal,LDM-ALMIBAR,andina.prod_053,80,Cocción de almíbar,andina.wc_cocina,120
+,,,,,andina.prod_058,0.6,,,
+,,,,,andina.prod_060,0.2,,,
+andina.bom_conserva400,andina.prod_002,1000,normal,LDM-CON-AGU400,andina.prod_sem_pulpa,240,Envasado y sellado,andina.wc_envasado,240
+,,,,,andina.prod_sem_almibar,180,Etiquetado y encajado,andina.wc_etiquetado,180
+,,,,,andina.prod_062,1000,,,
+,,,,,andina.prod_065,1000,,,
+,,,,,andina.prod_067,1000,,,
+,,,,,andina.prod_068,1000,,,
+,,,,,andina.prod_069,84,,,
+andina.bom_kit_navidad,andina.prod_kit_navidad,1,phantom,LDM-KIT-NAV,andina.prod_002,2,,,
+,,,,,andina.prod_013,1,,,
+,,,,,andina.prod_016,3,,,
