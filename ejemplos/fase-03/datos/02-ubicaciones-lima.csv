@@ -1,0 +1,7 @@
+id,name,location_id/id,usage,barcode
+andina.loc_a,Estante A - Conservas,stock.stock_location_stock,internal,LIMA-A
+andina.loc_b,Estante B - Snacks,stock.stock_location_stock,internal,LIMA-B
+andina.loc_c,Estante C - Insumos,stock.stock_location_stock,internal,LIMA-C
+andina.loc_d,Cámara refrigerada,stock.stock_location_stock,internal,LIMA-D
+andina.loc_e,Zona de despacho,stock.stock_location_stock,internal,LIMA-E
+andina.loc_cuar,Cuarentena,stock.stock_location_stock,internal,LIMA-Q

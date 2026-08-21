@@ -8,6 +8,20 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
+
+| Recurso | Contenido |
+|---|---|
+| `datos/` | 2º almacén, 6 ubicaciones, método de costo por categoría, 10 productos con lote y caducidad, 14 lotes, stock inicial de 29 líneas, 8 reglas de reordenamiento y 6 órdenes de compra |
+| `guias/H1` | Diseño del almacén: cuántos pasos y por qué |
+| `guias/H2` | **Laboratorio de rutas**: 10 escenarios a predecir + 5 diagnósticos de soporte real |
+| `guias/H3` | **Laboratorio de valoración**: estándar vs. PEPS vs. promedio con las mismas operaciones |
+| `guias/H4` | Trazabilidad, FEFO y simulacro de recall cronometrado |
+| `guias/H5` | Chuleta v19 (`stock.lot`, `periodic`, `qty_multiple` eliminado, `inventory_quantity_auto_apply`) |
+| `soluciones/` | Respuestas de ambos laboratorios y del cuestionario |
+
 ## 1. Resultados de aprendizaje
 
 1. Ejecutar el ciclo Procure-to-Pay: solicitud → orden de compra → recepción → factura de proveedor.

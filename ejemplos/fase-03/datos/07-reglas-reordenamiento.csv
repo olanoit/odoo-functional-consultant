@@ -1,0 +1,9 @@
+id,product_id/id,location_id/id,product_min_qty,product_max_qty,trigger
+andina.op_001,andina.prod_049,stock.stock_location_stock,50,300,auto
+andina.op_002,andina.prod_051,stock.stock_location_stock,100,500,auto
+andina.op_003,andina.prod_053,stock.stock_location_stock,200,1000,auto
+andina.op_004,andina.prod_054,stock.stock_location_stock,30,120,auto
+andina.op_005,andina.prod_062,stock.stock_location_stock,2000,10000,auto
+andina.op_006,andina.prod_065,stock.stock_location_stock,3000,15000,auto
+andina.op_007,andina.prod_067,stock.stock_location_stock,10000,50000,auto
+andina.op_008,andina.prod_069,stock.stock_location_stock,500,3000,auto

@@ -1,0 +1,8 @@
+id,name,parent_id/id,property_cost_method
+andina.categ_conservas,Conservas,andina.categ_terminados,fifo
+andina.categ_snacks,Snacks,andina.categ_terminados,average
+andina.categ_harinas,Harinas y Granos,andina.categ_terminados,average
+andina.categ_bebidas,Bebidas,andina.categ_terminados,fifo
+andina.categ_mp,Materia Prima,andina.categ_insumos,average
+andina.categ_envases,Envases y Embalajes,andina.categ_insumos,standard
+andina.categ_aditivos,Aditivos,andina.categ_insumos,standard

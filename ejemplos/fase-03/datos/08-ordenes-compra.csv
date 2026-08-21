@@ -1,0 +1,12 @@
+id,partner_id/id,date_order,order_line/product_id/id,order_line/product_qty
+andina.po_001,andina.prov_001,2026-08-03 09:00:00,andina.prod_049,400
+,,,andina.prod_050,250
+andina.po_002,andina.prov_002,2026-08-05 10:30:00,andina.prod_051,600
+,,,andina.prod_052,300
+andina.po_003,andina.prov_003,2026-08-07 11:15:00,andina.prod_053,1200
+andina.po_004,andina.prov_006,2026-08-10 08:45:00,andina.prod_062,12000
+,,,andina.prod_063,6000
+andina.po_005,andina.prov_007,2026-08-12 14:20:00,andina.prod_065,20000
+,,,andina.prod_066,8000
+andina.po_006,andina.prov_008,2026-08-14 09:30:00,andina.prod_067,50000
+,,,andina.prod_068,50000

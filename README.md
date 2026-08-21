@@ -17,7 +17,7 @@ y poner en marcha** una implementación Odoo.
 |---|---|
 | [`00-metodo-y-entorno.md`](00-metodo-y-entorno.md) | **Léelo primero.** Método de estudio, entorno de práctica, reglas del juego, cómo se valida cada fase. |
 | [`fases/`](fases/) | Una carpeta con las 12 fases. Cada fase es autocontenida: qué estudiar, dónde, qué laboratorio hacer, cómo validar y cuándo avanzar. |
-| [`ejemplos/`](ejemplos/) | Cuadernos de casos prácticos por fase: datos listos para importar, laboratorios guiados y soluciones. Se construyen fase a fase. **Disponibles: Fases 1 y 2.** |
+| [`ejemplos/`](ejemplos/) | Cuadernos de casos prácticos por fase: datos listos para importar, laboratorios guiados y soluciones. Se construyen fase a fase. **Disponibles: Fases 1 a 3.** |
 | [`plantillas/`](plantillas/) | Documentos de trabajo reales de consultoría (levantamiento, GAP-FIT, UAT, demo, migración de datos, bitácora). Se usan **desde la Fase 1**, no al final. |
 | [`recursos.md`](recursos.md) | Catálogo de recursos verificados: doc, eLearning oficial, YouTube, foro, apps, certificación. |
 | [`seguimiento.md`](seguimiento.md) | Tablero de progreso con casillas por fase y registro de horas. |
@@ -99,5 +99,5 @@ Cada fase entrena una parte de esa lista; la Fase 11 y la 12 las integran.
 
 > **Cuadernos de ejemplos:** cada fase tendrá el suyo en [`ejemplos/`](ejemplos/) —datos de ejemplo
 > listos para importar, configuración paso a paso, errores provocados a propósito y soluciones.
-> **Ya disponibles:** [`ejemplos/fase-01/`](ejemplos/fase-01/README.md) y [`ejemplos/fase-02/`](ejemplos/fase-02/README.md). Los demás se generan a medida
+> **Ya disponibles:** [`fase-01`](ejemplos/fase-01/README.md), [`fase-02`](ejemplos/fase-02/README.md) y [`fase-03`](ejemplos/fase-03/README.md). Los demás se generan a medida
 > que avanzas: se planifican de uno en uno, cuando llegues a la fase.

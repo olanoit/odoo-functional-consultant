@@ -1,0 +1,11 @@
+id,name,tracking,use_expiration_date,expiration_time,alert_time
+andina.prod_001,Conserva de Aguaymanto en almíbar 200 g,lot,True,730,30
+andina.prod_002,Conserva de Aguaymanto en almíbar 400 g,lot,True,730,30
+andina.prod_003,Conserva de Aguaymanto en almíbar 1 kg,lot,True,730,30
+andina.prod_004,Conserva de Sauco en almíbar 200 g,lot,True,730,30
+andina.prod_005,Conserva de Sauco en almíbar 400 g,lot,True,730,30
+andina.prod_013,Mermelada de Aguaymanto 250 g,lot,True,545,30
+andina.prod_014,Mermelada de Sauco 250 g,lot,True,545,30
+andina.prod_043,Néctar de Aguaymanto 300 ml,lot,True,365,30
+andina.prod_049,Aguaymanto fresco,lot,True,7,3
+andina.prod_054,Miel de abeja,lot,True,1095,30
