@@ -9,6 +9,14 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Material de práctica en **[`../ejemplos/fase-11/`](../ejemplos/fase-11/README.md)**: la
+**transcripción completa de una entrevista de levantamiento** con 4 personas (con sus contradicciones
+y sus silencios), 25 requerimientos para clasificar en la matriz GAP-FIT, 8 conversaciones difíciles
+con respuestas modelo, el ejercicio guiado de entrevista → GAP-FIT → alcance → estimación, y la
+checklist de go-live con plan de reversión.
+
 ## 1. Resultados de aprendizaje
 
 1. Ejecutar un levantamiento de requerimientos estructurado, con preguntas que revelan el proceso real.
