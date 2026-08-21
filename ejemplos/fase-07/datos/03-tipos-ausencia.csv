@@ -1,0 +1,7 @@
+id,name,requires_allocation,leave_validation_type,allocation_validation_type,request_unit,support_document,time_type,color
+andina.lt_vacaciones,Vacaciones,True,manager,hr,day,False,leave,3
+andina.lt_enfermedad,Descanso médico,False,hr,no_validation,day,True,leave,1
+andina.lt_permiso,Permiso sin goce de haber,False,both,no_validation,hour,False,leave,4
+andina.lt_compensatorio,Compensatorio por horas extra,True,manager,hr,day,False,leave,6
+andina.lt_familiar,Licencia por paternidad o maternidad,False,hr,no_validation,day,True,leave,8
+andina.lt_capacitacion,Capacitación externa,False,manager,no_validation,hour,False,other,10

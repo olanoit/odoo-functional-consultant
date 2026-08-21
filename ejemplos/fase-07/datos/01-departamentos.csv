@@ -1,0 +1,7 @@
+id,name,parent_id/id
+andina.dep_gerencia,Gerencia General,
+andina.dep_comercial,Comercial,andina.dep_gerencia
+andina.dep_operaciones,Operaciones,andina.dep_gerencia
+andina.dep_planta,Planta de producción,andina.dep_operaciones
+andina.dep_almacen,Almacén y despacho,andina.dep_operaciones
+andina.dep_admin,Administración y finanzas,andina.dep_gerencia

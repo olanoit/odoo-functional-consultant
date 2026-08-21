@@ -1,0 +1,19 @@
+id,name,work_email,department_id/id,job_id/id,resource_calendar_id/id,hourly_cost
+andina.emp_sofia,Sofía Reátegui Panduro,sofia.reategui@andinagourmet.com.pe,andina.dep_gerencia,andina.job_gerente,andina.cal_admin,65.00
+andina.emp_ana,Ana Vílchez Torres,ana.vilchez@andinagourmet.com.pe,andina.dep_comercial,andina.job_jefeventas,andina.cal_admin,32.00
+andina.emp_diego,Diego Castro Salas,diego.castro@andinagourmet.com.pe,andina.dep_admin,andina.job_comprador,andina.cal_admin,28.00
+andina.emp_marco,Marco Huamán Ríos,marco.huaman@andinagourmet.com.pe,andina.dep_almacen,andina.job_almacenero,andina.cal_planta,18.50
+andina.emp_lucia,Lucía Ferrer Chávez,lucia.ferrer@andinagourmet.com.pe,andina.dep_planta,andina.job_nutricionista,andina.cal_admin,45.00
+andina.emp_pedro,Pedro Quiroz Mendoza,pedro.quiroz@andinagourmet.com.pe,andina.dep_planta,andina.job_tecnico,andina.cal_planta,24.00
+andina.emp_rosa,Rosa Ccahuana Ttito,rosa.ccahuana@andinagourmet.com.pe,andina.dep_planta,andina.job_jefeplanta,andina.cal_planta,38.00
+andina.emp_julio,Julio Paredes Lino,julio.paredes@andinagourmet.com.pe,andina.dep_admin,andina.job_contador,andina.cal_admin,42.00
+andina.emp_carla,Carla Espinoza Mucha,carla.espinoza@andinagourmet.com.pe,andina.dep_comercial,andina.job_vendedor,andina.cal_admin,22.00
+andina.emp_victor,Víctor Anccasi Ramos,victor.anccasi@andinagourmet.com.pe,andina.dep_comercial,andina.job_vendedor,andina.cal_admin,22.00
+andina.emp_nelly,Nelly Bautista Roque,nelly.bautista@andinagourmet.com.pe,andina.dep_planta,andina.job_operario,andina.cal_planta,14.00
+andina.emp_hugo,Hugo Sarmiento Vela,hugo.sarmiento@andinagourmet.com.pe,andina.dep_planta,andina.job_operario,andina.cal_planta,14.00
+andina.emp_mirta,Mirta Chuquilín Vargas,mirta.chuquilin@andinagourmet.com.pe,andina.dep_planta,andina.job_operario,andina.cal_planta_tarde,14.00
+andina.emp_raul,Raúl Ynga Sandoval,raul.ynga@andinagourmet.com.pe,andina.dep_planta,andina.job_operario,andina.cal_planta_tarde,14.00
+andina.emp_ines,Inés Palomino Ayala,ines.palomino@andinagourmet.com.pe,andina.dep_almacen,andina.job_almacenero,andina.cal_planta,16.00
+andina.emp_omar,Omar Tinoco Guerra,omar.tinoco@andinagourmet.com.pe,andina.dep_almacen,andina.job_almacenero,andina.cal_planta_tarde,16.00
+andina.emp_luz,Luz Arana Poma,luz.arana@andinagourmet.com.pe,andina.dep_admin,andina.job_contador,andina.cal_medio,26.00
+andina.emp_jorge,Jorge Bendezú Rivas,jorge.bendezu@andinagourmet.com.pe,andina.dep_planta,andina.job_operario,andina.cal_planta,14.00
