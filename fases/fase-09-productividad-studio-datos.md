@@ -11,6 +11,14 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-09/`](../ejemplos/fase-09/README.md)**: un dataset de
+**512 clientes de un sistema legado** con duplicados, RUC inválidos y formatos rotos para la
+migración completa (perfilado, decisiones, mapeo, carga y validación con sumas de control),
+más la guía de Studio con el árbol de decisión aplicado a 6 casos reales y la construcción de una
+app propia.
+
 ## 1. Resultados de aprendizaje
 
 1. Usar Conversaciones, Calendario, Conocimiento, Documentos y Firma como herramientas de proceso.

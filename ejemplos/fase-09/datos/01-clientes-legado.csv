@@ -1,0 +1,513 @@
+codigo_cliente,razon_social,ruc,ciudad,telefono,email,limite_credito,estado
+CLI00563,Abarrotes Los Cedros S.A.,20500546116,Puno,+51 973256367,abarrotes563@correo.pe,3000,ACTIVO
+CLI00033,Abarrotes Villa Norte S.A.,20500032015,Iquitos,0924488220,abarrotes33@correo.pe,3000,ACTIVO
+CLI00112,Bodega Villa Norte,20500108640,Tarapoto,992671299,bodega112@correo.pe,1500,ACTIVO
+CLI00178,Almacenes Buen Precio E.I.R.L.,20500172666,Tarapoto,+51 955653827,almacenes178@correo.pe,3000,ACTIVO
+CLI00418,Market Santa Rosa S.A.C.,20500405466,Huancayo,935932411,market418@correo.pe,5000,ACTIVO
+CLI00194,Negocios Puerto Nuevo,20500188180,Tacna,0965578208,negocios194@correo.pe,0,ACTIVO
+CLI00334,Abarrotes Río Verde S.A.,20500323982,Cusco,954302782,abarrotes334@correo.pe,25000,ACTIVO
+CLI90006,Mayorista Las Palmeras S.A.C.,20500041715,Piura,0944365408,mayorista43@correo.pe,0,ACTIVO
+CLI00151,Negocios Vista Alegre S.A.,20500146479,Iquitos,+51 950196661,,0,ACTIVO
+CLI00224,Negocios Buen Precio S.A.,20500217287,Lima,966958792,negocios224@correo.pe,1500,ACTIVO
+CLI00538,Comercial La Merced E.I.R.L.,20500521865,Tarapoto,+51 967096708,comercial538@correo.pe,10000,INACTIVO
+CLI00326,Comercial San Isidro E.I.R.L.,20500316226,Piura,969613237,comercial326@correo.pe,5000,ACTIVO
+CLI00314,Inversiones Las Palmeras,20500304589,Ica,956804631,inversiones314@correo.pe,0,ACTIVO
+CLI00055,Negocios Río Verde,20500053357,Huancayo,+51 985780740,negocios55@correo.pe,S/ 3.000,ACTIVO
+CLI00180,Distribuidora San Martín S.A.,20500174600,Puno,964154676,distribuidora180@correo.pe,25000,INACTIVO
+CLI00226,Distribuidora El Progreso S.A.,20500219221,Ica,+51 968746602,distribuidora226@correo.pe,3000,ACTIVO
+CLI00071,Tiendas Los Cedros E.I.R.L.,20500068877,Chiclayo,+51 975336401,tiendas71@correo.pe,3000,ACTIVO
+CLI00292,Almacenes Casa Grande S.A.,20500283247,Lima,991618244,,25000,ACTIVO
+CLI00283,Autoservicio Río Verde S.A.,20500274515,Puno,+51 922330545,autoservicio283@correo.pe,0,ACTIVO
+CLI00531,Negocios La Colina S.A.C.,20500515075,Huancayo,0967207565,negocios531@correo.pe,0,ACTIVO
+CLI00095,Tiendas San Martín S.A.,20500092158,Ica,0954599229,tiendas95@correo.pe,3000,INACTIVO
+CLI00256,Minimarket Santa Rosa,20500248328,Cajamarca,0989215862,minimarket256@correo.pe,1500,ACTIVO
+CLI00127,Minimarket Vista Alegre E.I.R.L.,20500123193,Trujillo,0926758096,minimarket127@correo.pe,3000,ACTIVO
+CLI00363,Mayorista Vista Alegre S.R.L.,20500352117,Tacna,992758681,mayorista363@correo.pe,0,ACTIVO
+CLI00556,Minimarket San Martín S.R.L.,20500539322,Piura,953136502,minimarket556@correo.pe,25000,ACTIVO
+CLI00208,Almacenes San Martín S.A.,20500201763,Tarapoto,0968597621,almacenes208@correo.pe,3000,ACTIVO
+CLI00012,Tiendas Río Verde,20500011646,Tacna,958125246,tiendas12@correo.pe,S/ 3.000,INACTIVO
+CLI00490,Importadora La Merced,20500475308,Arequipa,978153201,importadora490@correo.pe,0,ACTIVO
+CLI00346,Distribuidora Vista Alegre S.A.,20500335620,Cajamarca,+51 906507542,distribuidora346@correo.pe,3000,INACTIVO
+CLI00230,Inversiones Villa Norte S.A.C.,20500223104,Huancayo,930844858,inversiones230@correo.pe,0,ACTIVO
+CLI00252,Market Los Cedros S.A.C.,20500244446,Cajamarca,0928354028,market252@correo.pe,10000,INACTIVO
+CLI00264,Almacenes Campo Alegre E.I.R.L.,20500256088,Huancayo,0964981679,almacenes264@correo.pe,0,ACTIVO
+CLI00504,Abarrotes Río Verde,20500488884,Ayacucho,+51 918438549,,5000,ACTIVO
+CLI00225,Market Vista Alegre E.I.R.L.,20500218259,Puno,0909065327,market225@correo.pe,1500,ACTIVO
+CLI00021,Market Río Verde S.R.L.,20500020378,Arequipa,989731916,market21@correo.pe,1500,ACTIVO
+CLI00172,Supermercados Los Cedros S.A.C.,20500166844,Cusco,+51 907740289,,1500,INACTIVO
+CLI00440,Negocios La Merced S.A.C.,20500426803,Juliaca,+51 991026540,,25000,INACTIVO
+CLI00039,Distribuidora Los Andes S.A.C.,20500037831,Cusco,+51 941596580,distribuidora39@correo.pe,25000,ACTIVO
+CLI00210,Tiendas El Progreso E.I.R.L.,20500203707,Chiclayo,0942625260,tiendas210@correo.pe,3000,ACTIVO
+CLI00289,Importadora Campo Alegre S.R.L.,20500280337,Huancayo,+51 976867385,importadora289@correo.pe,3000,ACTIVO
+CLI00309,Abarrotes El Trigal,20500299739,Cusco,+51 909996346,abarrotes309@correo.pe,0,ACTIVO
+CLI00313,Tiendas Las Palmeras S.A.C.,20500303612,Tarapoto,+51 987410707,tiendas313@correo.pe,3000,INACTIVO
+CLI00066,Abarrotes Buen Precio,20500064022,Chiclayo,+51 909265701,abarrotes66@correo.pe,0,ACTIVO
+CLI00362,Corporación San Isidro S.A.C.,20500351145,Trujillo,932004585,corporación362@correo.pe,10000,ACTIVO
+CLI00002,Autoservicio Puerto Nuevo,20500001942,Juliaca,0965888073,autoservicio2@correo.pe,10000,ACTIVO
+CLI00574,Autoservicio El Trigal S.A.,20500556782,Cusco,+51 901393846,autoservicio574@correo.pe,5000,ACTIVO
+CLI00345,Negocios Campo Alegre S.R.L.,20500334658,Iquitos,+51 948121152,negocios345@correo.pe,25000,ACTIVO
+CLI00477,Tiendas Villa Norte,20500462699,Ica,0961504426,tiendas477@correo.pe,1500,INACTIVO
+CLI00093,Minimarket Buen Precio E.I.R.L.,20500090210,Trujillo,0907199812,minimarket93@correo.pe,25000,ACTIVO
+CLI00153,Abarrotes La Merced S.A.,20500148412,Cusco,941688779,abarrotes153@correo.pe,0,ACTIVO
+CLI00161,Mayorista Nueva Esperanza S.R.L.,20500156172,Tarapoto,+51 955095231,mayorista161@correo.pe,0,ACTIVO
+CLI00250,Distribuidora Santa Rosa,20500242508,Tarapoto,+51 919418693,distribuidora250@correo.pe,0,ACTIVO
+CLI00062,Minimarket Sol de Oro S.A.C.,20500060141,Iquitos,0994540747,minimarket62@correo.pe,0,ACTIVO
+CLI00523,Corporación Puerto Nuevo S.R.L.,20500507315,Arequipa,+51 902890911,corporación523@correo.pe,3000,ACTIVO
+CLI00534,Market Río Verde,20500517981,Puno,985827433,market534@correo.pe,5000,ACTIVO
+CLI00245,Negocios Villa Norte S.A.C.,20500237652,,+51 948575520,,25000,ACTIVO
+CLI00050,Abarrotes Río Verde S.R.L.,20500048500,Chiclayo,0969853472,abarrotes50@correo.pe,3000,INACTIVO
+CLI00598,Importadora El Trigal S.A.,20500580063,Tacna,0913212195,importadora598@correo.pe,1500,ACTIVO
+CLI00265,Inversiones Campo Alegre S.A.,20500257050,Piura,938430671,inversiones265@correo.pe,10000,ACTIVO
+CLI00011,Corporación La Colina,20500010674,Tarapoto,0933689519,corporación11@correo.pe,25000,ACTIVO
+CLI00085,Mayorista Río Verde,20500082454,Iquitos,964773101,mayorista85@correo.pe,10000,ACTIVO
+CLI90002,Importadora Buen Precio S.A.C.,20500014556,Tacna,0996169478,importadora15@correo.pe,10000,ACTIVO
+CLI00113,Negocios Villa Norte S.A.,20500109611,Lima,933449924,negocios113@correo.pe,5000,ACTIVO
+CLI00524,Market Alto Andino S.A.,20500508281,Tarapoto,973285047,market524@correo.pe,25000,ACTIVO
+CLI90005,Comercial Los Cedros S.A.C.,20500034921,Huancayo,+51 914231875,comercial36@correo.pe,3000,ACTIVO
+CLI00052,Minimarket San Isidro,20500050447,Chiclayo,+51 975375365,minimarket52@correo.pe,3000,ACTIVO
+CLI00438,Comercial San Martín S.A.C.,20500424860,Huancayo,0965275654,comercial438@correo.pe,10000,ACTIVO
+CLI00286,Corporación El Trigal E.I.R.L.,20500277425,Chiclayo,943108364,corporación286@correo.pe,10000,ACTIVO
+CLI00058,Abarrotes Vista Alegre,20500056267,Arequipa,+51 919044466,abarrotes58@correo.pe,3000,ACTIVO
+CLI00572,Comercial Nueva Esperanza E.I.R.L.,20500554844,Arequipa,+51 914494073,comercial572@correo.pe,3000,ACTIVO
+CLI90011,Bodega Alto Andino S.A.C.,20500075661,Arequipa,+51 944289631,bodega78@correo.pe,5000,ACTIVO
+CLI00207,Negocios El Trigal,20500200791,Arequipa,0906209252,negocios207@correo.pe,5000,ACTIVO
+CLI00281,Minimarket Casa Grande E.I.R.L.,20500272571,Arequipa,0979405108,minimarket281@correo.pe,1500,ACTIVO
+CLI00439,Supermercados Los Andes S.A.C.,20500425831,Ayacucho,954950276,supermercados439@correo.pe,0,ACTIVO
+CLI00353,Inversiones Campo Alegre E.I.R.L.,20500342413,Trujillo,949615576,inversiones353@correo.pe,3000,ACTIVO
+CLI00258,Inversiones Vista Alegre S.R.L.,20500250268,Juliaca,969740974,inversiones258@correo.pe,3000,ACTIVO
+CLI00198,Inversiones Los Andes,20500192063,Puno,+51 963406082,inversiones198@correo.pe,S/ 25.000,ACTIVO
+CLI00369,Comercial San Isidro,20500357933,Chiclayo,953541106,comercial369@correo.pe,3000,ACTIVO
+CLI00017,Corporación Casa Grande S.A.C.,20500016494,Cusco,0955205206,corporación17@correo.pe,0,INACTIVO
+CLI00486,Corporación Alto Andino S.R.L.,20500471426,Ica,910274068,corporación486@correo.pe,3000,ACTIVO
+CLI00324,Autoservicio Las Palmeras S.A.C.,20500314282,Ayacucho,948243077,autoservicio324@correo.pe,3000,ACTIVO
+CLI00379,Supermercados La Colina S.A.,20500367637,,+51 929243222,supermercados379@correo.pe,5000,ACTIVO
+CLI00142,Minimarket Campo Alegre S.R.L.,20500137747,Ica,0952963167,minimarket142@correo.pe,10000,ACTIVO
+CLI00290,Tiendas El Trigal S.R.L.,20500281309,,+51 903752892,tiendas290@correo.pe,3000,ACTIVO
+CLI00404,Supermercados Puerto Nuevo E.I.R.L.,20500391881,Arequipa,0959960163,supermercados404@correo.pe,0,ACTIVO
+CLI00249,Abarrotes Las Palmeras,20500241536,Lima,+51 943591243,abarrotes249@correo.pe,0,ACTIVO
+CLI00507,Distribuidora Buen Precio S.R.L.,20500491796,Cajamarca,+51 935096289,distribuidora507@correo.pe,1500,ACTIVO
+CLI00493,Bodega Los Cedros E.I.R.L.,20500478218,Ayacucho,0991786162,bodega493@correo.pe,10000,ACTIVO
+CLI00562,Bodega Puerto Nuevo S.A.C.,20500545144,Cajamarca,+51 945954332,bodega562@correo.pe,10000,ACTIVO
+CLI00437,Importadora Santa Rosa S.A.C.,20500423898,Puno,948506590,importadora437@correo.pe,0,ACTIVO
+CLI00448,Negocios El Trigal S.A.C.,20500434563,Cajamarca,996847966,negocios448@correo.pe,0,ACTIVO
+CLI00397,Tiendas Vista Alegre S.A.,20500385091,Cajamarca,0946366921,tiendas397@correo.pe,0,ACTIVO
+CLI00124,Corporación Los Cedros S.A.C.,20500120283,Tarapoto,0997671227,corporación124@correo.pe,10000,ACTIVO
+CLI00597,Autoservicio El Trigal S.A.C.,20500579090,Iquitos,0954383965,autoservicio597@correo.pe,0,ACTIVO
+CLI00522,Market Sol de Oro E.I.R.L.,20500506343,Lima,937723489,market522@correo.pe,10000,INACTIVO
+CLI00222,Corporación La Merced S.R.L.,20500215349,Tarapoto,923929086,corporación222@correo.pe,1500,ACTIVO
+CLI00108,Market Los Andes S.A.C.,20500104768,Iquitos,975749525,,25000,ACTIVO
+CLI00030,Comercial San Isidro S.R.L.,20500029103,Trujillo,923447159,comercial30@correo.pe,5000,ACTIVO
+CLI00181,Distribuidora El Trigal S.A.C.,20500175576,Cajamarca,+51 957680307,distribuidora181@correo.pe,25000,ACTIVO
+CLI00489,Bodega Vista Alegre E.I.R.L.,20500474336,Tarapoto,983664187,bodega489@correo.pe,0,INACTIVO
+CLI00527,Autoservicio Campo Alegre,20500511193,Huancayo,+51 936428723,,25000,ACTIVO
+CLI00451,Distribuidora Los Andes E.I.R.L.,20500437473,Ica,953652104,distribuidora451@correo.pe,1500,INACTIVO
+CLI00331,Market Vista Alegre,20500321076,Cusco,0998708487,market331@correo.pe,1500,INACTIVO
+CLI00508,Distribuidora Puerto Nuevo E.I.R.L.,20500492768,Tarapoto,911882204,,0,ACTIVO
+CLI00431,Almacenes Santa Rosa E.I.R.L.,20500418070,Juliaca,0918637545,almacenes431@correo.pe,0,INACTIVO
+CLI00054,Bodega Vista Alegre,20500052385,Huancayo,+51 965076364,bodega54@correo.pe,3000,ACTIVO
+CLI00374,Inversiones La Colina S.A.,20500362783,Piura,960268040,inversiones374@correo.pe,10000,ACTIVO
+CLI00218,Tiendas La Colina S.A.,20500211467,Ayacucho,0993203221,tiendas218@correo.pe,5000,ACTIVO
+CLI00441,Inversiones San Isidro,20500427770,Piura,947025573,inversiones441@correo.pe,25000,ACTIVO
+CLI00513,Bodega Sol de Oro E.I.R.L.,20500497611,Chiclayo,940194980,,1500,INACTIVO
+CLI00073,Abarrotes La Colina,20500070815,Juliaca,0989607543,abarrotes73@correo.pe,10000,ACTIVO
+CLI00299,Minimarket San Martín,20500290031,Ica,0983750247,minimarket299@correo.pe,S/ 25.000,INACTIVO
+CLI00105,Inversiones Alto Andino S.R.L.,20500101858,Cajamarca,991540404,,5000,ACTIVO
+CLI00262,Importadora Sol de Oro S.R.L.,20500254140,Puno,948922860,importadora262@correo.pe,0,ACTIVO
+CLI00300,Market Campo Alegre S.R.L.,20500291002,Cusco,+51 940108465,market300@correo.pe,5000,ACTIVO
+CLI00373,Comercial Buen Precio S.R.L.,20500361817,Tacna,+51 952181545,,5000,ACTIVO
+CLI00059,Supermercados Los Andes,20500057239,Puno,0925471405,supermercados59@correo.pe,3000,ACTIVO
+CLI00126,Comercial Nueva Esperanza S.A.C.,20500122227,Lima,951786198,comercial126@correo.pe,5000,ACTIVO
+CLI00023,Autoservicio Sol de Oro S.A.C.,20500022311,Huancayo,+51 906895485,autoservicio23@correo.pe,25000,ACTIVO
+CLI00129,Market Río Verde E.I.R.L.,20500125137,Juliaca,993071644,market129@correo.pe,3000,ACTIVO
+CLI00375,Autoservicio Río Verde,20500363755,Ica,+51 962574936,autoservicio375@correo.pe,25000,ACTIVO
+CLI00328,Market San Martín S.A.,20500318164,Trujillo,+51 982821969,,3000,ACTIVO
+CLI00061,Autoservicio Casa Grande,20500059177,Trujillo,0969281900,,3000,ACTIVO
+CLI00558,Inversiones Nueva Esperanza S.A.,20500541262,Tacna,967312202,inversiones558@correo.pe,0,ACTIVO
+CLI00223,Comercial El Progreso S.A.,20500216311,Tacna,+51 968610191,comercial223@correo.pe,1500,ACTIVO
+CLI00231,Autoservicio Río Verde E.I.R.L.,20500224071,Tarapoto,978084305,autoservicio231@correo.pe,3000,ACTIVO
+CLI00537,Corporación Nueva Esperanza,20500520893,Cajamarca,+51 976339224,corporación537@correo.pe,1500,ACTIVO
+CLI00092,  ALMACENES LOS ANDES S.R.L.  ,20500089246,Cajamarca,924023137,almacenes92@correo.pe,10000,ACTIVO
+CLI00187,Bodega Santa Rosa E.I.R.L.,20500181398,Chiclayo,908668427,bodega187@correo.pe,10000,INACTIVO
+CLI00163,Tiendas Vista Alegre,20500158116,Huancayo,904570558,tiendas163@correo.pe,3000,ACTIVO
+CLI00544,Minimarket Alto Andino,20500527685,Piura,928131517,,0,ACTIVO
+CLI00185,Tiendas San Martín,20500179458,Cusco,974924966,tiendas185@correo.pe,1500,ACTIVO
+CLI00271,Comercial La Merced S.A.C.,20500262878,Lima,0969474561,comercial271@correo.pe,5000,ACTIVO
+CLI00065,Comercial Casa Grande S.A.,20500063051,Tarapoto,916232107,comercial65@correo.pe,1500,ACTIVO
+CLI00325,Bodega Las Palmeras S.A.,20500315254,Lima,0973310657,bodega325@correo.pe,10000,ACTIVO
+CLI00488,Almacenes El Progreso,20500473364,Chiclayo,+51 981177585,almacenes488@correo.pe,10000,ACTIVO
+CLI00367,Mayorista La Merced S.A.,20500355990,Trujillo,911959510,mayorista367@correo.pe,25000,INACTIVO
+CLI00101,Importadora Campo Alegre,20-500097974,Trujillo,+51 923101803,importadora101@correo.pe,5000,ACTIVO
+CLI00132,Supermercados Nueva Esperanza S.A.C.,20500128047,Huancayo,+51 940767216,supermercados132@correo.pe,10000,ACTIVO
+CLI00474,Bodega Los Cedros,20500459787,Lima,944965104,,1500,ACTIVO
+CLI00434,Comercial Sol de Oro,20500420988,Juliaca,+51 995992870,comercial434@correo.pe,5000,ACTIVO
+CLI00476,Bodega San Isidro E.I.R.L.,20500461722,Piura,939020786,bodega476@correo.pe,1500,ACTIVO
+CLI00156,Bodega El Progreso S.A.,20500151324,Tacna,+51 973920258,bodega156@correo.pe,5000,ACTIVO
+CLI00273,Almacenes El Progreso E.I.R.L.,20500264811,Juliaca,+51 966201502,,0,ACTIVO
+CLI00337,Almacenes Alto Andino S.A.,20500326892,Tacna,+51 930382713,almacenes337@correo.pe,5000,ACTIVO
+CLI00604,Abarrotes Casa Grande E.I.R.L.,20500585880,Chiclayo,0927043789,abarrotes604@correo.pe,1500,ACTIVO
+CLI00579,Minimarket Casa Grande S.A.C.,20500561638,Arequipa,0962922123,minimarket579@correo.pe,1500,ACTIVO
+CLI00484,Almacenes Santa Rosa S.R.L.,20500469481,Puno,994323687,,1500,ACTIVO
+CLI00177,Negocios Alto Andino,20500171694,Lima,954888845,negocios177@correo.pe,10000,ACTIVO
+CLI00041,Inversiones San Isidro S.R.L.,20500039770,Puno,+51 979733040,inversiones41@correo.pe,25000,ACTIVO
+CLI00371,Inversiones Río Verde,20500359871,Chiclayo,0977337894,inversiones371@correo.pe,10000,ACTIVO
+CLI00577,Importadora Nueva Esperanza S.A.,20500559692,Lima,901451132,,5000,ACTIVO
+CLI00473,Tiendas La Merced S.R.L.,20500458811,Puno,936492367,tiendas473@correo.pe,25000,INACTIVO
+CLI00144,Importadora Buen Precio E.I.R.L.,20500139685,Trujillo,0940537059,,10000,ACTIVO
+CLI00091,Market Alto Andino,20500088274,Trujillo,0919324407,market91@correo.pe,25000,ACTIVO
+CLI00233,Supermercados Nueva Esperanza,20500226014,Huancayo,920327749,supermercados233@correo.pe,1500,ACTIVO
+CLI00419,Corporación San Martín E.I.R.L.,20500406438,Tarapoto,+51 966681114,corporación419@correo.pe,1500,ACTIVO
+CLI00119,Almacenes La Merced S.A.C.,20500115433,Cajamarca,953810144,almacenes119@correo.pe,1500,ACTIVO
+CLI00084,Supermercados Río Verde,20500081482,Huancayo,929298954,supermercados84@correo.pe,5000,ACTIVO
+CLI00520,Supermercados Los Andes E.I.R.L.,20500504405,Cajamarca,963668281,,25000,ACTIVO
+CLI00037,Minimarket La Merced,20-500035898,Chiclayo,978934594,minimarket37@correo.pe,3000,ACTIVO
+CLI00570,Mayorista La Colina E.I.R.L.,20500552906,Chiclayo,+51 914330054,mayorista570@correo.pe,0,ACTIVO
+CLI90009,Importadora La Colina S.A.C.,20500062089,Juliaca,0909815488,importadora64@correo.pe,10000,ACTIVO
+CLI00150,Mayorista Sol de Oro S.A.C.,20500145505,Cusco,+51 923464099,mayorista150@correo.pe,5000,ACTIVO
+CLI00427,Importadora Buen Precio S.A.,20500414198,Arequipa,+51 957103861,importadora427@correo.pe,1500,ACTIVO
+CLI00335,Corporación San Martín S.R.L.,20500324954,,+51 918550822,corporación335@correo.pe,1500,ACTIVO
+CLI00387,Almacenes Vista Alegre S.A.,20500375397,Ica,+51 950187439,almacenes387@correo.pe,3000,ACTIVO
+CLI00063,Comercial Casa Grande S.R.L.,20500061112,Cusco,0920699871,comercial63@correo.pe,1500,INACTIVO
+CLI00146,Abarrotes Los Andes,20500141621,Piura,0904853558,abarrotes146@correo.pe,10000,ACTIVO
+CLI00456,Mayorista Santa Rosa S.A.,20500442329,Puno,+51 901752982,,1500,ACTIVO
+CLI00361,Almacenes La Merced,20500350173,Cajamarca,0974428120,almacenes361@correo.pe,25000,ACTIVO
+CLI00056,Mayorista Los Cedros E.I.R.L.,20500054329,Ayacucho,0913522643,mayorista56@correo.pe,0,ACTIVO
+CLI00589,Autoservicio Nueva Esperanza S.R.L.,20500571331,Tarapoto,938263240,autoservicio589@correo.pe,3000,ACTIVO
+CLI00111,Almacenes Campo Alegre,20500107678,Arequipa,0944951322,almacenes111@correo.pe,3000,ACTIVO
+CLI00031,Negocios Las Palmeras S.R.L.,20500030071,Tacna,+51 943726695,negocios31@correo.pe,5000,INACTIVO
+CLI00425,Abarrotes Nueva Esperanza,20500412250,Trujillo,0917691817,abarrotes425@correo.pe,0,ACTIVO
+CLI00287,Comercial La Colina,20500278391,Huancayo,+51 939825725,comercial287@correo.pe,5000,ACTIVO
+CLI90001,Autoservicio Río Verde S.R.L.,20500007762,Juliaca,975698815,autoservicio8@correo.pe,5000,ACTIVO
+CLI00192,Tiendas Sol de Oro S.A.C.,20500186241,Chiclayo,+51 903721571,tiendas192@correo.pe,3000,INACTIVO
+CLI00182,Market El Progreso E.I.R.L.,20500176548,Chiclayo,+51 992573339,market182@correo.pe,0,ACTIVO
+CLI00038,Minimarket Los Cedros S.R.L.,20500036860,Arequipa,+51 955249698,minimarket38@correo.pe,3000,ACTIVO
+CLI00428,Comercial Santa Rosa,20500415160,Ica,0913396879,comercial428@correo.pe,25000,ACTIVO
+CLI00528,Comercial Los Cedros,20500512165,Huancayo,0911439774,comercial528@correo.pe,1500,ACTIVO
+CLI00043,Mayorista Las Palmeras S.A.C.,20500041715,Piura,0944365408,mayorista43@correo.pe,0,ACTIVO
+CLI00392,Market La Colina E.I.R.L.,20500380242,Arequipa,936545625,market392@correo.pe,0,ACTIVO
+CLI00546,Minimarket La Colina S.A.C.,20500529629,Arequipa,+51 965892521,minimarket546@correo.pe,25000,ACTIVO
+CLI00541,Supermercados Puerto Nuevo,20500524775,Ayacucho,0946383340,,1500,ACTIVO
+CLI00370,Almacenes El Progreso S.A.,20500358905,Lima,975442780,almacenes370@correo.pe,25000,INACTIVO
+CLI00603,Abarrotes Alto Andino,20500584913,Cusco,0942087792,abarrotes603@correo.pe,0,ACTIVO
+CLI00267,Negocios El Progreso S.A.,20500258994,Huancayo,0900553951,negocios267@correo.pe,5000,ACTIVO
+CLI00348,Negocios Río Verde E.I.R.L.,20500337568,Lima,+51 984274469,,0,ACTIVO
+CLI00154,Almacenes Villa Norte,20500149389,Trujillo,984200104,almacenes154@correo.pe,25000,INACTIVO
+CLI00257,Inversiones Alto Andino S.A.,20500249294,Tacna,906186663,inversiones257@correo.pe,0,ACTIVO
+CLI00240,Bodega La Colina,20500232804,Juliaca,+51 962783925,bodega240@correo.pe,0,ACTIVO
+CLI00420,Tiendas La Colina,20500407400,Tarapoto,+51 904889937,tiendas420@correo.pe,3000,ACTIVO
+CLI00535,Bodega San Isidro S.R.L.,20500518953,Trujillo,0964279667,,5000,ACTIVO
+CLI00347,Negocios San Isidro S.R.L.,20500336596,Ayacucho,0940909896,negocios347@correo.pe,3000,ACTIVO
+CLI00200,Bodega Buen Precio,20500194007,Lima,+51 905153679,bodega200@correo.pe,10000,ACTIVO
+CLI00026,Market Villa Norte S.A.,20500025221,Puno,+51 991066500,market26@correo.pe,10000,ACTIVO
+CLI00081,Autoservicio Los Andes E.I.R.L.,20500078571,Iquitos,0968910905,autoservicio81@correo.pe,5000,ACTIVO
+CLI00020,Market La Colina,20500019400,Ayacucho,+51 973256520,market20@correo.pe,10000,INACTIVO
+CLI00244,Market Villa Norte E.I.R.L.,20500236681,Piura,+51 916973902,market244@correo.pe,5000,ACTIVO
+CLI00238,Importadora La Merced S.A.,20500230861,Tarapoto,0907321996,importadora238@correo.pe,1500,ACTIVO
+CLI00032,Almacenes Río Verde S.R.L.,20500031043,Juliaca,+51 928767018,almacenes32@correo.pe,0,ACTIVO
+CLI00004,Importadora Santa Rosa S.A.,20500003884,Piura,947866880,importadora4@correo.pe,25000,ACTIVO
+CLI00506,Comercial Sol de Oro S.A.C.,20500490820,Chiclayo,0919875131,comercial506@correo.pe,3000,ACTIVO
+CLI00239,Abarrotes El Progreso S.R.L.,20500231832,Juliaca,+51 951553073,abarrotes239@correo.pe,25000,ACTIVO
+CLI00349,Autoservicio Villa Norte S.R.L.,20500338530,Chiclayo,923968981,autoservicio349@correo.pe,1500,ACTIVO
+CLI00217,Bodega Nueva Esperanza S.A.C.,20500210495,Chiclayo,904413016,bodega217@correo.pe,3000,ACTIVO
+CLI00083,Distribuidora La Colina E.I.R.L.,20500080516,Lima,949148845,distribuidora83@correo.pe,5000,ACTIVO
+CLI00444,Bodega Los Cedros S.A.C.,20500430681,Puno,0929481722,bodega444@correo.pe,10000,ACTIVO
+CLI00243,Distribuidora Sol de Oro E.I.R.L.,20500235714,Trujillo,+51 972973542,distribuidora243@correo.pe,25000,ACTIVO
+CLI00131,Abarrotes Puerto Nuevo S.R.L.,20500127075,Iquitos,911169771,abarrotes131@correo.pe,10000,INACTIVO
+CLI00157,Minimarket San Martín S.A.C.,20500152291,Ica,956779946,minimarket157@correo.pe,0,ACTIVO
+CLI00051,Negocios Sol de Oro,20500049473,Cusco,907824479,negocios51@correo.pe,25000,ACTIVO
+CLI00339,Minimarket El Trigal E.I.R.L.,20500328836,Juliaca,+51 940239819,minimarket339@correo.pe,1500,ACTIVO
+CLI00025,Comercial La Colina S.A.,20500024250,Puno,0922915476,comercial25@correo.pe,10000,ACTIVO
+CLI00329,Distribuidora Villa Norte,20500319136,Lima,965987525,distribuidora329@correo.pe,3000,ACTIVO
+CLI00134,Minimarket Buen Precio,20500129981,Arequipa,+51 989185815,minimarket134@correo.pe,1500,ACTIVO
+CLI00521,Tiendas Los Cedros S.A.C.,20500505371,Ica,969555171,tiendas521@correo.pe,3000,ACTIVO
+CLI00322,Market Puerto Nuevo,20500312344,Huancayo,0916114347,market322@correo.pe,5000,ACTIVO
+CLI00015,Importadora Buen Precio S.A.C.,20500014556,Tacna,0996169478,importadora15@correo.pe,10000,ACTIVO
+CLI00268,Autoservicio Casa Grande S.A.C.,20500259966,Huancayo,0940540066,autoservicio268@correo.pe,5000,ACTIVO
+CLI00170,Supermercados La Colina S.A.C.,20-500164906,Chiclayo,962542393,,0,ACTIVO
+CLI00536,Importadora Los Cedros S.A.C.,20500519925,Iquitos,+51 982072114,importadora536@correo.pe,3000,ACTIVO
+CLI00214,Almacenes Alto Andino,20500207583,Lima,0975046521,,0,ACTIVO
+CLI00215,Mayorista Los Andes,20500208555,Chiclayo,0917591590,,5000,INACTIVO
+CLI00384,Comercial Casa Grande E.I.R.L.,20500372487,Trujillo,+51 955713229,comercial384@correo.pe,5000,INACTIVO
+CLI00455,Bodega Los Andes S.A.,20500441357,Lima,0901623032,bodega455@correo.pe,25000,INACTIVO
+CLI00009,Almacenes Sol de Oro,20500008734,Cusco,+51 906561596,almacenes9@correo.pe,10000,ACTIVO
+CLI00078,Bodega Alto Andino S.A.C.,20500075661,Arequipa,+51 944289631,bodega78@correo.pe,5000,ACTIVO
+CLI90010,Tiendas Los Cedros E.I.R.L.,20500068877,Chiclayo,+51 975336401,tiendas71@correo.pe,3000,ACTIVO
+CLI00601,Importadora San Martín S.A.C.,20500582970,Iquitos,0918094276,importadora601@correo.pe,1500,ACTIVO
+CLI00389,Negocios Los Andes S.A.C.,20500377331,Arequipa,+51 907937558,negocios389@correo.pe,1500,ACTIVO
+CLI00006,Mayorista Puerto Nuevo S.R.L.,20-500005824,Lima,0949505484,mayorista6@correo.pe,5000,INACTIVO
+CLI00296,Supermercados Los Cedros S.R.L.,20500287129,Huancayo,+51 949199240,,3000,ACTIVO
+CLI00220,Distribuidora Nueva Esperanza,20500213401,Cusco,+51 906681913,distribuidora220@correo.pe,0,ACTIVO
+CLI00487,Market La Merced,20500472392,Iquitos,965625113,market487@correo.pe,3000,ACTIVO
+CLI00130,Tiendas La Merced E.I.R.L.,20500126109,Lima,912024518,tiendas130@correo.pe,5000,ACTIVO
+CLI00053,Importadora Casa Grande S.A.,20500051419,Ica,973658086,importadora53@correo.pe,25000,ACTIVO
+CLI00277,Supermercados Santa Rosa S.A.C.,20500268698,Juliaca,958926019,supermercados277@correo.pe,5000,ACTIVO
+CLI00592,Negocios La Colina E.I.R.L.,20500574241,Juliaca,965304787,negocios592@correo.pe,25000,ACTIVO
+CLI00098,Autoservicio Santa Rosa E.I.R.L.,20500095061,Cusco,+51 988801484,autoservicio98@correo.pe,1500,ACTIVO
+CLI00010,Comercial Campo Alegre S.A.,20500009706,Tacna,+51 964708126,comercial10@correo.pe,0,ACTIVO
+CLI00588,Almacenes Nueva Esperanza S.R.L.,20500570360,Cajamarca,0996550519,,10000,ACTIVO
+CLI00094,Abarrotes Campo Alegre S.A.,20500091186,Tarapoto,0903893609,abarrotes94@correo.pe,10000,ACTIVO
+CLI00532,Bodega Vista Alegre S.A.,20500516047,Tarapoto,+51 978462157,bodega532@correo.pe,1500,ACTIVO
+CLI00046,Abarrotes El Trigal S.A.C.,20500044625,Huancayo,0916951405,abarrotes46@correo.pe,5000,ACTIVO
+CLI00188,Supermercados Alto Andino S.A.C.,20500182360,Iquitos,930377727,supermercados188@correo.pe,5000,ACTIVO
+CLI00547,Almacenes Los Cedros S.R.L.,20500530597,Huancayo,913632585,almacenes547@correo.pe,1500,ACTIVO
+CLI00351,Mayorista Villa Norte S.R.L.,20500340470,Puno,+51 969717582,mayorista351@correo.pe,1500,ACTIVO
+CLI00048,Tiendas Alto Andino S.A.,20500046563,Tarapoto,919821727,tiendas48@correo.pe,0,ACTIVO
+CLI00433,Comercial Los Cedros E.I.R.L.,20500420015,Arequipa,+51 942586337,comercial433@correo.pe,25000,ACTIVO
+CLI00139,Supermercados Los Cedros S.A.,20500134837,Ayacucho,0955088539,supermercados139@correo.pe,3000,ACTIVO
+CLI00593,Inversiones La Colina S.A.C.,20500575213,Ica,+51 952079830,inversiones593@correo.pe,1500,ACTIVO
+CLI00148,Abarrotes Campo Alegre,20500143569,Chiclayo,952282347,abarrotes148@correo.pe,0,ACTIVO
+CLI00189,Distribuidora El Trigal E.I.R.L.,20500183331,Piura,952693749,distribuidora189@correo.pe,25000,INACTIVO
+CLI00049,  CORPORACIÓN LAS PALMERAS S.R.L.  ,20500047535,Chiclayo,+51 984124685,corporación49@correo.pe,1500,ACTIVO
+CLI00166,Inversiones Santa Rosa,20500161028,Puno,993573033,inversiones166@correo.pe,25000,INACTIVO
+CLI00068,Importadora Villa Norte,20-500065967,Ica,954099053,importadora68@correo.pe,1500,ACTIVO
+CLI00160,Minimarket Sol de Oro E.I.R.L.,20500155206,Puno,0941276226,minimarket160@correo.pe,5000,ACTIVO
+CLI00457,Comercial Buen Precio E.I.R.L.,20500443295,Trujillo,998645845,comercial457@correo.pe,10000,ACTIVO
+CLI00401,Tiendas Buen Precio S.A.,20500388979,Juliaca,+51 997261942,tiendas401@correo.pe,3000,INACTIVO
+CLI00027,Bodega Vista Alegre S.A.C.,20500026191,Ica,0906467611,bodega27@correo.pe,25000,ACTIVO
+CLI00446,Supermercados Campo Alegre S.A.C.,20500432625,Juliaca,0913708403,supermercados446@correo.pe,5000,INACTIVO
+CLI00496,Autoservicio El Progreso S.A.C.,20500481120,Chiclayo,937706689,autoservicio496@correo.pe,3000,ACTIVO
+CLI00288,Distribuidora Las Palmeras,20500279363,Piura,900513394,distribuidora288@correo.pe,0,INACTIVO
+CLI00147,Supermercados Las Palmeras E.I.R.L.,20500142597,Ayacucho,0971789402,supermercados147@correo.pe,10000,ACTIVO
+CLI00302,Importadora El Trigal E.I.R.L.,20500292947,Piura,940732881,importadora302@correo.pe,25000,ACTIVO
+CLI00110,Autoservicio San Martín E.I.R.L.,20500106701,Iquitos,902447520,autoservicio110@correo.pe,25000,ACTIVO
+CLI00045,Mayorista La Merced E.I.R.L.,20500043653,Puno,+51 915875669,,10000,ACTIVO
+CLI00149,Autoservicio San Isidro,20500144531,Tarapoto,932749614,autoservicio149@correo.pe,S/ 5.000,ACTIVO
+CLI90007,Abarrotes Río Verde S.R.L.,20500048507,Chiclayo,0969853472,abarrotes50@correo.pe,3000,ACTIVO
+CLI00171,Supermercados Alto Andino,20500165872,Cajamarca,+51 915590235,supermercados171@correo.pe,5000,ACTIVO
+CLI00077,Almacenes Santa Rosa S.A.,20500074699,,983594248,almacenes77@correo.pe,0,ACTIVO
+CLI00001,Comercial Villa Norte,20500000971,Iquitos,0913775684,comercial1@correo.pe,10000,ACTIVO
+CLI00422,Supermercados Santa Rosa E.I.R.L.,20500409348,Tacna,902132417,,0,ACTIVO
+CLI00365,Corporación Buen Precio E.I.R.L.,20500354055,Trujillo,936747451,corporación365@correo.pe,3000,ACTIVO
+CLI00284,Bodega La Merced E.I.R.L.,20500275481,Tarapoto,0936656998,bodega284@correo.pe,5000,INACTIVO
+CLI00199,Comercial Casa Grande S.A.C.,20500193035,Piura,+51 932608523,comercial199@correo.pe,25000,ACTIVO
+CLI00204,Almacenes La Colina S.R.L.,20500197880,Cajamarca,995857076,almacenes204@correo.pe,25000,ACTIVO
+CLI00416,Abarrotes Buen Precio S.R.L.,20500403528,Tacna,968002745,abarrotes416@correo.pe,10000,INACTIVO
+CLI00343,Minimarket Sol de Oro,20500332710,Ayacucho,985242608,minimarket343@correo.pe,3000,ACTIVO
+CLI00120,Supermercados Vista Alegre,20500116405,,911348399,supermercados120@correo.pe,0,ACTIVO
+CLI00219,Autoservicio San Martín S.A.C.,20500212439,Piura,931983382,autoservicio219@correo.pe,0,INACTIVO
+CLI00246,Almacenes Los Andes S.A.,20500238624,Cusco,0965030619,almacenes246@correo.pe,25000,ACTIVO
+CLI00193,Corporación Río Verde S.A.,20500187213,Ica,972559699,corporación193@correo.pe,1500,INACTIVO
+CLI00585,Almacenes Puerto Nuevo S.R.L.,20500567458,Arequipa,0950572168,almacenes585@correo.pe,5000,INACTIVO
+CLI00586,Importadora Los Cedros S.A.,20500568420,Huancayo,0958601076,importadora586@correo.pe,5000,ACTIVO
+CLI00560,Tiendas El Trigal,20500543206,Iquitos,+51 961391113,tiendas560@correo.pe,1500,INACTIVO
+CLI00014,Corporación Buen Precio,20500013584,Cajamarca,958281295,corporación14@correo.pe,0,ACTIVO
+CLI00552,Distribuidora El Progreso,20500535441,Trujillo,0986639964,distribuidora552@correo.pe,1500,ACTIVO
+CLI00276,Corporación Río Verde E.I.R.L.,20500267721,Lima,0950914754,corporación276@correo.pe,1500,ACTIVO
+CLI00072,Corporación San Isidro S.A.,20500069849,Lima,0996161940,corporación72@correo.pe,5000,ACTIVO
+CLI00460,Autoservicio Los Cedros,20500446201,Piura,+51 984716008,autoservicio460@correo.pe,10000,ACTIVO
+CLI00358,Mayorista Santa Rosa,20500347261,Huancayo,+51 984859707,mayorista358@correo.pe,10000,ACTIVO
+CLI00076,Corporación Villa Norte S.A.C.,20500073722,Lima,+51 985398731,corporación76@correo.pe,3000,ACTIVO
+CLI00366,Supermercados Nueva Esperanza S.A.,20500355027,Ica,0901506501,supermercados366@correo.pe,0,INACTIVO
+CLI00118,Tiendas La Merced,20500114461,Chiclayo,+51 978727228,,1500,ACTIVO
+CLI00467,Minimarket Villa Norte S.A.,20500452995,Chiclayo,991584753,,0,INACTIVO
+CLI00406,Importadora Los Cedros,20500393824,Ica,+51 973401027,importadora406@correo.pe,25000,ACTIVO
+CLI00393,Abarrotes Los Cedros S.A.C.,20500381214,Puno,0928304191,abarrotes393@correo.pe,5000,ACTIVO
+CLI00571,Inversiones Villa Norte,20500553872,Arequipa,+51 945327163,,5000,INACTIVO
+CLI00040,Inversiones Casa Grande S.R.L.,20500038803,,981504394,inversiones40@correo.pe,25000,ACTIVO
+CLI00155,Negocios Santa Rosa,20500150352,Juliaca,945752567,negocios155@correo.pe,0,INACTIVO
+CLI00395,Market Sol de Oro S.A.C.,20500383152,Piura,915304867,market395@correo.pe,10000,ACTIVO
+CLI00432,Distribuidora Vista Alegre,20500419041,Piura,0981829050,distribuidora432@correo.pe,3000,ACTIVO
+CLI00414,Comercial Los Andes E.I.R.L.,20500401584,Tarapoto,924917330,comercial414@correo.pe,10000,ACTIVO
+CLI00330,Importadora La Colina,20500320100,Arequipa,+51 914914935,importadora330@correo.pe,5000,ACTIVO
+CLI00409,Negocios Los Andes S.R.L.,20500396734,Cusco,927874745,negocios409@correo.pe,5000,ACTIVO
+CLI00453,Market La Colina S.A.,20500439417,Lima,930955018,market453@correo.pe,3000,ACTIVO
+CLI00044,Autoservicio Villa Norte,20500042681,Tarapoto,+51 972767058,autoservicio44@correo.pe,1500,ACTIVO
+CLI00503,Importadora Puerto Nuevo S.A.,20500487918,Piura,0948187743,importadora503@correo.pe,25000,ACTIVO
+CLI00114,Comercial Puerto Nuevo S.A.,20500110580,Puno,964805280,comercial114@correo.pe,5000,ACTIVO
+CLI00500,Importadora Sol de Oro S.A.,20500485001,Tarapoto,+51 927490818,importadora500@correo.pe,25000,ACTIVO
+CLI00141,Almacenes San Isidro E.I.R.L.,20500136775,Juliaca,0989213390,almacenes141@correo.pe,0,ACTIVO
+CLI00501,Market Nueva Esperanza S.A.,20500485974,Cajamarca,0954315640,market501@correo.pe,25000,ACTIVO
+CLI00421,Bodega Santa Rosa S.A.C.,20500408376,Huancayo,+51 971028210,bodega421@correo.pe,3000,ACTIVO
+CLI00569,Market El Trigal S.A.,20500551934,Lima,949575924,market569@correo.pe,5000,ACTIVO
+CLI00125,Market Alto Andino E.I.R.L.,20500121258,Tacna,+51 972701840,market125@correo.pe,10000,ACTIVO
+CLI00005,Comercial Villa Norte S.A.C.,20500004852,Iquitos,0939207934,comercial5@correo.pe,1500,ACTIVO
+CLI00128,Abarrotes Vista Alegre S.A.,20500124165,Arequipa,+51 946215249,,1500,ACTIVO
+CLI00235,Supermercados El Progreso,20500227959,Trujillo,+51 939471331,supermercados235@correo.pe,1500,ACTIVO
+CLI00307,Almacenes Casa Grande S.A.C.,20500297795,Huancayo,0994057061,almacenes307@correo.pe,5000,ACTIVO
+CLI00234,Abarrotes Campo Alegre E.I.R.L.,20500226987,Lima,0998078317,abarrotes234@correo.pe,1500,ACTIVO
+CLI00016,Inversiones Vista Alegre S.A.,20500015528,Juliaca,0964309920,inversiones16@correo.pe,25000,ACTIVO
+CLI00539,Mayorista Casa Grande S.A.,20500522837,Juliaca,986341584,mayorista539@correo.pe,0,ACTIVO
+CLI00067,Almacenes El Trigal S.R.L.,20500064995,Cajamarca,0930339638,almacenes67@correo.pe,5000,ACTIVO
+CLI00191,Mayorista Los Andes S.A.C.,20500185270,Piura,912089890,mayorista191@correo.pe,25000,ACTIVO
+CLI00554,Minimarket Villa Norte E.I.R.L.,20500537389,Arequipa,+51 901018829,,25000,ACTIVO
+CLI00259,Supermercados El Progreso S.A.,20500251230,Huancayo,909454289,supermercados259@correo.pe,1500,ACTIVO
+CLI00301,Bodega San Isidro,20500291975,Puno,975994901,bodega301@correo.pe,0,ACTIVO
+CLI00035,Almacenes Puerto Nuevo,20500033950,Cusco,0939553980,almacenes35@correo.pe,25000,ACTIVO
+CLI00386,Abarrotes Santa Rosa,20500374421,Ayacucho,+51 960976618,abarrotes386@correo.pe,5000,ACTIVO
+CLI00452,Bodega El Trigal S.A.C.,20500438445,Cajamarca,951260029,bodega452@correo.pe,3000,INACTIVO
+CLI00168,Importadora Las Palmeras,20500162962,Tacna,0943545356,importadora168@correo.pe,3000,INACTIVO
+CLI00024,Almacenes Sol de Oro S.A.C.,20500023288,Iquitos,943991209,almacenes24@correo.pe,5000,ACTIVO
+CLI00197,Almacenes San Isidro,20500191091,Juliaca,+51 985426047,almacenes197@correo.pe,0,ACTIVO
+CLI00102,Autoservicio Sol de Oro,20500098946,Trujillo,0985131197,autoservicio102@correo.pe,3000,ACTIVO
+CLI00293,Inversiones Buen Precio,20500284219,Ayacucho,+51 981752186,inversiones293@correo.pe,25000,ACTIVO
+CLI00228,Market Campo Alegre S.A.C.,20500221161,Tarapoto,965626385,market228@correo.pe,25000,ACTIVO
+CLI00158,Distribuidora Buen Precio S.A.,20500153262,Chiclayo,0913226216,distribuidora158@correo.pe,5000,ACTIVO
+CLI00310,Bodega Sol de Oro S.A.,20500300702,Piura,960549095,bodega310@correo.pe,1500,ACTIVO
+CLI00184,  TIENDAS NUEVA ESPERANZA E.I.R.L.  ,20500178486,Chiclayo,912459868,tiendas184@correo.pe,10000,INACTIVO
+CLI00064,Importadora La Colina S.A.C.,20500062089,Juliaca,0909815488,importadora64@correo.pe,10000,ACTIVO
+CLI00251,Importadora Vista Alegre S.A.C.,20500243474,Chiclayo,0915814284,,10000,ACTIVO
+CLI00380,Abarrotes Nueva Esperanza S.A.,20500368609,Ica,992054055,abarrotes380@correo.pe,0,ACTIVO
+CLI00057,Negocios Puerto Nuevo S.R.L.,20500055295,Puno,+51 952784615,negocios57@correo.pe,10000,ACTIVO
+CLI00383,Inversiones Los Andes S.R.L.,20500371511,Piura,+51 989538738,inversiones383@correo.pe,25000,ACTIVO
+CLI00022,Inversiones Puerto Nuevo S.R.L.,20500021340,Iquitos,952399581,inversiones22@correo.pe,10000,ACTIVO
+CLI00013,Minimarket Campo Alegre S.A.,20500012618,Cajamarca,0965701930,minimarket13@correo.pe,1500,ACTIVO
+CLI00584,Mayorista San Martín E.I.R.L.,20500566486,Tarapoto,921339056,,5000,ACTIVO
+CLI00415,Bodega Los Andes S.A.C.,20500402556,Chiclayo,+51 924457976,bodega415@correo.pe,10000,ACTIVO
+CLI00594,Negocios Santa Rosa S.A.C.,20500576180,Ayacucho,950976324,negocios594@correo.pe,0,ACTIVO
+CLI00340,Comercial Río Verde E.I.R.L.,20500329808,Tarapoto,0913589275,comercial340@correo.pe,25000,ACTIVO
+CLI00459,Almacenes Santa Rosa S.A.C.,20500445239,Cusco,0904084819,,25000,ACTIVO
+CLI90003,Inversiones Puerto Nuevo S.R.L.,20500021340,Iquitos,952399581,inversiones22@correo.pe,10000,ACTIVO
+CLI00338,Negocios Sol de Oro S.R.L.,20500327864,Cusco,+51 976686972,negocios338@correo.pe,3000,ACTIVO
+CLI00202,Bodega Campo Alegre S.R.L.,20500195941,Trujillo,957820767,bodega202@correo.pe,5000,ACTIVO
+CLI00285,Abarrotes Sol de Oro,20500276453,Trujillo,0983200305,abarrotes285@correo.pe,10000,ACTIVO
+CLI00564,Tiendas Nueva Esperanza,20500547082,Puno,+51 968168622,tiendas564@correo.pe,0,ACTIVO
+CLI00263,Distribuidora Villa Norte S.A.,20500255111,Piura,0929532669,distribuidora263@correo.pe,10000,ACTIVO
+CLI00543,Inversiones Villa Norte S.R.L.,20500526719,Arequipa,0960565320,inversiones543@correo.pe,1500,ACTIVO
+CLI00008,  AUTOSERVICIO RÍO VERDE S.R.L.  ,20500007762,Juliaca,975698815,autoservicio8@correo.pe,5000,ACTIVO
+CLI00565,Supermercados El Trigal S.A.C.,20500548054,Ayacucho,+51 924032836,,5000,ACTIVO
+CLI00088,Autoservicio La Merced,20500085364,Cusco,+51 962251448,autoservicio88@correo.pe,5000,ACTIVO
+CLI00159,Abarrotes San Martín S.R.L.,20500154234,,0970327038,abarrotes159@correo.pe,0,ACTIVO
+CLI90008,Negocios Puerto Nuevo S.R.L.,20500055295,Puno,+51 952784615,negocios57@correo.pe,10000,ACTIVO
+CLI00028,Mayorista Sol de Oro E.I.R.L.,20500027160,Ica,0929356575,mayorista28@correo.pe,10000,ACTIVO
+CLI00206,Bodega Nueva Esperanza S.R.L.,20500199823,Puno,962613862,bodega206@correo.pe,0,ACTIVO
+CLI00298,Importadora El Trigal,20500289067,Juliaca,0905236943,importadora298@correo.pe,10000,ACTIVO
+CLI00462,Autoservicio San Isidro S.A.C.,20500448149,Cusco,+51 935698451,autoservicio462@correo.pe,5000,ACTIVO
+CLI00162,Market Los Cedros S.R.L.,20500157144,Huancayo,0977629963,market162@correo.pe,25000,ACTIVO
+CLI00557,Mayorista Río Verde E.I.R.L.,20500540291,Cusco,0999167678,mayorista557@correo.pe,10000,ACTIVO
+CLI00587,Bodega Los Cedros S.R.L.,20500569396,Iquitos,0916320291,,25000,ACTIVO
+CLI00458,Supermercados Puerto Nuevo S.A.C.,20500444267,Piura,918995682,supermercados458@correo.pe,1500,ACTIVO
+CLI00270,Abarrotes Alto Andino S.A.,20500261901,Huancayo,0944591543,abarrotes270@correo.pe,25000,ACTIVO
+CLI00354,Negocios Nueva Esperanza S.R.L.,20500343380,Piura,936081313,negocios354@correo.pe,3000,INACTIVO
+CLI00350,Tiendas Alto Andino,20500339501,Tarapoto,+51 906465420,tiendas350@correo.pe,1500,INACTIVO
+CLI00080,Market Las Palmeras,20500077604,Iquitos,0979062399,market80@correo.pe,0,INACTIVO
+CLI00398,Market La Colina S.R.L.,20500386062,Piura,+51 919988731,market398@correo.pe,0,ACTIVO
+CLI00019,Distribuidora Alto Andino S.R.L.,20500018438,Ica,0947949368,distribuidora19@correo.pe,3000,ACTIVO
+CLI00018,Corporación Puerto Nuevo,20500017466,Tarapoto,+51 981890761,corporación18@correo.pe,1500,INACTIVO
+CLI00478,Comercial Las Palmeras,20500463661,Cajamarca,+51 954631915,comercial478@correo.pe,3000,INACTIVO
+CLI00089,Tiendas El Progreso,20500086336,Cusco,996152038,tiendas89@correo.pe,10000,ACTIVO
+CLI00510,Inversiones Río Verde S.A.,20500494701,Lima,910605415,inversiones510@correo.pe,5000,ACTIVO
+CLI00074,Importadora Villa Norte S.A.C.,20500071789,Tarapoto,997232165,importadora74@correo.pe,3000,ACTIVO
+CLI00481,Autoservicio Casa Grande E.I.R.L.,20500466571,Iquitos,941785524,autoservicio481@correo.pe,1500,ACTIVO
+CLI00007,Inversiones Puerto Nuevo,20500006791,Tacna,+51 957102035,inversiones7@correo.pe,10000,ACTIVO
+CLI90000,Comercial Villa Norte,20500000971,Iquitos,0913775684,comercial1@correo.pe,10000,ACTIVO
+CLI00090,Negocios Villa Norte S.R.L.,20500087308,Ica,971498171,negocios90@correo.pe,10000,ACTIVO
+CLI00236,Corporación Sol de Oro,20500228921,Cajamarca,0985056469,corporación236@correo.pe,0,ACTIVO
+CLI00242,Autoservicio La Merced E.I.R.L.,20500234742,Arequipa,+51 970948649,autoservicio242@correo.pe,5000,INACTIVO
+CLI00099,Tiendas Las Palmeras,20500096030,Huancayo,948746691,tiendas99@correo.pe,3000,ACTIVO
+CLI00318,Inversiones Sol de Oro E.I.R.L.,20500308461,Iquitos,973539296,inversiones318@correo.pe,25000,ACTIVO
+CLI00133,Market Vista Alegre S.R.L.,20500129019,Ayacucho,0901407351,market133@correo.pe,3000,ACTIVO
+CLI00123,Comercial Vista Alegre,20500119315,Arequipa,927460898,,10000,ACTIVO
+CLI00269,Minimarket Los Andes,20500260930,Tarapoto,+51 976859251,minimarket269@correo.pe,1500,INACTIVO
+CLI00465,Comercial Buen Precio,20500451051,Piura,939559366,comercial465@correo.pe,1500,INACTIVO
+CLI00485,Inversiones El Progreso,20500470454,Ayacucho,0951539270,inversiones485@correo.pe,0,ACTIVO
+CLI00304,Negocios Casa Grande S.A.,20500294885,Ayacucho,+51 944022018,negocios304@correo.pe,3000,ACTIVO
+CLI00332,Comercial La Colina S.R.L.,20500322048,Chiclayo,+51 998114787,comercial332@correo.pe,3000,ACTIVO
+CLI00096,Tiendas Los Andes S.A.,20500093120,Lima,+51 912704519,tiendas96@correo.pe,25000,ACTIVO
+CLI00483,Mayorista Santa Rosa S.R.L.,20500468514,Juliaca,+51 966678322,mayorista483@correo.pe,3000,ACTIVO
+CLI00327,Tiendas Santa Rosa S.A.,20500317192,Ica,905647075,tiendas327@correo.pe,1500,INACTIVO
+CLI00315,Bodega Puerto Nuevo,20500305551,Juliaca,937021812,bodega315@correo.pe,0,ACTIVO
+CLI00429,Autoservicio Vista Alegre S.A.C.,20500416131,Cusco,+51 945299832,autoservicio429@correo.pe,10000,ACTIVO
+CLI00599,Abarrotes El Trigal S.A.,20500581035,Cajamarca,+51 919226473,abarrotes599@correo.pe,0,ACTIVO
+CLI00479,Mayorista El Progreso S.A.,20500464632,Chiclayo,+51 959038715,,1500,ACTIVO
+CLI00167,Importadora San Isidro,20500161991,Huancayo,0961977433,importadora167@correo.pe,25000,INACTIVO
+CLI00211,Supermercados Sol de Oro,20500204673,Piura,+51 975932944,supermercados211@correo.pe,5000,ACTIVO
+CLI00399,Distribuidora La Colina S.A.,20500387034,Cusco,0956765294,distribuidora399@correo.pe,3000,INACTIVO
+CLI00145,Supermercados Vista Alegre S.A.,20500140659,Ica,0916782031,supermercados145@correo.pe,5000,ACTIVO
+CLI00525,Comercial Puerto Nuevo S.R.L.,20500509253,Tacna,+51 933570607,comercial525@correo.pe,1500,INACTIVO
+CLI00291,Importadora La Merced S.R.L.,20500282275,Iquitos,+51 900101166,,1500,INACTIVO
+CLI00512,Inversiones Los Cedros S.R.L.,20500496640,Cusco,0992840283,inversiones512@correo.pe,0,ACTIVO
+CLI00376,Distribuidora Santa Rosa S.R.L.,20500364727,Tarapoto,+51 925659911,distribuidora376@correo.pe,25000,ACTIVO
+CLI00303,Importadora Puerto Nuevo S.R.L.,20500293919,Puno,0906065723,importadora303@correo.pe,3000,ACTIVO
+CLI00135,Tiendas La Colina S.A.C.,20500130955,Arequipa,+51 900533783,tiendas135@correo.pe,3000,INACTIVO
+CLI00115,Autoservicio Los Andes,20500111551,Tacna,+51 939550251,autoservicio115@correo.pe,10000,ACTIVO
+CLI00176,Inversiones La Merced S.A.C.,20500170721,Puno,0996729429,inversiones176@correo.pe,1500,ACTIVO
+CLI00568,Autoservicio San Martín S.A.,20500550962,Juliaca,0935437457,,3000,ACTIVO
+CLI00595,Almacenes Río Verde S.A.,20500577151,Huancayo,0941433230,,3000,ACTIVO
+CLI00312,Abarrotes Puerto Nuevo S.A.C.,20500302641,Iquitos,+51 941381739,abarrotes312@correo.pe,25000,ACTIVO
+CLI00104,Comercial El Progreso,20500100886,Cusco,961205543,comercial104@correo.pe,25000,ACTIVO
+CLI00316,Mayorista Buen Precio S.R.L.,20500306522,Huancayo,971332694,,5000,INACTIVO
+CLI00186,Bodega Alto Andino S.R.L.,20500180421,Ica,+51 952391277,bodega186@correo.pe,25000,ACTIVO
+CLI00082,Importadora Villa Norte S.R.L.,20500079542,Chiclayo,0964383227,importadora82@correo.pe,3000,ACTIVO
+CLI00502,Mayorista Alto Andino S.A.C.,20500486946,Lima,941738794,,1500,ACTIVO
+CLI00591,Mayorista Nueva Esperanza,20500573270,Lima,+51 906943919,mayorista591@correo.pe,3000,ACTIVO
+CLI00519,Tiendas Campo Alegre S.A.,20500503433,Ica,0977238126,tiendas519@correo.pe,10000,ACTIVO
+CLI00516,Abarrotes Los Andes S.R.L.,20500500523,Huancayo,0965469672,abarrotes516@correo.pe,25000,INACTIVO
+CLI00029,Minimarket Vista Alegre,20500028131,Juliaca,+51 952341080,minimarket29@correo.pe,10000,ACTIVO
+CLI00237,Inversiones La Merced,20500229897,Iquitos,0990010025,inversiones237@correo.pe,0,ACTIVO
+CLI00070,Abarrotes El Progreso S.A.,20500067901,Piura,915817033,abarrotes70@correo.pe,5000,ACTIVO
+CLI00352,Tiendas Los Cedros E.I.R.L.,20500341441,Chiclayo,0996344729,tiendas352@correo.pe,25000,ACTIVO
+CLI00551,Comercial Villa Norte S.R.L.,20500534479,Piura,0992852105,comercial551@correo.pe,0,ACTIVO
+CLI00175,Market Los Andes S.R.L.,20500169754,Trujillo,+51 956152494,market175@correo.pe,25000,ACTIVO
+CLI00137,  MARKET LA MERCED S.A.C.  ,20500132893,Cusco,959571428,market137@correo.pe,5000,ACTIVO
+CLI00247,Inversiones La Colina S.A.C.,20500239591,Ica,+51 922689444,inversiones247@correo.pe,S/ 3.000,ACTIVO
+CLI00103,Autoservicio Sol de Oro S.A.,20500099918,Iquitos,936652985,autoservicio103@correo.pe,5000,ACTIVO
+CLI00515,Distribuidora Casa Grande S.R.L.,20500499550,Piura,971333317,distribuidora515@correo.pe,0,ACTIVO
+CLI00109,Corporación Campo Alegre S.A.,20500105730,Iquitos,+51 920549175,corporación109@correo.pe,1500,INACTIVO
+CLI00260,Inversiones La Colina S.R.L.,20500252201,Piura,0984914852,inversiones260@correo.pe,5000,INACTIVO
+CLI00529,Negocios San Martín S.R.L.,20500513137,Cajamarca,936302625,negocios529@correo.pe,10000,ACTIVO
+CLI00454,Abarrotes Los Andes S.A.C.,20500440385,Arequipa,+51 902631615,abarrotes454@correo.pe,5000,ACTIVO
+CLI00578,Distribuidora La Merced E.I.R.L.,20500560666,Puno,0914462065,distribuidora578@correo.pe,1500,ACTIVO
+CLI00097,Negocios Los Cedros S.R.L.,20500094096,Cajamarca,+51 921986261,negocios97@correo.pe,0,ACTIVO
+CLI00232,Comercial El Progreso S.R.L.,20500225042,Arequipa,991757773,comercial232@correo.pe,25000,ACTIVO
+CLI00526,Tiendas Villa Norte E.I.R.L.,20500510227,Iquitos,+51 922362719,tiendas526@correo.pe,1500,ACTIVO
+CLI00372,Minimarket Puerto Nuevo,20500360845,Ayacucho,+51 959978789,minimarket372@correo.pe,10000,INACTIVO
+CLI00553,Supermercados Villa Norte S.A.,20500536412,Chiclayo,+51 942209465,supermercados553@correo.pe,25000,ACTIVO
+CLI00190,Supermercados La Merced S.R.L.,20500184303,Ica,909642412,supermercados190@correo.pe,3000,ACTIVO
+CLI00140,Comercial Campo Alegre,20500135809,Lima,+51 928632146,comercial140@correo.pe,3000,ACTIVO
+CLI00203,Bodega San Martín S.A.,20500196913,,928874629,bodega203@correo.pe,25000,ACTIVO
+CLI00100,Corporación Alto Andino,20500097001,Tacna,+51 928327121,corporación100@correo.pe,S/ 0,ACTIVO
+CLI00122,Mayorista Buen Precio,20500118343,Ica,+51 925501820,mayorista122@correo.pe,5000,INACTIVO
+CLI00342,Autoservicio San Isidro E.I.R.L.,20500331748,Juliaca,0963266861,,1500,ACTIVO
+CLI00600,Minimarket Campo Alegre,20500582007,Juliaca,972195958,minimarket600@correo.pe,10000,ACTIVO
+CLI00491,Corporación La Colina S.R.L.,20500476274,Tarapoto,+51 911148333,corporación491@correo.pe,1500,INACTIVO
+CLI00216,Distribuidora Puerto Nuevo S.A.C.,20500209527,Tacna,+51 926675933,distribuidora216@correo.pe,10000,ACTIVO
+CLI00205,Importadora Alto Andino S.A.C.,20500198851,Juliaca,+51 999278721,importadora205@correo.pe,0,ACTIVO
+CLI00075,Supermercados El Progreso S.R.L.,20500072751,Puno,0982102572,supermercados75@correo.pe,5000,ACTIVO
+CLI00164,Supermercados Las Palmeras,20500159082,Juliaca,927908106,supermercados164@correo.pe,25000,ACTIVO
+CLI00497,Tiendas Las Palmeras S.R.L.,20500482096,Ica,+51 917797732,tiendas497@correo.pe,25000,ACTIVO
+CLI00382,Tiendas San Martín S.A.C.,20500370549,Juliaca,0931536285,tiendas382@correo.pe,5000,ACTIVO
+CLI00417,Mayorista San Martín S.A.C.,20500404494,Iquitos,+51 905930625,mayorista417@correo.pe,1500,INACTIVO
+CLI00359,Distribuidora Nueva Esperanza S.A.,20500348233,Chiclayo,+51 955446289,distribuidora359@correo.pe,3000,ACTIVO
+CLI00069,Bodega Casa Grande S.R.L.,20500066939,Huancayo,0951221192,bodega69@correo.pe,5000,ACTIVO
+CLI00261,Negocios Buen Precio S.A.C.,20500253178,Cusco,0930542322,negocios261@correo.pe,0,ACTIVO
+CLI00047,Almacenes Las Palmeras,20500045591,Cusco,+51 924624539,almacenes47@correo.pe,25000,ACTIVO
+CLI00060,Supermercados Casa Grande E.I.R.L.,20500058201,Huancayo,+51 984532675,,10000,ACTIVO
+CLI00279,Comercial El Trigal S.A.C.,20500270633,Ayacucho,928970073,comercial279@correo.pe,3000,ACTIVO
+CLI00388,Abarrotes Las Palmeras S.R.L.,20500376369,Arequipa,941609993,abarrotes388@correo.pe,1500,ACTIVO
+CLI00278,Minimarket Santa Rosa S.A.C.,20500269660,Huancayo,0963692578,minimarket278@correo.pe,5000,ACTIVO
+CLI00394,Inversiones Buen Precio S.R.L.,20500382181,Puno,921580467,inversiones394@correo.pe,3000,ACTIVO
+CLI00121,Negocios Alto Andino S.A.C.,20500117371,Tarapoto,973779421,negocios121@correo.pe,3000,ACTIVO
+CLI00221,Distribuidora Sol de Oro S.R.L.,20500214377,Trujillo,926420056,distribuidora221@correo.pe,0,ACTIVO
+CLI90004,Minimarket Vista Alegre,20500028131,Juliaca,+51 952341080,minimarket29@correo.pe,10000,ACTIVO
+CLI00003,Distribuidora Campo Alegre S.A.C.,20500002914,,913160265,distribuidora3@correo.pe,25000,ACTIVO
+CLI00356,Almacenes Casa Grande,20500345323,Ica,+51 998758959,almacenes356@correo.pe,1500,ACTIVO
+CLI00596,Almacenes Santa Rosa,20500578123,Ica,999368803,almacenes596@correo.pe,3000,ACTIVO
+CLI00321,Market Buen Precio,20500311372,Arequipa,950839839,market321@correo.pe,5000,ACTIVO
+CLI00424,Autoservicio San Isidro S.A.,20500411288,Arequipa,+51 901373467,autoservicio424@correo.pe,3000,ACTIVO
+CLI00042,Abarrotes Casa Grande,20500040743,Ica,952217045,abarrotes42@correo.pe,3000,INACTIVO
+CLI00403,Mayorista Puerto Nuevo S.A.C.,20500390914,Huancayo,+51 988640553,mayorista403@correo.pe,5000,ACTIVO
+CLI00297,Importadora Nueva Esperanza,20500288095,Ica,0917976094,importadora297@correo.pe,0,ACTIVO
+CLI00573,Negocios El Trigal S.R.L.,20500555816,Ayacucho,0980617232,negocios573@correo.pe,0,ACTIVO
+CLI00499,Importadora Río Verde,20500484030,Huancayo,0951210923,importadora499@correo.pe,25000,ACTIVO
+CLI00295,Distribuidora San Martín S.A.C.,20500286157,Arequipa,0995042277,distribuidora295@correo.pe,3000,ACTIVO
+CLI00449,Distribuidora Casa Grande,20500435535,Tarapoto,+51 945401602,distribuidora449@correo.pe,0,INACTIVO
+CLI00183,Autoservicio San Martín S.R.L.,20500177510,Huancayo,+51 901347066,autoservicio183@correo.pe,25000,INACTIVO
+CLI00034,Importadora Alto Andino,20500032988,Puno,0929063835,,25000,ACTIVO
+CLI00341,Importadora La Colina S.R.L.,20500330776,Juliaca,909833836,importadora341@correo.pe,3000,ACTIVO
+CLI00152,Comercial Santa Rosa S.A.,20500147441,Arequipa,980730471,comercial152@correo.pe,10000,ACTIVO
+CLI00087,Importadora Casa Grande E.I.R.L.,20500084392,Arequipa,0923400541,importadora87@correo.pe,10000,ACTIVO
+CLI00136,Supermercados Sol de Oro S.A.,20-500131927,Puno,920208479,supermercados136@correo.pe,25000,INACTIVO
+CLI00305,Almacenes Las Palmeras S.A.C.,20500295857,Iquitos,994644404,almacenes305@correo.pe,0,ACTIVO
+CLI00364,Corporación Santa Rosa S.A.C.,20500353083,Iquitos,+51 976384637,,5000,ACTIVO
+CLI00391,Autoservicio Buen Precio,20500379279,Huancayo,957292337,autoservicio391@correo.pe,0,ACTIVO
+CLI00377,Mayorista San Isidro S.A.C.,20500365693,Trujillo,990259887,mayorista377@correo.pe,5000,ACTIVO
+CLI00213,Almacenes Los Cedros S.A.,20500206617,Lima,+51 952455801,almacenes213@correo.pe,10000,ACTIVO
+CLI00475,Tiendas Sol de Oro,20500460751,Ayacucho,957880286,tiendas475@correo.pe,10000,ACTIVO
+CLI00266,Negocios Los Andes E.I.R.L.,20500258021,Tacna,+51 903572514,negocios266@correo.pe,10000,ACTIVO
+CLI00408,Distribuidora Los Cedros E.I.R.L.,20500395762,Cajamarca,911324796,distribuidora408@correo.pe,10000,ACTIVO
+CLI00447,Negocios Los Cedros S.A.,20500433591,Iquitos,978911670,negocios447@correo.pe,25000,INACTIVO
+CLI00165,Minimarket Casa Grande,20500160056,Piura,941780902,,10000,ACTIVO
+CLI00468,Almacenes Alto Andino E.I.R.L.,20500453967,Lima,+51 938875850,almacenes468@correo.pe,10000,ACTIVO
+CLI00407,Inversiones Los Cedros,20500394791,Chiclayo,+51 917851899,inversiones407@correo.pe,25000,ACTIVO
+CLI00317,Mayorista Los Cedros,20500307499,Huancayo,939737463,,1500,ACTIVO
+CLI00036,Comercial Los Cedros S.A.C.,20500034921,Huancayo,+51 914231875,comercial36@correo.pe,3000,ACTIVO
+CLI00248,Abarrotes Casa Grande S.A.C.,20500240564,Huancayo,974342000,abarrotes248@correo.pe,10000,ACTIVO
