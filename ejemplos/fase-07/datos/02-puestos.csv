@@ -3,9 +3,9 @@ andina.job_gerente,Gerente General,andina.dep_gerencia,0,Dirección general de l
 andina.job_jefeventas,Jefe de Ventas,andina.dep_comercial,0,Responsable del equipo comercial y del cumplimiento de metas.
 andina.job_vendedor,Ejecutivo Comercial,andina.dep_comercial,2,Atención a distribuidores y apertura de nuevos puntos de venta.
 andina.job_comprador,Analista de Compras,andina.dep_admin,0,Abastecimiento de insumos y envases.
-andina.job_almacenero,Almacenero,andina.dep_almacen,1,Recepción, despacho y control de existencias.
+andina.job_almacenero,Almacenero,andina.dep_almacen,1,"Recepción, despacho y control de existencias."
 andina.job_operario,Operario de producción,andina.dep_planta,3,Operación de líneas de pulpeado y envasado.
 andina.job_jefeplanta,Jefe de Planta,andina.dep_planta,0,Programación de producción y control de calidad.
 andina.job_nutricionista,Nutricionista,andina.dep_planta,0,Formulación de productos y registros sanitarios.
-andina.job_contador,Contador,andina.dep_admin,0,Contabilidad, tributación y cierre mensual.
+andina.job_contador,Contador,andina.dep_admin,0,"Contabilidad, tributación y cierre mensual."
 andina.job_tecnico,Técnico de Mantenimiento,andina.dep_planta,0,Mantenimiento preventivo y correctivo de equipos.

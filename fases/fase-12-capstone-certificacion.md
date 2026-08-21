@@ -7,6 +7,13 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Material en **[`../ejemplos/fase-12/`](../ejemplos/fase-12/README.md)**: guion día a día de las
+4 semanas del capstone con sus gates, y un **simulacro de 60 preguntas** con clave, explicaciones de
+las más falladas y mapa de repaso por fase. Incluye el resumen de **todos los cambios de v19**
+documentados a lo largo del plan, para llevarlos frescos al examen.
+
 ## Parte A — Proyecto integrador
 
 ### A.1 El encargo
