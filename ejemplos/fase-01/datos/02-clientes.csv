@@ -1,0 +1,26 @@
+id,name,company_type,vat,street,city,country_id/id,phone,email,category_id/id,customer_rank
+andina.cli_001,Distribuidora Sol de Oro S.A.C.,company,20100451370,"Av. Argentina 2450, Cercado",Lima,base.pe,+51 1 4001013,ventas@distribuidora01.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito",1
+andina.cli_002,Comercial Los Andes E.I.R.L.,company,20100452741,Calle Mercaderes 318,Arequipa,base.pe,+51 1 4002026,ventas@comercial02.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_003,Supermercados Vega Norte S.A.,company,20100454115,Av. España 1120,Trujillo,base.pe,+51 1 4003039,ventas@supermercados03.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_004,Bodega Doña Rosa,company,20100455481,"Jr. Puno 455, La Victoria",Lima,base.pe,+51 1 4004052,ventas@bodega04.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_005,Minimarket La Cosecha E.I.R.L.,company,20100456851,Av. El Sol 890,Cusco,base.pe,+51 1 4005065,ventas@minimarket05.com.pe,"andina.tag_retail,andina.tag_provincia,andina.tag_contado",1
+andina.cli_006,Gourmet Market Miraflores S.A.C.,company,20100458226,"Av. Larco 1201, Miraflores",Lima,base.pe,+51 1 4006078,ventas@gourmet06.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_007,Importadora Pacífico Sur S.A.C.,company,20100459591,Av. Néstor Gambetta 3400,Callao,base.pe,+51 1 4007091,ventas@importadora07.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito",1
+andina.cli_008,Tiendas Naturista Vida Sana,company,20100460964,"Av. Benavides 2255, Surco",Lima,base.pe,+51 1 4008104,ventas@tiendas08.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_009,Distribuidora Chiclayo Norte S.R.L.,company,20100462339,Av. Balta 780,Chiclayo,base.pe,+51 1 4009117,ventas@distribuidora09.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_010,Comercializadora Huancayo S.A.C.,company,20100463700,Jr. Ancash 210,Huancayo,base.pe,+51 1 4010130,ventas@comercializadora10.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_011,Café Orgánico del Valle,company,20100465079,Calle Plateros 366,Cusco,base.pe,+51 1 4011143,ventas@café11.com.pe,"andina.tag_retail,andina.tag_provincia,andina.tag_contado",1
+andina.cli_012,Hotel Casa Andina Plaza,company,20100466440,Jr. Ugarte 403,Arequipa,base.pe,+51 1 4012156,ventas@hotel12.com.pe,"andina.tag_retail,andina.tag_provincia,andina.tag_contado",1
+andina.cli_013,Restaurante Sabor Peruano S.A.C.,company,20100467811,"Av. La Mar 770, Miraflores",Lima,base.pe,+51 1 4013169,ventas@restaurante13.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_014,Autoservicios Piura Centro E.I.R.L.,company,20100469180,Av. Grau 560,Piura,base.pe,+51 1 4014182,ventas@autoservicios14.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_015,Bio Tienda Ecológica S.A.C.,company,20100470552,"Av. Primavera 120, San Borja",Lima,base.pe,+51 1 4015195,ventas@bio15.com.pe,"andina.tag_online,andina.tag_lima,andina.tag_contado",1
+andina.cli_016,Distribuidora Altiplano Puno S.R.L.,company,20100471923,Jr. Lima 425,Puno,base.pe,+51 1 4016208,ventas@distribuidora16.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_017,Comercial Selva Verde E.I.R.L.,company,20100473292,Calle Próspero 615,Iquitos,base.pe,+51 1 4017221,ventas@comercial17.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_018,Market Express Tacna S.A.C.,company,20100474663,Av. Bolognesi 340,Tacna,base.pe,+51 1 4018234,ventas@market18.com.pe,"andina.tag_retail,andina.tag_provincia,andina.tag_contado",1
+andina.cli_019,Delicias del Perú Export S.A.C.,company,20100476038,Av. Elmer Faucett 3550,Lima,base.pe,+51 1 4019247,ventas@delicias19.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito",1
+andina.cli_020,Panadería La Espiga de Oro,company,20100477409,"Jr. Huánuco 288, Barrios Altos",Lima,base.pe,+51 1 4020260,ventas@panaderia20.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_021,Corporación Retail Andina S.A.,company,20100478774,Av. Javier Prado Este 4200,Lima,base.pe,+51 1 4021273,ventas@corporacion21.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito",1
+andina.cli_022,Tienda Saludable Nutrivida,company,20100480141,Av. Ejército 710,Arequipa,base.pe,+51 1 4022286,ventas@tienda22.com.pe,"andina.tag_online,andina.tag_provincia,andina.tag_contado",1
+andina.cli_023,Distribuidora Ica Sur E.I.R.L.,company,20100481511,Av. Los Maestros 145,Ica,base.pe,+51 1 4023299,ventas@distribuidora23.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1
+andina.cli_024,Cafetería Quinua & Café,company,20100482887,"Calle Berlín 380, Miraflores",Lima,base.pe,+51 1 4024312,ventas@cafeteria24.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado",1
+andina.cli_025,Comercial Ayacucho Central S.R.L.,company,20100484251,Jr. 28 de Julio 190,Ayacucho,base.pe,+51 1 4025325,ventas@comercial25.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito",1

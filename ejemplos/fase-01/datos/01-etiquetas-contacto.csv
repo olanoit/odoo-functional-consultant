@@ -1,0 +1,11 @@
+id,name,parent_id/id
+andina.tag_mayorista,Mayorista,
+andina.tag_retail,Retail,
+andina.tag_online,Online,
+andina.tag_lima,Zona Lima,
+andina.tag_provincia,Zona Provincia,
+andina.tag_credito,Con línea de crédito,
+andina.tag_contado,Solo contado,
+andina.tag_insumos,Proveedor de insumos,
+andina.tag_envases,Proveedor de envases,
+andina.tag_servicios,Proveedor de servicios,

@@ -1,0 +1,6 @@
+id,name,phone,email,category_id/id
+andina.cli_001,Distribuidora Sol de Oro S.A.C.,+51 1 7015500,compras@soldeoro01.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito"
+andina.cli_004,Bodega Doña Rosa,+51 1 7015504,rosa.quispe@bodega04.com.pe,"andina.tag_retail,andina.tag_lima,andina.tag_contado"
+andina.cli_009,Distribuidora Chiclayo Norte S.R.L.,+51 74 7015509,gerencia@distribuidora09.com.pe,"andina.tag_mayorista,andina.tag_provincia,andina.tag_credito"
+andina.cli_015,Bio Tienda Ecológica S.A.C.,+51 1 7015515,pedidos@bio15.com.pe,"andina.tag_online,andina.tag_lima,andina.tag_contado"
+andina.cli_021,Corporación Retail Andina S.A.,+51 1 7015521,abastecimiento@corporacion21.com.pe,"andina.tag_mayorista,andina.tag_lima,andina.tag_credito"

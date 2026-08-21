@@ -1,0 +1,11 @@
+id,name,type,parent_id/id,function,phone,email,street,city
+andina.cont_001,Carmen Ríos Paredes,contact,andina.cli_001,Jefa de Compras,+51 1 4001137,carmen.rios@soldeoro01.com.pe,,
+andina.cont_002,Almacén Central Lima,delivery,andina.cli_001,,,,"Av. Argentina 2450, Puerta 3",Lima
+andina.cont_003,Facturación Sol de Oro,invoice,andina.cli_001,,,facturas@soldeoro01.com.pe,"Av. Argentina 2450, Piso 2",Lima
+andina.cont_004,Luis Mamani Condori,contact,andina.cli_002,Gerente Comercial,+51 54 4002274,luis.mamani@comercial02.com.pe,,
+andina.cont_005,Tienda Cayma,delivery,andina.cli_002,,,,Av. Cayma 1120,Arequipa
+andina.cont_006,Tienda Cerro Colorado,delivery,andina.cli_002,,,,Av. Aviación 455,Arequipa
+andina.cont_007,Rosa Quispe Huamán,contact,andina.cli_004,Propietaria,+51 1 4004052,rosa.quispe@bodega04.com.pe,,
+andina.cont_008,Centro de Distribución Norte,delivery,andina.cli_003,,,,Av. Mansiche 2300,Trujillo
+andina.cont_009,Patricia Vargas Núñez,contact,andina.cli_006,Compradora Categoría Abarrotes,+51 1 4006078,patricia.vargas@gourmet06.com.pe,,
+andina.cont_010,Almacén Callao,delivery,andina.cli_007,,,,"Av. Néstor Gambetta 3400, Almacén B",Callao

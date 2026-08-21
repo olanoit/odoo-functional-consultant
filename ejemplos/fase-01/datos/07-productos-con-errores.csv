@@ -1,0 +1,10 @@
+id,name,default_code,barcode,type,is_storable,categ_id/id,uom_id,list_price,standard_price
+andina.err_001,Conserva de Mango en almíbar 400 g,CON-MAN-400g,7751000000018,producto,True,andina.categ_conservas,Unidades,13.50,7.10
+andina.err_002,Mermelada de Mango 250 g,MER-MAN-250,7751000000025,consu,True,andina.categ_mermeladas,Unidades,10.20,5.30
+andina.err_003,Snack de Maca Horneada 50 g,SNK-MAC-50g,7751000000032,consu,True,andina.categ_snacks,Unidades,"5,90",2.60
+andina.err_004,Harina de Maca 500 g,HAR-MAC-500g,7751000000049,consu,True,andina.categ_harinas,Unidades,15.80,8.20
+andina.err_004,Harina de Maca 1 kg,HAR-MAC-1kg,7751000000056,consu,True,andina.categ_harinas,Unidades,28.90,15.10
+andina.err_006,,SNK-CAN-50g,7751000000063,consu,True,andina.categ_snacks,Unidades,4.90,2.15
+andina.err_007,Néctar de Maracuyá 300 ml,BEB-MAR-300ml,7751000000070,consu,True,andina.categ_bebidas,Unidad,4.30,1.95
+andina.err_008,Conserva de Higo en almíbar 400 g,CON-HIG-400g,7750000000014,consu,True,andina.categ_conservas,Unidades,13.90,7.40
+andina.err_009,Barra de Maca con Miel 35 g,BAR-MAC-35g,7751000000094,consu,sí,andina.categ_snacks,Unidades,3.80,1.70

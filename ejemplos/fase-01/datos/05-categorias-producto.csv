@@ -1,0 +1,12 @@
+id,name,parent_id/id
+andina.categ_andina,ANDINA GOURMET,
+andina.categ_terminados,Productos Terminados,andina.categ_andina
+andina.categ_conservas,Conservas,andina.categ_terminados
+andina.categ_snacks,Snacks,andina.categ_terminados
+andina.categ_harinas,Harinas y Granos,andina.categ_terminados
+andina.categ_bebidas,Bebidas,andina.categ_terminados
+andina.categ_insumos,Insumos,andina.categ_andina
+andina.categ_mp,Materia Prima,andina.categ_insumos
+andina.categ_envases,Envases y Embalajes,andina.categ_insumos
+andina.categ_aditivos,Aditivos,andina.categ_insumos
+andina.categ_serv,Servicios,andina.categ_andina

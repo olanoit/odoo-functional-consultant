@@ -1,0 +1,16 @@
+id,name,company_type,vat,street,city,country_id/id,phone,email,category_id/id,supplier_rank
+andina.prov_001,Agroexportadora Valle Sagrado S.A.C.,company,20205102117,Carretera Urubamba Km 4,Cusco,base.pe,+51 1 5100907,contacto@agroexportadora01.com.pe,"andina.tag_insumos,andina.tag_provincia",1
+andina.prov_002,Granos Andinos del Perú S.A.,company,20205104225,Av. Circunvalación 1200,Puno,base.pe,+51 1 5101814,contacto@granos02.com.pe,"andina.tag_insumos,andina.tag_provincia",1
+andina.prov_003,Azucarera Norteña S.A.A.,company,20205106333,Carretera Panamericana Norte Km 780,Chiclayo,base.pe,+51 1 5102721,contacto@azucarera03.com.pe,"andina.tag_insumos,andina.tag_provincia",1
+andina.prov_004,Apícola Miel Real E.I.R.L.,company,20205108441,Jr. Tarma 455,Junín,base.pe,+51 1 5103628,contacto@apícola04.com.pe,"andina.tag_insumos,andina.tag_provincia",1
+andina.prov_005,Insumos Químicos Alimentarios S.A.C.,company,20205110551,"Av. Argentina 4820, Callao",Lima,base.pe,+51 1 5104535,contacto@insumos05.com.pe,"andina.tag_insumos,andina.tag_lima",1
+andina.prov_006,Envases de Vidrio Perú S.A.,company,20205112660,"Av. Los Frutales 380, Ate",Lima,base.pe,+51 1 5105442,contacto@envases06.com.pe,"andina.tag_envases,andina.tag_lima",1
+andina.prov_007,Tapas y Cierres Metálicos S.A.C.,company,20205114778,Av. Colonial 2915,Lima,base.pe,+51 1 5106349,contacto@tapas07.com.pe,"andina.tag_envases,andina.tag_lima",1
+andina.prov_008,Etiquetas Gráficas Andina E.I.R.L.,company,20205116886,Jr. Paruro 1240,Lima,base.pe,+51 1 5107256,contacto@etiquetas08.com.pe,"andina.tag_envases,andina.tag_lima",1
+andina.prov_009,Cartones y Corrugados del Sur S.A.C.,company,20205118994,Parque Industrial Mz. F Lote 12,Arequipa,base.pe,+51 1 5108163,contacto@cartones09.com.pe,"andina.tag_envases,andina.tag_provincia",1
+andina.prov_010,Plásticos Flexibles Lima S.A.,company,20205121103,Av. Separadora Industrial 1590,Lima,base.pe,+51 1 5109070,contacto@plásticos10.com.pe,"andina.tag_envases,andina.tag_lima",1
+andina.prov_011,Transportes Refrigerados Perú S.A.C.,company,20205123211,Av. Nicolás Ayllón 5600,Lima,base.pe,+51 1 5109977,contacto@transportes11.com.pe,"andina.tag_servicios,andina.tag_lima",1
+andina.prov_012,Maquilas Alimentarias del Norte S.R.L.,company,20205125320,Parque Industrial Lote 45,Trujillo,base.pe,+51 1 5110884,contacto@maquilas12.com.pe,"andina.tag_servicios,andina.tag_provincia",1
+andina.prov_013,Certificaciones y Laboratorios S.A.C.,company,20205127438,"Av. Guardia Civil 1250, Surco",Lima,base.pe,+51 1 5111791,contacto@certificaciones13.com.pe,"andina.tag_servicios,andina.tag_lima",1
+andina.prov_014,Servicios Contables Delgado E.I.R.L.,company,20205129546,"Av. Arequipa 3200, San Isidro",Lima,base.pe,+51 1 5112698,contacto@servicios14.com.pe,"andina.tag_servicios,andina.tag_lima",1
+andina.prov_015,Mantenimiento Industrial Quispe S.A.C.,company,20205131656,Calle Ilo 220,Arequipa,base.pe,+51 1 5113605,contacto@mantenimiento15.com.pe,"andina.tag_servicios,andina.tag_provincia",1
