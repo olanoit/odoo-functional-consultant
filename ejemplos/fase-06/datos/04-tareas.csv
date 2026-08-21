@@ -1,0 +1,13 @@
+id,name,project_id/id,allocated_hours,priority,date_deadline,partner_id/id
+andina.task_001,Levantamiento de requisitos de marca propia,andina.proj_soldeoro,16,1,2026-08-14 18:00:00,andina.cli_001
+andina.task_002,Diseño de etiqueta y ficha técnica,andina.proj_soldeoro,40,1,2026-09-04 18:00:00,andina.cli_001
+andina.task_003,Pruebas de formulación en planta,andina.proj_soldeoro,32,0,2026-09-25 18:00:00,andina.cli_001
+andina.task_004,Registro sanitario y trámites,andina.proj_soldeoro,24,0,2026-10-23 18:00:00,andina.cli_001
+andina.task_005,Primera corrida de producción,andina.proj_soldeoro,20,1,2026-11-20 18:00:00,andina.cli_001
+andina.task_006,Relevamiento de góndola y surtido,andina.proj_gourmet,12,0,2026-08-24 18:00:00,andina.cli_006
+andina.task_007,Capacitación al personal de tienda,andina.proj_gourmet,8,1,2026-09-07 18:00:00,andina.cli_006
+andina.task_008,Instalación de material POP,andina.proj_gourmet,6,0,2026-09-18 18:00:00,andina.cli_006
+andina.task_009,Seguimiento de rotación primer mes,andina.proj_gourmet,10,0,2026-10-16 18:00:00,andina.cli_006
+andina.task_010,Atención de consultas de distribuidores,andina.proj_soporte,120,0,2026-12-31 18:00:00,
+andina.task_011,Rediseño del proceso de despacho,andina.proj_interno,40,1,2026-09-30 18:00:00,
+andina.task_012,Documentación de procedimientos de almacén,andina.proj_interno,24,0,2026-10-31 18:00:00,

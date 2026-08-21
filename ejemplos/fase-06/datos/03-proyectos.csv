@@ -1,0 +1,5 @@
+id,name,partner_id/id,allow_timesheets,allow_billable,privacy_visibility,date_start,date
+andina.proj_soldeoro,Marca propia - Distribuidora Sol de Oro,andina.cli_001,True,True,portal,2026-08-03,2026-11-28
+andina.proj_gourmet,Implantación línea Gourmet Market,andina.cli_006,True,True,portal,2026-08-17,2026-10-16
+andina.proj_soporte,Soporte a distribuidores 2026,,True,True,employees,2026-01-05,2026-12-31
+andina.proj_interno,Mejora de procesos internos,,True,False,employees,2026-07-01,2026-12-31

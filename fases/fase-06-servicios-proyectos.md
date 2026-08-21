@@ -8,6 +8,13 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-06/`](../ejemplos/fase-06/README.md)**: 6 empleados con costo
+por hora, 5 servicios con las tres políticas de facturación, 4 proyectos y 12 tareas,
+**laboratorio de rentabilidad** con el margen calculado a mano, y guía de mesa de ayuda, SLA,
+servicio de campo y planeación.
+
 ## 1. Resultados de aprendizaje
 
 1. Configurar proyectos con etapas, subtareas, dependencias y planificación.

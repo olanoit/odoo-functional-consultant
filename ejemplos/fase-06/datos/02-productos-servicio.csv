@@ -1,0 +1,6 @@
+id,name,default_code,type,categ_id/id,uom_id/id,list_price,standard_price,sale_ok,purchase_ok,invoice_policy,service_tracking
+andina.srv_implantacion,Implantación de línea en punto de venta,SRV-IMPL,service,andina.categ_serv,uom.product_uom_unit,4800.00,0.00,True,False,order,task_in_project
+andina.srv_asesoria_hora,Asesoría nutricional por hora,SRV-ASES-H,service,andina.categ_serv,uom.product_uom_hour,120.00,0.00,True,False,delivery,task_in_project
+andina.srv_bolsa20,Bolsa de 20 horas de soporte,SRV-BOL-20,service,andina.categ_serv,uom.product_uom_hour,2200.00,0.00,True,False,delivery,task_global_project
+andina.srv_hitos,Desarrollo de marca propia (por hitos),SRV-HITOS,service,andina.categ_serv,uom.product_uom_unit,18000.00,0.00,True,False,delivery,project_only
+andina.srv_capacitacion,Capacitación de personal de tienda,SRV-CAPA,service,andina.categ_serv,uom.product_uom_hour,95.00,0.00,True,False,delivery,no
