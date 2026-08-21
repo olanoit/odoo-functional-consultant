@@ -10,6 +10,20 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-04/`](../ejemplos/fase-04/README.md)**:
+
+| Recurso | Contenido |
+|---|---|
+| `datos/` | 25 cuentas tipo PCGE, 7 diarios, 7 impuestos, 3 posiciones fiscales (mecanismo nuevo de v19), 2 planes analíticos con 8 cuentas, **extracto bancario de 40 líneas** y 4 modelos de conciliación |
+| `guias/I1` | **Laboratorio de asientos**: predice 12 asientos antes de ejecutarlos |
+| `guias/I2` | Impuestos y posiciones fiscales en v19 (`original_tax_ids` / `fiscal_position_ids`) |
+| `guias/I3` | Conciliación bancaria: 40 líneas en menos de 10 minutos |
+| `guias/I4` | **Checklist de cierre mensual** (30 controles) + cuadre inventario ↔ contabilidad |
+| `guias/I5` | Chuleta v19 de Contabilidad |
+| `soluciones/` | Los 12 asientos resueltos y el cuestionario |
+
 ## 1. Resultados de aprendizaje
 
 1. Explicar la partida doble en el modelo de Odoo: diario, asiento, apunte, cuenta, conciliación.

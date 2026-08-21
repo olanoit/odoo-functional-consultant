@@ -1,0 +1,41 @@
+id,journal_id/id,date,payment_ref,partner_id/id,amount
+andina.stl_001,andina.jr_bcp_mn,2026-08-03,Transferencia Sol de Oro fact FACV/2026/0012,andina.cli_001,15340.20
+andina.stl_002,andina.jr_bcp_mn,2026-08-05,Depósito Comercial Los Andes,andina.cli_002,8920.00
+andina.stl_003,andina.jr_bcp_mn,2026-08-07,Transferencia Vega Norte,andina.cli_003,22480.50
+andina.stl_004,andina.jr_bcp_mn,2026-08-09,Yape Bodega Doña Rosa,andina.cli_004,412.30
+andina.stl_005,andina.jr_bcp_mn,2026-08-11,Transferencia Gourmet Market,andina.cli_006,6180.00
+andina.stl_006,andina.jr_bcp_mn,2026-08-13,Depósito Tiendas Vida Sana,andina.cli_008,3450.75
+andina.stl_007,andina.jr_bcp_mn,2026-08-15,Transferencia Distribuidora Chiclayo,andina.cli_009,11200.00
+andina.stl_008,andina.jr_bcp_mn,2026-08-17,Transferencia Comercial Huancayo,andina.cli_010,7830.40
+andina.stl_009,andina.jr_bcp_mn,2026-08-19,Depósito Bio Tienda Ecológica,andina.cli_015,2190.00
+andina.stl_010,andina.jr_bcp_mn,2026-08-21,Transferencia Corporación Retail Andina,andina.cli_021,31500.00
+andina.stl_011,andina.jr_bcp_mn,2026-08-23,Transferencia Market Express Tacna,andina.cli_018,4120.60
+andina.stl_012,andina.jr_bcp_mn,2026-08-25,Depósito Autoservicios Piura,andina.cli_014,9640.00
+andina.stl_013,andina.jr_bcp_mn,2026-08-27,Pago proveedor Valle Sagrado,andina.prov_001,-8400.00
+andina.stl_014,andina.jr_bcp_mn,2026-08-01,Pago Granos Andinos,andina.prov_002,-14880.00
+andina.stl_015,andina.jr_bcp_mn,2026-08-03,Pago Azucarera Norteña,andina.prov_003,-5040.00
+andina.stl_016,andina.jr_bcp_mn,2026-08-05,Pago Envases de Vidrio Perú,andina.prov_006,-16200.00
+andina.stl_017,andina.jr_bcp_mn,2026-08-07,Pago Tapas y Cierres,andina.prov_007,-5600.00
+andina.stl_018,andina.jr_bcp_mn,2026-08-09,Pago Etiquetas Gráficas,andina.prov_008,-6000.00
+andina.stl_019,andina.jr_bcp_mn,2026-08-11,Pago Transportes Refrigerados,andina.prov_011,-3400.00
+andina.stl_020,andina.jr_bcp_mn,2026-08-13,Pago Servicios Contables Delgado,andina.prov_014,-1800.00
+andina.stl_021,andina.jr_bcp_mn,2026-08-15,Comisión mantenimiento de cuenta,,-25.00
+andina.stl_022,andina.jr_bcp_mn,2026-08-17,ITF impuesto a las transacciones,,-3.15
+andina.stl_023,andina.jr_bcp_mn,2026-08-19,Comisión transferencia interbancaria,,-8.50
+andina.stl_024,andina.jr_bcp_mn,2026-08-21,Portes y mantenimiento,,-15.00
+andina.stl_025,andina.jr_bcp_mn,2026-08-23,Comisión mantenimiento de cuenta,,-25.00
+andina.stl_026,andina.jr_bcp_mn,2026-08-25,Intereses cuenta de ahorro,,42.80
+andina.stl_027,andina.jr_bcp_mn,2026-08-27,Comisión transferencia interbancaria,,-8.50
+andina.stl_028,andina.jr_bcp_mn,2026-08-01,ITF impuesto a las transacciones,,-2.40
+andina.stl_029,andina.jr_bcp_mn,2026-08-03,Pago planilla remuneraciones agosto,,-38500.00
+andina.stl_030,andina.jr_bcp_mn,2026-08-05,Pago AFP y ESSALUD,,-9240.00
+andina.stl_031,andina.jr_bcp_mn,2026-08-07,Pago detracción Banco de la Nación,,-1840.00
+andina.stl_032,andina.jr_bcp_mn,2026-08-09,Pago IGV mensual SUNAT,,-12360.00
+andina.stl_033,andina.jr_bcp_mn,2026-08-11,Alquiler local Lima,,-6500.00
+andina.stl_034,andina.jr_bcp_mn,2026-08-13,Recibo de luz y agua,,-1840.25
+andina.stl_035,andina.jr_bcp_mn,2026-08-15,Comisión POS tarjetas,,-318.40
+andina.stl_036,andina.jr_bcp_mn,2026-08-17,Abono liquidación POS Visa,,7240.00
+andina.stl_037,andina.jr_bcp_mn,2026-08-19,Abono liquidación POS Mastercard,,3180.50
+andina.stl_038,andina.jr_bcp_mn,2026-08-21,Transferencia no identificada,,1500.00
+andina.stl_039,andina.jr_bcp_mn,2026-08-23,Devolución cliente no identificado,,-420.00
+andina.stl_040,andina.jr_bcp_mn,2026-08-25,Depósito en efectivo tienda Lima,,5600.00

@@ -1,0 +1,8 @@
+id,name,code,type,default_account_id/id
+andina.jr_ven_fac,Facturas de venta,FACV,sale,andina.acc_7012
+andina.jr_ven_bol,Boletas de venta,BOLV,sale,andina.acc_7012
+andina.jr_com,Facturas de compra,COMP,purchase,andina.acc_6011
+andina.jr_bcp_mn,Banco BCP soles,BCPMN,bank,andina.acc_1041
+andina.jr_bcp_usd,Banco BCP dólares,BCPUS,bank,andina.acc_1042
+andina.jr_caja,Caja chica,CAJA,cash,andina.acc_1011
+andina.jr_misc,Operaciones diversas,MISC,general,

@@ -1,0 +1,8 @@
+id,name,amount,amount_type,type_tax_use,price_include,original_tax_ids/id
+andina.tax_igv18_v,IGV 18% (venta),18,percent,sale,False,
+andina.tax_igv18_c,IGV 18% (compra),18,percent,purchase,False,
+andina.tax_igv18_inc,IGV 18% incluido en precio (venta),18,percent,sale,True,
+andina.tax_exo_v,Exonerado (venta),0,percent,sale,False,andina.tax_igv18_v
+andina.tax_ina_v,Inafecto (venta),0,percent,sale,False,andina.tax_igv18_v
+andina.tax_exo_c,Exonerado (compra),0,percent,purchase,False,andina.tax_igv18_c
+andina.tax_gra_v,Gratuito - transferencia gratuita,0,percent,sale,False,

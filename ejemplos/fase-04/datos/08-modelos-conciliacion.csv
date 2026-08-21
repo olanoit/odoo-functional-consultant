@@ -1,0 +1,5 @@
+id,name,sequence,trigger,match_label,match_label_param,line_ids/account_id/id,line_ids/label,line_ids/amount_type
+andina.rm_comision,Comisiones bancarias,10,auto_reconcile,contains,Comisión,andina.acc_6532,Comisión bancaria,percentage
+andina.rm_itf,ITF,20,auto_reconcile,contains,ITF,andina.acc_6532,ITF,percentage
+andina.rm_portes,Portes y mantenimiento,30,auto_reconcile,contains,Portes,andina.acc_6532,Portes,percentage
+andina.rm_intereses,Intereses bancarios,40,manual,contains,Intereses,andina.acc_7761,Intereses ganados,percentage

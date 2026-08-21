@@ -1,0 +1,9 @@
+id,name,code,plan_id/id
+andina.an_conservas,Conservas,CONS,andina.plan_linea
+andina.an_snacks,Snacks,SNK,andina.plan_linea
+andina.an_bebidas,Bebidas,BEB,andina.plan_linea
+andina.an_harinas,Harinas y granos,HAR,andina.plan_linea
+andina.an_mayorista,Mayorista B2B,MAY,andina.plan_canal
+andina.an_tienda,Tienda propia,TIE,andina.plan_canal
+andina.an_online,Canal online,ONL,andina.plan_canal
+andina.an_export,Exportación,EXP,andina.plan_canal

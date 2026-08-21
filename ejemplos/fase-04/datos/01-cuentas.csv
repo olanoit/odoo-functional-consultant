@@ -1,0 +1,26 @@
+id,code,name,account_type,reconcile
+andina.acc_1041,1041,Cuentas corrientes operativas - BCP MN,asset_cash,False
+andina.acc_1042,1042,Cuentas corrientes operativas - BCP USD,asset_cash,False
+andina.acc_1043,1043,Cuenta de detracciones - Banco de la Nación,asset_cash,False
+andina.acc_1011,1011,Caja chica,asset_cash,False
+andina.acc_1212,1212,Facturas por cobrar - terceros,asset_receivable,True
+andina.acc_1213,1213,Letras por cobrar,asset_receivable,True
+andina.acc_2011,2011,Mercaderías - existencias,asset_current,False
+andina.acc_2411,2411,Materias primas,asset_current,False
+andina.acc_2511,2511,Envases y embalajes,asset_current,False
+andina.acc_3311,3311,Maquinaria y equipo,asset_fixed,False
+andina.acc_3911,3911,Depreciación acumulada - maquinaria,asset_fixed,False
+andina.acc_4212,4212,Facturas por pagar - terceros,liability_payable,True
+andina.acc_4011,4011,IGV por pagar,liability_current,False
+andina.acc_4017,4017,IGV crédito fiscal,asset_current,False
+andina.acc_4111,4111,Remuneraciones por pagar,liability_current,False
+andina.acc_7011,7011,Ventas - mercaderías,income,False
+andina.acc_7012,7012,Ventas - productos terminados,income,False
+andina.acc_6911,6911,Costo de ventas - mercaderías,expense_direct_cost,False
+andina.acc_6011,6011,Compras de mercaderías,expense_direct_cost,False
+andina.acc_6311,6311,Transporte y fletes,expense,False
+andina.acc_6811,6811,Depreciación del ejercicio,expense_depreciation,False
+andina.acc_6591,6591,Diferencia de cambio - pérdida,expense_other,False
+andina.acc_7761,7761,Diferencia de cambio - ganancia,income_other,False
+andina.acc_6532,6532,Gastos bancarios y comisiones,expense,False
+andina.acc_6591b,6595,Faltantes y mermas de inventario,expense_other,False

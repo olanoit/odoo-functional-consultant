@@ -1,0 +1,4 @@
+id,name,auto_apply,country_id/id,tax_ids/id
+andina.fp_exonerado,Cliente exonerado (Amazonía),False,,"andina.tax_exo_v,andina.tax_exo_c"
+andina.fp_inafecto,Operación inafecta,False,,andina.tax_ina_v
+andina.fp_export,Exportación,True,base.pe,andina.tax_ina_v
