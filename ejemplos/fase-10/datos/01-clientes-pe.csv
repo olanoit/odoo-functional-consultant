@@ -1,0 +1,13 @@
+id,name,company_type,l10n_latam_identification_type_id/id,vat,street,city,country_id/id,email,customer_rank
+pe.cli_001,Distribuidora Sol de Oro S.A.C.,company,l10n_pe.it_RUC,20512301437,Av. Principal 107,Lima,base.pe,contacto1@distribuidora.pe,1
+pe.cli_002,Comercial Los Andes E.I.R.L.,company,l10n_pe.it_RUC,20512302867,Av. Principal 114,Arequipa,base.pe,contacto2@comercial.pe,1
+pe.cli_003,Supermercados Vega Norte S.A.,company,l10n_pe.it_RUC,20512304291,Av. Principal 121,Trujillo,base.pe,contacto3@supermercados.pe,1
+pe.cli_004,Gourmet Market Miraflores S.A.C.,company,l10n_pe.it_RUC,20512305726,Av. Principal 128,Lima,base.pe,contacto4@gourmet.pe,1
+pe.cli_005,Importadora Pacífico Sur S.A.C.,company,l10n_pe.it_RUC,20512307150,Av. Principal 135,Callao,base.pe,contacto5@importadora.pe,1
+pe.cli_006,Distribuidora Amazonía Verde S.R.L.,company,l10n_pe.it_RUC,20512308580,Av. Principal 142,Iquitos,base.pe,contacto6@distribuidora.pe,1
+pe.cli_007,Comercial Selva Alta E.I.R.L.,company,l10n_pe.it_RUC,20512310011,Av. Principal 149,Tarapoto,base.pe,contacto7@comercial.pe,1
+pe.cli_008,Exportadora Andes Foods S.A.C.,company,l10n_pe.it_RUC,20512311441,Av. Principal 156,Lima,base.pe,contacto8@exportadora.pe,1
+pe.cli_009,Rosa Quispe Huamán,person,l10n_pe.it_DNI,40012411,Jr. Los Olivos 227,Lima,base.pe,persona9@correo.pe,1
+pe.cli_010,Julio Paredes Lino,person,l10n_pe.it_DNI,40013790,Jr. Los Olivos 230,Lima,base.pe,persona10@correo.pe,1
+pe.cli_011,Carmen Ríos Paredes,person,l10n_pe.it_DNI,40015169,Jr. Los Olivos 233,Lima,base.pe,persona11@correo.pe,1
+pe.cli_012,Luis Mamani Condori,person,l10n_pe.it_DNI,40016548,Jr. Los Olivos 236,Arequipa,base.pe,persona12@correo.pe,1

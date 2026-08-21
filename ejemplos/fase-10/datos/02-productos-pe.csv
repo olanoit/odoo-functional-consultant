@@ -1,0 +1,9 @@
+id,name,default_code,type,is_storable,categ_id/id,uom_id/id,list_price,standard_price,sale_ok,tracking
+pe.prod_001,Conserva de Aguaymanto 400 g,PE-CON-AGU-400,consu,True,product.product_category_goods,uom.product_uom_unit,12.50,6.80,True,lot
+pe.prod_002,Snack de Quinua 50 g,PE-SNK-QUI-50,consu,True,product.product_category_goods,uom.product_uom_unit,4.50,2.10,True,none
+pe.prod_003,Harina de Quinua 500 g,PE-HAR-QUI-500,consu,True,product.product_category_goods,uom.product_uom_unit,11.50,6.20,True,none
+pe.prod_004,Néctar de Camu Camu 300 ml,PE-BEB-CAM-300,consu,True,product.product_category_goods,uom.product_uom_unit,3.90,1.80,True,lot
+pe.prod_005,Servicio de flete Lima-Provincia,PE-SRV-FLETE,service,False,product.product_category_services,uom.product_uom_unit,180.00,120.00,True,none
+pe.prod_006,Muestra comercial sin valor,PE-MUESTRA,consu,True,product.product_category_goods,uom.product_uom_unit,0.00,3.40,True,none
+pe.prod_007,Libro recetario andino,PE-LIBRO,consu,True,product.product_category_goods,uom.product_uom_unit,35.00,18.00,True,none
+pe.prod_008,Bolsa plástica biodegradable,PE-BOLSA,consu,True,product.product_category_goods,uom.product_uom_unit,0.50,0.22,True,none

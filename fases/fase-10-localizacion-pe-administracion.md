@@ -12,6 +12,14 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-10/`](../ejemplos/fase-10/README.md)**: 12 clientes peruanos
+con RUC y DNI usando los ID externos reales de la localización, 8 productos con casos tributarios
+distintos (gravado, exonerado, gratuito, ICBPER), guía de instalación paso a paso, el
+**manual de 10 errores de facturación electrónica** y la **matriz de hosting** con recomendación
+por perfil de cliente.
+
 ## 1. Resultados de aprendizaje
 
 1. Instalar y configurar la localización peruana **antes** de operar, y explicar qué trae.
