@@ -1,0 +1,8 @@
+id,name,parent_id/id,sequence
+andina.pubcat_conservas,Conservas y mermeladas,,10
+andina.pubcat_snacks,Snacks saludables,,20
+andina.pubcat_harinas,Harinas y granos andinos,,30
+andina.pubcat_bebidas,Néctares y bebidas,,40
+andina.pubcat_regalo,Canastas y regalos,,50
+andina.pubcat_aguaymanto,Línea aguaymanto,andina.pubcat_conservas,11
+andina.pubcat_sinazucar,Sin azúcar añadida,andina.pubcat_snacks,21

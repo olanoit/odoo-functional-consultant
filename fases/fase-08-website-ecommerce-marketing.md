@@ -8,6 +8,13 @@
 
 ---
 
+## 📓 Cuaderno de ejemplos de esta fase
+
+Datos y casos en **[`../ejemplos/fase-08/`](../ejemplos/fase-08/README.md)**: 7 categorías de tienda,
+20 productos publicados, 3 métodos de envío, listas y contactos de correo, la
+**checklist de puesta en marcha de la tienda** (10 bloques) y las **4 campañas de automatización**
+que todo negocio necesita, con sus condiciones de salida.
+
 ## 1. Resultados de aprendizaje
 
 1. Construir un sitio web corporativo con el editor por bloques, sin código, y publicarlo.

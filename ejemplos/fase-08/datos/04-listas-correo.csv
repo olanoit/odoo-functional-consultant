@@ -1,0 +1,4 @@
+id,name,is_public
+andina.ml_clientes,Clientes de tienda en línea,True
+andina.ml_distribuidores,Distribuidores mayoristas,False
+andina.ml_boletin,Boletín Vida Andina,True

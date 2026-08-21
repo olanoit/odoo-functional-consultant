@@ -1,0 +1,4 @@
+id,name,delivery_type,product_id/id,fixed_price,free_over,amount
+andina.ship_lima,Reparto propio Lima Metropolitana,fixed,andina.prod_074,15.00,True,250.00
+andina.ship_provincia,Agencia a provincia,fixed,andina.prod_075,35.00,False,0.00
+andina.ship_tienda,Retiro en tienda (Lima),fixed,andina.prod_076,0.00,False,0.00

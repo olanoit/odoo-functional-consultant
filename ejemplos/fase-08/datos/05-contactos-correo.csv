@@ -1,0 +1,13 @@
+id,name,email,company_name,list_ids/id,country_id/id
+andina.mc_001,Carmen Ríos Paredes,carmen.rios@soldeoro01.com.pe,Distribuidora Sol de Oro,andina.ml_distribuidores,base.pe
+andina.mc_002,Luis Mamani Condori,luis.mamani@comercial02.com.pe,Comercial Los Andes,andina.ml_distribuidores,base.pe
+andina.mc_003,Patricia Vargas Núñez,patricia.vargas@gourmet06.com.pe,Gourmet Market Miraflores,andina.ml_distribuidores,base.pe
+andina.mc_004,Rosa Quispe Huamán,rosa.quispe@bodega04.com.pe,Bodega Doña Rosa,andina.ml_distribuidores,base.pe
+andina.mc_005,Ana Lucía Portugal,analucia.portugal@correo.pe,,andina.ml_boletin,base.pe
+andina.mc_006,Marcos Delgado Ruiz,marcos.delgado@correo.pe,,andina.ml_boletin,base.pe
+andina.mc_007,Silvia Ynca Ramos,silvia.ynca@correo.pe,,andina.ml_clientes,base.pe
+andina.mc_008,Renzo Cabrera Soto,renzo.cabrera@correo.pe,,andina.ml_clientes,base.pe
+andina.mc_009,Fiorella Ugarte Díaz,fiorella.ugarte@correo.pe,,andina.ml_clientes,base.pe
+andina.mc_010,Kevin Ramírez Ponce,kevin.ramirez@correo.pe,,andina.ml_boletin,base.pe
+andina.mc_011,Gabriela Nieto Salas,gabriela.nieto@correo.pe,,andina.ml_clientes,base.pe
+andina.mc_012,Diego Aliaga Torres,diego.aliaga@correo.pe,,andina.ml_boletin,base.pe
