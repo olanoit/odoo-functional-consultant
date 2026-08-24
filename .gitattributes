@@ -1,0 +1,4 @@
+# Los CSV del material son datos de importación: LF en el repositorio.
+# Odoo los importa igual con LF o CRLF; Excel y LibreOffice también los abren con LF.
+*.csv text eol=lf
+*.md  text eol=lf
