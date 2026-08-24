@@ -85,10 +85,24 @@
 
 ## 6. Normativa peruana (Fase 10)
 
-| Recurso | URL |
-|---|---|
-| SUNAT — portal institucional | <https://www.sunat.gob.pe> |
-| Comprobantes de pago electrónicos, detracciones, SIRE/PLE | Buscar en el portal de SUNAT la sección de *Comprobantes de pago electrónicos* y *Libros electrónicos* |
+Enlaces comprobados el 24 de agosto de 2026. Los desarrolla la guía
+[O0 — Guía completa de la localización peruana](ejemplos/fase-10/guias/O0-guia-completa-localizacion-pe.md).
+
+| Recurso | URL | Para qué |
+|---|---|---|
+| SUNAT — portal institucional | <https://www.sunat.gob.pe> | Punto de entrada |
+| Comprobantes de Pago Electrónicos (CPE) | <https://cpe.sunat.gob.pe/> | Normativa de facturación electrónica |
+| Qué es un OSE | <https://cpe.sunat.gob.pe/aliados/ose> | La distinción OSE / PSE, que se pregunta en todo levantamiento |
+| Certificados digitales autorizados | <https://cpe.sunat.gob.pe/informacion_general/certificados_digitales/> | Si el cliente pone su propio certificado |
+| Padrón de PSE *(PDF)* | <https://www.sunat.gob.pe/orientacion/padrones/pse/ProveedoresServiciosElectronicos-PSE.pdf> | Comprobar que un proveedor está autorizado |
+| Manual de servicios web GRE *(PDF)* | <https://cpe.sunat.gob.pe/sites/default/files/inline-files/Manual_Servicios_GRE%20%281%29.pdf> | Obtener las credenciales de la API de guías de remisión |
+| Guía de remisión | <https://www.gob.pe/7899-guia-de-remision> | Cuándo es obligatoria |
+| SIRE — portal | <https://sire.sunat.gob.pe/> | Registros electrónicos de ventas y compras |
+| SIRE — qué es y cronograma | <https://emprender.sunat.gob.pe/comprobantes-libros/registros-libros-electronicos/sistema-integrado-registros-electronicos-sire> | **Verifica aquí el estado vigente**: las fechas se mueven |
+| RVIE | <https://emprender.sunat.gob.pe/comprobantes-libros/registros-libros-electronicos/registro-ventas-e-ingresos-electronico-rvie> | Registro de ventas |
+| RCE | <https://emprender.sunat.gob.pe/comprobantes-libros/registros-libros-electronicos/registro-compras-electronico-rce> | Registro de compras |
+| Códigos de error SUNAT/OSE | <https://www.nubefact.com/codigos-error-sunat/> | Catálogo de ~1 000 códigos. Es de un proveedor privado: úsalo para diagnosticar, no para citar normativa |
+| Smart Tutorial — Localización de Perú | <https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133> | 15 lecciones en español, oficiales de Odoo |
 
 > Para otros países: el índice de
 > [localizaciones fiscales](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations.html)

@@ -67,6 +67,8 @@ probablemente aparezcan y los que más gente falla por venir de versiones anteri
 | Inventario | `stock.move` pierde `name` y `product_uom`: descripción en `description_picking`, unidad heredada del producto |
 | Contabilidad | **Los movimientos de existencias ya no generan asiento al validarse**: perpetua (`real_time`) contabiliza al facturar, periódica (`periodic`) al cierre |
 | Contabilidad | El **costo de ventas** va en el mismo asiento que la factura de venta; la cuenta transitoria de entrada de existencias desapareció |
+| Contactos | El modelo **`res.bank` ya no existe**: las cuentas bancarias viven en `res.partner.bank` |
+| Localización PE | La documentación oficial cita `l10n_pe_edi_stock_20` y `l10n_pe_website_sale`, que **no existen** en saas-19.4; el proveedor de firma `digiflow` se llama ahora **«Estela»** |
 | RR. HH. | `hr.leave.type` **eliminado** → **`hr.work.entry.type`** (con `code` obligatorio); `time_type` → **`count_as`** |
 | RR. HH. | `resource.calendar` **sin `tz`**: la zona horaria vive en el empleado |
 | UdM | `uom.category_id` y `uom_type` **eliminados**; `factor` pasa a ser **calculado** |

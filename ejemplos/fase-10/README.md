@@ -18,6 +18,7 @@ la estructura del cuaderno es la misma.)*
 |---|---|
 | `datos/01-clientes-pe.csv` | 12 clientes: 8 empresas con **RUC** y 4 personas con **DNI**, con los ID externos reales de la localización. En v19 es `l10n_latam_identification_type_id` quien determina si el contacto es empresa o persona (`is_company` es calculado) |
 | `datos/02-productos-pe.csv` | 8 productos con casos tributarios deliberadamente distintos (gravado, exonerado, gratuito, con ICBPER) |
+| `guias/O0` | **Guía completa de la localización peruana** — la referencia de consulta de toda la fase |
 | `guias/O1` | Instalación y configuración de la localización, paso a paso |
 | `guias/O2` | **Manual de errores de facturación electrónica** (10 casos) — entregable |
 | `guias/O3` | **Matriz de hosting**, actualizaciones y multiempresa — entregable |
@@ -26,11 +27,23 @@ la estructura del cuaderno es la misma.)*
 
 | Módulo | Edición | Aporta |
 |---|---|---|
-| `l10n_pe` | Community | Plan contable, impuestos, tipos de identificación (`l10n_pe.it_RUC`, `l10n_pe.it_DNI`), ciudades y **distritos** |
-| `l10n_pe_edi` | Enterprise | Envío a SUNAT/OSE, CDR, anulaciones |
-| `l10n_pe_edi_stock` | Enterprise | Guía de remisión electrónica |
-| `l10n_pe_pos`, `l10n_pe_edi_pos` | — | Punto de venta con comprobantes peruanos |
-| `l10n_pe_reports`, `l10n_pe_reports_stock` | Enterprise | Reportes locales y kardex |
+| `l10n_pe` | **Community** | Plan contable PCGE, impuestos, tipos de identificación (`l10n_pe.it_RUC`, `l10n_pe.it_DNI`), ciudades y **distritos** |
+| `l10n_pe_edi` | Enterprise | Firma y envío a OSE/SUNAT, CDR, anulaciones |
+| `l10n_pe_edi_stock` | Enterprise | Guía de remisión electrónica (**incluye la GRE 2.0**) |
+| `l10n_pe_edi_withholding` | Enterprise | Comprobantes de **retención** |
+| `l10n_pe_reports` | Enterprise | RVIE 14.4, RCE 8.4 y 8.5, PLE 5.1 / 5.3 / 6.1 / 1.1 / 1.2 |
+| `l10n_pe_reports_lib` | Enterprise | Base de los informes de inventario y balances |
+| `l10n_pe_reports_stock` | Enterprise | PLE 12.1 y 13.1 (inventario permanente) |
+| `l10n_pe_reports_stock_landed_costs` | Enterprise | PLE de inventario con costos en destino |
+| `l10n_pe_pos` | **Community** | Documentos peruanos en Punto de Venta |
+| `l10n_pe_edi_pos` | Enterprise | Emisión electrónica desde el Punto de Venta |
+
+Son **diez** módulos, y solo `l10n_pe` y `l10n_pe_pos` son Community: **la facturación electrónica
+exige Enterprise**. Es el primer dato de cualquier propuesta económica.
+
+> ⚠️ La documentación oficial cita dos módulos que **no existen** en saas-19.4:
+> `l10n_pe_edi_stock_20` (la GRE 2.0 está dentro de `l10n_pe_edi_stock`) y `l10n_pe_website_sale`.
+> Lo desarrolla la guía [O0](guias/O0-guia-completa-localizacion-pe.md).
 
 ---
 
