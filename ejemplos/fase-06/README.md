@@ -93,3 +93,20 @@ escalamiento a visita de campo con firma del cliente y planificación de turnos.
 - [ ] **Entregable C:** *"Modelo de negocio de servicios"*: catálogo, política de facturación por
       tipo, flujo de soporte e indicadores de rentabilidad.
 - [ ] Respaldo `LAB_fase06_AAAAMMDD.zip`.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video proyectos, hojas de horas y facturación de servicios — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en las tres políticas de facturación de servicios y la mesa de ayuda |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

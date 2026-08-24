@@ -100,3 +100,20 @@ Al terminar debes tener los 10 artefactos, listos para usar con un cliente real:
 - [ ] 20 casos UAT ejecutados con gestión de defectos.
 - [ ] Guías rápidas por rol (mínimo 3) y plan de capacitación.
 - [ ] Checklist de go-live y plan de estabilización.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video levantamiento, GAP-FIT, UAT y puesta en marcha — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la metodología de implementación y la gestión del alcance |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

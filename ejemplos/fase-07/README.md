@@ -110,3 +110,20 @@ motor**. No para prometer una planilla peruana.
 - [ ] **Entregable C:** *"Alcance de RR. HH. y nómina para un cliente peruano"*, con recomendación
       argumentada y estimación por bloque.
 - [ ] Respaldo `LAB_fase07_AAAAMMDD.zip`.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el ciclo del empleado, ausencias y reclutamiento — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los horarios de trabajo, las entradas de trabajo y el alcance de nómina |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

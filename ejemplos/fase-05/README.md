@@ -107,3 +107,20 @@ preventivo y correctivo de la línea de envasado, y una ECO que cambia el diáme
       estructura, las operaciones, los puntos de control y el modelo de costeo.
 - [ ] **Entregable D:** demo de 15 minutos "de la materia prima al cliente, con trazabilidad y costo".
 - [ ] Respaldo `LAB_fase05_AAAAMMDD.zip`.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video listas de materiales, órdenes de trabajo y subcontratación — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en el costeo de fabricación, la planificación y los flujos de calidad |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

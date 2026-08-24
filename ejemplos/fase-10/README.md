@@ -123,3 +123,20 @@ Guía O3, secciones 1 a 4 y 6:
 - [ ] Respuesta escrita y honesta sobre PLE/SIRE.
 - [ ] Segunda compañía con accesos diferenciados y una operación interempresa.
 - [ ] Respaldos `PE_fase10` y `LAB_fase10`.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video la localización peruana y la facturación electrónica — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los tipos de documento, los libros electrónicos y la operación multiempresa |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

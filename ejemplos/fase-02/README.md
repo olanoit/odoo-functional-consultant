@@ -285,3 +285,20 @@ un cliente de suscripciones lo pide desde el primer día — es pregunta de prev
 Los 12 pedidos confirmados generarán **entregas pendientes**. No las valides todavía: en la Fase 3
 las usarás para estudiar reservas, entregas parciales y rutas multi-etapa. Ese "desorden" es
 intencional y es exactamente lo que encontrarás en un cliente real.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el embudo de CRM, las listas de precios y las políticas de facturación — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la precedencia de reglas de precio y las plantillas de cotización |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

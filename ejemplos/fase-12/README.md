@@ -86,3 +86,20 @@ probablemente aparezcan y los que más gente falla por venir de versiones anteri
 
 > A partir de aquí el aprendizaje sigue con clientes reales, y el método no cambia:
 > **leer la documentación, configurar, romper a propósito, explicar. Y documentar todo.**
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el repaso integral de todos los módulos antes del examen — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los temas que se te resistan en el simulacro, módulo por módulo |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra la tabla de cambios de v19 de este mismo cuaderno y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

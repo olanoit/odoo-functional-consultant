@@ -166,3 +166,20 @@ Al terminar debes tener:
 La Fase 5 (Manufactura) usa las cuentas y la valoración para calcular el **costo real de producción**;
 la Fase 6 usa la **analítica** para la rentabilidad de proyectos; y la Fase 10 monta la localización
 peruana sobre esta misma lógica fiscal. Si algo quedó sin cuadrar, se arrastra hasta el final.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video plan contable, impuestos, conciliación bancaria y cierre de mes — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la configuración fiscal, los modelos de conciliación y la contabilidad analítica |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

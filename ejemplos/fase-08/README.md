@@ -117,3 +117,20 @@ Implementa al menos dos completas y ejecútalas contra datos reales de tu base.
 - [ ] **Entregable C:** *"Plan digital de ANDINA GOURMET"*: mapa captación → conversión → retención,
       con la app responsable de cada paso y los indicadores de cada etapa.
 - [ ] Respaldo `LAB_fase08_AAAAMMDD.zip`.
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video la tienda en línea, campañas de correo y automatizaciones de marketing — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la configuración del sitio web, los métodos de envío y los flujos de carrito |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

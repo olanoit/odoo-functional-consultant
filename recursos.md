@@ -52,13 +52,16 @@
 | Recurso | URL | Notas |
 |---|---|---|
 | Canal oficial de Odoo | <https://www.youtube.com/@odoo> | Demos por app y sesiones de Odoo Experience |
+| **Odoo en Español** | <https://www.youtube.com/@OdooSpanish> | Canal en español dedicado a Odoo: recorridos funcionales por app y casos de uso. Referencia recomendada en **todas las fases** de este plan |
 | Curso Odoo desde cero en español (playlist) | <https://www.youtube.com/playlist?list=PL9KT1AOP2NPSvWYGoGiQaByOJx2G0na9q> | Comunidad; verifica la versión que usa |
 | Tutoriales y trucos de Odoo en español (playlist) | <https://www.youtube.com/playlist?list=PLmH4mrtD1T8R1nTsCdUdHfXruMMA_rjHY> | Comunidad |
 | Contabilidad en Odoo (playlist en español) | <https://www.youtube.com/playlist?list=PLmH4mrtD1T8R5MUXM0J_7OPFjXD82-XVi> | Comunidad; contrastar con la doc oficial |
 
-> **Advertencia sobre videos de comunidad:** la mayoría están grabados en versiones anteriores
-> (15–18). Sirven para entender el *concepto* y el *flujo*, nunca para copiar la configuración
-> literalmente. Verifica siempre contra la documentación 19.4 y contra tu base de datos.
+> **Advertencia sobre videos y blogs de comunidad:** buena parte del material está grabado o escrito
+> para versiones anteriores (15–18). Sirve para entender el *concepto* y el *flujo*, nunca para copiar
+> la configuración literalmente. Verifica siempre contra la documentación 19.4 y contra tu base de
+> datos: este mismo plan tuvo que corregir una decena de campos y modelos que cambiaron en v19 y que
+> el material de versiones anteriores sigue dando por buenos.
 
 ## 4. Comunidad y consulta
 
@@ -68,6 +71,7 @@
 | Odoo Apps Store (módulos de terceros) | <https://apps.odoo.com/apps/modules> |
 | OCA — Odoo Community Association (módulos abiertos) | <https://github.com/OCA> |
 | Runbot (bases de prueba de todas las ramas) | <https://runbot.odoo.com/> |
+| **Cybrosys — blogs y tutoriales** | <https://www.cybrosys.com> | Partner con una biblioteca extensa de artículos funcionales y técnicos por módulo. Referencia recomendada en **todas las fases** de este plan |
 
 ## 5. Entornos de práctica
 

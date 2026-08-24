@@ -273,3 +273,20 @@ Estos datos **no se tiran**: la base `LAB` sigue creciendo sobre ellos.
 | 4 — Contabilidad | Las ventas y compras generadas sobre estos maestros |
 | 5 — Manufactura | Insumos y envases como componentes de la lista de materiales |
 | 10 — Localización PE | Los RUC (que **entonces sí** se validarán) |
+
+---
+
+## Para ampliar
+
+Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+
+| Recurso | Para qué en esta fase |
+|---|---|
+| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video importación de datos, modelo de datos y permisos de usuario — **después** de haberlo hecho tú con estos datos |
+| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los campos técnicos de contactos y productos, y la notación `/id` al importar |
+
+> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
+> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
+> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+
+El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).
