@@ -274,19 +274,33 @@ Estos datos **no se tiran**: la base `LAB` sigue creciendo sobre ellos.
 | 5 — Manufactura | Insumos y envases como componentes de la lista de materiales |
 | 10 — Localización PE | Los RUC (que **entonces sí** se validarán) |
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video importación de datos, modelo de datos y permisos de usuario — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los campos técnicos de contactos y productos, y la notación `/id` al importar |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Contacts](https://www.cybrosys.com/odoo/odoo-books/v19/contacts/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How Data File Loading Works in Odoo 19](https://www.cybrosys.com/blog/how-data-file-loading-works-in-odoo-19) | Orden de carga de los archivos de datos y por qué el orden importa | *ene 2026* |
+| [Overview of Access Control Lists (ACLs) in Odoo 19](https://www.cybrosys.com/blog/overview-of-access-control-lists-acls-in-odoo-19) | Grupos de seguridad y permisos, el tema del Ejemplo 5 | *dic 2025* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «importar datos» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=importar+datos) — vídeos en español sobre importación de datos, contactos y permisos.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

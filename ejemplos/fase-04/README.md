@@ -167,19 +167,33 @@ La Fase 5 (Manufactura) usa las cuentas y la valoración para calcular el **cost
 la Fase 6 usa la **analítica** para la rentabilidad de proyectos; y la Fase 10 monta la localización
 peruana sobre esta misma lógica fiscal. Si algo quedó sin cuadrar, se arrastra hasta el final.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video plan contable, impuestos, conciliación bancaria y cierre de mes — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la configuración fiscal, los modelos de conciliación y la contabilidad analítica |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Invoicing & Accounting](https://www.cybrosys.com/odoo/odoo-books/v19/invoicing-and-accounting/) · [· Reconciliation](https://www.cybrosys.com/odoo/odoo-books/v19/invoicing-and-accounting/reconciliation/) · [· Tax Returns](https://www.cybrosys.com/odoo/odoo-books/v19/invoicing-and-accounting/tax-returns/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [The Ultimate Guide to Journal Items and Entries in Odoo 19 Accounting](https://www.cybrosys.com/blog/the-ultimate-guide-to-journal-items-and-entries-in-odoo-19-accounting) | Apuntes y asientos — el laboratorio I1 | *may 2026* |
+| [A Complete Guide to Inventory Valuation in Odoo 19](https://www.cybrosys.com/blog/a-complete-guide-to-inventory-valuation-in-odoo-19) | **Léelo antes del laboratorio I1**: explica por qué la recepción ya no genera asiento | *may 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «contabilidad conciliación» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=contabilidad+conciliaci%C3%B3n) — vídeos en español sobre contabilidad, impuestos y conciliación.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

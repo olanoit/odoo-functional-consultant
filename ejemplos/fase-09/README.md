@@ -96,19 +96,32 @@ Con los 512 clientes ya cargados:
       [`../../plantillas/05-plan-de-migracion-de-datos.md`](../../plantillas/05-plan-de-migracion-de-datos.md).
 - [ ] Respaldo `LAB_fase09_AAAAMMDD.zip`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video Studio, migración de datos y hojas de cálculo — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la personalización sin código y la limpieza de datos antes de importar |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Studio](https://www.cybrosys.com/odoo/odoo-books/v19/studio/) · [Spreadsheet (BI)](https://www.cybrosys.com/odoo/odoo-books/v19/spreadsheet-bi/) · [Knowledge](https://www.cybrosys.com/odoo/odoo-books/v19/knowledge/) · [Data Recycle](https://www.cybrosys.com/odoo/odoo-books/v19/data-recycle/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Configure a Dashboard with Odoo 19](https://www.cybrosys.com/blog/how-to-configure-a-dashboard-with-odoo-19) | Tableros sobre hojas de cálculo — el entregable de la fase | *ene 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «Studio personalización» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=Studio+personalizaci%C3%B3n) — vídeos en español sobre Studio y personalización sin código.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

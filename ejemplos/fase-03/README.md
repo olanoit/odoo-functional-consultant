@@ -152,19 +152,33 @@ Compras recibidas y facturadas, ventas entregadas, ajustes de inventario y un va
 distinto de cero. Con eso podrás hacer un **cierre de mes real** en vez de un ejercicio teórico.
 No borres nada: el desorden acumulado es el material de trabajo.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video rutas de almacén, trazabilidad por lote y los métodos de valoración — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en las reglas de reordenamiento, los costos en destino y el cuadre de inventario |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Inventory](https://www.cybrosys.com/odoo/odoo-books/v19/inventory/) · [Inventory · Configuration](https://www.cybrosys.com/odoo/odoo-books/v19/inventory/configuration/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [A Complete Guide to Inventory Valuation in Odoo 19](https://www.cybrosys.com/blog/a-complete-guide-to-inventory-valuation-in-odoo-19) | **Confirma el cambio de v19**: con valoración perpetua los asientos se generan al facturar, no al validar el movimiento | *may 2026* |
+| [Complete Guide to Inventory Flow in Odoo 19: Routes, Rules & Setup](https://www.cybrosys.com/blog/complete-guide-to-inventory-flow-in-odoo-19-routes-rules-and-setup) | Rutas y reglas — el laboratorio H2 | *abr 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «inventario almacén» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=inventario+almac%C3%A9n) — vídeos en español sobre almacenes, rutas y trazabilidad.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

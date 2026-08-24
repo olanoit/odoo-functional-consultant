@@ -101,19 +101,30 @@ Al terminar debes tener los 10 artefactos, listos para usar con un cliente real:
 - [ ] Guías rápidas por rol (mínimo 3) y plan de capacitación.
 - [ ] Checklist de go-live y plan de estabilización.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video levantamiento, GAP-FIT, UAT y puesta en marcha — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la metodología de implementación y la gestión del alcance |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [What are the Steps for a Successful Odoo Implementation](https://www.cybrosys.com/blog/what-are-the-steps-for-a-successful-odoo-platform-implementation) | Las cinco fases de una implantación. **Es de 2021**, pero la metodología no depende de la versión; contrástalo con tu propio kit | *dic 2021* ⚠️ **v15** |
+
+### Odoo en Español — YouTube
+
+[**Buscar «implementación Odoo» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=implementaci%C3%B3n+Odoo) — vídeos en español sobre metodología de implantación.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

@@ -87,19 +87,32 @@ probablemente aparezcan y los que más gente falla por venir de versiones anteri
 > A partir de aquí el aprendizaje sigue con clientes reales, y el método no cambia:
 > **leer la documentación, configurar, romper a propósito, explicar. Y documentar todo.**
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el repaso integral de todos los módulos antes del examen — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los temas que se te resistan en el simulacro, módulo por módulo |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra la tabla de cambios de v19 de este mismo cuaderno y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Índice completo del libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [The Ultimate Guide to Odoo 19 New Features and Enhancements](https://www.cybrosys.com/blog/the-ultimate-guide-to-odoo-19-new-features-and-enhancements) | Repaso de las novedades de v19 módulo por módulo — para el examen | *sep 2025* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «Odoo 19 novedades» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=Odoo+19+novedades) — vídeos en español sobre las novedades de Odoo 19.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra la tabla de cambios de v19 de este mismo cuaderno y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

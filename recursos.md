@@ -65,13 +65,14 @@
 
 ## 4. Comunidad y consulta
 
-| Recurso | URL |
-|---|---|
-| Foro oficial (ayuda) | <https://www.odoo.com/forum/ayuda-1> |
-| Odoo Apps Store (módulos de terceros) | <https://apps.odoo.com/apps/modules> |
-| OCA — Odoo Community Association (módulos abiertos) | <https://github.com/OCA> |
-| Runbot (bases de prueba de todas las ramas) | <https://runbot.odoo.com/> |
-| **Cybrosys — blogs y tutoriales** | <https://www.cybrosys.com> | Partner con una biblioteca extensa de artículos funcionales y técnicos por módulo. Referencia recomendada en **todas las fases** de este plan |
+| Recurso | URL | Notas |
+|---|---|---|
+| Foro oficial (ayuda) | <https://www.odoo.com/forum/ayuda-1> | Preguntas resueltas por la comunidad y por empleados de Odoo |
+| Odoo Apps Store (módulos de terceros) | <https://apps.odoo.com/apps/modules> | Filtra por versión 19 antes de proponer nada a un cliente |
+| OCA — Odoo Community Association (módulos abiertos) | <https://github.com/OCA> | Módulos libres; revisa la rama 19.0 de cada repositorio |
+| Runbot (bases de prueba de todas las ramas) | <https://runbot.odoo.com/> | Bases desechables de cualquier rama, útiles para comparar versiones |
+| **Cybrosys — libro de Odoo 19** | <https://www.cybrosys.com/odoo/odoo-books/v19/> | Manual por módulos **escrito para v19**, con un capítulo por app. La referencia de terceros más fiable de este catálogo |
+| **Cybrosys — blog filtrado por Odoo 19** | <https://www.cybrosys.com/blog/odoo-19> | Artículos funcionales y técnicos de v19. El blog general mezcla v7 a v19: usa siempre este filtro |
 
 ## 5. Entornos de práctica
 

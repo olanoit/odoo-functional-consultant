@@ -108,19 +108,32 @@ preventivo y correctivo de la línea de envasado, y una ECO que cambia el diáme
 - [ ] **Entregable D:** demo de 15 minutos "de la materia prima al cliente, con trazabilidad y costo".
 - [ ] Respaldo `LAB_fase05_AAAAMMDD.zip`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video listas de materiales, órdenes de trabajo y subcontratación — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en el costeo de fabricación, la planificación y los flujos de calidad |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Manufacturing](https://www.cybrosys.com/odoo/odoo-books/v19/manufacturing/) · [· Operations](https://www.cybrosys.com/odoo/odoo-books/v19/manufacturing/operations/) · [Quality](https://www.cybrosys.com/odoo/odoo-books/v19/quality/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Set Up Products for Manufacturing in Odoo 19](https://www.cybrosys.com/blog/how-to-set-up-products-for-manufacturing-in-odoo-19) | LdM, componentes y operaciones — los tres archivos de esta fase | *jul 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «fabricación lista de materiales» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=fabricaci%C3%B3n+lista+de+materiales) — vídeos en español sobre fabricación y listas de materiales.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

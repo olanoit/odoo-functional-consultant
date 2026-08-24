@@ -118,19 +118,33 @@ Implementa al menos dos completas y ejecútalas contra datos reales de tu base.
       con la app responsable de cada paso y los indicadores de cada etapa.
 - [ ] Respaldo `LAB_fase08_AAAAMMDD.zip`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video la tienda en línea, campañas de correo y automatizaciones de marketing — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la configuración del sitio web, los métodos de envío y los flujos de carrito |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [ECommerce](https://www.cybrosys.com/odoo/odoo-books/v19/ecommerce/) · [Website Builder](https://www.cybrosys.com/odoo/odoo-books/v19/website-builder/) · [Email Marketing](https://www.cybrosys.com/odoo/odoo-books/v19/email-marketing/) · [Marketing Automation](https://www.cybrosys.com/odoo/odoo-books/v19/marketing-automation/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Manage B2B and B2C Sales in Odoo 19 E-Commerce](https://www.cybrosys.com/blog/how-to-manage-b2b-and-b2c-sales-in-odoo-19-e-commerce) | Precios con y sin impuesto en la tienda | *abr 2026* |
+| [Step-by-Step Guide to Setting Up Mailing Lists in Odoo 19](https://www.cybrosys.com/blog/step-by-step-guide-to-setting-up-mailing-lists-in-odoo-19) | Listas de correo — los archivos `04-listas-correo.csv` y `05-contactos-correo.csv` | *ago 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «comercio electrónico» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=comercio+electr%C3%B3nico) — vídeos en español sobre sitio web y comercio electrónico.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

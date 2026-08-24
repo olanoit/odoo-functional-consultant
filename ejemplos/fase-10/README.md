@@ -124,19 +124,33 @@ Guía O3, secciones 1 a 4 y 6:
 - [ ] Segunda compañía con accesos diferenciados y una operación interempresa.
 - [ ] Respaldos `PE_fase10` y `LAB_fase10`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video la localización peruana y la facturación electrónica — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los tipos de documento, los libros electrónicos y la operación multiempresa |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Invoicing & Accounting · Configuration](https://www.cybrosys.com/odoo/odoo-books/v19/invoicing-and-accounting/configuration/) · [· Settings](https://www.cybrosys.com/odoo/odoo-books/v19/invoicing-and-accounting/settings/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [An Overview of Accounting Localization for Peru in Odoo 17](https://www.cybrosys.com/blog/an-overview-of-accounting-localization-for-peru-in-odoo-17) | SUNAT, tipos de documento, facturación electrónica y GRE. **Es de v17**: el flujo sigue siendo válido, los nombres de campo no | *sep 2024* ⚠️ **v17** |
+| [How to Generate Multi-Company Reports in Odoo 19](https://www.cybrosys.com/blog/how-to-generate-multi-company-reports-in-odoo-19) | Multiempresa y reportes consolidados — el Ejemplo 7 | *oct 2025* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «localización Perú» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=localizaci%C3%B3n+Per%C3%BA) — vídeos en español sobre la localización peruana.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

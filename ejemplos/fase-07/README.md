@@ -111,19 +111,33 @@ motor**. No para prometer una planilla peruana.
       argumentada y estimación por bloque.
 - [ ] Respaldo `LAB_fase07_AAAAMMDD.zip`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el ciclo del empleado, ausencias y reclutamiento — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en los horarios de trabajo, las entradas de trabajo y el alcance de nómina |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Employees](https://www.cybrosys.com/odoo/odoo-books/v19/employees/) · [Time Off · Configuration](https://www.cybrosys.com/odoo/odoo-books/v19/time-off/configuration/) · [Recruitment](https://www.cybrosys.com/odoo/odoo-books/v19/recruitment/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Set Up Time Off Types in Odoo 19](https://www.cybrosys.com/blog/how-to-set-up-time-off-types-in-odoo-19) | **Confirma el campo `Count as`** y el tipo de entrada de trabajo — el archivo `03-tipos-ausencia.csv` | *feb 2026* |
+| [How to Define and Manage Job Positions in Odoo 19](https://www.cybrosys.com/blog/how-to-define-and-manage-job-positions-in-odoo-19) | Puestos de trabajo — el archivo `02-puestos.csv` | *abr 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «empleados ausencias» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=empleados+ausencias) — vídeos en español sobre empleados y ausencias.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

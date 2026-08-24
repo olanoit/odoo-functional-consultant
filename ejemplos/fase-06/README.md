@@ -94,19 +94,32 @@ escalamiento a visita de campo con firma del cliente y planificación de turnos.
       tipo, flujo de soporte e indicadores de rentabilidad.
 - [ ] Respaldo `LAB_fase06_AAAAMMDD.zip`.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video proyectos, hojas de horas y facturación de servicios — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en las tres políticas de facturación de servicios y la mesa de ayuda |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Project](https://www.cybrosys.com/odoo/odoo-books/v19/project/) · [Timesheet](https://www.cybrosys.com/odoo/odoo-books/v19/timesheet/) · [Helpdesk](https://www.cybrosys.com/odoo/odoo-books/v19/helpdesk/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Use Timesheet-Based Billing for Projects in Odoo 19](https://www.cybrosys.com/blog/how-to-use-timesheet-based-billing-for-projects-in-odoo-19) | Facturación por horas — las tres políticas del Ejemplo 3 | *may 2026* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «proyectos hoja de horas» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=proyectos+hoja+de+horas) — vídeos en español sobre proyectos y hojas de horas.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

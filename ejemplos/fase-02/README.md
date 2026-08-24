@@ -286,19 +286,33 @@ Los 12 pedidos confirmados generarán **entregas pendientes**. No las valides to
 las usarás para estudiar reservas, entregas parciales y rutas multi-etapa. Ese "desorden" es
 intencional y es exactamente lo que encontrarás en un cliente real.
 
+
+
 ---
 
 ## Para ampliar
 
-Dos fuentes de comunidad que conviene tener abiertas durante toda la fase:
+### Cybrosys — libro de Odoo 19 y artículos
 
-| Recurso | Para qué en esta fase |
-|---|---|
-| **[Odoo en Español](https://www.youtube.com/@OdooSpanish)** | Ver explicado en video el embudo de CRM, las listas de precios y las políticas de facturación — **después** de haberlo hecho tú con estos datos |
-| **[Cybrosys](https://www.cybrosys.com)** | Artículos por módulo; útiles para profundizar en la precedencia de reglas de precio y las plantillas de cotización |
+Enlaces verificados uno a uno. Todos están **en inglés**.
 
-> **Úsalas para el concepto, no para la configuración.** Buena parte de ese material está grabado o
-> escrito para v15–v18, y en v19 cambiaron nombres de campo, valores de selección y modelos enteros.
-> Contrasta siempre contra la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+**Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [CRM](https://www.cybrosys.com/odoo/odoo-books/v19/crm/) · [Sales](https://www.cybrosys.com/odoo/odoo-books/v19/sales/)
+
+| Artículo | Para qué en esta fase | Fecha |
+|---|---|---|
+| [How to Configure & Optimize Pricelists in Odoo 19](https://www.cybrosys.com/blog/how-to-configure-and-optimize-pricelists-in-odoo-19) | Reglas de precio por producto, categoría, cantidad y fecha — el laboratorio G2 | *nov 2025* |
+| [How to Design Professional Quotation Templates in Odoo 19](https://www.cybrosys.com/blog/how-to-design-professional-quotation-templates-in-odoo-19) | Plantillas de cotización, el archivo `08-plantilla-cotizacion.csv` | *dic 2025* |
+
+### Odoo en Español — YouTube
+
+[**Buscar «lista de precios ventas» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=lista+de+precios+ventas) — vídeos en español sobre el embudo de CRM y las listas de precios.
+
+> El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
+> canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus
+> vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
+
+> **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
+> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).
