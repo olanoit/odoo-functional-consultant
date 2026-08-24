@@ -16,7 +16,7 @@ la estructura del cuaderno es la misma.)*
 
 | Archivo | Qué es |
 |---|---|
-| `datos/01-clientes-pe.csv` | 12 clientes: 8 empresas con **RUC** y 4 personas con **DNI**, con los ID externos reales de la localización |
+| `datos/01-clientes-pe.csv` | 12 clientes: 8 empresas con **RUC** y 4 personas con **DNI**, con los ID externos reales de la localización. En v19 es `l10n_latam_identification_type_id` quien determina si el contacto es empresa o persona (`is_company` es calculado) |
 | `datos/02-productos-pe.csv` | 8 productos con casos tributarios deliberadamente distintos (gravado, exonerado, gratuito, con ICBPER) |
 | `guias/O1` | Instalación y configuración de la localización, paso a paso |
 | `guias/O2` | **Manual de errores de facturación electrónica** (10 casos) — entregable |

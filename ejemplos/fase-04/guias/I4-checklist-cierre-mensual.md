@@ -43,7 +43,8 @@
 | 4.1 | Todas las transferencias del mes validadas (nada *En espera* de fecha anterior) | Inventario → Transferencias | Almacén | ☐ |
 | 4.2 | Ajustes de inventario del mes aplicados y justificados | Historial de ajustes | Almacén | ☐ |
 | 4.3 | **Valor del inventario = saldo de la cuenta de existencias** | Ver guía de cuadre (§ siguiente) | Contabilidad | ☐ |
-| 4.4 | Cuenta de **entrada de existencias** revisada (recepciones sin factura) | Mayor de la cuenta | Contabilidad | ☐ |
+| 4.4 | **Recepciones sin factura de proveedor** listadas y explicadas | Compras → *Facturas por crear* | Contabilidad | ☐ |
+| 4.4b | **Entregas sin factura de cliente** listadas y explicadas | Ventas → pedidos *Por facturar* | Contabilidad | ☐ |
 | 4.5 | Costos en destino del mes aplicados | Listado de costos en destino | Contabilidad | ☐ |
 
 ## Bloque 5 — Impuestos
@@ -87,7 +88,8 @@
 |---|---|
 | Categorías con valoración **periódica** mezcladas con **perpetua** | Revisar el método por categoría |
 | Asientos manuales directos a la cuenta de existencias | Filtrar el mayor por diario *Operaciones diversas* |
-| Recepciones sin factura (cuenta de entrada de existencias) | Saldo de la cuenta transitoria |
+| Recepciones sin factura de proveedor | Compras → *Facturas por crear* (en v19 ya no hay cuenta transitoria que cuadrar) |
+| Entregas sin factura de cliente | Ventas → *Por facturar*: en v19 ahí se esconden **ingreso y costo** no registrados |
 | Costos en destino registrados y no aplicados | Listado de costos en destino en borrador |
 | Ajustes de inventario del último día no contabilizados | Fecha de los asientos vs. fecha del ajuste |
 | Cambio de método de costo durante el período | Historial del campo en la categoría |

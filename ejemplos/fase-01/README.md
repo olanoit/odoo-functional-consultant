@@ -18,8 +18,8 @@ Todo gira alrededor de **ANDINA GOURMET S.A.C.** y usa datos listos para importa
 | `datos/03-proveedores.csv` | 15 proveedores clasificados por tipo de suministro |
 | `datos/04-contactos-hijos.csv` | 10 contactos hijos: personas, direcciones de entrega y de facturación |
 | `datos/05-categorias-producto.csv` | 11 categorías de producto en jerarquía de 3 niveles |
-| `datos/06-productos.csv` | **79 productos**: terminados, insumos y servicios, con proveedor, costo y plazo |
-| `datos/07-productos-con-errores.csv` | 9 filas con los errores de importación más frecuentes, a propósito |
+| `datos/06-productos.csv` | **79 productos**: terminados, insumos y servicios, con proveedor, costo y plazo. Crea plantilla (`andina.prod_XXX`) **y** variante (`andina.var_XXX`) |
+| `datos/07-productos-con-errores.csv` | 9 filas con 8 errores de importación frecuentes, a propósito; **solo 5 los reporta Odoo** |
 | `datos/08-clientes-actualizacion.csv` | 5 clientes para demostrar actualización sin duplicar |
 | `guias/E1-matriz-de-permisos.md` | Los 4 usuarios de la fase, sus grupos y las pruebas de acceso |
 | `guias/E2-ejercicios-busqueda-reportes.md` | 15 ejercicios de filtros, agrupaciones y pivote |
@@ -123,7 +123,7 @@ clientes la referencian. Fíjate en la columna `id`: son **identificadores exter
 | Columna | Por qué está así |
 |---|---|
 | `id` | ID externo propio (`andina.cli_001`) → permite reimportar y **actualizar** |
-| `company_type` | `company` o `person`. Determina si es empresa o individuo |
+| *(sin columna empresa/persona)* | En v19 `company_type` no existe e `is_company` es **calculado**: Odoo marca como empresa a todo contacto sin padre que tenga `vat`. Por eso los 25 clientes salen como empresas **sin declararlo** |
 | `vat` | RUC. Sin la localización peruana instalada **no se valida** (eso llega en la Fase 10) |
 | `country_id/id` | `base.pe` → referencia por **ID externo**, inmune al idioma de la base |
 | `category_id/id` | Many2many: varios IDs externos separados por coma, entre comillas |
@@ -151,7 +151,7 @@ Orden: `05-categorias-producto.csv` → `06-productos.csv`.
 
 | Grupo | Cantidad | Características |
 |---|---|---|
-| Conservas, snacks, harinas, bebidas | 45 | `sale_ok=True`, con código de barras EAN-13 válido y peso |
+| Conservas, snacks, harinas, bebidas | 48 | `sale_ok=True`, con código de barras EAN-13 válido y peso |
 | Materia prima y aditivos | 13 | En **kg** y **litros**, con proveedor, precio y plazo de entrega |
 | Envases y embalajes | 12 | Compra por unidad, con cantidad mínima de pedido |
 | Servicios | 6 | `type=service`, `is_storable` vacío — no hay stock de un servicio |
@@ -166,6 +166,14 @@ Orden: `05-categorias-producto.csv` → `06-productos.csv`.
 | `categ_id/id` | Apunta a las categorías del archivo 05, no a las de Odoo |
 | `seller_ids/partner_id/id` | Importa una **línea One2many** (el proveedor) desde el mismo CSV |
 | `seller_ids/price`, `/delay`, `/min_qty` | Precio de proveedor, plazo en días y cantidad mínima → los usarás en la Fase 3 para reglas de reordenamiento |
+| `product_variant_ids/id` | **Crea también el ID externo de la variante** (`andina.var_001`). Sin esta columna, `andina.prod_001` sería solo la *plantilla* y todos los CSV que piden `product_id` (stock, lotes, líneas de pedido, componentes de LdM) fallarían con *«expected model product.product, found product.template»* |
+
+> **Plantilla vs. variante — el detalle que rompe medio cuaderno.** El catálogo se importa en
+> `product.template` (el menú *Productos*), pero `stock.quant`, `stock.lot`, `sale.order.line`,
+> `purchase.order.line`, `mrp.bom.line` y `delivery.carrier` apuntan a **`product.product`** (la variante).
+> Un ID externo de plantilla **no sirve** ahí. Por eso el CSV trae `product_variant_ids/id`: en el mismo
+> paso crea la plantilla `andina.prod_XXX` **y** su variante `andina.var_XXX`. A partir de la Fase 2,
+> todo lo que sea `product_id/id` usa `andina.var_XXX`; lo que sea `product_tmpl_id/id`, `andina.prod_XXX`.
 
 **Verificaciones después de importar:**
 1. Filtra por categoría *Materia Prima*: 9 productos, todos en kg o litros, todos con proveedor.
@@ -178,7 +186,7 @@ Orden: `05-categorias-producto.csv` → `06-productos.csv`.
 ## Ejemplo 6 — Romper la importación a propósito
 *(Bloque 1.6 · 45 min · base `LAB`)* ← **el ejercicio más valioso de la fase**
 
-Importa `07-productos-con-errores.csv` con **Probar importación**. Odoo rechazará el archivo.
+Importa `07-productos-con-errores.csv` con **Probar importación**.
 
 **Antes de leer la solución**, escribe en tu bitácora tu diagnóstico de cada fila.
 Las 9 filas contienen 8 errores distintos (uno se repite en dos filas):
@@ -194,8 +202,16 @@ Las 9 filas contienen 8 errores distintos (uno se repite en dos filas):
 | 8 | Conserva de Higo | Compara su código de barras con el del producto `andina.prod_001` |
 | 9 | Barra de Maca | Mira `is_storable` |
 
+> **La trampa del ejercicio.** Odoo **no rechaza el archivo entero**: verificado en v19, solo avisa
+> de **5 de los 8 errores**. Los otros 3 se importan mal en silencio —un precio cien veces mayor, un
+> producto que desaparece y un booleano inventado— y ninguno se ve en la pantalla de resultados.
+>
+> Así que el ejercicio no termina cuando Odoo deja de quejarse. Termina cuando **cuentas los
+> registros creados** y **compruebas los valores** contra el archivo. Anota antes de importar cuáles
+> de las 9 filas crees que Odoo va a reportar; acertar eso vale más que diagnosticar los 8 errores.
+
 Luego contrasta con [`guias/E3-errores-de-importacion.md`](guias/E3-errores-de-importacion.md),
-que trae el mensaje esperado, la causa y la corrección de cada uno.
+que trae el mensaje esperado, la causa y la corrección de cada uno, y marca cuáles son silenciosos.
 
 **Cierre del ejercicio:** corrige el archivo y consigue importarlo **sin errores**.
 Ese archivo corregido —y tu diagnóstico— son el borrador de tu *checklist personal de importación*,

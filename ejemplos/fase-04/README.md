@@ -45,6 +45,12 @@ Trabaja sobre la base `LAB` con las ventas de la Fase 2, las compras y el invent
 
 Importa `01-cuentas.csv` y `02-diarios.csv`.
 
+> **El código de diario es único por compañía.** El diario *Operaciones diversas* del CSV usa el código
+> **`OPDIV`**, no `MISC`: todo plan contable estándar (el genérico y el peruano) ya trae un diario `MISC`
+> y el import fallaría entero con *«Journal codes must be unique per company»* — un solo código repetido
+> tumba el archivo completo, no solo su fila. Antes de importar diarios en un cliente real, exporta los
+> códigos existentes y compáralos.
+
 Mira con atención la columna **`account_type`**: es lo que determina el comportamiento de la cuenta,
 no el número. Ejercicio: explica por qué `4017 IGV crédito fiscal` está como `asset_current` y no
 como `liability_current`, y qué pasaría si estuviera mal clasificada.

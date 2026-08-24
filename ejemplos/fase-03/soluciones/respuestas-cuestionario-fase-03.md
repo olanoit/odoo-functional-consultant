@@ -31,11 +31,17 @@ Se verifica con el reporte de previsión, el detalle de operaciones y la pestañ
 vinculadas.
 
 **5. Asientos de una recepción con valoración automática y PEPS.**
-Se debita la cuenta de **valoración de existencias** (aumenta el activo) y se acredita la cuenta de
-**entrada de existencias** (interim), por el valor de la capa que entra (cantidad × precio de esa
-compra). Al registrar la factura del proveedor, la cuenta de entrada se salda contra la de
-proveedores; cualquier diferencia entre el precio recibido y el facturado va a la cuenta de
-diferencia de precio.
+**Ninguno.** En Odoo 19 la valoración perpetua se llama, literalmente, *Perpetual (at invoicing)*:
+validar la recepción sube el stock y crea la capa de costo PEPS, pero **no genera asiento**.
+
+El asiento aparece al **validar la factura de compra**, y carga **directamente** la cuenta de
+valoración de existencias contra la de proveedores (más el IGV). La antigua cuenta transitoria de
+**entrada de existencias** (`property_stock_account_input_categ_id`) **fue eliminada**: ya no hay
+dos momentos que conectar. Si el precio facturado difiere del recibido, la diferencia va a la cuenta
+de **diferencia de precio** de la categoría.
+
+> Es el error más probable de quien viene de v16–v18: buscar en la recepción un asiento que ya no
+> se genera y concluir que la valoración está mal configurada.
 
 **6. *Packaging* vs. paquete.**
 El **empaque** (en v19, `uom_ids`) es una presentación comercial estándar: "caja de 24 latas" —

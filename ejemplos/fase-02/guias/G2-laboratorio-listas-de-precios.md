@@ -45,7 +45,7 @@ Si **ninguna** regla aplica, el precio es el **precio de venta del producto** (`
 | `may_cons100` | Categoría *Conservas* | 100 | −22 % |
 | `may_cons500` | Categoría *Conservas* | 500 | −28 % |
 | `may_snack200` | Categoría *Snacks* | 200 | −25 % |
-| `may_agu400` | Producto *Conserva de Aguaymanto 400 g* | 1 000 | Precio fijo S/ 8.50 |
+| `may_agu400` | Producto *`CON-AGU-400g`* | 1 000 | Precio fijo S/ 8.50 |
 
 **Exportación USD** — `exp_global`: todos los productos, −5 %, en USD (tasa 1 USD = 3.75 PEN).
 
@@ -56,30 +56,38 @@ Si **ninguna** regla aplica, el precio es el **precio de venta del producto** (`
 
 ## 3. Los 18 casos
 
-Precio de lista de referencia: Conserva Aguaymanto 400 g = **12.50** · Conserva Sauco 400 g = **13.12** ·
-Snack Quinua 50 g = **4.50** · Snack Quinua 100 g = **7.88** · Harina Quinua 500 g = **11.50** ·
-Néctar Aguaymanto 300 ml = **3.90**
+Los casos usan la **referencia interna** del producto, no su nombre, porque en un catálogo real hay
+varias presentaciones con nombre parecido. Búscalos en Odoo por ese código:
+
+| Referencia | Nombre en el catálogo | Categoría | Precio de venta |
+|---|---|---|---|
+| `CON-AGU-400g` | Conserva de Aguaymanto en almíbar 400 g | Conservas | **12.50** |
+| `CON-SAU-400g` | Conserva de Sauco en almíbar 400 g | Conservas | **13.12** |
+| `SNK-QUI-50g` | Snack de Quinua Horneada 50 g | Snacks | **4.50** |
+| `SNK-QUI-100g` | Snack de Quinua Horneada 100 g | Snacks | **7.88** |
+| `HAR-QUI-500g` | Harina de Quinua 500 g | Harinas y Granos | **11.50** |
+| `BEB-AGU-300ml` | Néctar de Aguaymanto 300 ml | Bebidas | **3.90** |
 
 | # | Producto | Cant. | Lista | Fecha del pedido | Tu predicción | Regla que crees que gana |
 |---|---|---|---|---|---|---|
-| 1 | Conserva Aguaymanto 400 g | 1 | Mayorista | 2026-09-01 | | |
-| 2 | Conserva Aguaymanto 400 g | 100 | Mayorista | 2026-09-01 | | |
-| 3 | Conserva Aguaymanto 400 g | 500 | Mayorista | 2026-09-01 | | |
-| 4 | Conserva Aguaymanto 400 g | 1 000 | Mayorista | 2026-09-01 | | |
-| 5 | Conserva Aguaymanto 400 g | 1 200 | Mayorista | 2026-09-01 | | |
-| 6 | Conserva Sauco 400 g | 500 | Mayorista | 2026-09-01 | | |
-| 7 | Snack Quinua 50 g | 100 | Mayorista | 2026-09-01 | | |
-| 8 | Snack Quinua 50 g | 200 | Mayorista | 2026-09-01 | | |
-| 9 | Harina Quinua 500 g | 50 | Mayorista | 2026-09-01 | | |
-| 10 | Néctar Aguaymanto 300 ml | 24 | Mayorista | 2026-09-01 | | |
-| 11 | Conserva Aguaymanto 400 g | 1 | Tienda | 2026-09-01 | | |
-| 12 | Snack Quinua 50 g | 500 | Tienda | 2026-09-01 | | |
-| 13 | Snack Quinua 50 g | 1 | Promoción | 2026-11-30 | | |
-| 14 | Snack Quinua 50 g | 1 | Promoción | 2026-12-15 | | |
-| 15 | Néctar Aguaymanto 300 ml | 1 | Promoción | 2026-12-15 | | |
-| 16 | Conserva Aguaymanto 400 g | 1 | Promoción | 2026-12-15 | | |
-| 17 | Conserva Aguaymanto 400 g | 1 | Exportación USD | 2026-09-01 | | |
-| 18 | Snack Quinua 100 g | 240 | Exportación USD | 2026-09-01 | | |
+| 1 | `CON-AGU-400g` | 1 | Mayorista | 2026-09-01 | | |
+| 2 | `CON-AGU-400g` | 100 | Mayorista | 2026-09-01 | | |
+| 3 | `CON-AGU-400g` | 500 | Mayorista | 2026-09-01 | | |
+| 4 | `CON-AGU-400g` | 1 000 | Mayorista | 2026-09-01 | | |
+| 5 | `CON-AGU-400g` | 1 200 | Mayorista | 2026-09-01 | | |
+| 6 | `CON-SAU-400g` | 500 | Mayorista | 2026-09-01 | | |
+| 7 | `SNK-QUI-50g` | 100 | Mayorista | 2026-09-01 | | |
+| 8 | `SNK-QUI-50g` | 200 | Mayorista | 2026-09-01 | | |
+| 9 | `HAR-QUI-500g` | 50 | Mayorista | 2026-09-01 | | |
+| 10 | `BEB-AGU-300ml` | 24 | Mayorista | 2026-09-01 | | |
+| 11 | `CON-AGU-400g` | 1 | Tienda | 2026-09-01 | | |
+| 12 | `SNK-QUI-50g` | 500 | Tienda | 2026-09-01 | | |
+| 13 | `SNK-QUI-50g` | 1 | Promoción | 2026-11-30 | | |
+| 14 | `SNK-QUI-50g` | 1 | Promoción | 2026-12-15 | | |
+| 15 | `BEB-AGU-300ml` | 1 | Promoción | 2026-12-15 | | |
+| 16 | `CON-AGU-400g` | 1 | Promoción | 2026-12-15 | | |
+| 17 | `CON-AGU-400g` | 1 | Exportación USD | 2026-09-01 | | |
+| 18 | `SNK-QUI-100g` | 240 | Exportación USD | 2026-09-01 | | |
 
 ## 4. Preguntas de diseño (responder por escrito)
 

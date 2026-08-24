@@ -1,17 +1,17 @@
 id,name,number_of_days,require_signature,require_payment,prepayment_percent,note,sale_order_template_line_ids/display_type,sale_order_template_line_ids/name,sale_order_template_line_ids/product_id/id,sale_order_template_line_ids/product_uom_qty,sale_order_template_line_ids/is_optional
-andina.sot_distribuidor,Kit de arranque distribuidor,15,True,True,0.30,"Precios expresados en soles e incluyen IGV. Entrega en almacén del cliente en Lima; provincias vía agencia por cuenta del cliente. Vigencia de la oferta: 15 días.",line_section,LÍNEA DE CONSERVAS,,,False
-,,,,,,,,,andina.prod_002,120,False
-,,,,,,,,,andina.prod_005,60,False
-,,,,,,,,,andina.prod_013,48,False
+andina.sot_distribuidor,Kit de arranque distribuidor,15,True,True,0.30,Precios expresados en soles e incluyen IGV. Entrega en almacén del cliente en Lima; provincias vía agencia por cuenta del cliente. Vigencia de la oferta: 15 días.,line_section,LÍNEA DE CONSERVAS,,,False
+,,,,,,,,,andina.var_002,120,False
+,,,,,,,,,andina.var_005,60,False
+,,,,,,,,,andina.var_013,48,False
 ,,,,,,,line_section,LÍNEA DE SNACKS,,,False
-,,,,,,,,,andina.prod_016,200,False
-,,,,,,,,,andina.prod_028,300,False
+,,,,,,,,,andina.var_016,200,False
+,,,,,,,,,andina.var_028,300,False
 ,,,,,,,line_section,OPCIONALES,,,False
-,,,,,,,,,andina.prod_074,1,True
-,,,,,,,,,andina.prod_079,1,True
-,,,,,,,,,andina.prod_078,1,True
-,,,,,,,line_note,"Los productos opcionales no forman parte del total hasta que el cliente los agregue desde el portal.",,,False
-andina.sot_degustacion,Pack degustación retail,7,False,False,0.00,"Muestra comercial para tiendas nuevas. Un pack por punto de venta.",,,andina.prod_001,6,False
-,,,,,,,,,andina.prod_016,12,False
-,,,,,,,,,andina.prod_043,12,False
-,,,,,,,,,andina.prod_078,1,True
+,,,,,,,,,andina.var_074,1,True
+,,,,,,,,,andina.var_079,1,True
+,,,,,,,,,andina.var_078,1,True
+,,,,,,,line_note,Los productos opcionales no forman parte del total hasta que el cliente los agregue desde el portal.,,,False
+andina.sot_degustacion,Pack degustación retail,7,False,False,0.00,Muestra comercial para tiendas nuevas. Un pack por punto de venta.,,,andina.var_001,6,False
+,,,,,,,,,andina.var_016,12,False
+,,,,,,,,,andina.var_043,12,False
+,,,,,,,,,andina.var_078,1,True

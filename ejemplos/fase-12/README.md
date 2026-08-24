@@ -58,6 +58,18 @@ probablemente aparezcan y los que más gente falla por venir de versiones anteri
 | Inventario | Valoración `manual_periodic` → **`periodic`**; nuevo `lot_valuated` |
 | Inventario | `qty_multiple` **eliminado** en reglas de reordenamiento |
 | Contabilidad | `account.fiscal.position.tax` **eliminado** → `original_tax_ids` + `fiscal_position_ids` |
+| Contacto | `company_type` **eliminado**; `is_company` es **calculado** (desde `vat` / tipo de identificación) y no se importa |
+| Producto | ID externo de plantilla ≠ de variante: para `product_id` hace falta `product_variant_ids/id` |
+| Compras | Línea: `product_uom_id` → **`uom_id`**; `taxes_id` → **`tax_ids`**; el estado `done` ya no existe |
+| Contabilidad | `account.account.deprecated` **eliminado** → `active`; `account.analytic.plan` sin `company_id` |
+| Inventario | Categoría: `property_stock_account_input_categ_id`/`_output_categ_id` → **`account_stock_variation_id`** |
+| Inventario | **`stock.valuation.layer` eliminado**: el importe está en `stock.move.value`; el producto usa `total_value` / `avg_cost` (antes `value_svl` / `quantity_svl`) |
+| Inventario | `stock.move` pierde `name` y `product_uom`: descripción en `description_picking`, unidad heredada del producto |
+| Contabilidad | **Los movimientos de existencias ya no generan asiento al validarse**: perpetua (`real_time`) contabiliza al facturar, periódica (`periodic`) al cierre |
+| Contabilidad | El **costo de ventas** va en el mismo asiento que la factura de venta; la cuenta transitoria de entrada de existencias desapareció |
+| RR. HH. | `hr.leave.type` **eliminado** → **`hr.work.entry.type`** (con `code` obligatorio); `time_type` → **`count_as`** |
+| RR. HH. | `resource.calendar` **sin `tz`**: la zona horaria vive en el empleado |
+| UdM | `uom.category_id` y `uom_type` **eliminados**; `factor` pasa a ser **calculado** |
 | Contabilidad | Modelos de conciliación: `rule_type` → **`trigger`** |
 | Contabilidad | `account.account.company_id` → **`company_ids`** (Many2many) |
 | RR. HH. | `hr.contract` **eliminado** → **`hr.version`** |

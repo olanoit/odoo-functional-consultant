@@ -1,5 +1,5 @@
-id,name,default_code,type,is_storable,categ_id/id,uom_id/id,list_price,standard_price,sale_ok,purchase_ok,tracking,route_ids/id
-andina.prod_sem_pulpa,Pulpa de aguaymanto pasteurizada,SEM-PULP-AGU,consu,True,andina.categ_mp,uom.product_uom_kgm,0.00,11.20,False,False,lot,mrp.route_warehouse0_manufacture
-andina.prod_sem_almibar,Almíbar base 40 Brix,SEM-ALM-40,consu,True,andina.categ_mp,uom.product_uom_litre,0.00,3.40,False,False,lot,mrp.route_warehouse0_manufacture
-andina.prod_sem_pulpasau,Pulpa de sauco pasteurizada,SEM-PULP-SAU,consu,True,andina.categ_mp,uom.product_uom_kgm,0.00,12.60,False,False,lot,mrp.route_warehouse0_manufacture
-andina.prod_kit_navidad,Kit Navideño Andino (3 productos),KIT-NAV-3,consu,True,andina.categ_terminados,uom.product_uom_unit,68.00,0.00,True,False,none,
+id,name,default_code,product_variant_ids/id,type,is_storable,categ_id/id,uom_id/id,list_price,standard_price,sale_ok,purchase_ok,tracking,route_ids/id
+andina.prod_sem_pulpa,Pulpa de aguaymanto pasteurizada,SEM-PULP-AGU,andina.var_sem_pulpa,consu,True,andina.categ_mp,uom.product_uom_kgm,0.00,11.20,False,False,lot,mrp.route_warehouse0_manufacture
+andina.prod_sem_almibar,Almíbar base 40 Brix,SEM-ALM-40,andina.var_sem_almibar,consu,True,andina.categ_mp,uom.product_uom_litre,0.00,3.40,False,False,lot,mrp.route_warehouse0_manufacture
+andina.prod_sem_pulpasau,Pulpa de sauco pasteurizada,SEM-PULP-SAU,andina.var_sem_pulpasau,consu,True,andina.categ_mp,uom.product_uom_kgm,0.00,12.60,False,False,lot,mrp.route_warehouse0_manufacture
+andina.prod_kit_navidad,Kit Navideño Andino (3 productos),KIT-NAV-3,andina.var_kit_navidad,consu,True,andina.categ_terminados,uom.product_uom_unit,68.00,0.00,True,False,none,

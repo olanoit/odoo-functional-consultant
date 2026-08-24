@@ -9,24 +9,38 @@
 
 | # | Producto | Cant. | Lista | Fecha | Lista S/ | **Precio** | Regla que gana |
 |---|---|---|---|---|---|---|---|
-| 1 | Conserva Aguaymanto 400 g | 1 | Mayorista | 2026-09-01 | 12.50 | **10.62** | `may_global` (−15 %) |
-| 2 | Conserva Aguaymanto 400 g | 100 | Mayorista | 2026-09-01 | 12.50 | **9.75** | `may_cons100` (−22 %) |
-| 3 | Conserva Aguaymanto 400 g | 500 | Mayorista | 2026-09-01 | 12.50 | **9.00** | `may_cons500` (−28 %) |
-| 4 | Conserva Aguaymanto 400 g | 1 000 | Mayorista | 2026-09-01 | 12.50 | **8.50** | `may_agu400` (fijo) |
-| 5 | Conserva Aguaymanto 400 g | 1 200 | Mayorista | 2026-09-01 | 12.50 | **8.50** | `may_agu400` (fijo) |
-| 6 | Conserva Sauco 400 g | 500 | Mayorista | 2026-09-01 | 13.12 | **9.45** | `may_cons500` (−28 %) |
-| 7 | Snack Quinua 50 g | 100 | Mayorista | 2026-09-01 | 4.50 | **3.82** | `may_global` (−15 %) |
-| 8 | Snack Quinua 50 g | 200 | Mayorista | 2026-09-01 | 4.50 | **3.38** | `may_snack200` (−25 %) |
-| 9 | Harina Quinua 500 g | 50 | Mayorista | 2026-09-01 | 11.50 | **9.78** | `may_global` (−15 %) |
-| 10 | Néctar Aguaymanto 300 ml | 24 | Mayorista | 2026-09-01 | 3.90 | **3.31** | `may_global` (−15 %) |
-| 11 | Conserva Aguaymanto 400 g | 1 | Tienda | 2026-09-01 | 12.50 | **12.50** | sin regla → precio de lista |
-| 12 | Snack Quinua 50 g | 500 | Tienda | 2026-09-01 | 4.50 | **4.50** | sin regla → precio de lista |
-| 13 | Snack Quinua 50 g | 1 | Promoción | 2026-11-30 | 4.50 | **4.50** | fuera de vigencia → precio de lista |
-| 14 | Snack Quinua 50 g | 1 | Promoción | 2026-12-15 | 4.50 | **3.60** | `promo_snacks` (−20 %) |
-| 15 | Néctar Aguaymanto 300 ml | 1 | Promoción | 2026-12-15 | 3.90 | **3.31** | `promo_bebidas` (−15 %) |
-| 16 | Conserva Aguaymanto 400 g | 1 | Promoción | 2026-12-15 | 12.50 | **12.50** | la promo no cubre conservas |
-| 17 | Conserva Aguaymanto 400 g | 1 | Exportación USD | 2026-09-01 | 12.50 | **11.88 PEN → $ 3.17** | `exp_global` (−5 %) |
-| 18 | Snack Quinua 100 g | 240 | Exportación USD | 2026-09-01 | 7.88 | **7.49 PEN → $ 2.00** | `exp_global` (−5 %) |
+| 1 | `CON-AGU-400g` | 1 | Mayorista | 2026-09-01 | 12.50 | **10.62** | `may_global` (−15 %) |
+| 2 | `CON-AGU-400g` | 100 | Mayorista | 2026-09-01 | 12.50 | **9.75** | `may_cons100` (−22 %) |
+| 3 | `CON-AGU-400g` | 500 | Mayorista | 2026-09-01 | 12.50 | **9.00** | `may_cons500` (−28 %) |
+| 4 | `CON-AGU-400g` | 1 000 | Mayorista | 2026-09-01 | 12.50 | **8.50** | `may_agu400` (fijo) |
+| 5 | `CON-AGU-400g` | 1 200 | Mayorista | 2026-09-01 | 12.50 | **8.50** | `may_agu400` (fijo) |
+| 6 | `CON-SAU-400g` | 500 | Mayorista | 2026-09-01 | 13.12 | **9.45** | `may_cons500` (−28 %) |
+| 7 | `SNK-QUI-50g` | 100 | Mayorista | 2026-09-01 | 4.50 | **3.83** | `may_global` (−15 %) |
+| 8 | `SNK-QUI-50g` | 200 | Mayorista | 2026-09-01 | 4.50 | **3.38** | `may_snack200` (−25 %) |
+| 9 | `HAR-QUI-500g` | 50 | Mayorista | 2026-09-01 | 11.50 | **9.78** | `may_global` (−15 %) |
+| 10 | `BEB-AGU-300ml` | 24 | Mayorista | 2026-09-01 | 3.90 | **3.31** | `may_global` (−15 %) |
+| 11 | `CON-AGU-400g` | 1 | Tienda | 2026-09-01 | 12.50 | **12.50** | sin regla → precio de lista |
+| 12 | `SNK-QUI-50g` | 500 | Tienda | 2026-09-01 | 4.50 | **4.50** | sin regla → precio de lista |
+| 13 | `SNK-QUI-50g` | 1 | Promoción | 2026-11-30 | 4.50 | **4.50** | fuera de vigencia → precio de lista |
+| 14 | `SNK-QUI-50g` | 1 | Promoción | 2026-12-15 | 4.50 | **3.60** | `promo_snacks` (−20 %) |
+| 15 | `BEB-AGU-300ml` | 1 | Promoción | 2026-12-15 | 3.90 | **3.31** | `promo_bebidas` (−15 %) |
+| 16 | `CON-AGU-400g` | 1 | Promoción | 2026-12-15 | 12.50 | **12.50** | la promo no cubre conservas |
+| 17 | `CON-AGU-400g` | 1 | Exportación USD | 2026-09-01 | 12.50 | **11.88 PEN → $ 3.17** | `exp_global` (−5 %) |
+| 18 | `SNK-QUI-100g` | 240 | Exportación USD | 2026-09-01 | 7.88 | **7.49 PEN → $ 2.00** | `exp_global` (−5 %) |
+
+> **Sobre los medios céntimos (verificado en Odoo 19).** Tres casos caen exactamente en `.xx5`
+> y no redondean todos hacia arriba:
+>
+> | Caso | Cálculo | Valor exacto | Odoo muestra |
+> |---|---|---|---|
+> | 1 | 12.50 × 0.85 | 10.625 | **10.62** |
+> | 7 | 4.50 × 0.85 | 3.825 | **3.83** |
+> | 10 | 3.90 × 0.85 | 3.315 | **3.31** |
+>
+> No es un error ni una política de redondeo bancario: el producto en coma flotante de 12.50 × 0.85
+> vale 10.6249999… y el de 4.50 × 0.85 vale 3.8250000000000002. Odoo redondea ese valor real, no el
+> decimal que tú escribirías a mano. **Conclusión práctica:** no valides un precio de lista con una
+> calculadora al último céntimo; valida la **regla que gana**, que es lo que el cliente reclama.
 
 *(Casos 17 y 18: con tasa 1 USD = 3.75 PEN. Odoo aplica el descuento sobre el precio base y luego
 convierte a la moneda de la lista. Si tu tasa es otra, el importe en dólares cambia; el de soles no.)*

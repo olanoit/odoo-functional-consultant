@@ -19,7 +19,7 @@
 | 7 | **Costo unitario de la conserva** | **S/ 5.5034** |
 | 8 | Margen sobre S/ 12.50 | **56.0 %** |
 | 9 | Diferencia con el estándar de 6.80 | **−S/ 1.2966** (el estándar estaba **sobrevalorado**) |
-| 10 | Con aguaymanto a S/ 12.00/kg | **S/ 6.4114** (+16.5 %) |
+| 10 | Con aguaymanto a S/ 12.00/kg | **S/ 6.5114** (+18.3 %) |
 
 ## Detalle
 
@@ -54,6 +54,20 @@ Mano obra  : Envasado  (240 + 25 + 25) = 290 min = 4.8333 h × 56.00 = 270.67
 Total 5 503.45 / 1 000 u  →  5.5034 S//unidad
 ```
 
+### Escenario 10: aguaymanto a S/ 12.00/kg
+```
+Pulpa      : materiales 120 × 12.00 = 1 440.00 + 0.4 × 18.50 = 7.40  →  1 447.40
+             mano de obra sin cambio                                 →    120.17
+             1 567.57 / 100 kg                                       →  15.6757 S//kg
+Conserva   : 240 kg × 15.6757 = 3 762.17   (antes 2 754.16, +1 008.01)
+             el resto de componentes y la mano de obra no cambian
+             6 167.46 materiales + 344.00 mano de obra = 6 511.46 / 1 000 u
+                                                        →  6.5114 S//unidad
+```
+Solo cambia **una** línea de la lista de materiales de la pulpa y el costo unitario sube 18.3 %.
+Ese apalancamiento —un insumo que pesa el 53 % del costo— es el argumento para contratar la
+cosecha por campaña en lugar de comprar al precio de mercado.
+
 ## Lo que enseña el resultado
 
 **El componente que más pesa es la pulpa (53 %)**, es decir, el **aguaymanto**. No los envases, que
@@ -72,7 +86,7 @@ o fijando precios demasiado altos. Con 50 000 unidades al año, son S/ 65 000 de
 Ese número, dicho en una reunión, vende el proyecto entero.
 
 **Sensibilidad:** si el aguaymanto sube de 8.50 a 12.00 (algo normal entre campañas), el costo pasa
-de 5.50 a 6.41 (+16.5 %) y el margen cae del 56 % al 48.7 %. El cliente necesita ver ese cálculo
+de 5.5034 a 6.5114 (+18.3 %) y el margen cae del 56.0 % al 47.9 %. El cliente necesita ver ese cálculo
 **antes** de comprometer una lista de precios anual con sus distribuidores.
 
 ## Respuestas de diseño

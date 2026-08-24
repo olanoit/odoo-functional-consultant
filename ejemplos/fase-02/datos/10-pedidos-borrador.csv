@@ -1,28 +1,28 @@
 id,partner_id/id,date_order,pricelist_id/id,team_id/id,order_line/product_id/id,order_line/product_uom_qty
-andina.so_001,andina.cli_001,2026-06-03 10:15:00,andina.pl_mayorista,andina.team_b2b,andina.prod_002,120
-,,,,,andina.prod_005,60
-,,,,,andina.prod_016,200
-andina.so_002,andina.cli_002,2026-06-08 09:30:00,andina.pl_mayorista,andina.team_b2b,andina.prod_002,300
-,,,,,andina.prod_013,120
-andina.so_003,andina.cli_004,2026-06-12 16:45:00,andina.pl_tienda,andina.team_retail,andina.prod_001,12
-,,,,,andina.prod_016,24
-,,,,,andina.prod_043,24
-andina.so_004,andina.cli_003,2026-06-19 11:00:00,andina.pl_mayorista,andina.team_b2b,andina.prod_002,600
-,,,,,andina.prod_017,250
-andina.so_005,andina.cli_006,2026-06-25 14:20:00,andina.pl_mayorista,andina.team_b2b,andina.prod_013,180
-,,,,,andina.prod_037,90
-andina.so_006,andina.cli_008,2026-07-02 10:00:00,andina.pl_tienda,andina.team_retail,andina.prod_032,30
-,,,,,andina.prod_037,24
-andina.so_007,andina.cli_010,2026-07-09 15:30:00,andina.pl_mayorista,andina.team_b2b,andina.prod_002,150
-,,,,,andina.prod_028,400
-andina.so_008,andina.cli_015,2026-07-16 12:10:00,andina.pl_tienda,andina.team_online,andina.prod_016,36
-,,,,,andina.prod_022,36
-,,,,,andina.prod_043,48
-andina.so_009,andina.cli_009,2026-07-23 09:05:00,andina.pl_mayorista,andina.team_b2b,andina.prod_005,200
-,,,,,andina.prod_019,300
-andina.so_010,andina.cli_014,2026-08-04 11:40:00,andina.pl_mayorista,andina.team_b2b,andina.prod_002,1200
-andina.so_011,andina.cli_007,2026-08-11 10:25:00,andina.pl_export,andina.team_b2b,andina.prod_002,480
-,,,,,andina.prod_017,240
-andina.so_012,andina.cli_021,2026-08-18 17:00:00,andina.pl_mayorista,andina.team_b2b,andina.prod_003,90
-,,,,,andina.prod_039,60
-,,,,,andina.prod_074,1
+andina.so_001,andina.cli_001,2026-06-03 10:15:00,andina.pl_mayorista,andina.team_b2b,andina.var_002,120
+,,,,,andina.var_005,60
+,,,,,andina.var_016,200
+andina.so_002,andina.cli_002,2026-06-08 09:30:00,andina.pl_mayorista,andina.team_b2b,andina.var_002,300
+,,,,,andina.var_013,120
+andina.so_003,andina.cli_004,2026-06-12 16:45:00,andina.pl_tienda,andina.team_retail,andina.var_001,12
+,,,,,andina.var_016,24
+,,,,,andina.var_043,24
+andina.so_004,andina.cli_003,2026-06-19 11:00:00,andina.pl_mayorista,andina.team_b2b,andina.var_002,600
+,,,,,andina.var_017,250
+andina.so_005,andina.cli_006,2026-06-25 14:20:00,andina.pl_mayorista,andina.team_b2b,andina.var_013,180
+,,,,,andina.var_037,90
+andina.so_006,andina.cli_008,2026-07-02 10:00:00,andina.pl_tienda,andina.team_retail,andina.var_032,30
+,,,,,andina.var_037,24
+andina.so_007,andina.cli_010,2026-07-09 15:30:00,andina.pl_mayorista,andina.team_b2b,andina.var_002,150
+,,,,,andina.var_028,400
+andina.so_008,andina.cli_015,2026-07-16 12:10:00,andina.pl_tienda,andina.team_online,andina.var_016,36
+,,,,,andina.var_022,36
+,,,,,andina.var_043,48
+andina.so_009,andina.cli_009,2026-07-23 09:05:00,andina.pl_mayorista,andina.team_b2b,andina.var_005,200
+,,,,,andina.var_019,300
+andina.so_010,andina.cli_014,2026-08-04 11:40:00,andina.pl_mayorista,andina.team_b2b,andina.var_002,1200
+andina.so_011,andina.cli_007,2026-08-11 10:25:00,andina.pl_export,andina.team_b2b,andina.var_002,480
+,,,,,andina.var_017,240
+andina.so_012,andina.cli_021,2026-08-18 17:00:00,andina.pl_mayorista,andina.team_b2b,andina.var_003,90
+,,,,,andina.var_039,60
+,,,,,andina.var_074,1

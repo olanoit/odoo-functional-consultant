@@ -16,6 +16,11 @@ Usa los insumos y envases cargados en la Fase 1, el inventario de la Fase 3 y la
 | `guias/J2` | Producción, subcontratación, calidad, mantenimiento y PLM |
 | `soluciones/` | Costeo resuelto con el análisis de negocio |
 
+> **IDs externos de esta fase:** `01-productos-produccion.csv` crea plantilla (`andina.prod_sem_*`,
+> `andina.prod_kit_navidad`) **y** variante (`andina.var_sem_*`, `andina.var_kit_navidad`) mediante la
+> columna `product_variant_ids/id`. En `03-listas-materiales.csv`, `product_tmpl_id/id` usa el ID de
+> **plantilla** y `bom_line_ids/product_id/id` el de **variante**: no son intercambiables.
+
 ## Antes de empezar
 
 Apps: **Fabricación** (y en Enterprise, **Calidad**, **Mantenimiento** y **PLM**).

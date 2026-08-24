@@ -13,6 +13,17 @@
 | **PEPS (FIFO)** | 1 650.00 | 1 200.00 | 500 | **900.00** | 1.8000 |
 | **Promedio (AVCO)** | 1 710.00 | 1 255.38 | 500 | **784.62** | 1.5692 |
 
+> **Verificado en Odoo 19 (saas~19.4)** ejecutando las cinco operaciones sobre tres productos
+> reales. Dos advertencias sobre cómo *ver* estos números en la interfaz:
+>
+> - El coste unitario del promedio se muestra como **1.57**, no 1.5692: el campo `avg_cost` se
+>   presenta con la precisión decimal de *Precio del producto* (2 dígitos por defecto). El valor
+>   total, 784.62, sí es exacto. Si necesitas los 4 decimales, sube la precisión en
+>   *Ajustes → Técnico → Precisión decimal*.
+> - Las entradas deben hacerse con una **orden de compra** con su precio unitario. Si creas el
+>   movimiento de existencias a mano, v19 lo valora al coste actual del producto y **los tres
+>   métodos dan el mismo resultado**: parecería que el método de costo no funciona.
+
 **Las mismas 500 unidades valen 675, 784.62 o 900 soles según el método.** Esa frase, dicha en una
 reunión con el gerente y el contador, es lo que justifica que el consultor participe en la decisión.
 

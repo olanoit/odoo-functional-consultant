@@ -112,9 +112,11 @@ a) Fecha de entrada b) Fecha de caducidad c) Costo d) Ubicación
 **24.** En Odoo 19, el modelo de lotes se llama:
 a) `stock.production.lot` b) `stock.lot` c) `stock.serial` d) `product.lot`
 
-**25.** Con valoración perpetua y PEPS, una recepción de mercancía:
-a) No genera asiento b) Debita valoración de existencias y acredita entrada de existencias
-c) Debita gasto y acredita proveedores d) Solo genera asiento al facturar
+**25.** En Odoo 19, con valoración perpetua (*Perpetual (at invoicing)*) y PEPS, **validar la
+recepción** de la mercancía:
+a) Debita valoración de existencias y acredita entrada de existencias
+b) No genera ningún asiento: la contabilidad espera a la factura de compra
+c) Debita gasto y acredita proveedores d) Genera el asiento solo si la categoría tiene diario de existencias
 
 **26.** Los costos en destino (landed costs) se pueden distribuir por:
 a) Solo por cantidad b) Cantidad, peso, volumen, valor o a partes iguales

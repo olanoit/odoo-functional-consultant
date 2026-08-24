@@ -15,6 +15,7 @@ Se apoya en el catálogo de la Fase 1, las listas de precios de la Fase 2 y el i
 |---|---|
 | `datos/01-categorias-tienda.csv` | 7 categorías de tienda (distintas de las internas) |
 | `datos/02-productos-publicados.csv` | Publica 20 productos con su orden y categoría web |
+| `datos/00-productos-envio.csv` | 3 productos de servicio **propios del transporte** (se importan antes que los métodos) |
 | `datos/03-metodos-envio.csv` | 3 métodos: reparto Lima (gratis sobre S/ 250), agencia, retiro |
 | `datos/04-listas-correo.csv` | 3 listas de correo |
 | `datos/05-contactos-correo.csv` | 12 contactos repartidos entre las listas |
@@ -41,7 +42,13 @@ Configura la **base neutralizada** o desactiva el envío real de correos antes d
 ## Ejemplo 2 — Montar la tienda
 *(Bloque 8.2 · 120 min)*
 
-Importa `01-categorias-tienda.csv` → `02-productos-publicados.csv` → `03-metodos-envio.csv`.
+Importa `01-categorias-tienda.csv` → `02-productos-publicados.csv` → `00-productos-envio.csv` → `03-metodos-envio.csv`.
+
+> **Por qué un producto de envío propio y no un flete del catálogo.** `delivery.carrier.fixed_price`
+> **escribe** el `list_price` del producto asociado. Si enlazas el método de envío a un producto que ya
+> vendes (por ejemplo *Flete Lima – Arequipa*, S/ 850), Odoo le cambia el precio a la tarifa de envío
+> y te destroza el catálogo sin avisar. Los productos de transporte se crean **aparte y solo para eso**:
+> es la razón por la que Odoo trae su propio *Delivery Product*.
 
 Fíjate en la diferencia entre los dos árboles de categorías:
 

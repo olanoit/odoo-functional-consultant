@@ -2,7 +2,15 @@
 
 Casos prácticos para [`../../fases/fase-07-rrhh.md`](../../fases/fase-07-rrhh.md).
 
-> ⚠️ **Cambio mayor de v19:** el modelo `hr.contract` **desapareció**. Ahora existe **`hr.version`**:
+> ⚠️ **Cambios mayores de v19 en RR. HH.**
+>
+> 1. El modelo **`hr.leave.type` desapareció**: los tipos de ausencia ahora son **`hr.work.entry.type`**
+>    (el mismo modelo que los tipos de entrada de trabajo de nómina). Campos nuevos obligatorios/relevantes:
+>    **`code`** (obligatorio), **`count_as`** (`absence` / `working_time`, sustituye a `time_type`)
+>    y **`time_off_selectable`** (que aparezca en el menú de Ausencias). El campo `time_type` ya no existe.
+> 2. **`resource.calendar` ya no tiene `tz`**: la zona horaria vive en el empleado
+>    (`hr.employee.tz`, vía `resource.resource`). Una columna `tz` en el CSV de horarios falla.
+> 3. El modelo `hr.contract` **desapareció**. Ahora existe **`hr.version`**:
 > cada empleado tiene versiones fechadas donde viven el salario (`wage`), el horario
 > (`resource_calendar_id`), el puesto, el departamento y las fechas de contrato
 > (`contract_date_start` / `contract_date_end`). Todo material anterior a v19 sobre contratos de
@@ -16,8 +24,8 @@ Casos prácticos para [`../../fases/fase-07-rrhh.md`](../../fases/fase-07-rrhh.m
 |---|---|
 | `datos/01-departamentos.csv` | 6 departamentos en jerarquía de 3 niveles |
 | `datos/02-puestos.csv` | 10 puestos, algunos con vacantes abiertas |
-| `datos/03-tipos-ausencia.csv` | 6 tipos con distintas reglas de aprobación y unidad |
-| `datos/04-horarios.csv` | 4 horarios: administrativo, dos turnos de planta y medio tiempo |
+| `datos/03-tipos-ausencia.csv` | 6 tipos con distintas reglas de aprobación y unidad → se importa en **`hr.work.entry.type`** |
+| `datos/04-horarios.csv` | 4 horarios: administrativo, dos turnos de planta y medio tiempo (sin `tz`: se fija por empleado) |
 | `datos/05-empleados.csv` | **18 empleados** con departamento, puesto, horario y costo/hora |
 | `guias/L1` | **Alcance real de RR. HH. y nómina en Perú** (entregable de la fase) |
 | `guias/L2` | Ausencias, asignaciones, acumulación y asistencias |

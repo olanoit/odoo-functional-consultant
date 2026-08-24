@@ -30,12 +30,19 @@ horas salen mal, y hay que rehacer las solicitudes ya aprobadas.
 | Medio tiempo | Contabilidad de apoyo | 5 | 25 |
 
 **Ejercicio:** carga `04-horarios.csv`, luego **completa a mano las franjas horarias**
-(`attendance_ids`) de cada uno; el CSV solo crea la cabecera. Añade los feriados peruanos del
+(`attendance_ids`) de cada uno; el CSV solo crea la cabecera.
+
+> **v19:** `resource.calendar` **ya no tiene campo `tz`**. La zona horaria se fija en cada empleado
+> (`hr.employee.tz`, heredado de `resource.resource`), no en el horario. Revisa que los 18 empleados
+> queden en `America/Lima`: con la zona mal puesta, las horas de asistencia se desplazan 5 horas.
+ Añade los feriados peruanos del
 segundo semestre: 28 y 29 de julio, 30 de agosto, 8 de octubre, 1 de noviembre, 8 y 25 de diciembre.
 
 ## 3. Los seis tipos de ausencia
 
-Del archivo `03-tipos-ausencia.csv`:
+Del archivo `03-tipos-ausencia.csv`, que se importa en el modelo **`hr.work.entry.type`**
+(en v19 `hr.leave.type` ya no existe: los tipos de ausencia y los tipos de entrada de trabajo
+son el mismo modelo). Menú: *Ausencias → Configuración → Tipos de ausencia*.
 
 | Tipo | ¿Requiere asignación? | Aprobación | Unidad | Documento |
 |---|---|---|---|---|
@@ -46,9 +53,13 @@ Del archivo `03-tipos-ausencia.csv`:
 | Licencia paternidad/maternidad | No | RR. HH. | Día | **Sí** |
 | Capacitación externa | No | Jefe | Hora | No |
 
-**Detalle que importa:** *Capacitación externa* tiene `time_type = other` (tiempo trabajado), no
-`leave`. No es una ausencia: la persona está trabajando, solo que fuera. Confundirlo distorsiona los
-reportes de ausentismo.
+**Detalle que importa:** *Capacitación externa* tiene **`count_as = working_time`** (tiempo trabajado),
+no `absence`. No es una ausencia: la persona está trabajando, solo que fuera. Confundirlo distorsiona
+los reportes de ausentismo.
+
+> **v19:** el campo se llamaba `time_type` (`leave` / `other`) y ahora es **`count_as`**
+> (`absence` / `working_time`). Además `code` es **obligatorio** —es el código de nómina— y
+> `time_off_selectable = True` es lo que hace que el tipo aparezca en el menú de Ausencias.
 
 **Ejercicio de diseño:** ¿por qué el permiso sin goce lleva **doble** aprobación y el descanso médico
 solo una? Escribe la razón de negocio, no la técnica.

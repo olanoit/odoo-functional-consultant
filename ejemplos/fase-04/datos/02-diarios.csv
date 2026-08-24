@@ -5,4 +5,4 @@ andina.jr_com,Facturas de compra,COMP,purchase,andina.acc_6011
 andina.jr_bcp_mn,Banco BCP soles,BCPMN,bank,andina.acc_1041
 andina.jr_bcp_usd,Banco BCP dólares,BCPUS,bank,andina.acc_1042
 andina.jr_caja,Caja chica,CAJA,cash,andina.acc_1011
-andina.jr_misc,Operaciones diversas,MISC,general,
+andina.jr_misc,Operaciones diversas,OPDIV,general,

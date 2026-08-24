@@ -16,8 +16,9 @@
 | Producto almacenable | `type = 'product'` | `type = 'consu'` **+** `is_storable = True` | Un CSV con `type=product` **falla** |
 | Unidad de compra | `uom_po_id` | **eliminado** — solo existe `uom_id` | La columna `uom_po_id` ya no se puede importar |
 | Empaques del producto | modelo `product.packaging` | `uom_ids` (Many2many a `uom.uom`) | Cambia el modelado de "caja de 12" |
-| Unidades de medida | `category_id` + `uom_type` + `factor` | `relative_factor` + `relative_uom_id` (jerarquía) | Ya no hay "categoría de UdM" |
+| Unidades de medida | `category_id` + `uom_type` + `factor` (editable) | `relative_factor` + `relative_uom_id` (jerarquía); `factor` sigue existiendo pero es **calculado** | Ya no hay "categoría de UdM"; no se puede importar `factor` |
 | Celular del contacto | `mobile` | **eliminado** — solo `phone` | Una columna `mobile` provoca error de campo desconocido |
+| Empresa / persona | `company_type` (`company`/`person`) | **eliminado**. `is_company` existe pero es **calculado y no importable**: sale de `vat` (y del tipo de identificación con la localización LATAM instalada) | Ni `company_type` ni `is_company` sirven como columna de CSV |
 | Grupos del usuario | `groups_id` | `group_ids` | Rompe importaciones de usuarios |
 | Categoría raíz de producto | `product.product_category_all` ("All") | `product.product_category_goods` ("Goods"), `..._services`, `..._expenses` | El ID externo antiguo **no existe** |
 
@@ -26,7 +27,7 @@
 | Campo técnico | Tipo | Notas para importar |
 |---|---|---|
 | `name` | Char | Obligatorio |
-| `company_type` | Selección | `company` / `person` (equivale a `is_company`) |
+| `is_company` | Boolean **calculado** | `True` si el contacto es su propia entidad comercial y tiene `vat`. **No se importa**: no tiene `inverse`. Con la localización LATAM instalada depende de `l10n_latam_identification_type_id` (RUC → empresa, DNI → persona). `company_type` ya no existe |
 | `parent_id` | Many2one → `res.partner` | Empresa a la que pertenece el contacto hijo |
 | `type` | Selección | `contact`, `invoice`, `delivery`, `other` |
 | `vat` | Char | RUC/NIF. Solo se valida con la localización instalada |
@@ -108,6 +109,14 @@ Se importa desde el mismo CSV del producto con notación de ruta:
 | `o2m/subcampo` | `seller_ids/price` | Importar líneas hijas desde el mismo archivo |
 | `o2m/m2o/id` | `seller_ids/partner_id/id` | Relación dentro de una línea hija |
 | `id` | `andina.cli_001` | ID externo del propio registro → permite **actualizar** |
+| `product_variant_ids/id` | `andina.var_001` | Al importar en `product.template`, **da ID externo también a la variante** |
+
+> **Plantilla ≠ variante.** Un ID externo creado al importar en `product.template` **no se puede usar**
+> en un campo `product_id` (que apunta a `product.product`): Odoo responde
+> *«Invalid external ID …: expected model 'product.product', found 'product.template'»*.
+> Solución en el propio CSV del catálogo: la columna **`product_variant_ids/id`**, que crea el ID externo
+> de la variante en el mismo paso. Regla del cuaderno: `product_tmpl_id/id` → `andina.prod_XXX`;
+> `product_id/id` → `andina.var_XXX`.
 
 ## 7. Valores que Odoo acepta en la importación
 

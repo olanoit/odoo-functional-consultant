@@ -14,9 +14,16 @@
 | Valoración de inventario | `manual_periodic` / `real_time` | **`periodic`** / `real_time` | Un CSV o script con `manual_periodic` falla |
 | Lotes | Modelo `stock.production.lot` | **`stock.lot`** | Cambió el nombre del modelo (desde v17) |
 | Múltiplo de compra en reordenamiento | `qty_multiple` | **eliminado**; ahora `qty_to_order` (computado) y `qty_to_order_manual` | Las reglas antiguas no se importan igual |
-| Valoración por lote | No existía | **`lot_valuated`** en producto y categoría | Permite costo distinto por lote |
+| Valoración por lote | No existía | **`lot_valuated`** en el producto (`product.template`) | Permite costo distinto por lote |
 | Método de costo en el producto | Solo en la categoría | `cost_method` y `valuation` **calculados** en `product.template` (solo lectura) | Se siguen configurando en la categoría |
 | Empaques | `product.packaging` | `uom_ids` en el producto | Cambia el modelado de "caja de 12" |
+| Cuentas de entrada/salida de existencias | `property_stock_account_input_categ_id` / `_output_categ_id` | **eliminados** → `account_stock_variation_id` (variación de existencias) y `property_stock_account_production_cost_id` | La configuración contable de la categoría cambió de forma |
+| Línea de compra: unidad e impuestos | `product_uom_id`, `taxes_id` | **`uom_id`**, **`tax_ids`** | Un CSV de órdenes de compra con los nombres antiguos falla |
+| Estado de la orden de compra | incluía `done` | `draft`, `sent`, **`to approve`**, `purchase`, `cancel` | Ya no existe el estado `done` |
+| **Capas de valoración** | Modelo `stock.valuation.layer` (una capa por movimiento) | **eliminado**: el importe vive en el propio movimiento, en `stock.move.value` | Todo script, informe o integración que lea `stock.valuation.layer` deja de funcionar |
+| Valor e importe unitario del producto | `value_svl` / `quantity_svl` | **`total_value`** y **`avg_cost`** (calculados desde `stock_move_ids.value`) | Cambian los nombres de campo en informes y filtros |
+| Informe de valoración | Vista de lista sobre las capas | Modelo dedicado **`stock_account.stock.valuation.report`** | El informe ya no es una lista filtrable de capas |
+| `stock.move` | Tenía `name` (descripción) y `product_uom` | **ambos eliminados**: la descripción es `description_picking` y la unidad se toma del producto | Crear movimientos por script con `name` o `product_uom` lanza `ValueError: Invalid field` |
 
 ## 2. `stock.warehouse` — Almacén
 
@@ -56,6 +63,12 @@
 
 > Para cargar stock inicial por CSV se usa **`inventory_quantity_auto_apply`**. Con
 > `inventory_quantity` tendrías que aplicar el ajuste después, registro por registro.
+>
+> **La carga de stock no es idempotente.** Una vez creado el quant, reimportar el mismo archivo falla con
+> *«Quant's editing is restricted»*: `product_id`, `location_id` y `lot_id` no se pueden reescribir sobre
+> un quant existente. Si necesitas repetir el ejercicio, borra los quants o restaura el respaldo — no
+> reimportes encima. Además, el archivo se importa desde *Inventario → Operaciones → Ajustes de inventario*,
+> que es la vista que activa el modo de ajuste (`inventory_mode`).
 
 ## 5. `stock.lot` — Lote / número de serie
 
@@ -80,7 +93,7 @@
 | `product_min_qty`, `product_max_qty` | Mínimo que dispara, máximo al que repone |
 | `trigger` | `auto` (planificador) o `manual` |
 | `route_id` | Ruta a usar (comprar, fabricar, transferir) |
-| `qty_to_order` | **Calculado** en v19 (reemplaza a `qty_multiple`) |
+| `qty_to_order` | **Calculado** en v19 (reemplaza a `qty_multiple`); `qty_to_order_manual` para forzarlo |
 
 ## 7. `product.category` — Valoración
 
@@ -90,18 +103,20 @@
 | `property_valuation` | **`periodic`**, `real_time` |
 | `property_stock_journal` | Diario de existencias |
 | `property_stock_valuation_account_id` | Cuenta de valoración |
-| `property_stock_account_input_categ_id` / `_output_categ_id` | Entrada y salida de existencias |
+| `account_stock_variation_id` | **v19**: variación de existencias (sustituye a `property_stock_account_input_categ_id` / `_output_categ_id`) |
+| `property_stock_account_production_cost_id` | Costo de producción |
 | `property_price_difference_account_id` | Diferencia de precio (con costo estándar) |
-| `lot_valuated` | Valoración específica por lote (**novedad v19**) |
 
 Son campos **dependientes de compañía**: en multiempresa cada una tiene su valor.
 
 ## 8. `purchase.order` y línea
 
 **Orden:** `partner_id`, `date_order` (Datetime), `date_planned`, `currency_id`, `payment_term_id`,
-`picking_type_id`, `state` (`draft`, `sent`, `purchase`, `done`, `cancel`).
+`picking_type_id`, `state` (`draft`, `sent`, `to approve`, `purchase`, `cancel`).
 
-**Línea:** `product_id`, `product_qty`, `product_uom_id`, `price_unit`, `date_planned`, `taxes_id`.
+**Línea:** `product_id`, `product_qty`, **`uom_id`** (no `product_uom_id`), `price_unit`, `date_planned`, **`tax_ids`** (no `taxes_id`).
+
+> Cuidado: en **ventas** la línea usa `product_uom_id`; en **compras**, `uom_id`. No son simétricos.
 
 **En el producto:** `purchase_method` (`purchase` = cantidades pedidas, `receive` = recibidas)
 controla el control de facturas de compra — el equivalente a `invoice_policy` en ventas.
@@ -116,7 +131,16 @@ controla el control de facturas de compra — el equivalente a `invoice_policy` 
 | Regla de reordenamiento | `product_id/id`, `location_id/id`, `product_min_qty`, `product_max_qty`, `trigger` |
 | Orden de compra con líneas | `partner_id/id`, `date_order`, `order_line/product_id/id`, `order_line/product_qty` |
 
-**Ubicaciones estándar por ID externo:** `stock.stock_location_stock` (WH/Existencias),
+> ⚠️ **Todos los `product_id/id` de esta tabla esperan el ID externo de la _variante_**
+> (`product.product` → `andina.var_XXX`), no el de la plantilla (`andina.prod_XXX`). Si te equivocas,
+> Odoo responde *«Invalid external ID …: expected model 'product.product', found 'product.template'»*.
+> Ver [E4 §6](../../fase-01/guias/E4-campos-tecnicos-v19.md).
+
+**Ubicaciones estándar por ID externo** (verificadas en v19): `stock.stock_location_stock` (WH/Existencias),
 `stock.stock_location_customers`, `stock.stock_location_suppliers`,
-`stock.stock_location_inter_company` (tránsito), `stock.location_production`,
-`stock.stock_location_scrapped`.
+`stock.stock_location_inter_company` (tránsito), `stock.stock_location_output`,
+`stock.location_pack_zone`.
+
+> Las ubicaciones virtuales **Production** e **Inventory adjustment** se crean por compañía y **no tienen ID externo** en v19:
+> referéncialas por nombre o por `usage` (`production` / `inventory`), no por `stock.location_production`
+> ni `stock.stock_location_scrapped` — esos IDs ya no existen.

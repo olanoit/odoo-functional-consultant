@@ -59,12 +59,12 @@ Completa esta tabla antes de transformar nada:
 | `limite_credito` | *(campo a crear con Studio)* | quitar `S/` y separadores | No |
 | `estado` | `active` | ACTIVO → True, INACTIVO → False | Sí |
 | — | `customer_rank` | fijo `1` | Sí |
-| — | `company_type` | fijo `company` | Sí |
+| — | *(ninguna)* | `is_company` es **calculado** en v19: sale de `vat`. No se mapea | — |
 | — | `country_id/id` | fijo `base.pe` | No |
 
 > Fíjate en el último bloque: hay campos que **no vienen del origen** y que hay que añadir con un
 > valor fijo. Olvidarlos es la causa de que los clientes migrados no aparezcan en Ventas
-> (`customer_rank`) o queden como personas en vez de empresas (`company_type`).
+> (`customer_rank`) o queden como personas en vez de empresas (`is_company`, que Odoo deduce del `vat`).
 
 ## 4. El campo que no existe: `limite_credito`
 

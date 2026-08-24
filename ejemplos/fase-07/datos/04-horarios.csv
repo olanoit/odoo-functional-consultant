@@ -1,5 +1,5 @@
-id,name,hours_per_day,tz,full_time_required_hours
-andina.cal_admin,Administrativo 48h (L-V 8-18 / S 8-13),8,America/Lima,48
-andina.cal_planta,Planta turno día (L-S 7-15),8,America/Lima,48
-andina.cal_planta_tarde,Planta turno tarde (L-S 15-23),8,America/Lima,48
-andina.cal_medio,Medio tiempo (L-V 8-13),5,America/Lima,25
+id,name,hours_per_day,full_time_required_hours
+andina.cal_admin,Administrativo 48h (L-V 8-18 / S 8-13),8,48
+andina.cal_planta,Planta turno día (L-S 7-15),8,48
+andina.cal_planta_tarde,Planta turno tarde (L-S 15-23),8,48
+andina.cal_medio,Medio tiempo (L-V 8-13),5,25

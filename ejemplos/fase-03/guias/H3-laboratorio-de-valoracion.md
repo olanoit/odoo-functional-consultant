@@ -58,10 +58,20 @@ operativo añade? ¿Para ANDINA GOURMET lo recomendarías?
 ## 5. Segunda parte: valoración automática y su asiento
 
 1. Configura una categoría con **valoración perpetua** (`property_valuation = real_time`) y sus
-   cuentas: entrada de existencias, salida de existencias, valoración y diferencia de precio.
+   cuentas. Ojo con los nombres de v19: **valoración de existencias**, **variación de existencias**
+   (`account_stock_variation_id`), **costo de producción** y **diferencia de precio**. Las antiguas
+   cuentas de *entrada* y *salida de existencias* **ya no existen**.
 2. Ejecuta una recepción y busca el asiento generado. Escribe el asiento a mano **antes** de mirarlo.
 3. Ejecuta una entrega y haz lo mismo.
 4. Compara con una categoría en **valoración periódica**: ¿qué asientos hay? ¿Cuándo se registran?
+
+> **Spoiler que necesitas para no perder una hora:** en los pasos 2 y 3 el asiento que vas a buscar
+> **no existe**. En v19 `real_time` se llama *Perpetual (at invoicing)*: la recepción y la entrega no
+> generan asiento; el asiento llega con la **factura**, y en la venta trae el costo de ventas dentro
+> del mismo apunte que el ingreso. `periodic` es *Periodic (at closing)* y contabiliza al cierre,
+> contra la cuenta de **variación de existencias**. El ejercicio real es explicar **por qué** el
+> asiento no está donde lo buscabas y qué controles reemplazan al viejo cuadre de la cuenta
+> transitoria. Lo desarrolla el laboratorio **I1** de la Fase 4.
 
 > **Nota v19:** los valores del campo cambiaron. Antes eran `manual_periodic` / `real_time`;
 > ahora son **`periodic`** / **`real_time`**. Un CSV o script de v16–v18 con `manual_periodic` falla.

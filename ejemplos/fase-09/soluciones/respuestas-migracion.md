@@ -50,7 +50,7 @@ Si migras **todos** los registros (activos + archivados), sin fusionar duplicado
 | Archivados | 78 |
 | Suma de límites de crédito | 3 776 000 |
 | Con `customer_rank = 1` | 512 |
-| Con `company_type = company` | 512 |
+| Con `is_company = True` | 512 *(calculado por Odoo a partir del `vat`; no se importa)* |
 | Con RUC cargado | 498 |
 
 Si el cliente decide **no migrar los inactivos**, los números cambian a 434 creados y la suma de

@@ -13,7 +13,12 @@
 | Mapeo de impuestos en posición fiscal | Modelo `account.fiscal.position.tax` (origen → destino) | **Eliminado.** El impuesto destino declara `original_tax_ids` y `fiscal_position_ids`; la posición tiene `tax_ids` (M2M) | Todo CSV o tutorial anterior de posiciones fiscales falla |
 | Modelos de conciliación | `rule_type` (`writeoff_button`, `writeoff_suggestion`, `invoice_matching`) | **`trigger`** (`manual` / `auto_reconcile`) + `can_be_proposed`, `match_amount`, `match_label` | Cambia por completo la importación de modelos |
 | Cuenta ↔ compañía | `company_id` (Many2one) | **`company_ids`** (Many2many) | Una cuenta puede compartirse entre compañías |
-| Valoración de inventario (categoría) | `manual_periodic` | **`periodic`** | Ver chuleta de la Fase 3 |
+| Cuenta obsoleta | `deprecated` | **eliminado** — se archiva con `active = False` | Un CSV con `deprecated` falla |
+| Plan analítico ↔ compañía | `company_id` | **eliminado** de `account.analytic.plan` | Los planes ya no se limitan por compañía |
+| Valoración de inventario (categoría) | `manual_periodic` | **`periodic`** (*at closing*) / `real_time` (*at invoicing*) | Ver chuleta de la Fase 3 |
+| **Momento del asiento de existencias** | Cada movimiento validado generaba su asiento | **Ninguno lo genera**: perpetua contabiliza al **facturar**, periódica al **cierre** | Recepciones, entregas y ajustes ya no producen asiento al validarlos |
+| Costo de ventas | Asiento separado, en la entrega | **En el mismo asiento de la factura de venta**, junto al ingreso | Ingreso y costo caen siempre en el mismo período |
+| Cuenta de entrada de existencias | `property_stock_account_input_categ_id` (transitoria) | **eliminada**; la factura de compra carga directamente la cuenta de valoración | El cuadre de cierre pasa de un saldo contable a dos listados de documentos pendientes |
 
 ## 2. `account.account` — Cuenta contable
 
@@ -26,7 +31,7 @@
 | `tax_ids` | Impuestos por defecto de la cuenta |
 | `currency_id` | Fuerza una moneda concreta |
 | `company_ids` | **Many2many en v19** |
-| `deprecated` | Cuenta obsoleta: no se puede usar en asientos nuevos |
+| `active` | `False` archiva la cuenta (**sustituye a `deprecated`**, que ya no existe en v19) |
 
 **Valores de `account_type`:** `asset_receivable`, `asset_cash`, `asset_current`, `asset_non_current`,
 `asset_prepayments`, `asset_fixed`, `liability_payable`, `liability_credit_card`, `liability_current`,
@@ -82,7 +87,7 @@
 
 | Modelo | Campos |
 |---|---|
-| `account.analytic.plan` | `name`, `parent_id`, `company_id` |
+| `account.analytic.plan` | `name`, `parent_id`, `default_applicability`, `applicability_ids` (**sin `company_id` en v19**) |
 | `account.analytic.account` | `name`, `code`, `plan_id`, `root_plan_id`, `partner_id`, `company_id` |
 | Distribución | En los apuntes: `analytic_distribution` (JSON con porcentajes por cuenta analítica) |
 | `account.analytic.distribution.model` | Reglas automáticas: por producto, socio, cuenta… |
