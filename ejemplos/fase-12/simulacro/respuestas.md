@@ -33,9 +33,9 @@ cantidad, Por lotes, Por número de serie único), que por debajo sigue escribie
 resultante sea mayor. Odoo ordena por `applied_on, min_quantity desc` y toma la primera aplicable.
 De aquí sale la mayoría de los "Odoo me pone mal los precios".
 
-**12 y 16 · Cambios de v19, vigentes en v20.** Los opcionales son líneas con `is_optional`; las
-etapas de CRM se relacionan con equipos por `team_ids` (Many2many). Cualquier material anterior a v19
-falla aquí.
+**12 y 16 · Cambios de v19, vigentes en v20.** Los opcionales son líneas con `is_optional` (en v20
+se marca la sección opcional); las etapas de CRM se relacionan con equipos por `team_ids`
+(Many2many). Cualquier material anterior a v19 falla aquí.
 
 **13 · Novedad de v20 en el PdV.** La sesión ya no genera "un asiento resumen": genera una **factura
 resumen** al *cliente por defecto* configurado en el PdV, en el *diario de cierre*, y otra nota de

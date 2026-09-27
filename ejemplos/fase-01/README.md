@@ -148,7 +148,10 @@ clientes la referencian. Fíjate en la columna `id`: son **identificadores exter
 
 **`04-contactos-hijos.csv`** — el mismo modelo `res.partner`, pero con `parent_id/id` apuntando al
 cliente y `type` definiendo su rol: `contact` (persona), `delivery` (dirección de entrega),
-`invoice` (dirección de facturación).
+`invoice` (dirección de facturación). Las direcciones de entrega y de facturación traen además
+`country_id/id` = `base.pe`: **una dirección sin país no hereda el del padre**, y en la Fase 4 la
+posición fiscal de exportación (que no exige país) se aplicaría a todo pedido o factura que use esa
+dirección —el IGV pasa a *0% Exp*—. Verificado en v20 con el plan contable peruano.
 
 **Verificación:** abre `Distribuidora Sol de Oro S.A.C.` → pestaña **Contactos y direcciones**:
 debe tener 3 hijos (una persona, una dirección de entrega, una de facturación).

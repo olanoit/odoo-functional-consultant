@@ -20,7 +20,13 @@ Al lanzar una orden de 1 000 conservas sin stock de pulpa ni almíbar, con los s
 con LdM propia (en v20 la ruta de **fabricación** es del almacén y se les aplica sola por tener LdM):
 
 1. Odoo crea la orden de la conserva (en espera de componentes).
-2. Crea las órdenes de fabricación de **pulpa** y **almíbar**.
+2. **No** crea por sí solo las órdenes de **pulpa** y **almíbar**: los componentes de una orden se
+   piden *bajo existencias* y la orden se queda esperando. Las órdenes hijas (240 kg de pulpa y 180 L
+   de almíbar) aparecen de dos maneras, verificadas en v20:
+   - marcando en la pulpa y el almíbar la ruta **Reabastecer sobre pedido (MTO)** —viene archivada:
+     desarchívala en *Inventario → Configuración → Rutas*—: se crean al **confirmar** la orden;
+   - o desde *Inventario → Operaciones → Reabastecimiento*, que propone esas cantidades y las crea
+     con **Pedir** (o sola, con una regla de reordenamiento automática).
 3. Si tampoco hay aguaymanto, dispara la **compra** (si el insumo tiene regla o ruta de compra).
 
 **Ejercicio:** ejecútalo y dibuja la cadena completa de documentos. Después responde:

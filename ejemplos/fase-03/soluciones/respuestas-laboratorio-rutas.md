@@ -16,7 +16,10 @@ Tres transferencias, en este orden: *Recogida* (Existencias → Empaque), *Empaq
 *Envío* (Salida → Cliente). La primera se genera al confirmar el pedido; las demás, al validar la anterior.
 
 **3. La misma venta con solo 80 unidades disponibles.**
-La entrega queda **En espera** (disponibilidad parcial). El almacenero puede:
+Con la política de envío por defecto (*Lo antes posible*), la entrega queda **Lista** con
+disponibilidad parcial: reserva las 80 que hay y deja el resto pendiente (verificado en v20). Solo
+queda **En espera** si el tipo de operación o la entrega usan *Cuando todos los productos estén listos*.
+El almacenero puede:
 (a) entregar las 80 y dejar el resto en un albarán de retropedido (*backorder*),
 (b) esperar a completar, (c) forzar la cantidad si el stock existe pero no está reservado,
 (d) cancelar. La opción por defecto —crear retropedido— es la correcta en la mayoría de negocios.

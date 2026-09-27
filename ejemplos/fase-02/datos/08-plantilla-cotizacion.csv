@@ -6,12 +6,13 @@ andina.sot_distribuidor,Kit de arranque distribuidor,15,True,0.30,Precios expres
 ,,,,,,line_section,LÍNEA DE SNACKS,,,False
 ,,,,,,,,andina.var_016,200,False
 ,,,,,,,,andina.var_028,300,False
-,,,,,,line_section,OPCIONALES,,,False
-,,,,,,,,andina.var_074,1,True
-,,,,,,,,andina.var_079,1,True
-,,,,,,,,andina.var_078,1,True
+,,,,,,line_section,OPCIONALES,,,True
+,,,,,,,,andina.var_074,0,False
+,,,,,,,,andina.var_079,0,False
+,,,,,,,,andina.var_078,0,False
 ,,,,,,line_note,Los productos opcionales no forman parte del total hasta que el cliente los agregue desde el portal.,,,False
 andina.sot_degustacion,Pack degustación retail,7,False,0.00,Muestra comercial para tiendas nuevas. Un pack por punto de venta.,,,andina.var_001,6,False
 ,,,,,,,,andina.var_016,12,False
 ,,,,,,,,andina.var_043,12,False
-,,,,,,,,andina.var_078,1,True
+,,,,,,line_section,OPCIONALES,,,True
+,,,,,,,,andina.var_078,0,False

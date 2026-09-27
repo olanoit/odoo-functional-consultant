@@ -26,7 +26,7 @@
 | Concepto | Antes | **Desde v19** | Impacto |
 |---|---|---|---|
 | Etapa de CRM ↔ equipo | `team_id` (Many2one) | **`team_ids`** (Many2many) | Las etapas se comparten entre equipos; un CSV con `team_id` falla |
-| Productos opcionales en plantilla | Modelo `sale.order.template.option` | Línea normal con **`is_optional = True`** | Cambia por completo cómo se importa una plantilla |
+| Productos opcionales en plantilla | Modelo `sale.order.template.option` | Línea normal; en v20, **`is_optional = True` en la línea de sección**: sus productos (con cantidad 0) son los opcionales | Cambia por completo cómo se importa una plantilla |
 | Alerta de oportunidad estancada | No existía | **`rotting_threshold_days`** en `crm.stage` | Nueva palanca de gestión del embudo |
 | Importación de variantes | Manual, vía `attribute_line_ids` | **`import_attribute_values`** (`"Atributo:Valor,Atributo2:Valor2"`) | Permite crear plantilla + variantes + atributos desde un solo CSV |
 | Secciones en líneas | `line_section`, `line_note` | Se añade **`line_subsection`** | Cotizaciones con dos niveles de agrupación |
@@ -127,7 +127,8 @@
 | `sale_order_template_line_ids` | Líneas |
 
 **Línea de plantilla:** `product_id`, `product_uom_qty`, `product_uom_id`, `name`, `sequence`,
-`display_type` (`line_section` / `line_subsection` / `line_note`), **`is_optional`**, `price_unit` y
+`display_type` (`line_section` / `line_subsection` / `line_note`), **`is_optional`** (en v20 se marca en la
+sección y afecta a los productos que cuelgan de ella), `price_unit` y
 `discount` (para líneas sin producto) y, en v20, `section_qty` / `section_uom_id` en las secciones.
 
 ## 8. `product.template` — campos de venta

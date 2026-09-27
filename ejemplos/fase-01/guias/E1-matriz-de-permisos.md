@@ -54,7 +54,7 @@ y marca el resultado observado. Si algo no coincide con lo esperado, corrige los
 | 5 | Diego | Menú principal | Ve Compras, Inventario y Contactos; **no** ve Ventas | ☐ |
 | 6 | Diego | Crear una solicitud de presupuesto de *Quinua perlada* | Puede; el proveedor y el precio salen del CSV importado | ☐ |
 | 7 | Diego | Abrir un producto y ver el precio de venta | Lo ve, pero no puede modificar campos de Ventas | ☐ |
-| 8 | Marco | Menú principal | Ve solo Inventario | ☐ |
+| 8 | Marco | Menú principal | Ve Inventario y Contactos (en v20 el menú Contactos lo ve todo usuario con rol *Usuario*); **no** ve Ventas, Compras ni Ajustes | ☐ |
 | 9 | Marco | Hacer un ajuste de inventario | Puede (y en la Fase 3 decidiremos si **debe** poder) | ☐ |
 | 10 | Marco | Ver el costo de un producto | **No** debería ver información de compra/coste | ☐ |
 | 11 | Sofía | Menú principal | Ve todo, incluidos Ajustes | ☐ |
@@ -95,6 +95,7 @@ No modifiques nada aquí todavía: en la Fase 9 aprenderás cuándo tocar esto y
 | Error | Síntoma | Corrección |
 |---|---|---|
 | Probar permisos con el mismo navegador | "Sigo viendo todo" | Usar ventana privada o cerrar sesión |
+| Ana ve los presupuestos de otros aunque tenga *solo propios* | Con *Punto de venta* instalado, v20 da a cada usuario nuevo el grupo *Punto de venta / Usuario*, y ese grupo lee todos los pedidos (permiso *POS Sales Orders*) | Quita a Ana el grupo de Punto de venta y revisa los grupos que Odoo añadió por defecto al crear el usuario |
 | Dar *Ajustes* a un usuario "para que pueda trabajar" | Ve y modifica toda la configuración | Nunca es la solución; buscar el grupo correcto |
 | Confundir usuario interno con usuario de portal | El de portal no consume licencia y ve muy poco | El portal se usa para clientes (Fase 2) |
 | Asignar grupos y no probarlos | En UAT el usuario no puede trabajar | Cada rol se prueba **entrando con él** |

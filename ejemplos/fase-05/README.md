@@ -83,7 +83,8 @@ producción con y sin órdenes de trabajo, cadena multinivel, consumo flexible y
 desecho, sobreproducción y desmontaje.
 
 **El ejercicio que más enseña:** lanza 1 000 conservas sin stock de pulpa ni almíbar y dibuja la
-cadena completa de documentos que Odoo genera solo.
+cadena completa de documentos que Odoo genera solo. Ojo: la genera solo si los semielaborados tienen la
+ruta **MTO**; sin ella, la orden queda en espera y la cadena la arranca el *Reabastecimiento* (J2 §2).
 
 ## Ejemplo 4 — Costo real vs. teórico
 *(Bloque 5.3 · 45 min)*

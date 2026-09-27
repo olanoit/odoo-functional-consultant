@@ -7,8 +7,8 @@ y los 79 productos de ANDINA GOURMET son la materia prima de todo lo que sigue.
 > **Versión objetivo:** Odoo 20 (20.0). Campos verificados contra el código fuente
 > ([`guias/G5-campos-tecnicos-v20-ventas.md`](guias/G5-campos-tecnicos-v20-ventas.md)).
 > Desde v19 las etapas de CRM se comparten entre equipos (`team_ids` es Many2many), los productos
-> opcionales de una plantilla de cotización son líneas normales con `is_optional` y existe un mecanismo
-> para **importar variantes**. En v20 se suman tres cambios más que rompen material de v19: las reglas
+> opcionales de una plantilla de cotización son líneas normales (en v20, las de una sección con
+> `is_optional`) y existe un mecanismo para **importar variantes**. En v20 se suman tres cambios más que rompen material de v19: las reglas
 > de lista de precios pasan a ser **Descuento / Recargo / Precio fijo** (`percent_price` y el tipo
 > *Fórmula* desaparecen), `require_payment` ya no existe (el pago en línea se exige cuando el
 > porcentaje de anticipo es mayor que cero) y el cierre del PdV emite una **factura resumen**.
@@ -88,8 +88,10 @@ parada 10 días está muerta y hay que saberlo.
 >
 > **Ojo con las etapas de fábrica:** la app CRM ya trae 4 etapas compartidas (*Nuevo*, *Calificado*,
 > *Propuesta*, *Ganado*), y el CSV no las reemplaza: crea las suyas con otro ID externo. Tras importar,
-> el kanban muestra **9 columnas**, tres con el nombre repetido (verificado en v20). Archiva las 4 de
-> fábrica —no tienen oportunidades— para quedarte con el embudo de 5 etapas que diseñaste.
+> el kanban muestra **9 columnas**, tres con el nombre repetido (verificado en v20). Elimina las 4 de
+> fábrica —no tienen oportunidades— para quedarte con el embudo de 5 etapas que diseñaste: las etapas
+> de CRM **no se pueden archivar** (en v20 `crm.stage` no tiene campo *Activo*); si prefieres no
+> borrarlas, pliégalas (`fold`) para que no estorben en el kanban.
 
 **Oportunidades** (`crm.lead`). Observa que traen `expected_revenue`, `probability` y `date_deadline`:
 son las tres columnas de las que vive el **pronóstico**. `priority` es la estrella (0–3).
@@ -192,16 +194,20 @@ Importa `08-plantilla-cotizacion.csv` en *Ventas → Configuración → Plantill
 `andina.sot_distribuidor` (*Kit de arranque distribuidor*) trae:
 - **Secciones** (`display_type = line_section`): agrupan visualmente la cotización.
 - **Una nota** (`line_note`) visible para el cliente.
-- **3 líneas opcionales** (`is_optional = True`): flete, góndola y asesoría. **No suman al total**
-  hasta que el cliente las agrega desde el portal.
+- **Una sección de opcionales** (la sección *OPCIONALES* con `is_optional = True`) con 3 productos:
+  flete, góndola y asesoría, **con cantidad 0**. **No suman al total** hasta que el cliente los agrega
+  desde el portal y elige la cantidad.
 - `require_signature` y `prepayment_percent = 0.30`: firma en línea y **30 % de anticipo**.
   En v20 el campo `require_payment` ya no existe: el pago en línea se exige cuando el anticipo es
   mayor que cero, y la plantilla *Pack degustación retail* (anticipo 0) no pide pago.
 - `number_of_days = 15`: validez de la oferta.
 
 > **Desde v19** los opcionales ya no viven en un modelo aparte (`sale.order.template.option`):
-> son líneas normales marcadas con `is_optional`. En v20 las líneas de plantilla admiten además
-> atributos configurables y cantidad por sección.
+> son líneas normales. **En v20 lo opcional es la sección:** `is_optional` se marca en la línea de
+> sección y vuelve opcionales en el portal todos los productos que cuelgan de ella; esos productos van
+> con cantidad 0 para no sumar al total. Un producto con `is_optional = True` fuera de una sección
+> opcional **suma al total como cualquier otro** y el cliente no puede quitarlo (verificado en v20).
+> Además, las líneas de plantilla admiten atributos configurables y cantidad por sección.
 
 **Ejecuta el flujo completo** con *Distribuidora Sol de Oro S.A.C.*:
 1. Nueva cotización → aplicar la plantilla → verificar que el precio sale de la lista Mayorista.
@@ -248,6 +254,13 @@ listas de precios y equipos.
 
 Confirma al menos 8 de los 12 pedidos (los reportes de ventas solo cuentan pedidos confirmados)
 y responde con la interfaz:
+
+> **Ojo con la fecha al confirmar:** en v20 (como antes) confirmar un pedido reescribe su *Fecha de
+> la orden* con la fecha y hora actuales, así que los 12 pedidos pasan al mes en curso y la pregunta 1
+> deja de tener sentido. Para recuperar las fechas del archivo, **vuelve a importar
+> `10-pedidos-borrador.csv` dejando sin importar todas las columnas salvo `id` y `date_order`**
+> (en el diálogo, *No importar* en las demás): el ID externo actualiza la fecha sin duplicar líneas
+> (verificado en v20).
 
 1. ¿Cuál fue el mes de mayor venta y por cuánto?
 2. ¿Qué equipo vendió más y cuál tiene el **ticket promedio** más alto?

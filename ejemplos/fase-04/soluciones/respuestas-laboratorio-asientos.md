@@ -164,7 +164,8 @@ En v20 salen **dos** asientos. Al conciliar el extracto en dólares con la factu
 | 1042 Banco USD | 3 820.00 (= $ 1 000) | |
 | 1212 Facturas por cobrar | | 3 820.00 (= $ 1 000) |
 
-y Odoo genera automáticamente, en el diario **Diferencia de cambio** (`EXCH`), el asiento que salda
+y Odoo genera automáticamente, en el diario **Diferencia de cambio** (`EXCH`; en una base creada en
+español el código es `CAMBIO`), el asiento que salda
 la cuenta por cobrar en soles:
 
 | Cuenta | Debe | Haber |

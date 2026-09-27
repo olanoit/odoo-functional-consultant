@@ -105,7 +105,7 @@ versiones anteriores.
 | Usuario | `groups_id` → **`group_ids`** | v19 |
 | Categoría | `product_category_all` → **`product_category_goods`** | v19 |
 | CRM | `crm.stage.team_id` → **`team_ids`** (Many2many); nuevo `rotting_threshold_days` | v19 |
-| Ventas | Opcionales de plantilla: modelo propio → línea con **`is_optional`** | v19 |
+| Ventas | Opcionales de plantilla: modelo propio → línea con **`is_optional`** (en v20, en la sección) | v19 |
 | Ventas | Variantes importables con **`import_attribute_values`** (`"Atributo:Valor"`) | v19 |
 | Inventario | `stock.production.lot` → **`stock.lot`** | v16 |
 | Inventario | Valoración `manual_periodic` → **`periodic`**; nuevo `lot_valuated` | v19 |

@@ -56,6 +56,13 @@ Importa `01-cuentas.csv` y `02-diarios.csv`.
 > y el import fallaría entero con *«Journal codes must be unique per company»* — un solo código repetido
 > tumba el archivo completo, no solo su fila. Antes de importar diarios en un cliente real, exporta los
 > códigos existentes y compáralos.
+>
+> **Diarios que aparecen solos.** Al importar `01-cuentas.csv`, v20 crea un diario de banco por cada
+> cuenta de tipo *Banco y caja* (`asset_cash`): cuatro diarios con el nombre de la cuenta como nombre
+> **y como código** (*Cuentas corrientes operativas - BCP MN*…). Como `02-diarios.csv` crea después
+> los diarios de verdad sobre 1041, 1042 y 1011, esas tres cuentas quedarían con dos diarios cada una.
+> Antes de importar `02-diarios.csv`, **elimina esos tres diarios automáticos** (no tienen movimientos);
+> el de 1043 (detracciones) puedes conservarlo. Verificado en v20.
 
 Mira con atención la columna **`account_type`**: es lo que determina el comportamiento de la cuenta,
 no el número. Ejercicio: explica por qué `4017 IGV crédito fiscal` está como `asset_current` y no
