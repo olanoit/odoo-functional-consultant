@@ -43,7 +43,9 @@ Odoo muestra el consumo por encima de lo vendido en la tarea y en el reporte, pe
 el registro de horas: eso sería contraproducente (el trabajo ya se hizo y hay que registrarlo).
 
 Lo correcto es un **procedimiento de negocio** apoyado en el sistema:
-- Alerta cuando se consume el 80 % de la bolsa → se contacta al cliente para renovarla.
+- Alerta cuando se consume el 80 % de la bolsa → se contacta al cliente para renovarla. Odoo trae
+  el apoyo: en los productos prepagados por horas, el campo *Umbral* (`service_upsell_threshold`,
+  90 % por defecto) crea una actividad de venta adicional para el vendedor al alcanzarlo.
 - Al superarla, las horas se siguen registrando pero quedan visibles como no facturables.
 - La renovación se vende como un pedido nuevo que repone el saldo.
 

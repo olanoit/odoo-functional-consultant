@@ -9,7 +9,7 @@ Usa los insumos y envases cargados en la Fase 1, el inventario de la Fase 3 y la
 
 | Archivo | Qué es |
 |---|---|
-| `datos/01-productos-produccion.csv` | 3 semielaborados con ruta de fabricación y lote, más un kit |
+| `datos/01-productos-produccion.csv` | 3 semielaborados con lote, más un kit |
 | `datos/02-centros-trabajo.csv` | 5 centros con costo/hora, tiempos de preparación y limpieza, OEE |
 | `datos/03-listas-materiales.csv` | 4 LdM: pulpa, almíbar, conserva (3 niveles) y un **kit** |
 | `guias/J1` | **Laboratorio de costeo**: calcula el costo real antes que Odoo |
@@ -20,12 +20,28 @@ Usa los insumos y envases cargados en la Fase 1, el inventario de la Fase 3 y la
 > `andina.prod_kit_navidad`) **y** variante (`andina.var_sem_*`, `andina.var_kit_navidad`) mediante la
 > columna `product_variant_ids/id`. En `03-listas-materiales.csv`, `product_tmpl_id/id` usa el ID de
 > **plantilla** y `bom_line_ids/product_id/id` el de **variante**: no son intercambiables.
+>
+> **La unidad de la LdM va explícita (`uom_id/id`).** Al importar, la LdM **no** toma la unidad del
+> producto: sin esa columna queda en *Unidades* aunque la pulpa se mida en kg y el almíbar en litros.
+> Verificado en v20: la pulpa quedaba como *100 Unidades* de un producto en kg, el cálculo de costo
+> desde la LdM salía multiplicado por 1 000 y el *Resumen de la LdM* de la conserva fallaba. Por eso el
+> archivo trae `uom.product_uom_kgm` en la pulpa, `uom.product_uom_litre` en el almíbar y
+> `uom.product_uom_unit` en la conserva y el kit.
 
 ## Antes de empezar
 
 Apps: **Fabricación** (y en Enterprise, **Calidad**, **Mantenimiento** y **PLM**).
-En *Fabricación → Configuración* activa: **Órdenes de trabajo**, **Listas de materiales multinivel**,
-**Subcontratación**, **Programa maestro de producción** y **Lotes/series**.
+En *Fabricación → Configuración → Ajustes* activa: **Órdenes de trabajo**, **Subcontratación** y
+**Programa maestro de producción** (y, en Enterprise, Calidad y PLM); en *Inventario → Configuración →
+Ajustes*, **Lotes y números de serie**. Las LdM multinivel no requieren ajuste: basta con que el
+semielaborado tenga su propia LdM.
+
+> **Cambio de v20 — la ruta *Fabricar* ya no se marca en el producto.** *Fabricar* (igual que
+> *Comprar*) es ahora una ruta **de almacén** (`product_selectable = False`): se aplica sola a todo
+> producto que tenga una LdM de tipo *Fabricar este producto*, y *Comprar* a los que tienen proveedor.
+> Por eso `01-productos-produccion.csv` ya no trae la columna `route_ids/id`: con ella, la importación
+> falla en v20 con *«Cannot link inaccessible records in product.template.route_ids
+> ([('product_selectable', '=', True)])»*.
 
 ---
 
@@ -42,16 +58,21 @@ Es la forma de importar One2many anidados en un único archivo.
 1. La LdM de la conserva tiene 7 componentes y 2 operaciones.
 2. La pulpa y el almíbar tienen su propia LdM → estructura de **3 niveles**.
 3. El Kit Navideño es de tipo **kit (phantom)**: comprueba que no genera orden de fabricación.
-4. Abre el reporte **Estructura y costo** de la conserva y compáralo con tu cálculo de J1.
+4. Abre el informe **Resumen de la LdM** (*BoM Overview*) de la conserva y compáralo con tu cálculo de J1.
+5. En v20 el campo `tracking` ya no admite el valor `none`: un producto sin lote ni serie se importa
+   con `tracking` **vacío** (así va el kit en `01-productos-produccion.csv`). La interfaz lo muestra con
+   el nuevo campo *Rastreo* (`store_by`: ninguno, por cantidad, por lotes, por número de serie único);
+   verificado en v20, el kit importado con `tracking` vacío queda *Por cantidad*.
 
 ## Ejemplo 2 — Laboratorio de costeo
 *(Bloque 5.3 · 90 min)* ← **el ejercicio central**
 
 [`guias/J1-laboratorio-de-costeo.md`](guias/J1-laboratorio-de-costeo.md): calcula a mano el costo de
-la pulpa, del almíbar y de la conserva, incluyendo tiempos de preparación y limpieza.
+la pulpa, del almíbar y de la conserva, incluyendo tiempos de preparación y limpieza y la eficiencia
+de cada centro de trabajo.
 
-Anticipo del hallazgo: el costo real es **S/ 5.50** frente al estándar de **S/ 6.80** que la empresa
-venía usando. Estaba subestimando su margen en S/ 1.30 por unidad. Ese tipo de número es lo que
+Anticipo del hallazgo: el costo real es **S/ 5.56** frente al estándar de **S/ 6.80** que la empresa
+venía usando. Estaba subestimando su margen en S/ 1.24 por unidad. Ese tipo de número es lo que
 convierte una implementación en un proyecto que el gerente defiende.
 
 ## Ejemplo 3 — Fabricar de verdad
@@ -71,7 +92,8 @@ Dos órdenes idénticas, una perfecta y otra con desviaciones (20 kg de merma de
 extra de envasado, 15 unidades desechadas). Produce el **análisis de varianza**: cuánto se desvió
 por material, cuánto por tiempo y cuánto por desecho.
 
-Escribe el asiento contable de la orden **antes** de mirarlo en Odoo.
+Escribe el asiento contable de la orden **antes** de mirarlo en Odoo, y comprueba primero si la
+ubicación *Producción* tiene cuenta de valoración: sin ella, la orden no genera asiento (J1, §5).
 
 ## Ejemplo 5 — Planificación
 *(Bloque 5.4 · 45 min)*
@@ -133,7 +155,8 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo (en v20, por
+> ejemplo, `tracking` ya no tiene el valor `none`): verifica contra la documentación 20.0, contra
+> [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

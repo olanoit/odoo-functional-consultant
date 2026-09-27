@@ -34,10 +34,9 @@ checklist de go-live con plan de reversión.
 La documentación oficial cubre el **producto**; la metodología se construye con práctica.
 Fuentes recomendadas:
 
-- **Odoo eLearning** — cursos de implementación/consultoría: <https://www.odoo.com/slides/all>
-  (ver el track funcional: <https://www.odoo.com/slides/functional-24>).
+- **Odoo eLearning** — cursos de implementación/consultoría, por app y por rol: <https://www.odoo.com/slides/all>.
 - **Foro oficial** — casos reales y problemas de implementación: <https://www.odoo.com/forum/ayuda-1>
-- **Documentación de administración** (entornos, actualizaciones, respaldos): [administration.html](https://www.odoo.com/documentation/saas-19.4/es/administration.html)
+- **Documentación de administración** (entornos, actualizaciones, respaldos): [administration.html](https://www.odoo.com/documentation/20.0/administration.html)
 - **apps.odoo.com** y **OCA** para el análisis de brechas: <https://apps.odoo.com/apps/modules> · <https://github.com/OCA>
 - Todas las plantillas de este plan: [`../plantillas/`](../plantillas/)
 

@@ -17,7 +17,7 @@ obtenida y costo calculado. Luego decide, con argumentos, cuál recomendarías a
 ## 2. La cadena multinivel
 
 Al lanzar una orden de 1 000 conservas sin stock de pulpa ni almíbar, con los semielaborados
-configurados con ruta de **fabricación**:
+con LdM propia (en v20 la ruta de **fabricación** es del almacén y se les aplica sola por tener LdM):
 
 1. Odoo crea la orden de la conserva (en espera de componentes).
 2. Crea las órdenes de fabricación de **pulpa** y **almíbar**.
@@ -26,14 +26,19 @@ configurados con ruta de **fabricación**:
 **Ejercicio:** ejecútalo y dibuja la cadena completa de documentos. Después responde:
 ¿en qué orden hay que terminarlas? ¿Qué pasa si terminas la conserva antes que la pulpa?
 
-## 3. Consumo flexible y mermas
+## 3. Consumo distinto de la LdM y mermas
 
-En la LdM, `consumption` controla si el operario puede consumir **más o menos** de lo previsto:
-`strict` (bloquea), `warning` (avisa) o `flexible` (permite).
+> ⚠️ **Cambio respecto de v19.0:** el campo `consumption` de la LdM (`strict` / `warning` /
+> `flexible`) **ya no existe en v20** (desapareció en las versiones saas-19.x). Ya no se elige por LdM
+> si se bloquea o se permite: cuando el consumo registrado difiere del de la LdM, Odoo **siempre**
+> muestra la *Advertencia de consumo* al marcar la orden como hecha, con tres salidas: **Confirmar**
+> (acepta lo consumido), **Update Quantities & Validate** (vuelve a las cantidades de la LdM) o
+> **Descartar** (`mrp/wizard/mrp_consumption_warning.py`).
 
-**Ejercicio:** configura `warning`, consume 260 kg de pulpa en vez de 240 y observa el aviso y el
-efecto en el costo real. Anota qué le dirías a un jefe de planta que pide `flexible` "para no perder
-tiempo": qué gana y qué pierde.
+**Ejercicio:** consume 260 kg de pulpa en vez de 240, observa el aviso, confírmalo y mira el efecto en
+el costo real. Anota qué le dirías a un jefe de planta que pide "que no salga ese aviso, para no
+perder tiempo": qué gana y qué pierde (pista: el aviso es el único control de mermas que queda en la
+orden).
 
 ## 4. Lotes y trazabilidad completa
 
@@ -49,7 +54,7 @@ tiempo": qué gana y qué pierde.
 
 | Operación | Qué probar | Qué observar |
 |---|---|---|
-| **Desecho** | Desechar 15 unidades durante la orden | Ubicación virtual de chatarra y su asiento |
+| **Desecho** | Desechar 15 unidades durante la orden | Ubicación virtual de desecho; hay asiento inmediato solo si esa ubicación tiene cuenta de valoración (si no, llega con el cierre de existencias) |
 | **Sobreproducción** | Producir 1 020 en vez de 1 000 | Cómo se reparte el costo entre más unidades |
 | **Desmontaje** | Deshacer una orden terminada | Los componentes vuelven al stock; ¿a qué costo? |
 
@@ -76,11 +81,19 @@ quién la recibe, qué acción correctiva se registra, qué pasa con la orden.
 
 ## 8. Mantenimiento
 
-1. Registra la **línea de envasado** como equipo, con responsable, criticidad y fecha de compra.
-2. Crea un mantenimiento **preventivo** cada 500 horas de uso o cada 3 meses.
+1. Registra la **línea de envasado** como equipo, con responsable, categoría, centro de trabajo, costo
+   y *Fecha efectiva* (la base del cálculo del MTBF). El equipo **no tiene campo de criticidad**: se
+   modela con una **propiedad** definida en la categoría del equipo o con la **prioridad** de cada
+   solicitud.
+2. Crea un mantenimiento **preventivo** recurrente cada 3 meses (*Recurrente*, *Repetir cada* 3
+   meses). El estándar de v20 programa por **calendario**, no por horas de uso: un plan "cada 500
+   horas" hay que convertirlo a una frecuencia equivalente o resolverlo fuera del estándar (dato para
+   tu análisis GAP).
 3. Genera una solicitud **correctiva** desde el taller (la selladora falla a mitad de una orden).
-4. Observa el efecto en la planificación del centro de trabajo mientras el equipo está en mantenimiento.
-5. Revisa los indicadores MTBF y MTTR y explica qué decisión de negocio dispara cada uno.
+4. Observa el efecto en la planificación del centro de trabajo mientras el equipo está en
+   mantenimiento (con *Bloquear centro de trabajo* activado en la solicitud, Enterprise).
+5. Revisa los indicadores MTBF y MTTR del equipo (se calculan con los mantenimientos **correctivos**
+   terminados) y explica qué decisión de negocio dispara cada uno.
 
 ## 9. PLM: cambio de ingeniería (Enterprise)
 

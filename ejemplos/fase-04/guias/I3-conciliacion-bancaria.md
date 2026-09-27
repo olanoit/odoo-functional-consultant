@@ -30,11 +30,21 @@ Saldo neto del extracto: **S/ 8 401.85**.
 
 **La productividad está en el segundo tipo.** Por eso el archivo `08-modelos-conciliacion.csv`.
 
-## 3. Modelos de conciliación (v19)
+## 3. Modelos de conciliación (v20)
 
-> ⚠️ **Cambio de v19:** el campo `rule_type` desapareció. Ahora se usa **`trigger`**
+> ⚠️ **Historia en dos pasos.** En v19 desapareció el antiguo `rule_type` (`writeoff_button`,
+> `writeoff_suggestion`, `invoice_matching`) y la automatización pasó a **`trigger`**
 > (`manual` / `auto_reconcile`) junto con los criterios `match_label`, `match_label_param`,
 > `match_amount`, `match_journal_ids`, `match_partner_ids`.
+>
+> **En v20 `rule_type` vuelve, con otro significado:** `reco_model` (*modelo de conciliación*, el
+> valor por defecto, el de este cuaderno) o `matching_rule` (*regla de coincidencia*). Las reglas de
+> coincidencia emparejan líneas del extracto con facturas y pagos abiertos, con una **tolerancia de
+> pago** (`payment_tolerance` + `payment_tolerance_type`: importe o porcentaje) y un **orden de
+> búsqueda** (`matching_order`: más antiguas o más recientes primero); siempre son automáticas.
+> `trigger` sigue existiendo y se propone según `rule_type`, pero puede cambiarse en los modelos.
+> Se llega a ambos desde el tablero del diario de banco (menú ⋮ de la tarjeta → *Modelos* /
+> *Matching Rules*).
 
 Los 4 modelos cargados:
 
@@ -45,9 +55,20 @@ Los 4 modelos cargados:
 | Portes y mantenimiento | etiqueta contiene *"Portes"* | 6532 Gastos bancarios | Sí |
 | Intereses bancarios | etiqueta contiene *"Intereses"* | 7761 Ingresos financieros | No (propuesta manual) |
 
+> **Por qué *"Portes y mantenimiento"* y no solo *"Portes"*:** el criterio *contiene* no distingue
+> mayúsculas y busca el texto en cualquier parte de la etiqueta. Con *"Portes"* a secas, la línea
+> *"Pago Transportes Refrigerados"* (un pago de S/ 3 400.00 a un proveedor) también encaja (trans**portes**)
+> y el modelo automático la concilia contra gastos bancarios sin preguntar. Comprobado en v20. Un
+> criterio de etiqueta demasiado corto es la forma más rápida de ensuciar el mayor en automático.
+
 **Ejercicio:** importa el extracto **antes** de crear los modelos, concilia 5 comisiones a mano y
 cronométrate. Después crea los modelos, deshaz la conciliación y repite. La diferencia de tiempo,
-multiplicada por 12 meses, es el argumento de venta.
+multiplicada por 12 meses, es el argumento de venta. Ojo: al **crear** un modelo, Odoo lo aplica
+enseguida a las líneas del extracto que sigan sin conciliar, así que las comisiones pendientes se
+concilian solas en cuanto importas `08-modelos-conciliacion.csv`.
+
+**Ejercicio v20:** crea además una **regla de coincidencia** con tolerancia del 1 % para los cobros
+de clientes y comprueba qué pasa con un cobro que llega S/ 3.00 por debajo de la factura.
 
 ## 4. El ejercicio completo (cronometrado)
 
@@ -73,7 +94,9 @@ multiplicada por 12 meses, es el argumento de venta.
 
 ## 6. Preguntas para tu bitácora
 
-1. ¿Qué es la cuenta de **pagos pendientes** (outstanding) y por qué el pago no toca directamente el banco?
+1. ¿Qué es la cuenta de **pagos pendientes** (outstanding) y por qué el pago no toca directamente el
+   banco? ¿Qué cambia si el método de pago del diario **no** tiene cuenta de pagos pendientes (lo
+   habitual en Enterprise)?
 2. ¿Qué diferencia hay entre *registrar un pago* y *conciliar*?
 3. ¿Por qué el saldo contable del banco puede diferir del saldo del extracto y en qué casos es normal?
 4. ¿Qué haces con un movimiento no identificado al cerrar el mes? ¿Puedes dejarlo sin conciliar?

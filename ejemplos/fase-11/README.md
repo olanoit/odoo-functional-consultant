@@ -125,6 +125,6 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
 > anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

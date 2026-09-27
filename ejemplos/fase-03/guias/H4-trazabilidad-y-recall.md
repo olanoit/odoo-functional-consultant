@@ -11,7 +11,7 @@ Con los CSV `04-productos-trazabilidad.csv`, `05-lotes.csv` y `06-stock-inicial.
 10 productos con seguimiento por **lote** y **fecha de caducidad**, y 14 lotes con stock real.
 
 Configura además:
-- *Inventario → Configuración*: activar **Lotes y números de serie** y **Fechas de caducidad**.
+- *Inventario → Configuración → Ajustes*: activar **Números de serie y lote** y **Fechas de caducidad**.
 - Estrategia de remoción **FEFO** (primero el que caduca antes) en la ubicación *Estante A*
   o en la categoría *Conservas*.
 
@@ -57,7 +57,9 @@ Repite hasta bajar de 3.
 
 Una vez identificado:
 1. Mueve el stock afectado a la ubicación **Cuarentena** con una transferencia interna.
-2. Verifica que ya no se puede reservar para ventas.
+2. Crea una venta del producto y comprueba si Odoo reserva el lote en cuarentena. Con el CSV tal cual,
+   **sí lo reserva**: *Cuarentena* cuelga de *WH/Existencias* y las entregas reservan en todas sus hijas.
+   Cambia su ubicación padre a *WH* (la vista del almacén, fuera de *Existencias*) y repite: ahora ya no.
 3. Registra la baja definitiva como **desecho (scrap)** y observa contra qué ubicación virtual va.
 4. Anota el impacto en la valoración (lo cuadrarás en la Fase 4).
 
@@ -74,7 +76,7 @@ Una vez identificado:
 > *(abro el lote)* Aquí está: se produjo el 19 de abril, 240 unidades.
 > *(clic en trazabilidad)* Se entregaron 180 a tres clientes: Sol de Oro el 5 de mayo,
 > Los Andes el 12, Vega Norte el 20. Quedan 60 en el estante A.
-> *(muevo a cuarentena)* Y con esto ya nadie puede venderlas.
+> *(muevo a cuarentena, fuera de Existencias)* Y con esto ya nadie puede venderlas.
 > Eso que acaba de ver toma tres minutos. Hoy, ¿cuánto les tomaría?"
 
 ## 7. Errores frecuentes

@@ -27,8 +27,8 @@ Studio, Documentos, Firma y Conocimiento son **Enterprise**.
 1. **Conocimiento:** construye el manual interno de ANDINA GOURMET con artículos anidados y vistas
    de Odoo incrustadas. **Úsalo para tu propia documentación de estudio**: es la mejor forma de
    aprenderlo y te deja el material listo para la Fase 11.
-2. **Documentos:** espacio de trabajo con reglas de clasificación y flujo de aprobación; conecta la
-   digitalización de facturas de proveedor con la Fase 4.
+2. **Documentos:** carpeta con etiquetas y una acción de carpeta (acción de servidor incrustada) que
+   clasifique lo que entra; conecta la digitalización de facturas de proveedor con la Fase 4.
 3. **Firma:** plantilla de contrato de distribuidor con campos y dos firmantes en orden.
 4. **Conversaciones y Calendario:** canales por equipo y agendamiento de citas en línea.
 
@@ -121,7 +121,7 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior a v19, y aun los artículos de v19 son de una versión anterior a la del curso (v20): contrasta
+> los nombres de campo. Verifica contra la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

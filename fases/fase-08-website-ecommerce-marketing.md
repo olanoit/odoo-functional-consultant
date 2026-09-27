@@ -29,21 +29,21 @@ que todo negocio necesita, con sus condiciones de salida.
 
 | # | Tema | Documentación |
 |---|---|---|
-| 8.1 | Sitio web | [websites/website.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/website.html) · [website/pages.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/website/pages.html) |
-| 8.2 | Comercio electrónico | [websites/ecommerce.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/ecommerce.html) |
-| 8.3 | Catálogo en línea | [ecommerce/products.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/ecommerce/products.html) |
-| 8.4 | Pago, envío y finalización de compra | [ecommerce/checkout_payment_shipping.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/ecommerce/checkout_payment_shipping.html) |
-| 8.5 | Proveedores de pago | [finance/payment_providers.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/payment_providers.html) |
-| 8.6 | Chat en vivo | [websites/livechat.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/livechat.html) |
-| 8.7 | Blog | [websites/blog.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/blog.html) |
-| 8.8 | Foro | [websites/forum.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/forum.html) |
-| 8.9 | eLearning | [websites/elearning.html](https://www.odoo.com/documentation/saas-19.4/es/applications/websites/elearning.html) |
-| 8.10 | Marketing por correo | [marketing/email_marketing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/email_marketing.html) |
-| 8.11 | Marketing por SMS | [marketing/sms_marketing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/sms_marketing.html) |
-| 8.12 | Marketing social | [marketing/social_marketing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/social_marketing.html) |
-| 8.13 | Automatización de marketing | [marketing/marketing_automation.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/marketing_automation.html) · [campaign_templates.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/marketing_automation/campaign_templates.html) |
-| 8.14 | Eventos | [marketing/events.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/events.html) |
-| 8.15 | Encuestas | [marketing/surveys.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/surveys.html) · [surveys/create.html](https://www.odoo.com/documentation/saas-19.4/es/applications/marketing/surveys/create.html) |
+| 8.1 | Sitio web | [websites/website.html](https://www.odoo.com/documentation/20.0/applications/websites/website.html) · [website/pages.html](https://www.odoo.com/documentation/20.0/applications/websites/website/pages.html) |
+| 8.2 | Comercio electrónico | [websites/ecommerce.html](https://www.odoo.com/documentation/20.0/applications/websites/ecommerce.html) |
+| 8.3 | Catálogo en línea | [ecommerce/products.html](https://www.odoo.com/documentation/20.0/applications/websites/ecommerce/products.html) |
+| 8.4 | Pago, envío y finalización de compra | [ecommerce/checkout_payment_shipping.html](https://www.odoo.com/documentation/20.0/applications/websites/ecommerce/checkout_payment_shipping.html) |
+| 8.5 | Proveedores de pago | [finance/payment_providers.html](https://www.odoo.com/documentation/20.0/applications/finance/payment_providers.html) |
+| 8.6 | Chat en vivo | [websites/livechat.html](https://www.odoo.com/documentation/20.0/applications/websites/livechat.html) |
+| 8.7 | Blog | [websites/blog.html](https://www.odoo.com/documentation/20.0/applications/websites/blog.html) |
+| 8.8 | Foro | [websites/forum.html](https://www.odoo.com/documentation/20.0/applications/websites/forum.html) |
+| 8.9 | eLearning | [websites/elearning.html](https://www.odoo.com/documentation/20.0/applications/websites/elearning.html) |
+| 8.10 | Marketing por correo | [marketing/email_marketing.html](https://www.odoo.com/documentation/20.0/applications/marketing/email_marketing.html) |
+| 8.11 | Marketing por SMS | [marketing/sms_marketing.html](https://www.odoo.com/documentation/20.0/applications/marketing/sms_marketing.html) |
+| 8.12 | Marketing social | [marketing/social_marketing.html](https://www.odoo.com/documentation/20.0/applications/marketing/social_marketing.html) |
+| 8.13 | Automatización de marketing | [marketing/marketing_automation.html](https://www.odoo.com/documentation/20.0/applications/marketing/marketing_automation.html) · [campaign_templates.html](https://www.odoo.com/documentation/20.0/applications/marketing/marketing_automation/campaign_templates.html) |
+| 8.14 | Eventos | [marketing/events.html](https://www.odoo.com/documentation/20.0/applications/marketing/events.html) |
+| 8.15 | Encuestas | [marketing/surveys.html](https://www.odoo.com/documentation/20.0/applications/marketing/surveys.html) · [surveys/create.html](https://www.odoo.com/documentation/20.0/applications/marketing/surveys/create.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -82,6 +82,13 @@ que todo negocio necesita, con sus condiciones de salida.
 3. Escenarios: bienvenida a nuevo cliente, recuperación de carrito, reactivación de cliente inactivo,
    nutrición de leads del formulario web.
 4. Medición del embudo de la campaña y su impacto en oportunidades ganadas.
+
+> **v20 renovó Automatización de marketing.** La campaña ya no parte solo de un filtro: el
+> *Trigger type* puede ser *Filtro*, *Event* (suscripción a una lista; con los módulos puente, página
+> visitada, formulario enviado, producto en el carrito o comprado), *Date*, *Anniversary*, *Manual* o
+> *Webhook*. Además de correo, SMS y acción del servidor hay actividades nuevas: *Split* (bifurcación
+> por condición), *Log Note*, *Mailing List Subscription* y cupón (`marketing_automation_loyalty`), y
+> disparadores como *Wait for a value* o *Collect Any Reply*. Casi todas estas etiquetas siguen en inglés en v20.
 
 > **Puente clave:** la automatización de marketing actúa sobre **cualquier modelo** (contactos, leads,
 > pedidos, suscripciones). Es la diferencia con una herramienta de correo masivo externa. Véndelo así.

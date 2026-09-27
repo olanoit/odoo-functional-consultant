@@ -29,11 +29,22 @@ del nombre ni del idioma de la base.
 
 **3. "Que el vendedor solo vea sus propios clientes": ¿configuración, Studio o desarrollo?**
 
-**Configuración.** Es un grupo estándar de Ventas (*Usuario: solo documentos propios*) apoyado en una
-regla de registro que ya existe. No se toca código ni Studio.
-Lo importante es el razonamiento: **antes de personalizar, se busca si el estándar ya lo resuelve**.
-La variante que sí requeriría más análisis: "que vea los suyos **y** los de su equipo" — también es
-estándar vía equipos de ventas; "que vea los de su región" ya empieza a necesitar más diseño.
+**Configuración, pero hay que precisar qué pide.** El grupo estándar de Ventas *Usuario: solo mostrar
+documentos propios* limita los **presupuestos y pedidos** (y las oportunidades de CRM) a los del propio
+vendedor: en v20 es una fila con dominio en *Ajustes → Técnico → Seguridad → Permisos de acceso*
+(*Personal Orders*). **No limita la ficha de clientes**: comprobado en v20, `res.partner` no tiene
+ningún dominio por vendedor, así que Ana sigue viendo todos los contactos.
+- Si el cliente quiere decir "que solo vea **sus ventas**" → configuración pura: asignar ese grupo.
+- Si de verdad quiere ocultar **las fichas de clientes ajenos** → hay que crear un permiso de acceso con
+  dominio sobre `res.partner` (`user_id = usuario actual`). Se hace sin código, en modo desarrollador,
+  pero ya es **diseño de seguridad**: afecta a direcciones de entrega, contactos hijos y facturación, y
+  se prueba con cuidado.
+
+Lo importante es el razonamiento: **antes de personalizar, se busca si el estándar ya lo resuelve, y
+se aclara con el cliente qué significa "ver"**. Ojo con las variantes: "que vea los suyos **y** los de
+su equipo" **no** viene de fábrica (el estándar solo distingue *propios* / *todos*; no hay regla por
+equipo de ventas) y requiere un permiso de acceso con dominio sobre `team_id`; "que vea los de su
+región" necesita todavía más diseño.
 
 **4. Archivar vs. eliminar. ¿Qué recomiendas?**
 
@@ -86,16 +97,16 @@ no una limitación: es lo que exige la normativa fiscal.
 
 **10. Diferencia entre unidad de medida y unidad de compra. Ejemplo con un insumo.**
 
-**Atención — pregunta con trampa en Odoo 19:** el campo de *unidad de medida de compra* (`uom_po_id`)
-**ya no existe** en esta versión. Antes permitía comprar en una unidad (sacos) y almacenar en otra (kg),
+**Atención — pregunta con trampa desde Odoo 19 (y sigue en Odoo 20):** el campo de *unidad de medida
+de compra* (`uom_po_id`) **ya no existe** en esta versión. Antes permitía comprar en una unidad (sacos) y almacenar en otra (kg),
 con conversión automática.
-En v19 el producto tiene una **única** unidad (`uom_id`) y, para los múltiplos, se usa `uom_ids`
-(empaques adicionales, que reemplazan al antiguo modelo de *packaging*).
+Desde v19 el producto tiene una **única** unidad (`uom_id`) y, para los múltiplos, se usa `uom_ids`
+(*embalajes* adicionales, que reemplazan al antiguo modelo de *packaging*).
 Ejemplo con *Quinua perlada*: la unidad es **kg**; si el proveedor vende en sacos de 25 kg, eso se
 modela como un empaque, no como una segunda unidad de compra.
 
 **Respuesta esperada del consultor:** además de explicar el concepto, decir explícitamente
-*"esto cambió en la versión 19"*. Un consultor que repite lo que aprendió en la v16 sin verificar
+*"esto cambió en la versión 19, y en la 20 sigue igual"*. Un consultor que repite lo que aprendió en la v16 sin verificar
 configura mal y cotiza mal. Verificar la versión **antes** de afirmar es parte del trabajo.
 
 ---

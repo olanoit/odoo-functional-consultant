@@ -2,19 +2,31 @@
 
 Casos prácticos para [`../../fases/fase-07-rrhh.md`](../../fases/fase-07-rrhh.md).
 
-> ⚠️ **Cambios mayores de v19 en RR. HH.**
+> ⚠️ **Cambios mayores en RR. HH. (llegaron en v19 y siguen vigentes en v20)**
 >
 > 1. El modelo **`hr.leave.type` desapareció**: los tipos de ausencia ahora son **`hr.work.entry.type`**
 >    (el mismo modelo que los tipos de entrada de trabajo de nómina). Campos nuevos obligatorios/relevantes:
 >    **`code`** (obligatorio), **`count_as`** (`absence` / `working_time`, sustituye a `time_type`)
 >    y **`time_off_selectable`** (que aparezca en el menú de Ausencias). El campo `time_type` ya no existe.
 > 2. **`resource.calendar` ya no tiene `tz`**: la zona horaria vive en el empleado
->    (`hr.employee.tz`, vía `resource.resource`). Una columna `tz` en el CSV de horarios falla.
+>    (`hr.employee.tz`, que en realidad se guarda en su versión, `hr.version.tz`). Una columna `tz`
+>    en el CSV de horarios falla.
 > 3. El modelo `hr.contract` **desapareció**. Ahora existe **`hr.version`**:
 > cada empleado tiene versiones fechadas donde viven el salario (`wage`), el horario
 > (`resource_calendar_id`), el puesto, el departamento y las fechas de contrato
 > (`contract_date_start` / `contract_date_end`). Todo material anterior a v19 sobre contratos de
 > Odoo está obsoleto, y los CSV de contratos de v16–v18 **no se pueden importar**.
+>
+> **Novedades de v20:**
+>
+> 4. Las reglas de horas extra de Asistencias (`hr.attendance.overtime.ruleset` / `rule`)
+>    **desaparecieron**: ahora son **reglas de tiempo** (`hr.time.rule`, *Asistencias → Configuración →
+>    Automatic Rules*), un motor común a Asistencias, Ausencias y Nómina. El exceso de horas se guarda
+>    como una asistencia aparte con su tipo de entrada de trabajo, y la regla puede abonar saldo a un
+>    tipo de ausencia (*Compensatorio*). Las asistencias tienen estado *Borrador / Validado / Rechazado*.
+> 5. En los tipos de ausencia conviven dos campos de unidad: **`unit_of_measure`** (*Unidad*: en qué se
+>    asigna y acumula el saldo, días u horas; **por defecto, horas**) y **`request_unit`** (*Tipo de
+>    duración*: día completo, medio día u horas personalizadas). El CSV fija los dos.
 
 ---
 
@@ -36,6 +48,10 @@ Apps: **Empleados**, **Ausencias**, **Asistencias**, **Reclutamiento**, **Evalua
 Los 6 empleados de la Fase 6 se reutilizan: el archivo `05-empleados.csv` usa los mismos ID externos
 y **actualiza** sus datos añadiendo departamento, puesto y horario. Los otros 12 se crean nuevos.
 
+> **Codificación:** en el diálogo de importación elige **`utf-8`** a mano. Odoo adivina la
+> codificación y con `04-horarios.csv` se equivoca (verificado en v20): se detecta como otra codificación y
+> los acentos entran rotos sin ningún aviso. Detalle en la [Fase 1](../fase-01/README.md#antes-de-empezar).
+
 ---
 
 ## Ejemplo 1 — La organización
@@ -44,12 +60,17 @@ y **actualiza** sus datos añadiendo departamento, puesto y horario. Los otros 1
 **Orden:** `01-departamentos.csv` → `02-puestos.csv` → `04-horarios.csv` → `05-empleados.csv`.
 
 **Después de importar, a mano:**
-1. Completa las **franjas horarias** de cada horario (el CSV solo crea la cabecera).
+1. Corrige las **franjas horarias** de cada horario: al crearse, Odoo le copia las del horario de la
+   empresa (por defecto L-V, 8 h/día), no las del nombre del horario.
+   **v20:** el *Equivalente a tiempo completo* (`full_time_required_hours`) se recalcula desde el
+   **horario de referencia** (`reference_calendar_id`, por defecto el de la empresa). Pon *Administrativo
+   48h* como horario de la empresa o como referencia de los cuatro; si no, el 48 del CSV se pierde al
+   editar las franjas y el medio tiempo no queda en 25/48.
 2. Carga los feriados peruanos del semestre.
 3. Asigna responsables de departamento y revisa el **organigrama**.
 4. Vincula empleados con usuarios de Odoo donde corresponda (no todos los operarios necesitan usuario).
-5. Explora la pestaña de **versiones** (`hr.version`) de un empleado: es donde vive su salario,
-   su horario y sus fechas de contrato en v19.
+5. Explora las **versiones** (`hr.version`) de un empleado: es donde viven su salario, su horario y
+   sus fechas de contrato en v20.
 
 **Verificación:** 18 empleados, 6 departamentos, 4 horarios; el costo/hora cargado en la Fase 6 sigue ahí
 (compruébalo: si se perdió, la rentabilidad de proyectos deja de funcionar).
@@ -138,6 +159,6 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
 > anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

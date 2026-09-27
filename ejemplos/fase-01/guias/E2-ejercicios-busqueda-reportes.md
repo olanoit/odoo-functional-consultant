@@ -18,7 +18,7 @@ Las respuestas están en [`../soluciones/respuestas-ejercicios-busqueda.md`](../
 **3.** Encuentra todos los contactos cuyo correo contiene `bodega`. ¿Qué tipo de registros son?
 
 **4.** Muestra únicamente las **direcciones de entrega** (no las empresas ni las personas).
-*(Pista: hay un filtro por tipo de dirección; si no lo encuentras, agrupa.)*
+*(Pista: no hay un filtro estándar por tipo de dirección: agrupa por un campo que no está en el menú.)*
 
 **5.** ¿Qué cliente tiene más de una dirección de entrega?
 

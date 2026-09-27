@@ -17,14 +17,19 @@ todas las secciones de permisos.
 | U3 | Marco Huamán | marco.huaman@andinagourmet.com.pe | Almacenero de Lima |
 | U4 | Sofía Reátegui | sofia.reategui@andinagourmet.com.pe | Gerente general |
 
-> Créalos como **usuarios internos**. Si tu base es una prueba en línea con límite de usuarios,
+> Créalos como **usuarios internos** con rol **Usuario**. En v20 el formulario de usuario muestra un
+> selector de rol con tres opciones: *ligero* (Light), *usuario* y *administrador*. El rol ligero solo
+> admite permisos "ligeros" (pedir ausencias, marcar asistencia…) y oculta apps como Contactos o
+> Ventas; si eliges *ligero*, Odoo recorta los grupos de la matriz de abajo.
+>
+> Si tu base es una prueba en línea con límite de usuarios,
 > crea U1 y U4 como usuarios reales y prueba U2/U3 reasignando grupos a U1 (anota que lo hiciste así).
 
 ## 2. Matriz de grupos
 
 | Área | U1 Ana (Ventas) | U2 Diego (Compras) | U3 Marco (Almacén) | U4 Sofía (Gerencia) |
 |---|---|---|---|---|
-| **Ventas** | Usuario: **solo sus propios documentos** | — | — | Administrador |
+| **Ventas** | Usuario: **solo mostrar documentos propios** | — | — | Administrador |
 | **Compras** | — | Usuario | — | Administrador |
 | **Inventario** | — | Usuario | Usuario | Administrador |
 | **Contabilidad** | — | — | — | Facturación (o Contable) |
@@ -61,7 +66,7 @@ y marca el resultado observado. Si algo no coincide con lo esperado, corrige los
    asignando otro vendedor.
 2. Entra como Ana: ve **3**.
 3. Vuelve como administrador y cambia el grupo de Ventas de Ana de
-   *Usuario: solo documentos propios* a *Usuario: todos los documentos*.
+   *Usuario: solo mostrar documentos propios* a *Usuario: todos los documentos*.
 4. Entra como Ana: ahora ve **5**. **Los menús no cambiaron** — cambió qué filas puede leer.
 
 **Escribe en tu bitácora, con tus palabras:**
@@ -70,10 +75,18 @@ y marca el resultado observado. Si algo no coincide con lo esperado, corrige los
 
 ## 5. Cómo inspeccionar las reglas (modo desarrollador)
 
-- *Ajustes → Técnico → Seguridad → Reglas de registro*: filtra por modelo `sale.order` y lee el dominio
-  de la regla "personal" (`[('user_id','=',user.id)]` o equivalente). Ahí está, literalmente, la restricción.
-- *Ajustes → Técnico → Seguridad → Listas de control de acceso*: los permisos de
-  lectura/escritura/creación/eliminación por modelo y grupo.
+En v20 (igual que desde saas-19.x) ya no hay dos menús separados de *Listas de control de acceso* y
+*Reglas de registro*: ambos se fusionaron en un solo modelo, `ir.access`.
+
+- *Ajustes → Técnico → Seguridad → Permisos de acceso*: filtra por modelo `sale.order`. Cada fila dice
+  **qué grupo** puede hacer **qué operaciones** (`r` leer, `u` modificar, `c` crear, `d` eliminar) y,
+  opcionalmente, **sobre qué registros** (el *dominio*).
+- Busca la fila *Personal Orders* del grupo *Usuario: solo mostrar documentos propios*: su dominio es
+  `['|', ('user_id', '=', user.id), ('user_id', '=', False)]` —sus pedidos **y** los que no tienen
+  vendedor—. Ahí está, literalmente, la restricción. La fila *All Orders* del grupo *Usuario: todos los
+  documentos* no tiene dominio: por eso ve todo.
+- Una fila **sin grupo** es una *restricción* global (lo que antes era una regla de registro global);
+  una con grupo es un *permiso*.
 
 No modifiques nada aquí todavía: en la Fase 9 aprenderás cuándo tocar esto y cuándo no.
 

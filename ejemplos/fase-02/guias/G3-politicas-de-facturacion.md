@@ -8,7 +8,8 @@
 - Producto A = *Conserva de Aguaymanto 400 g* → política **Cantidades entregadas**.
 - Producto B = *Asesoría nutricional para cliente* (servicio) → política **Cantidades pedidas**.
 - Cliente = *Comercial Los Andes E.I.R.L.* con lista Mayorista B2B.
-- Se configura en el producto, pestaña *Ventas* → *Política de facturación*.
+- Se configura en el producto, campo *Política de facturación* (el valor por defecto para productos
+  nuevos está en *Ventas → Configuración → Ajustes*).
 
 ---
 
@@ -18,7 +19,8 @@
 
 **Resultado esperado:**
 - La factura sale por **120 unidades**, no 200.
-- El pedido queda con estado de facturación *Por facturar parcialmente*.
+- El pedido queda con estado de facturación *Nada que facturar* hasta la siguiente entrega (Odoo no
+  tiene un estado "parcialmente facturado": el pedido vuelve a *A facturar* cuando salen las 80).
 - Al entregar las 80 restantes y volver a facturar, sale una **segunda factura** por 80.
 
 **Pregunta:** ¿qué ve el cliente en su portal entre la primera y la segunda factura?
@@ -29,7 +31,7 @@
 
 **Resultado esperado:**
 - La factura sale por **200 unidades**, aunque solo entregaste 120.
-- El pedido queda *Totalmente facturado* con mercancía pendiente de entregar.
+- El pedido queda *Completamente facturado* con mercancía pendiente de entregar.
 
 **La conversación con el cliente:** esto no es un error de Odoo, es una decisión de negocio.
 Se factura por adelantado lo comprometido. El riesgo: si nunca entregas las 80, tienes una factura

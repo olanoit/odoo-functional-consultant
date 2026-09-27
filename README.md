@@ -1,13 +1,15 @@
-# Plan de Estudios — Consultor Funcional Odoo 19 (saas-19.4)
+# Plan de Estudios — Consultor Funcional Odoo 20 (20.0)
 
 Ruta de aprendizaje completa, por fases, para pasar de "usuario que conoce Odoo"
 a **consultor funcional capaz de levantar, diseñar, configurar, probar, capacitar
 y poner en marcha** una implementación Odoo.
 
-- **Documentación base:** <https://www.odoo.com/documentation/saas-19.4/es/>
-- **Idioma de estudio:** español (la doc oficial en ES es la fuente primaria; cuando
-  una página no esté traducida, se usa la versión EN cambiando `/es/` por `/en/`).
-- **Versión objetivo:** Odoo 19 / saas-19.4.
+- **Documentación base:** <https://www.odoo.com/documentation/20.0/>
+- **Idioma de estudio:** español. Los enlaces a la documentación oficial apuntan a la
+  **20.0 en inglés**, porque la traducción al español de la 20.0 aún no está publicada; cuando
+  salga, basta insertar `/es/` tras `/20.0/` en la URL. Mientras tanto, la versión en español más
+  cercana es la saas-19.4 (detalles en [`recursos.md`](recursos.md)).
+- **Versión objetivo:** Odoo 20 / 20.0.
 
 ---
 

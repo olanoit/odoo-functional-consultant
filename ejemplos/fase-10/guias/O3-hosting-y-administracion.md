@@ -54,18 +54,26 @@ Sin ese responsable, es la peor opción: nadie actualiza, nadie prueba los respa
 |---|---|
 | 1. Leer las notas de la versión destino | Qué cambia funcionalmente |
 | 2. Inventariar personalizaciones | Studio, módulos de terceros, desarrollos |
-| 3. Solicitar base de prueba actualizada | Odoo ofrece el servicio de actualización |
+| 3. Solicitar base de prueba actualizada | Odoo ofrece el servicio de actualización (solo hacia versiones con soporte) |
 | 4. Probar **con casos escritos** | Los mismos de la UAT (Fase 11) |
 | 5. Corregir lo que rompió | Aquí se paga el costo de las personalizaciones |
 | 6. Capacitar en los cambios de interfaz | Los usuarios notan cada cambio |
 | 7. Ventana de corte y actualización real | Fuera de horario, con plan de reversión |
 
+**Plazos de soporte.** Odoo da soporte estándar de **tres años** a cada versión mayor (19.0, 20.0…);
+pasado ese plazo solo queda el soporte extendido, con cargo adicional obligatorio. Las versiones
+intermedias SaaS (19.1 a 19.4) solo existen en Odoo Online y no tienen soporte extendido. Consulta la
+[tabla vigente](https://www.odoo.com/documentation/20.0/administration/supported_versions.html)
+antes de proponer una fecha de actualización.
+
 **Lo que suele romper:** módulos de terceros sin versión nueva, desarrollos a medida, reportes
 personalizados, integraciones por API y automatizaciones que dependen de campos renombrados.
 
-> Los cambios de v19 que este plan documenta —`hr.contract` → `hr.version`, `uom_po_id` eliminado,
-> `account.fiscal.position.tax` eliminado, `qty_multiple` eliminado— son exactamente el tipo de cosa
-> que rompe una actualización. Por eso cada cuaderno de este plan tiene su chuleta de campos.
+> Los cambios que este plan documenta —los de v19, como `hr.contract` → `hr.version`, `uom_po_id`,
+> `account.fiscal.position.tax` o `qty_multiple` eliminados, y los de v20, como la desaparición de
+> `l10n_latam_base` (el tipo de identificación del contacto) o del valor `none` en el seguimiento de
+> productos— son exactamente el tipo de cosa que rompe una actualización. Por eso cada cuaderno de
+> este plan tiene su chuleta de campos.
 
 ## 5. Multiempresa
 

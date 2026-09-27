@@ -59,7 +59,7 @@ Completa esta tabla antes de transformar nada:
 | `limite_credito` | *(campo a crear con Studio)* | quitar `S/` y separadores | No |
 | `estado` | `active` | ACTIVO → True, INACTIVO → False | Sí |
 | — | `customer_rank` | fijo `1` | Sí |
-| — | *(ninguna)* | `is_company` es **calculado** en v19: sale de `vat`. No se mapea | — |
+| — | *(ninguna)* | `is_company` es **calculado** (desde v19, y sigue así en v20): sale de `vat`. No se mapea | — |
 | — | `country_id/id` | fijo `base.pe` | No |
 
 > Fíjate en el último bloque: hay campos que **no vienen del origen** y que hay que añadir con un

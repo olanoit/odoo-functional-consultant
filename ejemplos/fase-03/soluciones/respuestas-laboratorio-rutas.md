@@ -22,10 +22,28 @@ La entrega queda **En espera** (disponibilidad parcial). El almacenero puede:
 (d) cancelar. La opción por defecto —crear retropedido— es la correcta en la mayoría de negocios.
 
 **4. Venta desde Arequipa de producto que está en Lima (con ruta de reabastecimiento).**
-Cadena: *Entrega Arequipa* (AREQ/Existencias → Cliente) **en espera** →
-*Transferencia interalmacén* Lima → Tránsito → Arequipa (2 documentos: salida de Lima y entrada en
-Arequipa) que la abastece. Es una cadena **pull**: la necesidad del cliente jala el movimiento
-desde Lima. Si no hay stock en Lima tampoco, se encadena una compra (si el producto tiene esa ruta).
+Al confirmar el pedido solo aparece la *Entrega Arequipa* (AREQ/Existencias → Cliente), **en espera**:
+el producto es *Bajo existencias* (MTS), así que la venta no jala nada por sí sola. La cadena
+interalmacén nace cuando se dispara el **reabastecimiento** de Arequipa: el informe
+*Reabastecimiento* propone la cantidad faltante (regla manual creada al vuelo) y, al pulsar *Pedir*
+—o con una regla de reordenamiento automática en Arequipa—, se crean los documentos. Comprobado en
+v20 con Lima en 3 pasos:
+
+| # | Documento | Tipo | Desde → hasta |
+|---|---|---|---|
+| 1 | WH/PICK | Recoger | WH/Existencias → WH/Empaque |
+| 2 | WH/PACK | Empacar | WH/Empaque → WH/Salida |
+| 3 | WH/OUT | Envío | WH/Salida → Tránsito interalmacén |
+| 4 | AREQ/IN | Recepción | Tránsito interalmacén → AREQ/Existencias |
+| 5 | AREQ/OUT | Entrega (la del pedido) | AREQ/Existencias → Cliente |
+
+La salida de Lima **respeta sus 3 pasos**: la regla de la ruta va de Existencias a Tránsito con el
+tipo *Recoger*, pero el movimiento se detiene en *WH/Empaque* y las reglas *push* de Lima
+generan *Empacar* y *Envío* al validar cada paso. La recepción de Arequipa se crea de entrada, en
+espera, y queda lista al validar el envío de Lima; al validarla, la entrega al cliente pasa a *Lista*.
+Si Lima tampoco tiene stock, su *Recoger* queda en espera: la regla interalmacén es *Bajo existencias*,
+no encadena una compra; eso lo resuelve el reabastecimiento propio de Lima (regla de reordenamiento).
+Para que la venta jale la cadena directamente habría que combinar la ruta con **MTO**.
 
 **5. Producto MTO sin stock.**
 Además de la entrega en espera, se crea automáticamente una **solicitud de compra** (o una orden de
@@ -39,7 +57,8 @@ quedan fuera de tu alcance: es un argumento para no usar dropshipping en product
 
 **7. Control de calidad rechaza un lote.**
 La mercancía está físicamente en *WH/Control de calidad*, que es una ubicación **interna**: cuenta
-como stock. Para sacarla: transferencia interna a **Cuarentena** (y si se descarta definitivamente,
+como stock. Para sacarla: transferencia interna a **Cuarentena** (ubicada fuera de *WH/Existencias*,
+ver H1 §6) (y si se descarta definitivamente,
 **desecho**, que la manda a la ubicación virtual de chatarra) o **devolución al proveedor**
 (transferencia inversa de la recepción). Mientras esté en una ubicación interna sin restricción,
 puede reservarse para ventas: ese es el riesgo.

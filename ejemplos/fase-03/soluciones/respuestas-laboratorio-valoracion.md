@@ -13,15 +13,16 @@
 | **PEPS (FIFO)** | 1 650.00 | 1 200.00 | 500 | **900.00** | 1.8000 |
 | **Promedio (AVCO)** | 1 710.00 | 1 255.38 | 500 | **784.62** | 1.5692 |
 
-> **Verificado en Odoo 19 (saas~19.4)** ejecutando las cinco operaciones sobre tres productos
-> reales. Dos advertencias sobre cómo *ver* estos números en la interfaz:
+> **Verificado en Odoo 20** ejecutando las cinco operaciones (órdenes de compra y entregas reales)
+> sobre tres productos, uno por método: los valores de salida (`value` del movimiento), el valor
+> total y el coste coinciden al céntimo con esta tabla. Dos advertencias sobre cómo *ver* estos números en la interfaz:
 >
 > - El coste unitario del promedio se muestra como **1.57**, no 1.5692: el campo `avg_cost` se
 >   presenta con la precisión decimal de *Precio del producto* (2 dígitos por defecto). El valor
 >   total, 784.62, sí es exacto. Si necesitas los 4 decimales, sube la precisión en
 >   *Ajustes → Técnico → Precisión decimal*.
 > - Las entradas deben hacerse con una **orden de compra** con su precio unitario. Si creas el
->   movimiento de existencias a mano, v19 lo valora al coste actual del producto y **los tres
+>   movimiento de existencias a mano, Odoo (v19 y v20) lo valora al coste actual del producto y **los tres
 >   métodos dan el mismo resultado**: parecería que el método de costo no funciona.
 
 **Las mismas 500 unidades valen 675, 784.62 o 900 soles según el método.** Esa frase, dicha en una
@@ -58,7 +59,8 @@ Entradas: 2 500 u × 1.35 = 3 375.00   Salidas: 2 000 u × 1.35 = 2 700.00
 Valor final: 500 × 1.35 = 675.00
 ```
 Las diferencias contra el precio real pagado (0.15 × 1 000 + 0.45 × 500 = **375.00**) van a la
-**cuenta de diferencia de precio**, no al inventario.
+**cuenta de diferencia de precio** al validar la factura de proveedor (con valoración perpetua), no al
+inventario.
 
 ## Respuestas a las preguntas
 
@@ -81,11 +83,14 @@ precio estándar **exige** revisión periódica y actualización del estándar.
 | Envases y embalajes | **Estándar** | Precio estable y negociado por volumen; simplifica y las diferencias son pequeñas |
 | Producto terminado de alta rotación | **PEPS (FIFO)** | Coherente con la rotación física real (FEFO/FIFO) y con la trazabilidad por lote |
 
-**D. Cambiar el método con movimientos existentes:** Odoo recalcula la valoración y genera asientos
-de ajuste. El valor cambia de golpe y esa diferencia hay que explicarla al contador.
+**D. Cambiar el método con movimientos existentes:** en v20 Odoo **revalúa hacia atrás** todos los
+movimientos del producto desde el último cierre de inventario con el nuevo método y actualiza el costo
+(en v19 solo actualizaba el costo). No crea un asiento en ese momento: la diferencia aparece en el
+informe de valoración y en el siguiente cierre o factura. El valor cambia de golpe y esa diferencia hay
+que explicarla al contador.
 **Se decide antes de operar**; cambiarlo después es una decisión contable, no una configuración.
 
-**E. `lot_valuated` (v19):** permite que **cada lote tenga su propio costo**. Resuelve el caso de
+**E. `lot_valuated` (desde v19):** permite que **cada lote tenga su propio costo**. Resuelve el caso de
 compras del mismo insumo a precios muy distintos donde importa el costo real de cada lote
 (importaciones, campañas agrícolas). El costo operativo: obliga a manejar lotes en todo el flujo y
 complica los ajustes.

@@ -1,7 +1,8 @@
 # K2 — Mesa de ayuda, SLA y servicio de campo
 
 > Configuración guiada de la operación de soporte de ANDINA GOURMET.
-> Helpdesk, Servicio de campo y Planeación son **Enterprise**.
+> Helpdesk, Servicio de campo y Planeación son **Enterprise**. En v20, Servicio de campo es una
+> extensión de Planeación: las visitas son **intervenciones** (turnos `planning.slot`), no tareas.
 
 ---
 
@@ -18,7 +19,8 @@ Configura un equipo *Atención a distribuidores* con:
 | Etapas | Nuevo · En análisis · Esperando al cliente · Resuelto · Cancelado |
 | Asignación | Equilibrada entre 2 agentes |
 | Canales de entrada | Correo (alias `soporte@`), formulario web, chat en vivo |
-| Visibilidad | Miembros del equipo |
+| Visibilidad | *Usuarios del portal invitados y todos los usuarios internos (público)*: es **obligatoria** para usar el formulario web y para que el distribuidor vea sus tickets |
+| Calificaciones | Se activan **por etapa** (en *Resuelto*), no con una casilla del equipo |
 
 ## 2. Políticas SLA
 
@@ -27,6 +29,11 @@ Configura un equipo *Atención a distribuidores* con:
 | Crítico | Urgente | **4 horas** hábiles hasta la primera respuesta | Mercancía dañada o faltante |
 | Normal | Media | **2 días** hábiles hasta la resolución | Consultas y documentación |
 | Bajo | Baja | **5 días** | Sugerencias y mejoras |
+
+> **Cómo lo modela Odoo (v20):** cada política filtra los tickets con un **dominio** (campo *Tickets*,
+> `criteria_domain`: prioridad, etiquetas, cliente…) y fija una **etapa a alcanzar** (`stage_id`)
+> dentro de N **horas laborables** (`time`, según el horario del equipo). No hay un objetivo de
+> «primera respuesta» como tal: se modela exigiendo llegar a *En análisis*; la resolución, a *Resuelto*.
 
 **Ejercicio:**
 1. Crea las tres políticas y 10 tickets repartidos.
@@ -39,7 +46,8 @@ Configura un equipo *Atención a distribuidores* con:
 
 ## 3. Tickets facturables
 
-1. Vende la **bolsa de 20 horas de soporte** (`SRV-BOL-20`) a un distribuidor.
+1. Vende la **bolsa de 20 horas de soporte** (`SRV-BOL-20`, 20 h × S/ 110) a un distribuidor.
+   El equipo necesita activadas *Registro de horas* y *Facturación del tiempo*.
 2. Registra horas en un ticket contra esa bolsa.
 3. Comprueba el consumo y el saldo restante.
 4. Convierte un ticket no cubierto en una venta nueva.
@@ -58,11 +66,13 @@ Esa estimación es lo que justifica el tiempo de escribirlos.
 
 **Escenario:** un distribuidor reporta que la exhibidora refrigerada cedida en comodato no enfría.
 
-1. Escala el ticket a una **tarea de campo** asignada a Pedro Quiroz.
-2. Planifica la visita en su calendario.
-3. En sitio: registra tiempo, consume un repuesto del inventario del vehículo, completa la hoja de
-   trabajo y captura la **firma del cliente**.
-4. Factura la intervención (tiempo + materiales).
+1. En el equipo de asistencia activa *Servicio de campo* (`use_fsm`). Desde el ticket, pulsa
+   **Planear intervención**: se crea una intervención (turno de Planeación) enlazada al ticket.
+2. Asígnala a Pedro Quiroz y ubícala en su planificación (gantt o *Planeación → Mapas*); publícala.
+3. En sitio: inicia la intervención, registra tiempo, añade el repuesto con el botón *Productos*
+   (sale del almacén del vehículo si configuraste *Inventario por vehículo*), completa la **hoja de
+   trabajo** y usa *Firmar reporte* para capturar la **firma del cliente**.
+4. Márcala como terminada y factura la intervención (tiempo + materiales) desde su orden de venta.
 5. Relaciona el caso con **Mantenimiento** (Fase 5): ¿el equipo debía estar en un plan preventivo?
 
 ## 6. Planeación de recursos
@@ -76,7 +86,7 @@ Esa estimación es lo que justifica el tiempo de escribirlos.
 ## 7. Preguntas de diseño
 
 **A.** ¿Cuándo un pedido del cliente debe ser un **ticket**, cuándo una **tarea de proyecto** y cuándo
-una **tarea de campo**? Define el criterio en una frase para cada uno.
+una **intervención de campo**? Define el criterio en una frase para cada uno.
 
 **B.** El cliente quiere que sus distribuidores vean el estado de sus tickets. ¿Qué configuras y qué
 información **no** debe ver?

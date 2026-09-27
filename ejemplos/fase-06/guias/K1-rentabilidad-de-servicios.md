@@ -8,11 +8,15 @@
 
 ## 1. Las tres políticas de facturación de servicios
 
-| Producto del catálogo | `invoice_policy` + tipo | Cuándo se factura | Riesgo |
+| Producto del catálogo | Política (`invoice_policy` + `service_type`) | Cuándo se factura | Riesgo |
 |---|---|---|---|
-| Implantación en punto de venta (S/ 4 800) | **Precio fijo** (`order`) | Al confirmar el pedido | Si el trabajo se pasa de horas, el margen lo absorbe la empresa |
-| Asesoría por hora (S/ 120/h) | **Por horas registradas** (`delivery`) | Según hojas de horas | Si nadie registra, no se factura |
-| Desarrollo de marca propia (S/ 18 000) | **Por hitos** | Según avance aprobado | Requiere hitos definidos y aceptados por escrito |
+| Implantación en punto de venta (S/ 4 800) | **Precio fijo o de prepago** (`order` + `manual`) | Al confirmar el pedido | Si el trabajo se pasa de horas, el margen lo absorbe la empresa |
+| Asesoría por hora (S/ 120/h) | **Según el registro de horas** (`delivery` + `timesheet`) | Según hojas de horas | Si nadie registra, no se factura |
+| Desarrollo de marca propia (S/ 18 000) | **Basada en hitos** (`delivery` + `milestones`) | Según avance aprobado | Requiere hitos definidos y aceptados por escrito |
+
+> En el formulario del producto las dos columnas se ven como un solo campo, *Política de facturación
+> de servicios* (`service_policy`). La opción de hitos solo aparece cuando algún proyecto tiene
+> activada la casilla *Hitos*.
 
 **Ejercicio previo:** para cada uno, escribe qué pasa si el trabajo toma el doble de lo previsto.
 Esa respuesta es la que define el precio que debes cotizar.
@@ -44,7 +48,7 @@ Además se gastaron **S/ 1 850** en viajes y muestras, reembolsables **no** fact
 
 ## 3. El caso: bolsa de 20 horas de soporte
 
-Se vendió una **bolsa de 20 horas** por S/ 2 200. Se consumieron: 6 h de Lucía, 9 h de Ana y 7 h de Pedro.
+Se vendió una **bolsa de 20 horas** por S/ 2 200 (20 h × S/ 110, política *Precio fijo o de prepago*). Se consumieron: 6 h de Lucía, 9 h de Ana y 7 h de Pedro.
 
 | # | Pregunta | Tu respuesta |
 |---|---|---|
@@ -67,7 +71,15 @@ producción: con márgenes ficticios.
 
 ## 5. El reporte que hay que saber leer
 
-*Proyecto → abrir proyecto → Rentabilidad* muestra:
+En v20 el proyecto **ya no tiene un panel lateral de «Rentabilidad»** (tampoco estaba en saas-19.4).
+La rentabilidad se lee en dos lugares:
+
+| Dónde | Qué muestra |
+|---|---|
+| Proyecto → botón *Estado* (tablero de *Actualizaciones*) → acción *Apuntes analíticos* | Todo lo cargado a la cuenta analítica del proyecto: ingresos facturados, costo de horas (horas × costo/hora), gastos, compras y materiales |
+| *Hojas de horas → Reportes → Registro de horas → Por tipo de facturación* | Por proyecto y empleado: *Ingresos de la hoja de horas*, costo y **Margen** de las horas |
+
+Arma con ellos el cuadro de siempre:
 
 | Bloque | Qué incluye |
 |---|---|
@@ -75,6 +87,9 @@ producción: con márgenes ficticios.
 | Costos de horas | Horas × costo/hora del empleado |
 | Otros costos | Gastos, compras y materiales asignados al proyecto |
 | Margen | Diferencia y porcentaje |
+
+> La acción *Apuntes analíticos* solo aparece si está activa la **contabilidad analítica**
+> (grupo `analytic.group_analytic_accounting`).
 
 **Preguntas para la bitácora:**
 - ¿Por qué las horas del gerente encarecen tanto un proyecto? ¿Conviene que participe?

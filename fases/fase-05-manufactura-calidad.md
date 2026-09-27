@@ -30,15 +30,15 @@ calidad, mantenimiento y PLM.
 
 | # | Tema | Documentación |
 |---|---|---|
-| 5.1 | Manufactura (índice) | [inventory_and_mrp/manufacturing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/manufacturing.html) |
-| 5.2 | Configuración básica (LdM, órdenes, órdenes de trabajo) | [manufacturing/basic_setup.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/manufacturing/basic_setup.html) |
-| 5.3 | Configuración avanzada (centros de trabajo, kits, LdM multinivel) | [manufacturing/advanced_configuration.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/manufacturing/advanced_configuration.html) |
-| 5.4 | Flujos de trabajo de producción (MPS, desechos, desmontaje, secuencias) | [manufacturing/workflows.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/manufacturing/workflows.html) |
-| 5.5 | Subcontratación | [manufacturing/subcontracting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/manufacturing/subcontracting.html) |
-| 5.6 | Calidad | [inventory_and_mrp/quality.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/quality.html) |
-| 5.7 | Mantenimiento | [inventory_and_mrp/maintenance.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/maintenance.html) |
-| 5.8 | PLM (gestión del ciclo de vida del producto) | [inventory_and_mrp/plm.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/plm.html) |
-| 5.9 | Reparaciones | [inventory_and_mrp/repairs.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/repairs.html) |
+| 5.1 | Manufactura (índice) | [inventory_and_mrp/manufacturing.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing.html) |
+| 5.2 | Configuración básica (LdM, órdenes, órdenes de trabajo) | [manufacturing/basic_setup.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/basic_setup.html) |
+| 5.3 | Configuración avanzada (centros de trabajo, kits, LdM multinivel) | [manufacturing/advanced_configuration.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/advanced_configuration.html) |
+| 5.4 | Flujos de trabajo de producción (MPS, desechos, desmontaje, secuencias) | [manufacturing/workflows.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/workflows.html) |
+| 5.5 | Subcontratación | [manufacturing/subcontracting.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/subcontracting.html) |
+| 5.6 | Calidad | [inventory_and_mrp/quality.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/quality.html) |
+| 5.7 | Mantenimiento | [inventory_and_mrp/maintenance.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/maintenance.html) |
+| 5.8 | PLM (gestión del ciclo de vida del producto) | [inventory_and_mrp/plm.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/plm.html) |
+| 5.9 | Reparaciones | [inventory_and_mrp/repairs.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/repairs.html) |
 
 > **Nota de edición:** Calidad, PLM y algunas funciones avanzadas son **Enterprise**.
 
@@ -51,14 +51,17 @@ calidad, mantenimiento y PLM.
 3. **Kit** (tipo conjunto): diferencia radical con una LdM de fabricación — no genera orden ni stock propio.
    Explicar cuándo usar cada uno (regla: ¿existe físicamente el producto padre en el almacén?).
 4. LdM por **variante** y con **líneas de operación**.
-5. Cantidades con decimales, mermas y consumo flexible (permitir consumir más o menos de lo previsto).
-6. Reporte **estructura y costo** de la LdM: leer el costo teórico desglosado.
+5. Cantidades con decimales, mermas y consumo distinto del previsto: en v20 la LdM ya no tiene el
+   ajuste de consumo estricto/flexible; cualquier desviación dispara la *Advertencia de consumo* al
+   cerrar la orden.
+6. Informe **Resumen de la LdM** (*BoM Overview*): leer el costo teórico desglosado.
 
 ### Bloque 5.2 — Órdenes de fabricación y órdenes de trabajo (7 h)
 1. Fabricar sin órdenes de trabajo: confirmar, reservar componentes, marcar como hecho.
    Identificar los movimientos: componentes → ubicación de producción → producto terminado.
 2. Activar órdenes de trabajo y **centros de trabajo**: capacidad, eficiencia, tiempo de preparación
-   y limpieza, costo por hora, OEE.
+   y limpieza, costo por hora, OEE. Entender la fórmula de la duración esperada:
+   preparación + limpieza + ciclos × tiempo de ciclo × 100 / eficiencia.
 3. Ejecutar una orden en la **vista de taller (tablet)**: iniciar, pausar, registrar producción, terminar.
 4. Producción parcial, órdenes divididas, sobreproducción y desechos (*scrap*) durante la fabricación.
 5. Consumo de lotes en componentes y asignación de lote al producto terminado → **trazabilidad completa**
@@ -66,10 +69,14 @@ calidad, mantenimiento y PLM.
 6. Desmontaje (*unbuild*) y su efecto en stock y costos.
 
 ### Bloque 5.3 — Costos de producción (5 h) ← *el bloque que más se vende*
-1. Configurar el costo de los componentes (Fase 3) y el costo/hora de los centros de trabajo.
-2. Comparar **costo estándar** vs. **costo real** de la orden de fabricación.
-3. Ver el asiento contable generado con valoración automática: consumo de componentes,
-   absorción de mano de obra y entrada del producto terminado.
+1. Configurar el costo de los componentes (Fase 3), el costo/hora de los centros de trabajo y, nuevo
+   en v20, el **costo extra por unidad** de la LdM (energía, embalaje…), que se copia a la orden.
+2. Comparar **costo estándar** vs. **costo real** de la orden de fabricación (*Resumen de la orden de
+   fabricación*).
+3. Ver el asiento contable con valoración perpetua: consumo de componentes, absorción de mano de obra
+   y entrada del producto terminado. Solo se genera al cerrar la orden si la ubicación virtual
+   *Producción* tiene cuenta de valoración (cuenta de producción en proceso); si no, el valor llega al
+   mayor con el asiento de cierre de existencias (Fase 4).
 4. Analizar la varianza: por qué el costo real difiere del teórico (mermas, tiempos, precio de insumos).
 5. Construir el reporte de costo de producción por producto y por período.
 
@@ -94,8 +101,10 @@ calidad, mantenimiento y PLM.
 4. Caso ANDINA GOURMET: control de °Brix en la pulpa y de sellado en la conserva.
 
 ### Bloque 5.7 — Mantenimiento y PLM (4 h)
-1. **Equipos**: registro, categorías, responsable, ubicación, criticidad.
-2. Mantenimiento **preventivo** (por frecuencia o por métrica) y **correctivo** (solicitud desde el taller).
+1. **Equipos**: registro, categorías, responsable, ubicación y centro de trabajo. La criticidad no es un
+   campo estándar: se modela con propiedades de la categoría o con la prioridad de las solicitudes.
+2. Mantenimiento **preventivo** (recurrente por calendario: días, semanas, meses o años; el estándar no
+   programa por horas de uso) y **correctivo** (solicitud desde el taller).
 3. Indicadores: MTBF, MTTR, próximo mantenimiento previsto. Efecto en la planificación del centro de trabajo.
 4. **PLM**: crear una ECO (orden de cambio de ingeniería) sobre una LdM, revisarla, aprobarla y aplicarla.
    Ver el versionado y el historial del cambio.
@@ -148,3 +157,4 @@ En `LAB`:
 | Configurar órdenes de trabajo sin necesidad | Cada operación es un registro manual del operario en planta. Se justifica o se elimina. |
 | Prometer trazabilidad sin lotes en componentes | La cadena se corta en el primer eslabón sin seguimiento. |
 | Olvidar el costo/hora del centro de trabajo | El costo real sale igual al teórico y la analítica no sirve. |
+| Calcular el costo de operación sin la eficiencia del centro | El cálculo a mano nunca coincide con el de Odoo, que divide el tiempo de ciclo por la eficiencia. |

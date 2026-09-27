@@ -24,15 +24,27 @@
 
 ## Explicaciones de las que más se fallan
 
-**3 · v19: `type = consu` + `is_storable`.** El valor `product` desapareció en v18/v19. Es el error
-número uno al reutilizar plantillas de importación antiguas.
+**3 · `type = consu` + `is_storable`.** El valor `product` desapareció en v18 y sigue sin existir en
+v20. Es el error número uno al reutilizar plantillas de importación antiguas. En v20, con lotes y
+series activados, el formulario lo agrupa en el campo *Seguimiento* (`store_by`: Ninguno, Por
+cantidad, Por lotes, Por número de serie único), que por debajo sigue escribiendo `is_storable`.
 
 **10 · Especificidad sobre importe.** La regla de **producto** gana a la global aunque el precio
 resultante sea mayor. Odoo ordena por `applied_on, min_quantity desc` y toma la primera aplicable.
 De aquí sale la mayoría de los "Odoo me pone mal los precios".
 
-**12 y 16 · Cambios de v19.** Los opcionales son líneas con `is_optional`; las etapas de CRM se
-relacionan con equipos por `team_ids` (Many2many). Cualquier material anterior a v19 falla aquí.
+**12 y 16 · Cambios de v19, vigentes en v20.** Los opcionales son líneas con `is_optional`; las
+etapas de CRM se relacionan con equipos por `team_ids` (Many2many). Cualquier material anterior a v19
+falla aquí.
+
+**13 · Novedad de v20 en el PdV.** La sesión ya no genera "un asiento resumen": genera una **factura
+resumen** al *cliente por defecto* configurado en el PdV, en el *diario de cierre*, y otra nota de
+crédito para las devoluciones. En el modo por defecto (*Daily*) se contabiliza cada día a la hora
+fijada (4:00), aunque la sesión siga abierta (comprobado en v20: la factura resumen, el cobro de
+tarjeta y la línea de caja se generan con la sesión todavía *En curso*). Ojo: esa hora se compara con
+la hora **UTC** del servidor, así que las 4:00 son las 23:00 del día anterior en Lima. El otro modo (*At closing*) contabiliza al cerrar. Los
+tickets facturados uno a uno ya tienen su propia factura y no entran en el resumen. Si vienes de v19
+(y para el examen de v19), la respuesta allí era "un asiento resumen de la sesión".
 
 **19 · Ubicación virtual de inventario.** Todo movimiento tiene origen y destino: un ajuste positivo
 "viene" de la ubicación de pérdidas/ganancias de inventario. Es la partida doble del stock.
@@ -40,12 +52,19 @@ relacionan con equipos por `team_ids` (Many2many). Cualquier material anterior a
 **22 · Se usa el stock previsto, no el físico.** 1 500 − 3 000 = −1 500. Para llegar al máximo de
 10 000 hay que comprar **11 500**. Quien responde 8 500 está mirando solo lo que hay en el estante.
 
-**24 y 30 · Renombres de v19.** `stock.production.lot` → `stock.lot`; valoración `manual_periodic`
-→ `periodic`.
+**24 y 30 · Renombres que siguen vigentes.** `stock.production.lot` → `stock.lot` (desde v16);
+valoración `manual_periodic` → `periodic` (desde v19). En v20 estos campos de valoración de la
+categoría se definen en el módulo `account`, pero los valores son los mismos.
 
-**34 · El cambio más disruptivo de v19 en contabilidad.** El modelo `account.fiscal.position.tax`
+**34 · El cambio más disruptivo de v19 en contabilidad (vigente en v20).** El modelo `account.fiscal.position.tax`
 desapareció: ahora el impuesto **destino** declara a quién reemplaza (`original_tax_ids`) y en qué
 posiciones aplica (`fiscal_position_ids`).
+
+**35 · Pagos pendientes, si el método de pago tiene la cuenta.** La respuesta (b) describe el flujo
+con cuenta de *pagos pendientes* en el método de pago del diario. En Enterprise, por defecto, esa
+cuenta no viene configurada: registrar el pago **no crea asiento**, la factura queda *En proceso de
+pago* y el único asiento es el de la conciliación con el extracto (banco / cuenta por cobrar). Lo
+comprobaste en el laboratorio I1 (operación 3).
 
 **38 · La respuesta correcta es la (d).** Tener varias ubicaciones no descuadra nada: el valor es el
 mismo esté donde esté la mercancía dentro de la empresa. Las otras tres sí son causas reales de
@@ -58,7 +77,7 @@ por sus componentes. Si el cliente arma y almacena el producto, **necesita una L
 **49 · Costo por hora.** Sin `hourly_cost` cargado, todos los proyectos muestran 100 % de margen y el
 reporte que justificó comprar el módulo queda inservible.
 
-**53 · v19: `hr.version`.** El modelo `hr.contract` desapareció. Los datos laborales viven en
+**53 · Desde v19: `hr.version`.** El modelo `hr.contract` desapareció y no vuelve en v20. Los datos laborales viven en
 versiones fechadas del empleado.
 
 **56 · El carrito no reserva.** La reserva ocurre al confirmar el pedido, según el método de reserva
@@ -95,4 +114,4 @@ diferencia entre un consultor y un configurador.
 > porque el objetivo es que estudies el contenido, no que entrenes a adivinar patrones. El examen
 > oficial distribuye las respuestas al azar y usa formatos que aquí no están (selección múltiple,
 > verdadero/falso, preguntas invertidas). **Haz también el examen de muestra oficial**:
-> <https://www.odoo.com/slides/odoo-functional-certification-sample-test-50>
+> <https://www.odoo.com/slides/odoo-certification-sample-test-50>

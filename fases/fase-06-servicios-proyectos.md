@@ -29,12 +29,12 @@ servicio de campo y planeación.
 
 | # | Tema | Documentación |
 |---|---|---|
-| 6.1 | Proyecto | [services/project.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/project.html) · [project/tasks.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/project/tasks.html) |
-| 6.2 | Hojas de horas | [services/timesheets.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/timesheets.html) |
-| 6.3 | Servicio de asistencia (Helpdesk) | [services/helpdesk.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/helpdesk.html) · [helpdesk/overview.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/helpdesk/overview.html) |
-| 6.4 | Servicio de campo | [services/field_service.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/field_service.html) |
-| 6.5 | Planeación (turnos y recursos) | [services/planning.html](https://www.odoo.com/documentation/saas-19.4/es/applications/services/planning.html) |
-| 6.6 | Facturación de servicios (repaso desde Ventas) | [sales/invoicing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/sales/invoicing.html) |
+| 6.1 | Proyecto | [services/project.html](https://www.odoo.com/documentation/20.0/applications/services/project.html) · [project/tasks.html](https://www.odoo.com/documentation/20.0/applications/services/project/tasks.html) |
+| 6.2 | Hojas de horas | [services/timesheets.html](https://www.odoo.com/documentation/20.0/applications/services/timesheets.html) |
+| 6.3 | Servicio de asistencia (Helpdesk) | [services/helpdesk.html](https://www.odoo.com/documentation/20.0/applications/services/helpdesk.html) · [helpdesk/overview.html](https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview.html) |
+| 6.4 | Servicio de campo | [services/field_service.html](https://www.odoo.com/documentation/20.0/applications/services/field_service.html) |
+| 6.5 | Planeación (turnos y recursos) | [services/planning.html](https://www.odoo.com/documentation/20.0/applications/services/planning.html) |
+| 6.6 | Facturación de servicios (repaso desde Ventas) | [sales/invoicing.html](https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -46,10 +46,10 @@ servicio de campo y planeación.
 5. Etiquetas, prioridades, campos de proyecto y control de acceso (proyecto privado, portal, público).
 
 ### Bloque 6.2 — Servicios facturables (7 h)
-1. Configurar productos de servicio con las tres políticas:
-   - **Precio fijo** (factura al pedido),
-   - **Basado en hojas de horas** (factura lo registrado),
-   - **Por hitos** (factura por avance porcentual).
+1. Configurar productos de servicio con las tres políticas (campo *Política de facturación de servicios*):
+   - **Precio fijo o de prepago** (factura al pedido),
+   - **Según el registro de horas** (factura lo registrado),
+   - **Basada en hitos** (factura por avance; requiere activar *Hitos* en el proyecto).
 2. Vincular producto de servicio → proyecto/tarea creado automáticamente al confirmar la venta.
 3. Registrar horas contra la tarea (desde escritorio y desde móvil/temporizador) y **facturarlas**.
 4. Control de sobreconsumo: horas vendidas vs. registradas, alertas y qué hacer al excederse.
@@ -66,10 +66,24 @@ servicio de campo y planeación.
 6. Encuesta de satisfacción y reporte de desempeño del equipo.
 
 ### Bloque 6.4 — Servicio de campo (4 h)
-1. Tareas de campo: planificación, asignación a técnicos, ruta y calendario.
-2. En sitio: registrar tiempo, consumir productos del inventario del vehículo, hoja de trabajo, firma del cliente.
-3. Facturar la intervención (tiempo + materiales) y cerrar.
-4. Relación con Mantenimiento (Fase 5) y con Helpdesk (escalamiento de ticket a visita).
+
+> **v20:** Servicio de campo ya **no** trabaja con tareas de proyecto (el antiguo módulo `industry_fsm`
+> no existe). Es una extensión de **Planeación** (`planning_field_service` y los módulos
+> `planning_field_service_*`): cada **intervención es un turno** (`planning.slot`) con cliente,
+> dirección, prioridad y estado *Borrador → Planeado → En progreso → Completado*. Todo se configura y
+> se opera desde el menú de *Planeación*.
+
+1. Intervenciones: crearlas y asignarlas a técnicos en el gantt/calendario de Planeación, y ver la
+   ruta en *Planeación → Mapas* (*Por recurso*, *Mapa en vivo*, línea de tiempo), con tiempos de traslado.
+2. En sitio: iniciar la intervención, registrar tiempo (hojas de horas ligadas al turno), añadir
+   productos (botón *Productos*; con `planning_field_service_sale_stock` salen del **almacén del
+   vehículo** del técnico, definido en *Planeación → Configuración → Ajustes → Inventario por
+   vehículo*), completar la **hoja de trabajo** (`planning_field_service_worksheet`) y *Firmar
+   reporte* con la firma del cliente.
+3. Facturar la intervención (tiempo + materiales) desde la orden de venta vinculada
+   (`planning_field_service_sale_timesheet`) y marcarla *Terminado*.
+4. Relación con Mantenimiento (Fase 5) y con Helpdesk: activando *Servicio de campo* en el equipo de
+   asistencia, el ticket muestra el botón **Planear intervención** (escalamiento de ticket a visita).
 
 ### Bloque 6.5 — Planeación de recursos (3 h)
 1. Crear plantillas de turno, publicar horarios, asignaciones abiertas que los empleados toman.
@@ -97,7 +111,7 @@ En `LAB`:
 3. ¿Cómo se calcula el costo de una hora registrada y de dónde sale ese dato?
 4. Un proyecto a precio fijo lleva 60 h consumidas de 40 vendidas. ¿Qué muestra Odoo y qué recomiendas al cliente?
 5. ¿Qué es una política SLA y qué ocurre al vencerse?
-6. Diferencia entre tarea de proyecto, ticket de helpdesk y tarea de campo. ¿Cuándo usar cada una?
+6. Diferencia entre tarea de proyecto, ticket de helpdesk e intervención de campo (turno de Planeación). ¿Cuándo usar cada una?
 7. ¿Cómo vendes y controlas una bolsa de horas prepagada?
 8. ¿Qué ve un cliente en el portal de un proyecto y cómo se limita?
 9. ¿Cómo se factura un gasto reembolsable al cliente?

@@ -7,7 +7,7 @@ Casos prácticos para [`../../fases/fase-10-localizacion-pe-administracion.md`](
 > incumple y la que más caro se paga.
 
 *(Si tu mercado no es Perú, sustituye por la localización de tu país desde el
-[índice de localizaciones fiscales](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations.html);
+[índice de localizaciones fiscales](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html);
 la estructura del cuaderno es la misma.)*
 
 ---
@@ -16,18 +16,18 @@ la estructura del cuaderno es la misma.)*
 
 | Archivo | Qué es |
 |---|---|
-| `datos/01-clientes-pe.csv` | 12 clientes: 8 empresas con **RUC** y 4 personas con **DNI**, con los ID externos reales de la localización. En v19 es `l10n_latam_identification_type_id` quien determina si el contacto es empresa o persona (`is_company` es calculado) |
+| `datos/01-clientes-pe.csv` | 12 clientes: 8 empresas con **RUC** (columna `vat`) y 4 personas con **DNI** (columna `additional_identifiers`, en JSON: `{"PE_DNI": "40012411"}`). En v20 ya no existe el tipo de identificación: el RUC en `vat` hace que el contacto sea empresa (`is_company` es calculado) y el DNI como identificador adicional lo deja como persona |
 | `datos/02-productos-pe.csv` | 8 productos con casos tributarios deliberadamente distintos (gravado, exonerado, gratuito, con ICBPER) |
 | `guias/O0` | **Guía completa de la localización peruana** — la referencia de consulta de toda la fase |
 | `guias/O1` | Instalación y configuración de la localización, paso a paso |
 | `guias/O2` | **Manual de errores de facturación electrónica** (10 casos) — entregable |
 | `guias/O3` | **Matriz de hosting**, actualizaciones y multiempresa — entregable |
 
-## Módulos de la localización (verificados en v19)
+## Módulos de la localización (verificados en v20)
 
 | Módulo | Edición | Aporta |
 |---|---|---|
-| `l10n_pe` | **Community** | Plan contable PCGE, impuestos, tipos de identificación (`l10n_pe.it_RUC`, `l10n_pe.it_DNI`), ciudades y **distritos** |
+| `l10n_pe` | **Community** | Plan contable PCGE, impuestos, identificadores peruanos del contacto (DNI, CE, TAM… como identificadores adicionales) y su código SUNAT, ciudades y **distritos** |
 | `l10n_pe_edi` | Enterprise | Firma y envío a OSE/SUNAT, CDR, anulaciones |
 | `l10n_pe_edi_stock` | Enterprise | Guía de remisión electrónica (**incluye la GRE 2.0**) |
 | `l10n_pe_edi_withholding` | Enterprise | Comprobantes de **retención** |
@@ -41,7 +41,8 @@ la estructura del cuaderno es la misma.)*
 Son **diez** módulos, y solo `l10n_pe` y `l10n_pe_pos` son Community: **la facturación electrónica
 exige Enterprise**. Es el primer dato de cualquier propuesta económica.
 
-> ⚠️ La documentación oficial cita dos módulos que **no existen** en saas-19.4:
+> ⚠️ La documentación oficial (también la de 20.0) cita dos módulos que **no existen** en v20
+> (ni existían en saas-19.4):
 > `l10n_pe_edi_stock_20` (la GRE 2.0 está dentro de `l10n_pe_edi_stock`) y `l10n_pe_website_sale`.
 > Lo desarrolla la guía [O0](guias/O0-guia-completa-localizacion-pe.md).
 
@@ -67,8 +68,9 @@ diarios con series.
 
 Luego importa `01-clientes-pe.csv` y `02-productos-pe.csv`.
 
-**Verificación:** abre un cliente y comprueba que su tipo de documento es RUC o DNI según
-corresponda; abre un producto y revisa su afectación tributaria.
+**Verificación:** abre un cliente y comprueba que las empresas tienen el RUC en su campo y las
+personas el DNI entre sus **identificadores adicionales**; abre un producto y revisa su afectación
+tributaria.
 
 ## Ejemplo 3 — Emitir en modo de prueba
 *(Bloque 10.3 · 120 min)*
@@ -163,7 +165,7 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior a v19, y aun los artículos de v19 son de una versión anterior a la del curso (v20): contrasta
+> los nombres de campo. Verifica contra la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

@@ -10,20 +10,25 @@ saldo al ejercicio siguiente, si admite conciliación, y cómo se comporta en el
 es una convención de presentación (y en Perú, del PCGE). Una cuenta con el número correcto y el tipo
 equivocado produce estados financieros incorrectos.
 
-**2. Los tres bloqueos de fecha.**
-*Para todos*: nadie puede registrar antes de esa fecha (ni el administrador). *Para no asesores*: los
-usuarios normales no pueden, los contables sí. *Bloqueo fiscal*: impide modificar lo ya declarado a
-la autoridad tributaria. Es la herramienta antifraude y anti-error más importante, y se usa **cada mes**.
+**2. Las fechas de bloqueo.**
+El bloqueo "para no asesores" ya no existe (desapareció en v18). En v20 hay cinco fechas:
+*global* (nadie registra ni modifica asientos anteriores, salvo con una **excepción de bloqueo**
+concedida y trazada); *de declaración de impuestos* (protege lo ya declarado a la autoridad
+tributaria); *de ventas* y *de compras* (cierran solo esos diarios, útil cuando facturación termina
+antes que contabilidad); y el **bloqueo permanente** (*hard lock*), que no admite excepciones ni se
+puede retroceder. Es la herramienta antifraude y anti-error más importante, y se usa **cada mes**.
 
 **3. Cliente exonerado que compra un producto gravado.**
-Con una **posición fiscal** asignada al cliente. En v19 el impuesto *Exonerado* declara
+Con una **posición fiscal** asignada al cliente. Desde v19 (igual en v20) el impuesto *Exonerado* declara
 `original_tax_ids = IGV 18 %` y `fiscal_position_ids = Cliente exonerado`. No se toca el producto:
 el producto siempre lleva su impuesto normal y la posición lo sustituye al facturar.
 
 **4. Modelo de conciliación.**
 Una regla que reconoce automáticamente líneas de extracto repetitivas (comisiones, ITF, intereses) y
 propone o crea la contrapartida. Resuelve el problema de las decenas de movimientos pequeños que, a
-mano, convierten la conciliación en una tarea de horas.
+mano, convierten la conciliación en una tarea de horas. En v20 se complementa con las **reglas de
+coincidencia** (`rule_type = matching_rule`), que emparejan automáticamente el extracto con facturas
+abiertas dentro de una tolerancia de pago.
 
 **5. Pago en exceso.**
 El excedente queda en la cuenta del cliente como saldo a favor (crédito pendiente de aplicar).
@@ -47,9 +52,10 @@ analítica**, que la aplican según producto, cliente, cuenta o diario, sin inte
 
 **9. Inventario 120 000 vs. cuenta contable 118 500 — 5 causas.**
 (1) Categorías con valoración periódica mezcladas con perpetua; (2) asientos manuales a la cuenta de
-existencias; (3) recepciones sin factura o facturas sin recepción (cuenta transitoria de entrada);
-(4) costos en destino sin aplicar; (5) ajustes o desechos del último día sin contabilizar, o cambio de
-método de costo durante el período.
+existencias; (3) recepciones sin factura o facturas sin recepción (desde v19 sin cuenta transitoria: en v20 salen
+en los devengos del informe de valoración);
+(4) costos en destino sin aplicar; (5) ajustes o desechos pendientes del asiento de cierre de
+existencias (*Generate Entries* no ejecutado), o cambio de método de costo durante el período.
 
 **10. Coincidencia a tres bandas.**
 El control cruzado entre **orden de compra**, **recepción** y **factura del proveedor**: se paga solo
@@ -63,9 +69,13 @@ de cambio de la fecha. Al cobrar con otro tipo de cambio surge una **diferencia 
 una diferencia **no realizada** por revalorización.
 
 **12. Publicar una factura en un período bloqueado.**
-Odoo lo impide y avisa. Las opciones son: registrarla con fecha del período abierto (lo correcto si
-el cierre ya se declaró) o —solo con autorización del contador y trazabilidad— levantar el bloqueo,
-registrar y volver a bloquear. La decisión es del contador, no del consultor.
+Odoo no la rechaza: al publicarla conserva la **fecha de factura** pero **pospone la fecha contable**
+al primer período abierto posterior al bloqueo (respetando la secuencia del diario). Lo que sí
+impide es crear o modificar asientos con fecha contable dentro del período bloqueado. Si el contador
+necesita que el asiento caiga en el período cerrado —solo con su autorización— puede crear una
+**excepción de bloqueo** (queda registrada quién, para qué y hasta
+cuándo) o levantar el bloqueo, registrar y volver a bloquear. Con **bloqueo permanente** no hay
+excepción posible. La decisión es del contador, no del consultor.
 
 **13. Impuesto incluido en el precio.**
 Se usa cuando el precio de cara al público ya contiene el impuesto: punto de venta, tienda en línea,
@@ -77,7 +87,9 @@ Confundirlo es una causa habitual de márgenes mal calculados.
 (1) Completar y conciliar todas las operaciones del año; (2) registrar ajustes: depreciaciones,
 diferidos, provisiones, diferencias de cambio, inventario final; (3) revisar el balance de
 comprobación y las cuentas transitorias; (4) emitir y validar los estados financieros;
-(5) generar el asiento de cierre que traslada el resultado a resultados acumulados;
+(5) trasladar el resultado a resultados acumulados: Odoo lo calcula solo en la cuenta de tipo
+*Ganancias del año actual* y lo arrastra al ejercicio siguiente, sin asiento de cierre obligatorio; el
+asiento de asignación (a reservas, dividendos o resultados acumulados) lo decide el contador;
 (6) bloquear las fechas del ejercicio y respaldar.
 
 ---

@@ -16,7 +16,7 @@
 | 9 | Kardex valorizado SUNAT | **TERCEROS** o **FIT** según edición | `l10n_pe_reports_stock` en Enterprise; verificar cobertura del formato exigido |
 | 10 | Aviso por WhatsApp al despachar | **TERCEROS / DEV** | Requiere el módulo de WhatsApp y una plantilla aprobada; hay costo por mensaje |
 | 11 | Campo "color de la tapa" | **STUDIO** — o mejor, **PROCESO** | Antes de crear el campo: ¿no es un atributo de variante? Preguntar para qué se usará |
-| 12 | Comisión por margen | **DEV** | El cálculo de comisiones con reglas propias no es estándar; especificar y estimar |
+| 12 | Comisión por margen | **CONFIG** (Enterprise) | App Comisiones (`sale_commission`): con Margen de ventas instalado se añade sola `sale_commission_margin` y el plan admite el logro de tipo **Margen**. Solo es **DEV** si las reglas no caben en un plan lineal o escalonado |
 | 13 | Clientes afectados por un lote | **FIT** | Trazabilidad de lotes (Fase 3): es el argumento de venta, no un desarrollo |
 | 14 | Aprobación de descuentos > 20 % | **STUDIO** | Regla de aprobación |
 | 15 | Pedidos que entran por WhatsApp | **DEV** + **PROCESO** | Técnicamente posible con integración, pero la pregunta real es si conviene: un pedido debe entrar por un canal estructurado |
@@ -26,7 +26,7 @@
 | 19 | Planilla con PLAME y CTS | **OUT** (recomendado) o **DEV** | Ver el análisis completo en la Fase 7 |
 | 20 | Aviso de lote por vencer | **CONFIG** | Fechas de caducidad + días de alerta (Fase 3) |
 | 21 | Seguir usando el Excel en paralelo | **PROCESO** | Es el requerimiento más peligroso: garantiza doble digitación y datos que nunca cuadran. Se conversa, no se implementa |
-| 22 | Integrar balanza electrónica | **TERCEROS / DEV** | Vía IoT Box o desarrollo; requiere prueba con el hardware real antes de cotizar |
+| 22 | Integrar balanza electrónica | **TERCEROS / DEV** | Vía IoT Box, o en v20 conectada directamente al navegador (Web Serial, `iot_webserial`) en PdV y control de calidad; fuera de esos flujos, desarrollo. Requiere prueba con el hardware real antes de cotizar |
 | 23 | Guía de remisión electrónica | **FIT** (Enterprise) | `l10n_pe_edi_stock` |
 | 24 | Tablero de ventas del día en pantalla | **CONFIG** | Vista de tablero o panel; sin desarrollo |
 | 25 | Tienda funcionando sin internet | **FIT parcial** | El PdV opera fuera de línea y sincroniza al reconectar; hay que explicar los límites reales |

@@ -22,18 +22,18 @@
 
 | # | Tema | Documentación |
 |---|---|---|
-| 2.1 | CRM (visión general) | [sales/crm.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/crm.html) |
-| 2.2 | Captación de leads | [crm/acquire_leads.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/crm/acquire_leads.html) |
-| 2.3 | Gestión del flujo/pipeline | [crm/pipeline.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/crm/pipeline.html) |
-| 2.4 | Desempeño y reportes CRM | [crm/performance.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/crm/performance.html) |
-| 2.5 | Ventas (visión general) | [sales/sales.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/sales.html) |
-| 2.6 | Cotizaciones: envío, plantillas, firma y pago en línea | [sales/send_quotations.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/sales/send_quotations.html) |
-| 2.7 | Productos y precios (variantes, listas de precios, descuentos) | [sales/products_prices.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/sales/products_prices.html) |
-| 2.8 | Facturación de ventas (políticas, anticipos, prorrateo) | [sales/invoicing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/sales/invoicing.html) |
-| 2.9 | Punto de venta | [sales/point_of_sale.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/point_of_sale.html) |
-| 2.10 | Suscripciones | [sales/subscriptions.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/subscriptions.html) |
-| 2.11 | Alquiler | [sales/rental.html](https://www.odoo.com/documentation/saas-19.4/es/applications/sales/rental.html) |
-| 2.12 | Proveedores de pago (pago en línea) | [finance/payment_providers.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/payment_providers.html) |
+| 2.1 | CRM (visión general) | [sales/crm.html](https://www.odoo.com/documentation/20.0/applications/sales/crm.html) |
+| 2.2 | Captación de leads | [crm/acquire_leads.html](https://www.odoo.com/documentation/20.0/applications/sales/crm/acquire_leads.html) |
+| 2.3 | Gestión del flujo/pipeline | [crm/pipeline.html](https://www.odoo.com/documentation/20.0/applications/sales/crm/pipeline.html) |
+| 2.4 | Desempeño y reportes CRM | [crm/performance.html](https://www.odoo.com/documentation/20.0/applications/sales/crm/performance.html) |
+| 2.5 | Ventas (visión general) | [sales/sales.html](https://www.odoo.com/documentation/20.0/applications/sales/sales.html) |
+| 2.6 | Cotizaciones: envío, plantillas, firma y pago en línea | [sales/send_quotations.html](https://www.odoo.com/documentation/20.0/applications/sales/sales/send_quotations.html) |
+| 2.7 | Productos y precios (variantes, listas de precios, descuentos) | [sales/products_prices.html](https://www.odoo.com/documentation/20.0/applications/sales/sales/products_prices.html) |
+| 2.8 | Facturación de ventas (políticas, anticipos, prorrateo) | [sales/invoicing.html](https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing.html) |
+| 2.9 | Punto de venta | [sales/point_of_sale.html](https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale.html) |
+| 2.10 | Suscripciones | [sales/subscriptions.html](https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html) |
+| 2.11 | Alquiler | [sales/rental.html](https://www.odoo.com/documentation/20.0/applications/sales/rental.html) |
+| 2.12 | Proveedores de pago (pago en línea) | [finance/payment_providers.html](https://www.odoo.com/documentation/20.0/applications/finance/payment_providers.html) |
 
 **Refuerzo:** cursos de CRM, Sales y Point of Sale en <https://www.odoo.com/slides/all>.
 
@@ -62,7 +62,10 @@
 
 ### Bloque 2.3 — Precios y catálogo comercial (6 h)
 1. **Listas de precios**: por cliente, por moneda, por rango de fechas, por cantidad mínima,
-   basadas en otra lista, con descuentos y redondeo. Crear 3 escenarios reales:
+   basadas en otra lista, con descuentos y redondeo. En v20 cada regla es de uno de tres tipos:
+   **Descuento** (sobre el precio de venta u otra lista), **Recargo** (sobre el costo, el precio de
+   venta u otra lista) o **Precio fijo**; la antigua "Fórmula" desapareció y su redondeo, tarifa
+   adicional y márgenes viven ahora dentro de Descuento y Recargo. Crear 3 escenarios reales:
    - Mayorista con 15 % de descuento y precio escalonado por volumen.
    - Lista en USD para exportación.
    - Promoción de temporada con vigencia fechada.
@@ -88,7 +91,10 @@
    impresora de recibos, categorías de productos en pantalla.
 2. Abrir sesión, registrar 10 ventas con distintos pagos, aplicar descuento, hacer una devolución,
    **cerrar sesión** y revisar las diferencias de caja.
-3. Entender el asiento contable que genera el cierre de sesión (dónde mirarlo).
+3. Entender la contabilización de la sesión (dónde mirarla). En v20 no es un asiento suelto: se emite
+   una **factura resumen** al *Cliente por defecto* del PdV en su *Diario de cierre*, más una nota de
+   crédito aparte si hubo devoluciones, y por defecto se genera **cada día a las 04:00** aunque la
+   sesión siga abierta.
 4. Configurar clientes en PdV, programas de fidelidad y notas de pedido.
 5. Modo restaurante (mesas, pisos, división de cuenta) — al menos explorarlo, es pregunta frecuente.
 6. Comportamiento **fuera de línea**: qué pasa si cae internet durante una sesión.
@@ -103,6 +109,8 @@
 1. Análisis de ventas: por vendedor, por producto, por cliente, por período, con comparativas.
 2. Construir el tablero del gerente comercial: 5 indicadores que él realmente mira
    (ventas del mes vs. objetivo, pipeline ponderado, ticket promedio, margen por línea, top 10 clientes).
+   Ojo: en v20 el equipo de ventas ya no tiene *Objetivo de facturación* (`invoiced_target` se
+   eliminó); el objetivo se gestiona con los *Objetivos* de Comisiones (Enterprise) o fuera de Odoo.
 3. Exportar y guardar filtros compartidos.
 
 ## 4. Laboratorio integrador

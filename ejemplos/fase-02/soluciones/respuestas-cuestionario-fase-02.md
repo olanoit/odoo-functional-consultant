@@ -6,8 +6,8 @@
 
 **1. Un cliente entrega parcialmente y quiere facturar solo lo entregado. ¿Qué configuras y dónde?**
 
-La **política de facturación** del producto en *Ventas → Productos → pestaña Ventas* (campo
-`invoice_policy`), con valor **Cantidades entregadas**. Es **por producto**, no global: se decide
+La **política de facturación** del producto en *Ventas → Productos*, pestaña *Información general*
+junto al tipo de producto (campo `invoice_policy`), con valor **Cantidades entregadas**. Es **por producto**, no global: se decide
 producto por producto o por categoría al cargar el catálogo.
 Consecuencia operativa que hay que advertir: si el almacén no registra la entrega a tiempo, no se
 puede facturar. La política correcta obliga a un proceso de almacén disciplinado.
@@ -34,9 +34,13 @@ llegan filtrados, los leads solo agregan un paso burocrático. Se decide **por e
 
 **4. ¿Qué pasa contablemente al cerrar una sesión de PdV?**
 
-El cierre genera un **asiento contable** que resume la sesión: ingresos por ventas, impuestos,
-y los cobros por método de pago (efectivo a la cuenta de caja, tarjeta a su cuenta transitoria).
-La **diferencia de caja** declarada frente a la teórica se registra en una cuenta de diferencias.
+En v20 el cierre emite una **factura resumen** de las ventas no facturadas, a nombre del *Cliente por
+defecto* del PdV y en su *Diario de cierre*, con ingresos e impuestos; las devoluciones van en una
+**nota de crédito** aparte. Los cobros se registran por método de pago (el efectivo como líneas del
+extracto de caja, la tarjeta contra su cuenta de pagos pendientes). Por defecto esta contabilización se
+genera **cada día a las 04:00**, aunque la sesión siga abierta. La **diferencia de caja** declarada
+frente a la teórica se registra como corrección del extracto contra la cuenta de pérdidas o ganancias
+del diario de efectivo.
 Por eso el arqueo no es un trámite: es lo que hace que la contabilidad cuadre con el dinero real.
 
 **5. Un pedido confirmado necesita una línea adicional después de entregado.**

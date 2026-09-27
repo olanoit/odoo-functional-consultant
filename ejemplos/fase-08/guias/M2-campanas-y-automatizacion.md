@@ -36,6 +36,13 @@ dependen de la reputación del dominio del cliente, no del software.
 
 Diseña estas cuatro en *Automatización de marketing*, cada una con su condición de **salida**:
 
+> **Cómo se traduce a Odoo v20:** el *disparador* es el *Trigger type* de la campaña (*Filtro* sobre
+> el modelo, *Event* —p. ej. *Product in Cart*, *Form Submitted*, suscripción a lista—, *Date*…); las
+> condiciones «¿abrió?» son disparadores de actividad (*Mail: opened* / *Mail: not opened*) o una
+> actividad *Split*; «crear actividad para el vendedor» y «marcar como inactivo» son *Server Action*
+> o *Log Note*; y la **salida** se construye con el *Filtro de actividad* (`activity_domain`: si
+> el registro ya no lo cumple, la actividad se rechaza para él) o con un *Split* que corta la rama.
+
 ### A. Bienvenida a nuevo cliente
 ```
 Disparador: primer pedido confirmado

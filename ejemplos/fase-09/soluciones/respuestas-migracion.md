@@ -50,8 +50,22 @@ Si migras **todos** los registros (activos + archivados), sin fusionar duplicado
 | Archivados | 78 |
 | Suma de límites de crédito | 3 776 000 |
 | Con `customer_rank = 1` | 512 |
-| Con `is_company = True` | 512 *(calculado por Odoo a partir del `vat`; no se importa)* |
 | Con RUC cargado | 498 |
+| Con `is_company = True` | 498 *(calculado por Odoo a partir del `vat`; no se importa)* |
+
+**Por qué `is_company` no da 512.** En v20 `is_company` es un campo calculado y de solo lectura:
+vale `True` cuando el contacto es su propia entidad comercial **y** tiene NIF/RUC
+(`res.partner._compute_is_company`, en `odoo/addons/base/models/res_partner.py`). Los 14 que migras
+sin RUC entran como **personas**. Si en tránsito limpias los guiones —es un problema de formato,
+§3 de la guía— los 6 RUC con guiones pasan la validación y ambos controles suben a **504**; los 8
+con dígito verificador incorrecto no se pueden cargar con el RUC: con país Perú, Odoo valida el
+dígito verificador al guardar y **rechaza la fila** («Parece que el número RUC [...] para ... no es válido»).
+
+**El control «Ningún RUC duplicado» falla con este archivo.** De los 13 nombres duplicados, **11
+pares comparten el mismo RUC** (p. ej. `CLI00001` y `CLI90000`, *Comercial Villa Norte*). Odoo no lo
+impide: solo muestra un aviso de contacto con el mismo NIF (`same_vat_partner_id`). Si el cliente
+decide no fusionarlos, anota los 11 pares como excepción aceptada por escrito; si decide fusionarlos,
+los números de esta tabla bajan en consecuencia.
 
 Si el cliente decide **no migrar los inactivos**, los números cambian a 434 creados y la suma de
 límites baja: **recalcula la suma de control sobre el archivo filtrado**, no sobre el original.

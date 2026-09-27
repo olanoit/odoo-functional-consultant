@@ -4,10 +4,12 @@ Casos prácticos para [`../../fases/fase-04-contabilidad-finanzas.md`](../../fas
 Trabaja sobre la base `LAB` con las ventas de la Fase 2, las compras y el inventario de la Fase 3.
 **Aquí se cierra el mes de verdad**, no como ejercicio teórico.
 
-> **Versión objetivo:** Odoo 19. Dos cambios de esta versión afectan todo lo que sepas de antes:
-> el **mapeo de impuestos de las posiciones fiscales** cambió de modelo, y los **modelos de
-> conciliación** cambiaron sus campos. Detalle en
-> [`guias/I5-campos-tecnicos-v19-contabilidad.md`](guias/I5-campos-tecnicos-v19-contabilidad.md).
+> **Versión objetivo:** Odoo 20. Cuatro cambios recientes afectan todo lo que sepas de antes: desde
+> v19 el **mapeo de impuestos de las posiciones fiscales** vive en el impuesto destino y el
+> **inventario se contabiliza al facturar**; en v20 los **modelos de conciliación** recuperan
+> `rule_type` con un significado nuevo (reglas de coincidencia) y el **informe de valoración** pasa al
+> módulo `account` con sección de devengos. Detalle en
+> [`guias/I5-campos-tecnicos-v20-contabilidad.md`](guias/I5-campos-tecnicos-v20-contabilidad.md).
 
 ---
 
@@ -18,16 +20,16 @@ Trabaja sobre la base `LAB` con las ventas de la Fase 2, las compras y el invent
 | `datos/01-cuentas.csv` | 25 cuentas con nomenclatura tipo PCGE peruano y su `account_type` |
 | `datos/02-diarios.csv` | 7 diarios: facturas, boletas, compras, 2 bancos, caja y diversos |
 | `datos/03-impuestos.csv` | IGV 18 % (venta/compra/incluido), exonerado, inafecto, gratuito |
-| `datos/04-posiciones-fiscales.csv` | 3 posiciones con el **nuevo mecanismo de mapeo de v19** |
+| `datos/04-posiciones-fiscales.csv` | 4 posiciones (local, exonerado, inafecto, exportación) con el **mecanismo de mapeo vigente desde v19** |
 | `datos/05-planes-analiticos.csv` | 2 planes: línea de negocio y canal de venta |
 | `datos/06-cuentas-analiticas.csv` | 8 cuentas analíticas |
 | `datos/07-extracto-bancario.csv` | **40 líneas** de extracto de agosto 2026 |
 | `datos/08-modelos-conciliacion.csv` | 4 modelos de conciliación automática |
 | `guias/I1` | **Laboratorio de asientos**: predice 12 asientos antes de ejecutarlos |
-| `guias/I2` | Configuración fiscal e impuestos en v19 |
+| `guias/I2` | Configuración fiscal e impuestos en v20 |
 | `guias/I3` | Conciliación bancaria: 40 líneas en menos de 10 minutos |
 | `guias/I4` | **Checklist de cierre mensual** + cuadre inventario ↔ contabilidad (entregables) |
-| `guias/I5` | Chuleta de campos v19 de Contabilidad |
+| `guias/I5` | Chuleta de campos v20 de Contabilidad |
 | `soluciones/` | Asientos resueltos y cuestionario |
 
 ## Antes de empezar
@@ -37,6 +39,10 @@ Trabaja sobre la base `LAB` con las ventas de la Fase 2, las compras y el invent
 3. Multimoneda activada con la tasa **1 USD = 3.75 PEN**.
 4. **Nivelación previa:** si no dominas partida doble, haz el Bloque 4.0 de la fase antes de seguir.
    Este cuaderno asume que sabes qué es debe, haber y devengado.
+
+> **Codificación:** en el diálogo de importación elige **`utf-8`** a mano. Odoo adivina la
+> codificación y con `02-diarios.csv`, `05-planes-analiticos.csv` y `06-cuentas-analiticas.csv` se equivoca (verificado en v20): se detectan como otra codificación y
+> los acentos entran rotos sin ningún aviso. Detalle en la [Fase 1](../fase-01/README.md#antes-de-empezar).
 
 ---
 
@@ -58,7 +64,9 @@ como `liability_current`, y qué pasaría si estuviera mal clasificada.
 Luego, a mano:
 1. **Condiciones de pago**: contado, 30 días, y **30/70** (30 % a 15 días, 70 % a 45 días).
    Se crean a mano porque las líneas deben sumar 100 % (ver guía I5, §10).
-2. **Bloqueos de fecha**: prueba los tres tipos y comprueba qué permite cada uno.
+2. **Fechas de bloqueo**: prueba la global, la de declaración de impuestos y las de ventas/compras, y
+   comprueba qué permite cada una. El **bloqueo permanente** no se puede deshacer: pruébalo solo en
+   una copia de la base.
 3. **Saldos de apertura**: un asiento en el diario *Operaciones diversas* que cuadre.
 
 ## Ejemplo 2 — Impuestos y posiciones fiscales
@@ -67,9 +75,22 @@ Luego, a mano:
 Importa `03-impuestos.csv` y `04-posiciones-fiscales.csv`, y sigue
 [`guias/I2-configuracion-fiscal.md`](guias/I2-configuracion-fiscal.md).
 
-**Lo importante de este ejemplo:** en v19, el impuesto *Exonerado* declara a quién reemplaza
-(`original_tax_ids`) y en qué posición (`fiscal_position_ids`). El modelo
+**Lo importante de este ejemplo:** desde v19 (y sigue así en v20), el impuesto *Exonerado* declara a
+quién reemplaza (`original_tax_ids`) y en qué posición (`fiscal_position_ids`). El modelo
 `account.fiscal.position.tax` de versiones anteriores **ya no existe**.
+
+**La posición *Local Perú* no es decorativa:** la *Exportación* se detecta automáticamente sin país
+(aplica a cualquier cliente con país), así que necesita una posición local con país Perú y
+secuencia menor que la gane para los clientes peruanos. Es el mismo patrón que usa el plan contable
+peruano (`LOCAL PERU` / `EXTRANJERO - EXPORTACIÓN`).
+
+> **Con el plan contable peruano ya instalado (la base `LAB` tiene país Perú)**, esas dos posiciones
+> existen antes de importar: *LOCAL PERÚ* (secuencia 10, país Perú) y *EXTRANJERO - EXPORTACIÓN*
+> (secuencia 20, sin país). Verificado en v20: para un cliente peruano la detección automática elige
+> *LOCAL PERÚ* (empata en secuencia con *Local Perú* y gana la que ya existía) y para un cliente
+> extranjero, *EXTRANJERO - EXPORTACIÓN*; la *Exportación* del CSV (secuencia 40) nunca se aplica sola.
+> Para que actúen las posiciones del CSV, **archiva las dos del plan** (o dale a las del CSV una
+> secuencia menor). Es exactamente el tipo de duplicado que hay que detectar antes de un go-live.
 
 **Prueba de fuego:** el mismo producto facturado a tres clientes con posiciones distintas produce
 tres facturas distintas, sin tocar el producto.
@@ -134,7 +155,8 @@ Ejecuta el cierre completo de agosto de 2026 con
 Al terminar debes tener:
 - Balance general y estado de resultados emitidos.
 - Reporte de impuestos cuadrado con el mayor.
-- Valor de inventario = saldo de la cuenta de existencias (o diferencias explicadas una por una).
+- Valor de inventario = saldo de la cuenta de existencias (o diferencias explicadas una por una),
+  con el asiento de cierre de existencias y los devengos generados desde el informe de valoración.
 - Fecha de bloqueo puesta.
 - Respaldo del cierre.
 
@@ -193,7 +215,8 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior, y los artículos de v19 no recogen los cambios de v20 (reglas de coincidencia, informe de
+> valoración con devengos, cierre de PdV con factura resumen): verifica contra la documentación 20.0,
+> contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

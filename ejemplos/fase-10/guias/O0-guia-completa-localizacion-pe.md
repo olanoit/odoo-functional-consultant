@@ -1,4 +1,4 @@
-# O0 — Guía completa de la localización peruana (Odoo 19 · saas~19.4)
+# O0 — Guía completa de la localización peruana (Odoo 20 · 20.0)
 
 > **Qué es esta guía.** La referencia de consulta de la Fase 10: todo lo que la localización
 > peruana trae, cómo se configura y qué se rompe. Las otras tres guías de la fase son de trabajo:
@@ -7,11 +7,13 @@
 > [O3](O3-hosting-y-administracion.md) la matriz de hosting.
 >
 > **Cómo se escribió.** Partiendo de la
-> [documentación oficial de saas-19.4](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations/peru.html)
+> [documentación oficial de 20.0](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/peru.html)
 > y **contrastando cada dato contra una base real** con los diez módulos `l10n_pe*` instalados
-> (Odoo 19 saas~19.4, CE + EE, empresa peruana con plan contable `pe`). Los nombres de campo,
-> las listas de valores y los conteos que aparecen abajo **salen de la base, no de la documentación**.
-> Donde ambas fuentes discrepan se dice cuál gana y por qué.
+> (primera edición: saas~19.4, CE + EE, empresa peruana con plan contable `pe`), y después
+> **revisando cada dato contra el código fuente de Odoo 20.0** (CE + EE) para esta edición. Los
+> nombres de campo, las listas de valores y los conteos que aparecen abajo **salen de la base y del
+> código, no de la documentación**. Donde las fuentes discrepan se dice cuál gana y por qué, y lo que
+> cambió en v20 se marca como tal.
 >
 > Los enlaces externos se comprobaron uno a uno el **24 de agosto de 2026**.
 
@@ -43,7 +45,7 @@ Verificado sobre la instalación: **diez** módulos `l10n_pe*`, no cinco.
 
 | Módulo | Edición | Qué aporta |
 |---|---|---|
-| `l10n_pe` | **Community** | Plan de cuentas PCGE, impuestos, tipos de identificación, tipos de documento, distritos |
+| `l10n_pe` | **Community** | Plan de cuentas PCGE, impuestos, identificadores peruanos del contacto y su código SUNAT, tipos de documento, distritos |
 | `l10n_pe_edi` | Enterprise | Firma y envío a OSE/SUNAT, CDR, anulaciones. **El corazón de la localización** |
 | `l10n_pe_edi_stock` | Enterprise | Guía de Remisión Electrónica (GRE) |
 | `l10n_pe_edi_withholding` | Enterprise | Comprobantes de **retención** |
@@ -58,14 +60,20 @@ Verificado sobre la instalación: **diez** módulos `l10n_pe*`, no cinco.
 electrónica— exige Enterprise. Es el primer dato que va en una propuesta económica, antes que
 cualquier estimación de horas.
 
-### ⚠️ Dos módulos que la documentación cita y **no existen** en saas-19.4
+> **Cambio de v20 en las dependencias.** `l10n_pe` ya no depende de `base_vat`,
+> `portal_address_extended` ni `l10n_latam_base`: los tres desaparecen en v20. La validación del
+> RUC vive ahora en el módulo `base` y los tipos de identificación latinoamericanos se sustituyen por
+> los **identificadores adicionales** del contacto (§4.1).
 
-Comprobado en el código fuente de esta versión:
+### ⚠️ Dos módulos que la documentación cita y **no existen** en 20.0
 
-| La documentación dice | Realidad en saas~19.4 |
+Comprobado en el código fuente de esta versión (y tampoco existían en saas~19.4); la documentación
+de 20.0 los sigue citando:
+
+| La documentación dice | Realidad en 20.0 |
 |---|---|
 | Instalar `l10n_pe_edi_stock_20` para la GRE 2.0 | **No existe.** La GRE 2.0 está dentro de `l10n_pe_edi_stock`: los campos de credenciales de la API GRE (`l10n_pe_edi_stock_client_id`, `_client_secret`, `_client_username`, `_client_password`) ya están en `res.company` con solo ese módulo |
-| Instalar `l10n_pe_website_sale` para el eCommerce peruano | **No existe** en esta versión |
+| Instalar `l10n_pe_website_sale` para el eCommerce peruano | **No existe** en esta versión (ni en saas~19.4) |
 
 Si sigues la documentación al pie de la letra buscarás en Aplicaciones dos módulos que no aparecen
 y perderás una tarde. Este es exactamente el motivo por el que el método de este plan es
@@ -80,7 +88,7 @@ y perderás una tarde. Este es exactamente el motivo por el que el método de es
 | Campo (técnico) | Etiqueta | Nota |
 |---|---|---|
 | `country_id` | País | **Perú**. Determina qué localización instala Odoo |
-| `vat` | NIF | Con formato **RUC** (11 dígitos) |
+| `vat` | **RUC** *(la etiqueta la pone el país; en otros países es «NIF»)* | 11 dígitos; Odoo valida el dígito verificador al guardar |
 | `l10n_pe_edi_address_type_code` | Address Type Code | Código de establecimiento que SUNAT asigna al registrar el RUC. Si se desconoce: `0000` |
 
 **No existe** un campo «tipo de contribuyente»: si lo buscas por un tutorial antiguo, perderás el
@@ -120,16 +128,16 @@ Sin este dato los reportes PLE salen vacíos o mal formados.
 
 El campo es `res.company.l10n_pe_edi_provider` y tiene **tres** valores:
 
-| Valor | Etiqueta en v19 | Certificado | Credenciales SOL | Cuándo elegirlo |
+| Valor | Etiqueta en v20 | Certificado | Credenciales SOL | Cuándo elegirlo |
 |---|---|---|---|---|
 | `iap` | IAP | **Lo pone Odoo** | No | Por defecto. La vía rápida: sin certificado propio ni contrato con un OSE |
-| `digiflow` | **Estela (formerly Digiflow)** | Propio (`.pfx`) | Sí | El cliente ya tiene contrato con Estela |
+| `digiflow` | **Estela (antes Digiflow)** | Propio (`.pfx`) | Sí | El cliente ya tiene contrato con Estela |
 | `sunat` | SUNAT | Propio (`.pfx`) | Sí | Envío directo, sin OSE. Exige superar la **certificación SUNAT** |
 
-> **Ojo al nombre.** En Odoo 19 la etiqueta es **«Estela (formerly Digiflow)»**: Estela compró
-> Digiflow y la interfaz ya recoge el cambio, pero la documentación oficial y casi todos los
-> tutoriales siguen diciendo «Digiflow». Es el mismo proveedor. El valor técnico sigue siendo
-> `digiflow`.
+> **Ojo al nombre.** Desde v19, y también en Odoo 20, la etiqueta es **«Estela (formerly
+> Digiflow)»** (en español, «Estela (antes Digiflow)»): Estela compró Digiflow y la interfaz ya
+> recoge el cambio, pero la documentación oficial y casi todos los tutoriales siguen diciendo
+> «Digiflow». Es el mismo proveedor. El valor técnico sigue siendo `digiflow`.
 
 **Sobre IAP.** Odoo regala **1 000 créditos** en bases nuevas; después se compran por paquetes
 (1 000 / 5 000 / 10 000 / 20 000, tarificados en EUR). Se consume **un crédito por envío**, y un
@@ -150,8 +158,9 @@ que remite al registro ROPS de INDECOPI.
 
 ### 3.4 Entorno de prueba
 
-`l10n_pe_edi_test_env` es un **booleano**, no una lista. Y el valor por defecto es **producción**:
-una base recién instalada emite en real salvo que marques la casilla.
+`l10n_pe_edi_test_env` (en español, *Entorno de pruebas OSE*) es un **booleano**, no una lista. Y
+el valor por defecto es **producción**: una base recién instalada emite en real salvo que marques
+la casilla.
 
 Con entorno de prueba + IAP, las transacciones se validan solas y **no gastan créditos**.
 
@@ -169,32 +178,45 @@ tipo de cambio y es lo que SUNAT contrasta.
 
 ## 4. Datos maestros
 
-### 4.1 Tipos de identificación — los 11 reales
+### 4.1 Identificación del contacto — el gran cambio de v20
 
-`l10n_latam_identification_type_id` en el contacto. Verificados con su código SUNAT y su ID externo:
+**En v20 ya no existe el campo «tipo de identificación»** (`l10n_latam_identification_type_id`) ni
+los ID externos `l10n_pe.it_RUC`, `l10n_pe.it_DNI`… que usaban v19 y anteriores: el módulo
+`l10n_latam_base` desaparece. La identificación se carga así:
 
-| ID externo | Código | Documento |
+- El **RUC** va en el campo `vat` (etiqueta **RUC** en los contactos peruanos).
+- Cualquier otro documento —DNI, pasaporte, carné diplomático…— va en **Identificadores
+  adicionales** (`additional_identifiers`, un JSON `{clave: número}` que se edita con el botón que
+  hay junto al RUC).
+
+Odoo calcula a partir de ellos el **código SUNAT del catálogo 06** (`l10n_pe_sunat_id_code`) y el
+número que se informa (`l10n_pe_sunat_id_value`): es lo que viaja en el XML, en el QR y en los
+libros. Claves verificadas en `addons/l10n_pe/tools/partner_identifiers.py`:
+
+| Dónde / clave | Código SUNAT | Documento |
 |---|---|---|
-| `l10n_pe.it_RUC` | 6 | RUC |
-| `l10n_pe.it_DNI` | 1 | DNI |
-| `l10n_pe.it_NDTD` | 0 | Documento tributario no domiciliado |
-| `l10n_pe.it_DIC` | A | Carné de identidad diplomática |
-| `l10n_pe.it_IDCR` | B | Documento del país de residencia |
-| `l10n_pe.it_TIN` | C | Tax Identification Number |
-| `l10n_pe.it_IN` | D | Identification Number |
-| `l10n_pe.it_TAM` | E | TAM |
-| `l10n_pe.it_PTP` | F | PTP |
-| `l10n_pe.it_SP` | G | Salvoconducto |
-| `l10n_pe.it_CPP` | H | Permiso temporal / permanente |
+| `vat` (RUC peruano) | 6 | RUC |
+| `PE_DNI` | 1 | DNI *(Odoo valida su formato)* |
+| `PE_NDTD` | 0 | Documento tributario no domiciliado sin RUC |
+| `PE_DIC` | A | Carné de identidad diplomática |
+| `PE_IDCR` | B | Documento del país de residencia |
+| `PE_TIN` | C | Tax Identification Number |
+| `PE_IN` | D | Identification Number |
+| `PE_TAM` | E | TAM (tarjeta andina de migración) |
+| `PE_PTP` | F | PTP (permiso de residencia temporal) |
+| `PE_SP` | G | Salvoconducto |
+| `PE_CPP` | H | Carné de permiso temporal de permanencia |
+| `PASSPORT` | 7 | Pasaporte *(identificador genérico de `base`, disponible para Perú)* |
 
-**No hay «carné de extranjería»** en la lista peruana de v19, y el **pasaporte** no pertenece a esta
-localización: es `l10n_latam_base.it_pass`, genérico latinoamericano y **sin país asignado**. Para un
-extranjero domiciliado se usa `it_IDCR` (documento del país de residencia) o `it_CPP`.
+Para un NIF extranjero en `vat` (o un contacto sin ningún identificador) Odoo informa el código
+`0`, y para un documento de identidad extranjero sin clave peruana, el `4` (carné de extranjería). Si un contacto tiene RUC **y** DNI, se
+informa el **RUC**.
 
-> **Consecuencia de v19 que hay que tener presente:** `res.partner.company_type` desapareció e
-> `is_company` es **calculado**. Quien decide si el contacto es empresa o persona es, en la
-> práctica, el **tipo de identificación**. En un CSV de migración se importa
-> `l10n_latam_identification_type_id/id`, nunca `is_company`. Está en
+> **Consecuencia que hay que tener presente:** `res.partner.company_type` desapareció en v19 e
+> `is_company` es **calculado**: es `True` cuando el contacto tiene NIF/RUC en `vat`. Con RUC es
+> empresa; con solo DNI como identificador adicional es persona. En un CSV de migración se importan
+> `vat` y `additional_identifiers` (en JSON: `{"PE_DNI": "40012411"}`), nunca `is_company` ni el
+> antiguo `l10n_latam_identification_type_id/id`, que en v20 da error. Está en
 > [`../datos/01-clientes-pe.csv`](../datos/01-clientes-pe.csv).
 
 ### 4.2 Tipos de documento
@@ -221,7 +243,10 @@ un error de datos: la serie es distinta según el comprobante que rectifican.
 
 ### 4.3 Impuestos y sus campos EDI
 
-La documentación habla de «tres nuevos campos». En v19 son **cinco** en `account.tax`:
+La documentación habla de «tres nuevos campos». En v20 son **cinco** en `account.tax`: tres los
+añade `l10n_pe` (`l10n_pe_edi_tax_code`, `l10n_pe_edi_unece_category`, `l10n_pe_edi_isc_type`) y
+dos `l10n_pe_edi` (el motivo de afectación y el código internacional, ambos calculados a partir del
+código de tributo):
 
 | Campo | Para qué |
 |---|---|
@@ -261,10 +286,13 @@ Al crear un diario de ventas:
 | Campo | Valor |
 |---|---|
 | `l10n_latam_use_documents` | **Activado** (viene así por defecto en ventas) |
-| Flujo EDI | **Peru UBL 2.1** |
 
-> **Desmarca `Factur-X (FR)` a mano.** Aparece siempre por defecto, es el estándar francés, y no
-> tiene nada que hacer en una base peruana. La propia documentación lo advierte.
+> **La documentación va por detrás del código.** Pide elegir en el diario el flujo EDI
+> «Peru UBL 2.1» y desmarcar `Factur-X (FR)`. En el código de 20.0 esa sección del diario no existe
+> para Perú: `l10n_pe_edi` no depende de `account_edi` ni registra ningún formato EDI de diario. El
+> envío a SUNAT es una opción del asistente **Enviar** de la factura, la casilla **«Enviar a la
+> SUNAT»** (`ee20/l10n_pe_edi/models/account_move_send.py`), que aparece en toda factura de venta
+> peruana con documentos activados (§5.2).
 
 **Un diario por serie.** Cada tipo de documento tiene su secuencia dentro del diario donde se
 asigna. La correspondencia serie ↔ diario ↔ tipo de documento se acuerda con el contador **antes**
@@ -279,7 +307,7 @@ El **distrito no es decorativo**: forma parte del ubigeo que viaja en el XML. Un
 «Lima» y sin distrito genera rechazo. En una migración de contactos es el campo que más trabajo de
 limpieza exige, porque en el sistema antiguo casi nunca viene normalizado.
 
-> **Cambio de v19 que afecta a los datos bancarios:** el modelo `res.bank` **ya no existe**. Las
+> **Cambio de v19, vigente en v20, que afecta a los datos bancarios:** el modelo `res.bank` **ya no existe**. Las
 > cuentas bancarias viven en `res.partner.bank`. Un script de migración de proveedores que cree
 > bancos con el modelo antiguo falla con `KeyError`.
 
@@ -311,22 +339,26 @@ propio dentro de cada grupo: **no es lo mismo regalar que vender a cero**, y SUN
 
 ### 5.2 El ciclo
 
-Validar la factura registra el asiento **y** dispara el flujo electrónico. `l10n_pe_edi_status`
+Validar la factura registra el asiento y la deja **lista para enviar**; el envío a SUNAT se hace
+desde el botón **Enviar**, con la casilla **«Enviar a la SUNAT»** marcada. `l10n_pe_edi_status`
 tiene tres estados:
 
 | Estado | Significado |
 |---|---|
-| `to_send` | Listo para enviar. Lo manda un cron **cada hora**, o tú con *Enviar ahora* |
-| `sent` | Aceptado. Se descarga el ZIP y el CDR queda en el chatter |
+| `to_send` | Validada y pendiente de envío (o rechazada) |
+| `sent` | Aceptado. Se adjunta el ZIP y el CDR queda en el chatter |
 | `cancelled` | Baja aceptada |
 
-Es **asíncrono**: contabilizar no es enviar. Un rechazo deja el estado en `to_send`, con el error
-en la parte superior del documento.
+Contabilizar no es enviar. Antes de enviar, el asistente muestra los avisos de datos que faltan
+(RUC de la compañía, cliente, líneas). Un rechazo deja el estado en `to_send`, con el error en el
+asistente y en la factura. Si SUNAT aún no ha dado una respuesta definitiva (el CDR no está listo),
+el envío lo reintenta solo la acción planificada de envío de facturas; un rechazo de SUNAT no se
+reintenta solo.
 
 > **Cómo corregir, según dónde esté el error:** si está en un dato maestro (cliente, impuesto),
-> corrige el registro y pulsa **Reintentar**. Si está en la factura (tipo de operación, líneas),
-> hay que **restablecer a borrador**, corregir y reenviar. Confundir los dos caminos es la causa
-> número uno de créditos IAP quemados.
+> corrige el registro y vuelve a **Enviar**. Si está en la factura (tipo de operación, líneas),
+> hay que **restablecer a borrador**, corregir, validar y reenviar. Confundir los dos caminos es la
+> causa número uno de créditos IAP quemados.
 
 Una vez aceptado, el PDF sale con **código QR**: es la marca de documento fiscal válido.
 
@@ -334,6 +366,9 @@ Una vez aceptado, el PDF sale con **código QR**: es la marca de documento fisca
 
 Botón **Solicitar cancelación** con un motivo obligatorio. Genera un ticket, y el CDR de la baja
 queda en el chatter. **Consume un crédito.**
+
+**Las boletas (`03`) no se anulan así:** Odoo lo bloquea con un mensaje y obliga a emitir una
+**nota de crédito** (`button_request_cancel` en `ee20/l10n_pe_edi/models/account_move.py`).
 
 ---
 
@@ -383,9 +418,10 @@ Suele hacer falta **un segundo usuario SOL**, con permisos distintos a los de la
 `05` consignación · `13` otros · `14` venta sujeta a confirmación · `17` traslado para
 transformación · `18` traslado de emisor itinerante.
 
-> **Trampa documentada:** los motivos `03` y `12` fallan en Odoo porque exigen un cliente que el
-> flujo deja vacío. Y `13` (otros) provoca el error `cac:BuyerCustomerParty`. En la práctica se
-> trabaja con `01` y `04`.
+> **Trampa documentada:** según la documentación, los motivos `03` y `12` fallan en Odoo porque
+> exigen un cliente que el flujo deja vacío (el `12` ni siquiera figura entre los 8 de Odoo). Y `13`
+> (otros) provoca el error `cac:BuyerCustomerParty`: en el código de 20.0 son precisamente `03` y
+> `13` los que añaden ese bloque al XML. En la práctica se trabaja con `01` y `04`.
 
 **Lo demás que hay que dar de alta:** el *operador* (conductor, contacto tipo persona con licencia
 y distrito), el *transportista* (contacto tipo empresa con número MTC, entidad emisora y número de
@@ -395,7 +431,9 @@ autorización), y los *vehículos* en *Inventario → Configuración → Vehícu
 Marca **¿Es M1 o L?** si el vehículo tiene menos de cuatro ruedas u ocho asientos — motos y
 mototaxis, que en reparto urbano peruano son la norma.
 
-Para generar la guía, el albarán debe estar **Listo**; entonces aparece *Generar Guía de Remisión*.
+Para generar la guía, el albarán debe estar **Listo**; entonces aparece *Generar guía de remisión*.
+Novedad de v20: una vez aceptada, el PDF del albarán sale titulado *Sender Electronic Delivery
+Guide* (guía de remisión electrónica remitente) en lugar del título genérico.
 
 > **Vocabulario de SUNAT:** las guías **no se anulan, se «dan de baja»**. Y solo si el envío no ha
 > empezado, o cambiando el destinatario antes del destino final.
@@ -405,8 +443,10 @@ Para generar la guía, el albarán debe estar **Listo**; entonces aparece *Gener
 ## 8. Retenciones — lo que la documentación no cuenta
 
 `l10n_pe_edi_withholding` **existe y funciona**, y la página oficial de la localización no lo
-menciona. Añade el comprobante de retención (documento `20`) y, en `account.payment`, los campos
-`withhold`, `withholding_line_ids`, `withholding_amount` y `withholding_net_amount`.
+menciona. Añade el comprobante de retención (documento `20`) y su envío electrónico sobre los pagos,
+apoyándose en los campos `withhold`, `withholding_line_ids`, `withholding_amount` y
+`withholding_net_amount` de `account.payment`, que aporta su dependencia
+`l10n_account_withholding_tax` (Community). No se instala solo: hay que instalarlo a mano.
 
 Si el cliente es **agente de retención** designado por SUNAT, este módulo es obligatorio y no
 aparecerá en ninguna estimación hecha leyendo solo la documentación. Pregunta siempre por él en el
@@ -476,12 +516,24 @@ descarga a ciegas.
 
 ## 10. Punto de venta y comercio electrónico
 
-**PdV.** `l10n_pe_pos` (Community) permite editar los datos fiscales del cliente desde el TPV;
-`l10n_pe_edi_pos` (Enterprise) emite el comprobante electrónico. El tipo de documento sale del
-identificador: **RUC → factura, DNI → boleta**.
+**PdV.** `l10n_pe_pos` (Community) permite editar los datos fiscales del cliente desde el TPV
+(en v20, con el distrito en la ficha del cliente del TPV) y trae el cliente genérico *Consumidor
+Final* (DNI `00000000`); `l10n_pe_edi_pos` (Enterprise) emite el comprobante electrónico. El tipo de
+documento sale del identificador: **RUC → factura, sin RUC → boleta**.
+
+Dos novedades de v20 que hay que probar en la base antes de salir a producción:
+
+- Al facturar un pedido en el TPV, el comprobante se envía a SUNAT **en el acto**, aunque el TPV
+  no descargue el PDF (`_generate_pos_order_invoice` en `ee20/l10n_pe_edi_pos/models/pos_order.py`).
+- El cierre de sesión del TPV genera en v20 una **factura resumen** a nombre del cliente por defecto
+  del TPV, en el diario de cierre (*Point of Sale Closing*), con cierre diario automático a las 4:00
+  por defecto. Comprueba en tu base cómo trata la localización ese documento, porque es un diario
+  de ventas en una compañía peruana con documentos activados.
 
 **eCommerce.** El módulo `l10n_pe_website_sale` que cita la documentación **no existe en
-saas-19.4** (§2). Lo que sí aplica del flujo documentado, y conviene comprobar en la versión que
+20.0** (§2). En v20 es `l10n_pe` el que añade el distrito al formulario de dirección del portal y lo
+hace obligatorio para direcciones peruanas de una compañía peruana
+(`_get_mandatory_address_fields` en `addons/l10n_pe/models/res_partner.py`). Lo que sí aplica del flujo documentado, y conviene comprobar en la versión que
 tengas delante:
 
 - Política de facturación **Cantidades pedidas** en los productos.
@@ -500,16 +552,16 @@ tengas delante:
 Orden real. Cada punto bloquea al siguiente.
 
 - [ ] Base **nueva** con país Perú *(la localización va antes que el primer asiento)*
-- [ ] RUC en el NIF de la empresa y `address_type_code` confirmado con el cliente
+- [ ] RUC de la empresa en su campo (`vat`) y `address_type_code` confirmado con el cliente
 - [ ] Tipo de plan de cuentas para PLE 5.3 seleccionado
 - [ ] Proveedor de firma decidido, con su coste en la propuesta
 - [ ] Si no es IAP: certificado `.pfx` cargado y credenciales SOL con el formato RUC+usuario
 - [ ] Si es IAP: **el cliente** afilió a Estela/Digiflow como OSE y lo registró como PSE
 - [ ] **Entorno de prueba activado** *(por defecto está en producción)*
 - [ ] Tipo de cambio SUNAT conectado
-- [ ] Diarios con documentos activados y flujo **Peru UBL 2.1**; `Factur-X` desmarcado
+- [ ] Diarios de venta con documentos activados; casilla **«Enviar a la SUNAT»** visible al enviar la primera factura
 - [ ] Series acordadas por escrito con el contador
-- [ ] Clientes con tipo de identificación cargado
+- [ ] Clientes con RUC en su campo o DNI/otro documento como identificador adicional
 - [ ] Productos con UNSPSC; con partida arancelaria y **peso ≠ 0** si habrá GRE
 - [ ] Si habrá PLE de inventario: tipo de existencia, valoración automática, costo ≠ estándar y código de establecimiento
 - [ ] Si es agente de retención: `l10n_pe_edi_withholding` instalado
@@ -521,14 +573,13 @@ Orden real. Cada punto bloquea al siguiente.
 
 ## 12. Fuentes
 
-Comprobadas el **24 de agosto de 2026**.
+Comprobadas el **24 de agosto de 2026**; las de Odoo apuntan ya a la documentación 20.0.
 
 ### Oficiales de Odoo
 
 | Recurso | Enlace |
 |---|---|
-| Localización de Perú (saas-19.4, la versión de este plan) | <https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations/peru.html> |
-| Localización de Perú (19.0) | <https://www.odoo.com/documentation/19.0/es/applications/finance/fiscal_localizations/peru.html> |
+| Localización de Perú (20.0, la versión de este plan) | <https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/peru.html> |
 | Smart Tutorial — Localización de Perú *(15 lecciones en español)* | <https://www.odoo.com/slides/smart-tutorial-localizacion-de-peru-133> |
 | App Tour — Localización de Perú *(vídeo)* | <https://youtu.be/Ic3mGovkf8Y> |
 
@@ -552,7 +603,7 @@ Comprobadas el **24 de agosto de 2026**.
 
 | Recurso | Enlace |
 |---|---|
-| Estela *(antes Digiflow)* — OSE/PSE del servicio IAP | <https://www.digiflow.pe/> |
+| Estela *(antes Digiflow)* — OSE/PSE del servicio IAP | <https://www.estela.com/es-pe/tci-digiflow> |
 | Consulta de validez de comprobante — Estela OSE | <https://consulta.ose.pe/> |
 | Catálogo de códigos de error SUNAT/OSE *(~1 000 códigos)* | <https://www.nubefact.com/codigos-error-sunat/> |
 
@@ -566,9 +617,10 @@ Comprobadas el **24 de agosto de 2026**.
 1. Monta la base `PE` con [O1](O1-instalacion-localizacion-pe.md) y esta guía al lado.
 2. Emite, rechaza y anula a propósito con [O2](O2-manual-de-errores-sunat.md).
 3. Contrasta **cada dato de esta guía** contra tu propia base. Si algo no coincide, gana tu base:
-   la localización se actualiza con cada versión y esta guía se escribió contra saas~19.4 en
-   agosto de 2026.
+   la localización se actualiza con cada versión; esta guía se escribió contra saas~19.4 en
+   agosto de 2026 y se revisó contra el código de 20.0 en septiembre de 2026.
 
 > Lo que llevarte a un cliente: **la documentación oficial de una localización va siempre un poco
-> por detrás del código**. Aquí eran dos módulos inexistentes y un proveedor renombrado. Verificar
+> por detrás del código**. Aquí eran dos módulos inexistentes, un proveedor renombrado, una sección
+> del diario que ya no existe y un modelo de identificación que v20 sustituyó por completo. Verificar
 > antes de prometer no es desconfianza; es el trabajo.

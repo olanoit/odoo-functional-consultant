@@ -1,7 +1,7 @@
-id,name,code,requires_allocation,leave_validation_type,allocation_validation_type,request_unit,support_document,color,count_as,time_off_selectable
-andina.lt_vacaciones,Vacaciones,VAC,True,manager,hr,day,False,3,absence,True
-andina.lt_enfermedad,Descanso médico,DMED,False,hr,no_validation,day,True,1,absence,True
-andina.lt_permiso,Permiso sin goce de haber,PSGH,False,both,no_validation,hour,False,4,absence,True
-andina.lt_compensatorio,Compensatorio por horas extra,COMP,True,manager,hr,day,False,6,absence,True
-andina.lt_familiar,Licencia por paternidad o maternidad,LICF,False,hr,no_validation,day,True,8,absence,True
-andina.lt_capacitacion,Capacitación externa,CAPA,False,manager,no_validation,hour,False,10,working_time,True
+id,name,code,requires_allocation,leave_validation_type,allocation_validation_type,request_unit,unit_of_measure,support_document,color,count_as,time_off_selectable
+andina.lt_vacaciones,Vacaciones,VAC,True,manager,hr,day,day,False,3,absence,True
+andina.lt_enfermedad,Descanso médico,DMED,False,hr,no_validation,day,day,True,1,absence,True
+andina.lt_permiso,Permiso sin goce de haber,PSGH,False,both,no_validation,hour,hour,False,4,absence,True
+andina.lt_compensatorio,Compensatorio por horas extra,COMP,True,manager,hr,day,day,False,6,absence,True
+andina.lt_familiar,Licencia por paternidad o maternidad,LICF,False,hr,no_validation,day,day,True,8,absence,True
+andina.lt_capacitacion,Capacitación externa,CAPA,False,manager,no_validation,hour,hour,False,10,working_time,True

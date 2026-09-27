@@ -10,8 +10,10 @@
 
 ## 1. Resultados de aprendizaje
 
-1. Configurar el expediente del empleado, la estructura organizacional y los contratos.
-2. Implementar asistencias (kiosco, PIN, geolocalización) y su relación con horarios de trabajo.
+1. Configurar el expediente del empleado, la estructura organizacional y las **versiones del empleado**
+   (`hr.version`, que desde v19 reemplazan a los contratos).
+2. Implementar asistencias (kiosco, PIN, geolocalización) y su relación con horarios de trabajo y
+   reglas automáticas de horas extra.
 3. Configurar tipos de ausencia, asignaciones, aprobaciones y calendario del equipo.
 4. Ejecutar un proceso de reclutamiento completo, desde la publicación hasta la contratación.
 5. Configurar evaluaciones de desempeño y planes de carrera.
@@ -22,17 +24,17 @@
 
 | # | Tema | Documentación |
 |---|---|---|
-| 7.1 | Empleados | [hr/employees.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/employees.html) · [employees/new_employee.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/employees/new_employee.html) |
-| 7.2 | Asistencias | [hr/attendances.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/attendances.html) |
-| 7.3 | Tiempo personal / Ausencias | [hr/time_off.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/time_off.html) |
-| 7.4 | Reclutamiento | [hr/recruitment.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/recruitment.html) · [recruitment/new_job.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/recruitment/new_job.html) |
-| 7.5 | Evaluaciones | [hr/appraisals.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/appraisals.html) |
-| 7.6 | Nómina | [hr/payroll.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/payroll.html) · [payroll/contracts.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/payroll/contracts.html) |
-| 7.7 | Flota | [hr/fleet.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/fleet.html) |
-| 7.8 | Recepción (Frontdesk) | [hr/frontdesk.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/frontdesk.html) |
-| 7.9 | Almuerzo | [hr/lunch.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/lunch.html) |
-| 7.10 | Referencias de empleados | [hr/referrals.html](https://www.odoo.com/documentation/saas-19.4/es/applications/hr/referrals.html) |
-| 7.11 | Gastos de empleados (repaso Fase 4) | [finance/expenses.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/expenses.html) |
+| 7.1 | Empleados | [hr/employees.html](https://www.odoo.com/documentation/20.0/applications/hr/employees.html) · [employees/new_employee.html](https://www.odoo.com/documentation/20.0/applications/hr/employees/new_employee.html) |
+| 7.2 | Asistencias | [hr/attendances.html](https://www.odoo.com/documentation/20.0/applications/hr/attendances.html) |
+| 7.3 | Tiempo personal / Ausencias | [hr/time_off.html](https://www.odoo.com/documentation/20.0/applications/hr/time_off.html) |
+| 7.4 | Reclutamiento | [hr/recruitment.html](https://www.odoo.com/documentation/20.0/applications/hr/recruitment.html) · [recruitment/new_job.html](https://www.odoo.com/documentation/20.0/applications/hr/recruitment/new_job.html) |
+| 7.5 | Evaluaciones | [hr/appraisals.html](https://www.odoo.com/documentation/20.0/applications/hr/appraisals.html) |
+| 7.6 | Nómina | [hr/payroll.html](https://www.odoo.com/documentation/20.0/applications/hr/payroll.html) · [payroll/contracts.html](https://www.odoo.com/documentation/20.0/applications/hr/payroll/contracts.html) |
+| 7.7 | Flota | [hr/fleet.html](https://www.odoo.com/documentation/20.0/applications/hr/fleet.html) |
+| 7.8 | Recepción (Frontdesk) | [hr/frontdesk.html](https://www.odoo.com/documentation/20.0/applications/hr/frontdesk.html) |
+| 7.9 | Almuerzo | [hr/lunch.html](https://www.odoo.com/documentation/20.0/applications/hr/lunch.html) |
+| 7.10 | Referencias de empleados | [hr/referrals.html](https://www.odoo.com/documentation/20.0/applications/hr/referrals.html) |
+| 7.11 | Gastos de empleados (repaso Fase 4) | [finance/expenses.html](https://www.odoo.com/documentation/20.0/applications/finance/expenses.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -46,11 +48,16 @@
 
 ### Bloque 7.2 — Asistencias (3 h)
 1. Modos de registro: desde el perfil, desde **kiosco** (tablet con PIN o código de barras), desde móvil.
-2. Reglas de horas extra, tolerancias y aprobación de asistencias.
+2. Horas extra, tolerancias y aprobación de asistencias. **v20:** las antiguas reglas de horas extra
+   (`hr.attendance.overtime.ruleset`/`rule`) desaparecieron; ahora son **reglas de tiempo**
+   (`hr.time.rule`, *Asistencias → Configuración → Automatic Rules*), compartidas con Ausencias y
+   Nómina: el exceso se registra como una asistencia aparte con su tipo de entrada de trabajo y puede
+   **generar saldo de compensatorio**. Cada asistencia tiene estado (*Borrador / Validado / Rechazado*).
 3. Reporte de asistencia y su comparación con las hojas de horas (Fase 6): **no son lo mismo**.
 
 ### Bloque 7.3 — Ausencias (4 h)
-1. **Tipos de ausencia**: vacaciones, enfermedad, permiso sin goce, compensatorio. Configurar unidad
+1. **Tipos de ausencia** (desde v19 son `hr.work.entry.type`, el mismo modelo que los tipos de entrada
+   de trabajo de nómina): vacaciones, enfermedad, permiso sin goce, compensatorio. Configurar unidad
    (días/horas), aprobación (jefe/RR. HH./doble), documento de respaldo, efecto en nómina.
 2. **Asignaciones**: manual, por acumulación (*accrual*) con reglas de devengo, y sus fechas de corte.
 3. Flujo de solicitud → aprobación → efecto en calendario y en planificación (Fase 6).
@@ -72,10 +79,13 @@
 
 ### Bloque 7.6 — Nómina: alcance real (5 h) ← *criterio de consultor*
 1. Entender la arquitectura: **estructura salarial** → **reglas salariales** (con condiciones y
-   fórmulas Python) → **categorías** → **recibo de nómina** → asiento contable.
+   fórmulas Python) → **categorías** → **recibo de nómina** → asiento contable. **v20:** las entradas
+   manuales del recibo se enlazan directamente a una regla salarial de tipo *Input Value*
+   (desapareció el modelo `hr.payslip.input.type`).
 2. Crear una estructura simple con: sueldo básico, asignación familiar, descuento de pensión,
    renta de quinta categoría (simplificada), aportes del empleador. Generar recibos de un mes.
-3. Configurar contratos: tipo, salario, horario, fechas, estructura aplicable.
+3. Configurar las **versiones del empleado** (antes, contratos): tipo, salario, horario, fechas,
+   tipo de estructura salarial aplicable.
 4. Lotes de nómina, generación masiva y contabilización.
 5. **Evaluación crítica:** listar qué exige la legislación peruana (PLAME, T-Registro, CTS, gratificaciones,
    utilidades, quinta categoría con proyección anual, boletas electrónicas) y decidir por cada punto:

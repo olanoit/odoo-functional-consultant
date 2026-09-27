@@ -74,6 +74,9 @@ Reglas de diseño de ubicaciones:
 - **No crees más de las que se van a usar.** Cada ubicación es una decisión al recibir y al preparar.
 - **Usa códigos de barras** desde el inicio: es lo que hace viable el escaneo (Bloque 3.7).
 - La **cuarentena** es interna, no virtual: la mercancía retenida existe y hay que contarla.
+  Pero ojo: si cuelga de *WH/Existencias* (como en el CSV), sigue siendo **reservable** para ventas,
+  porque las entregas reservan en *Existencias* y en todas sus hijas. Para bloquearla de verdad, ponla
+  directamente bajo la ubicación vista del almacén (*WH*), fuera de *Existencias* (lo pruebas en H4).
 
 ## 7. Errores típicos
 

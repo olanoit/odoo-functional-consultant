@@ -31,7 +31,7 @@ Se verifica con el reporte de previsión, el detalle de operaciones y la pestañ
 vinculadas.
 
 **5. Asientos de una recepción con valoración automática y PEPS.**
-**Ninguno.** En Odoo 19 la valoración perpetua se llama, literalmente, *Perpetual (at invoicing)*:
+**Ninguno.** Desde Odoo 19 (y en v20) la valoración perpetua se llama, literalmente, *Perpetual (at invoicing)*:
 validar la recepción sube el stock y crea la capa de costo PEPS, pero **no genera asiento**.
 
 El asiento aparece al **validar la factura de compra**, y carga **directamente** la cuenta de
@@ -44,13 +44,13 @@ de **diferencia de precio** de la categoría.
 > se genera y concluir que la valoración está mal configurada.
 
 **6. *Packaging* vs. paquete.**
-El **empaque** (en v19, `uom_ids`) es una presentación comercial estándar: "caja de 24 latas" —
+El **empaque** (desde v19, `uom_ids`) es una presentación comercial estándar: "caja de 24 latas" —
 sirve para comprar y vender en múltiplos. El **paquete** es un bulto físico concreto e identificable
 que agrupa productos en el almacén. Para "caja de 24 latas" se usa **empaque**.
 
 **7. Garantizar que salga primero el lote que vence antes.**
 Estrategia de remoción **FEFO** configurada en la ubicación o en la categoría de producto, con los
-productos con `tracking = lot` y `use_expiration_date` activado y **fecha de caducidad cargada en
+productos con `tracking = lot` (en la ficha, *Seguimiento: Por lotes*) y `use_expiration_date` activado y **fecha de caducidad cargada en
 cada lote**. Sin la fecha en el lote, FEFO no tiene con qué ordenar y se comporta como FIFO.
 
 **8. ¿Recepción en 2 o en 3 pasos?**
@@ -77,8 +77,9 @@ solo lo que efectivamente llegó. Para mercancía física se recomienda **recibi
 coincidencia a tres bandas (orden ↔ recepción ↔ factura) y evita pagar lo que no llegó.
 
 **12. Cambiar el método de costo de un producto con movimientos.**
-Odoo revalúa y genera asientos de ajuste; el valor del inventario cambia de golpe y esa diferencia
-impacta el resultado del período. Se decide **antes** de operar. Si hay que cambiarlo, se hace en un
+En v20 Odoo revalúa hacia atrás todos los movimientos desde el último cierre de inventario con el
+nuevo método; el valor del inventario y el costo de ventas cambian de golpe y esa diferencia impacta el
+resultado del período (se contabiliza en el siguiente cierre o factura). Se decide **antes** de operar. Si hay que cambiarlo, se hace en un
 corte de período, coordinado con el contador y documentado.
 
 ---

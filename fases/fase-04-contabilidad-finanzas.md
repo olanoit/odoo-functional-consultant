@@ -16,12 +16,12 @@ Datos y casos en **[`../ejemplos/fase-04/`](../ejemplos/fase-04/README.md)**:
 
 | Recurso | Contenido |
 |---|---|
-| `datos/` | 25 cuentas tipo PCGE, 7 diarios, 7 impuestos, 3 posiciones fiscales (mecanismo nuevo de v19), 2 planes analíticos con 8 cuentas, **extracto bancario de 40 líneas** y 4 modelos de conciliación |
+| `datos/` | 25 cuentas tipo PCGE, 7 diarios, 7 impuestos, 4 posiciones fiscales (mecanismo de mapeo vigente desde v19), 2 planes analíticos con 8 cuentas, **extracto bancario de 40 líneas** y 4 modelos de conciliación |
 | `guias/I1` | **Laboratorio de asientos**: predice 12 asientos antes de ejecutarlos |
-| `guias/I2` | Impuestos y posiciones fiscales en v19 (`original_tax_ids` / `fiscal_position_ids`) |
+| `guias/I2` | Impuestos y posiciones fiscales en v20 (`original_tax_ids` / `fiscal_position_ids`) |
 | `guias/I3` | Conciliación bancaria: 40 líneas en menos de 10 minutos |
 | `guias/I4` | **Checklist de cierre mensual** (30 controles) + cuadre inventario ↔ contabilidad |
-| `guias/I5` | Chuleta v19 de Contabilidad |
+| `guias/I5` | Chuleta v20 de Contabilidad |
 | `soluciones/` | Los 12 asientos resueltos y el cuestionario |
 
 ## 1. Resultados de aprendizaje
@@ -40,32 +40,32 @@ Datos y casos en **[`../ejemplos/fase-04/`](../ejemplos/fase-04/README.md)**:
 
 | # | Tema | Documentación |
 |---|---|---|
-| 4.1 | Contabilidad (índice general) | [finance/accounting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting.html) |
-| 4.2 | Primeros pasos / configuración inicial | [accounting/get_started.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started.html) |
-| 4.3 | **Hoja de trucos de contabilidad** (léela dos veces) | [get_started/cheat_sheet.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started/cheat_sheet.html) |
-| 4.4 | Plan de cuentas | [get_started/chart_of_accounts.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started/chart_of_accounts.html) |
-| 4.5 | Multimoneda | [get_started/multi_currency.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started/multi_currency.html) |
-| 4.6 | Facturas de cliente | [accounting/customer_invoices.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices.html) |
-| 4.7 | Condiciones de pago | [customer_invoices/payment_terms.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices/payment_terms.html) |
-| 4.8 | Notas de crédito y reembolsos | [customer_invoices/credit_notes.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices/credit_notes.html) |
-| 4.9 | Facturación electrónica (marco general) | [customer_invoices/electronic_invoicing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices/electronic_invoicing.html) |
-| 4.10 | Facturas de proveedor | [accounting/vendor_bills.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/vendor_bills.html) |
-| 4.11 | Activos fijos | [vendor_bills/assets.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/vendor_bills/assets.html) |
-| 4.12 | Gastos diferidos / Ingresos diferidos | [deferred_expenses.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/vendor_bills/deferred_expenses.html) · [deferred_revenues.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices/deferred_revenues.html) |
-| 4.13 | Bancos y efectivo | [accounting/bank.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/bank.html) |
-| 4.14 | Conciliación bancaria y modelos de conciliación | [bank/reconciliation.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/bank/reconciliation.html) |
-| 4.15 | Sincronización bancaria | [bank/bank_synchronization.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/bank/bank_synchronization.html) |
-| 4.16 | Pagos (registro, lotes, seguimiento de deuda) | [accounting/payments.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/payments.html) · [payments/batch.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/payments/batch.html) · [payments/follow_up.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/payments/follow_up.html) |
-| 4.17 | Impuestos | [accounting/taxes.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/taxes.html) |
-| 4.18 | Posiciones fiscales | [taxes/fiscal_positions.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/taxes/fiscal_positions.html) |
-| 4.19 | Reportes contables | [accounting/reporting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/reporting.html) |
-| 4.20 | Contabilidad analítica | [reporting/analytic_accounting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/reporting/analytic_accounting.html) |
-| 4.21 | Presupuestos | [reporting/budget.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/reporting/budget.html) |
-| 4.22 | Declaración de impuestos | [reporting/tax_returns.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/reporting/tax_returns.html) |
-| 4.23 | Cierre de ejercicio | [reporting/year_end.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/reporting/year_end.html) |
-| 4.24 | Gastos de empleados | [finance/expenses.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/expenses.html) |
-| 4.25 | Proveedores de pago en línea | [finance/payment_providers.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/payment_providers.html) |
-| 4.26 | Valoración por precio promedio (puente con Fase 3) | [get_started/avg_price_valuation.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started/avg_price_valuation.html) |
+| 4.1 | Contabilidad (índice general) | [finance/accounting.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting.html) |
+| 4.2 | Primeros pasos / configuración inicial | [accounting/get_started.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started.html) |
+| 4.3 | **Hoja de trucos de contabilidad** (léela dos veces) | [get_started/cheat_sheet.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/cheat_sheet.html) |
+| 4.4 | Plan de cuentas | [get_started/chart_of_accounts.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/chart_of_accounts.html) |
+| 4.5 | Multimoneda | [get_started/multi_currency.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/multi_currency.html) |
+| 4.6 | Facturas de cliente | [accounting/customer_invoices.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices.html) |
+| 4.7 | Condiciones de pago | [customer_invoices/payment_terms.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/payment_terms.html) |
+| 4.8 | Notas de crédito y reembolsos | [customer_invoices/credit_notes.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/credit_notes.html) |
+| 4.9 | Facturación electrónica (marco general) | [customer_invoices/electronic_invoicing.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/electronic_invoicing.html) |
+| 4.10 | Facturas de proveedor | [accounting/vendor_bills.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/vendor_bills.html) |
+| 4.11 | Activos fijos | [vendor_bills/assets.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/vendor_bills/assets.html) |
+| 4.12 | Gastos diferidos / Ingresos diferidos | [deferred_expenses.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/vendor_bills/deferred_expenses.html) · [deferred_revenues.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/deferred_revenues.html) |
+| 4.13 | Bancos y efectivo | [accounting/bank.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html) |
+| 4.14 | Conciliación bancaria y modelos de conciliación | [bank/reconciliation.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/reconciliation.html) |
+| 4.15 | Sincronización bancaria | [bank/bank_synchronization.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/bank_synchronization.html) |
+| 4.16 | Pagos (registro, lotes, seguimiento de deuda) | [accounting/payments.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments.html) · [payments/batch.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments/batch.html) · [payments/follow_up.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments/follow_up.html) |
+| 4.17 | Impuestos | [accounting/taxes.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes.html) |
+| 4.18 | Posiciones fiscales | [taxes/fiscal_positions.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/fiscal_positions.html) |
+| 4.19 | Reportes contables | [accounting/reporting.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting.html) |
+| 4.20 | Contabilidad analítica | [reporting/analytic_accounting.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting/analytic_accounting.html) |
+| 4.21 | Presupuestos | [reporting/budget.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting/budget.html) |
+| 4.22 | Declaración de impuestos | [reporting/tax_returns.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting/tax_returns.html) |
+| 4.23 | Cierre de ejercicio | [reporting/year_end.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting/year_end.html) |
+| 4.24 | Gastos de empleados | [finance/expenses.html](https://www.odoo.com/documentation/20.0/applications/finance/expenses.html) |
+| 4.25 | Proveedores de pago en línea | [finance/payment_providers.html](https://www.odoo.com/documentation/20.0/applications/finance/payment_providers.html) |
+| 4.26 | Valoración por precio promedio (puente con Fase 3) | [get_started/avg_price_valuation.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/avg_price_valuation.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -86,8 +86,9 @@ activo, depreciación mensual, nómina simplificada. Si no salen, no sigas.
    conciliación, cuentas por defecto de la compañía. Crear/ajustar 15 cuentas propias.
 3. **Diarios**: ventas, compras, banco, efectivo, misceláneos. Secuencias, cuentas por defecto,
    control de acceso por diario, diarios en moneda extranjera.
-4. **Períodos fiscales**: bloqueos de fecha (bloqueo para todos, bloqueo para no asesores, bloqueo fiscal)
-   y por qué son la herramienta antifraude más importante.
+4. **Períodos fiscales**: fechas de bloqueo (global, de declaración de impuestos, de ventas, de compras
+   y el **bloqueo permanente**, irreversible), las excepciones de bloqueo y por qué son la herramienta
+   antifraude más importante.
 5. **Multimoneda**: activar USD, configurar tasas manuales y automáticas, y provocar una
    diferencia de cambio (realizada y no realizada).
 6. Saldos iniciales: cargar el balance de apertura por asiento de diario misceláneo.
@@ -127,6 +128,8 @@ activo, depreciación mensual, nómina simplificada. Si no salen, no sigas.
 1. Configurar diarios de banco; importar extracto (CSV/OFX) y crear extractos manuales.
 2. Ejecutar la conciliación: emparejar con factura, con pago, dividir un apunte, conciliar parcialmente.
 3. **Modelos de conciliación**: reglas automáticas para comisiones bancarias, redondeos y cobros recurrentes.
+   En v20 conviven con las **reglas de coincidencia** (*Matching Rules*), que emparejan el extracto con
+   facturas abiertas aplicando una tolerancia de pago y un orden de búsqueda.
 4. Conciliar diferencias de cambio en cuentas en USD.
 5. Cerrar el saldo del banco y cuadrarlo con el extracto real.
 6. Caja chica: diario de efectivo, arqueo, y su relación con el cierre de PdV (Fase 2).
@@ -151,14 +154,20 @@ activo, depreciación mensual, nómina simplificada. Si no salen, no sigas.
    desglose (*drill-down*) hasta el apunte, anotaciones, exportación a Excel/PDF.
 3. **Cierre de mes** simulado sobre los datos de las Fases 2 y 3:
    conciliar bancos → revisar cuentas transitorias → validar impuestos → revisar valoración de
-   inventario vs. cuenta contable → depreciaciones → bloquear fechas → emitir estados.
-4. Leer y resumir el proceso de **cierre de ejercicio** (asiento de cierre, cuenta de resultados acumulados).
+   inventario vs. cuenta contable (y generar desde el informe de valoración el asiento de cierre de
+   existencias y los devengos) → depreciaciones → bloquear fechas → emitir estados.
+4. Leer y resumir el proceso de **cierre de ejercicio**: Odoo calcula solo el resultado del año en la
+   cuenta de tipo *Ganancias del año actual* (`equity_unaffected`); el traspaso a resultados
+   acumulados es un asiento que decide el contador, no un proceso automático.
 5. Construir el **tablero financiero** del gerente: 6 indicadores y su fuente.
 
 ### Bloque 4.8 — Puente inventario ↔ contabilidad (4 h)
-1. Verificar que el valor del inventario (reporte de valoración) cuadre con la cuenta contable de existencias.
-2. Explicar cada diferencia posible: ajustes, chatarra, costos en destino, facturas sin recepción,
-   recepciones sin factura (cuenta de entrada de stock / mercancía en tránsito).
+1. Verificar que el valor del inventario (informe *Valoración del inventario*) cuadre con la cuenta
+   contable de existencias.
+2. Explicar cada diferencia posible: ajustes, chatarra, costos en destino, facturas sin recepción y
+   recepciones sin factura. Desde v19 ya no hay cuenta transitoria de entrada de existencias: en v20
+   esas dos últimas aparecen en la sección **devengos** (*Accruals*) del propio informe de valoración,
+   que puede contabilizarlas con reversión automática.
 3. Documentar el **procedimiento mensual de cuadre inventario-contabilidad** (entregable reutilizable).
 
 ## 4. Laboratorio integrador
@@ -178,7 +187,7 @@ Sobre los datos que ya existen en `LAB` (ventas de la Fase 2, compras de la Fase
 ## 5. Preguntas de comprensión (prueba B)
 
 1. ¿Por qué el **tipo** de cuenta importa más que su número en Odoo?
-2. ¿Qué diferencia hay entre bloqueo de fecha "para todos", "para no asesores" y bloqueo fiscal?
+2. ¿Qué diferencia hay entre la fecha de bloqueo global, la de declaración de impuestos, las de ventas/compras y el bloqueo permanente?
 3. Cliente exonerado de IGV compra un producto gravado. ¿Cómo lo resuelves sin tocar el producto?
 4. ¿Qué es un modelo de conciliación y qué problema resuelve?
 5. Se pagó una factura de más. ¿Dónde queda el excedente y cómo se aplica a la siguiente factura?
@@ -211,6 +220,6 @@ Sobre los datos que ya existen en `LAB` (ventas de la Fase 2, compras de la Fase
 | "El contador configura la contabilidad" | El contador define reglas; **tú** configuras. Si no entiendes, se configura mal. |
 | Empezar a facturar antes de definir impuestos y posiciones fiscales | Rehacer facturas emitidas es imposible; se corrige con notas de crédito y desconfianza. |
 | No usar analítica desde el inicio | Al año siguiente el cliente pide rentabilidad por línea y no hay datos históricos. |
-| Ignorar las cuentas transitorias (pagos pendientes, entrada de stock) | Son el 90 % de los descuadres del primer cierre. |
+| Ignorar las cuentas transitorias (pagos pendientes, suspenso bancario) y los devengos de existencias (recepciones y entregas sin facturar) | Son el 90 % de los descuadres del primer cierre. |
 | Conciliar a mano sin modelos | 200 líneas/mes a mano = el cliente vuelve a Excel. |
 | Prometer "el balance cuadra solo" | Cuadra si la configuración y el proceso son correctos; hay que demostrarlo, no prometerlo. |

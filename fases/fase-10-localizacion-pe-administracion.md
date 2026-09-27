@@ -7,7 +7,7 @@
 > hosting, respaldos, entornos, actualizaciones de versión y multiempresa.
 >
 > *(Si tu mercado no es Perú, sustituye la localización por la de tu país en el mismo índice de
-> [localizaciones fiscales](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations.html);
+> [localizaciones fiscales](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html);
 > la estructura del estudio es idéntica.)*
 
 ---
@@ -15,8 +15,8 @@
 ## 📓 Cuaderno de ejemplos de esta fase
 
 Datos y casos en **[`../ejemplos/fase-10/`](../ejemplos/fase-10/README.md)**: 12 clientes peruanos
-con RUC y DNI usando los ID externos reales de la localización, 8 productos con casos tributarios
-distintos (gravado, exonerado, gratuito, ICBPER), guía de instalación paso a paso, el
+con RUC y DNI cargados como pide v20 (RUC en `vat`, DNI como identificador adicional), 8 productos
+con casos tributarios distintos (gravado, exonerado, gratuito, ICBPER), guía de instalación paso a paso, el
 **manual de 10 errores de facturación electrónica** y la **matriz de hosting** con recomendación
 por perfil de cliente.
 
@@ -34,18 +34,18 @@ por perfil de cliente.
 
 | # | Tema | Fuente |
 |---|---|---|
-| 10.1 | Localizaciones fiscales (marco) | [finance/fiscal_localizations.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations.html) |
-| 10.2 | **Localización de Perú** | [fiscal_localizations/peru.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations/peru.html) |
-| 10.3 | Facturación electrónica (marco general) | [customer_invoices/electronic_invoicing.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/customer_invoices/electronic_invoicing.html) |
-| 10.4 | Multimoneda (repaso Fase 4) | [get_started/multi_currency.html](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/accounting/get_started/multi_currency.html) |
-| 10.5 | Multiempresa | [general/companies/multi_company.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/companies/multi_company.html) |
-| 10.6 | Administración e implementación | [administration.html](https://www.odoo.com/documentation/saas-19.4/es/administration.html) · [hosting.html](https://www.odoo.com/documentation/saas-19.4/es/administration/hosting.html) |
-| 10.7 | Odoo Online | [administration/odoo_online.html](https://www.odoo.com/documentation/saas-19.4/es/administration/odoo_online.html) |
-| 10.8 | Odoo.sh | [administration/odoo_sh.html](https://www.odoo.com/documentation/saas-19.4/es/administration/odoo_sh.html) · [odoo_sh/getting_started.html](https://www.odoo.com/documentation/saas-19.4/es/administration/odoo_sh/getting_started.html) |
-| 10.9 | Local (on-premise) | [administration/on_premise.html](https://www.odoo.com/documentation/saas-19.4/es/administration/on_premise.html) |
-| 10.10 | Actualización de versión | [administration/upgrade.html](https://www.odoo.com/documentation/saas-19.4/es/administration/upgrade.html) |
-| 10.11 | Versiones soportadas | [administration/supported_versions.html](https://www.odoo.com/documentation/saas-19.4/es/administration/supported_versions.html) |
-| 10.12 | Base neutralizada | [administration/neutralized_database.html](https://www.odoo.com/documentation/saas-19.4/es/administration/neutralized_database.html) |
+| 10.1 | Localizaciones fiscales (marco) | [finance/fiscal_localizations.html](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html) |
+| 10.2 | **Localización de Perú** | [fiscal_localizations/peru.html](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/peru.html) |
+| 10.3 | Facturación electrónica (marco general) | [customer_invoices/electronic_invoicing.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/electronic_invoicing.html) |
+| 10.4 | Multimoneda (repaso Fase 4) | [get_started/multi_currency.html](https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/multi_currency.html) |
+| 10.5 | Multiempresa | [general/companies/multi_company.html](https://www.odoo.com/documentation/20.0/applications/general/companies/multi_company.html) |
+| 10.6 | Administración e implementación | [administration.html](https://www.odoo.com/documentation/20.0/administration.html) · [hosting.html](https://www.odoo.com/documentation/20.0/administration/hosting.html) |
+| 10.7 | Odoo Online | [administration/odoo_online.html](https://www.odoo.com/documentation/20.0/administration/odoo_online.html) |
+| 10.8 | Odoo.sh | [administration/odoo_sh.html](https://www.odoo.com/documentation/20.0/administration/odoo_sh.html) · [odoo_sh/getting_started.html](https://www.odoo.com/documentation/20.0/administration/odoo_sh/getting_started.html) |
+| 10.9 | Local (on-premise) | [administration/on_premise.html](https://www.odoo.com/documentation/20.0/administration/on_premise.html) |
+| 10.10 | Actualización de versión | [administration/upgrade.html](https://www.odoo.com/documentation/20.0/administration/upgrade.html) |
+| 10.11 | Versiones soportadas | [administration/supported_versions.html](https://www.odoo.com/documentation/20.0/administration/supported_versions.html) |
+| 10.12 | Base neutralizada | [administration/neutralized_database.html](https://www.odoo.com/documentation/20.0/administration/neutralized_database.html) |
 | 10.13 | Normativa (fuente externa obligatoria) | <https://www.sunat.gob.pe> — comprobantes electrónicos, detracciones, SIRE |
 | 10.14 | Módulos de comunidad y terceros | <https://apps.odoo.com/apps/modules> · <https://github.com/OCA> |
 
@@ -68,11 +68,13 @@ Antes de configurar, entiende qué exige la SUNAT. Resume en tu bitácora:
 ### Bloque 10.2 — Instalación y configuración de la localización (6 h)
 1. Crear la base `PE` **nueva**, con país Perú y **antes de cualquier asiento** instalar el paquete
    de localización peruana + facturación electrónica.
-2. Revisar qué trajo la instalación: plan contable local, impuestos, tipos de documento de identidad,
-   tipos de comprobante, diarios, catálogos SUNAT.
+2. Revisar qué trajo la instalación: plan contable local, impuestos, identificadores peruanos del
+   contacto (DNI, CE, TAM…), tipos de comprobante, diarios, catálogos SUNAT.
 3. Configurar la compañía: RUC, dirección con ubigeo, tipo de contribuyente, datos del certificado.
 4. Configurar **diarios por tipo de comprobante** con sus series y correlativos.
-5. Configurar clientes con tipo de documento y validación de RUC/DNI.
+5. Configurar clientes con su identificación validada: el RUC en el campo **RUC** (`vat`) y el DNI
+   u otro documento como **identificador adicional**. En v20 ya no existe el campo «tipo de
+   identificación»: el código SUNAT (catálogo 06) lo calcula Odoo a partir del identificador.
 6. Configurar productos con sus códigos de tributo y unidades de medida SUNAT.
 
 ### Bloque 10.3 — Emisión electrónica en modo de prueba (7 h)
@@ -112,8 +114,10 @@ Antes de configurar, entiende qué exige la SUNAT. Resume en tu bitácora:
 2. **Respaldos**: frecuencia, restauración probada (un respaldo no probado no existe), retención.
 3. **Entornos** en Odoo.sh: producción, preproducción (*staging*), desarrollo; qué se prueba en cada uno.
 4. **Actualización de versión**: proceso, base de prueba, qué se rompe (personalizaciones y módulos de
-   terceros), plan de pruebas y ventana de corte. Leer [upgrade.html](https://www.odoo.com/documentation/saas-19.4/es/administration/upgrade.html)
-   y [supported_versions.html](https://www.odoo.com/documentation/saas-19.4/es/administration/supported_versions.html).
+   terceros), plan de pruebas y ventana de corte. Odoo da **soporte estándar de tres años** a cada
+   versión mayor; después solo hay soporte extendido, con cargo adicional obligatorio, y las versiones
+   intermedias (SaaS, p. ej. 19.4) solo existen en Odoo Online. Leer [upgrade.html](https://www.odoo.com/documentation/20.0/administration/upgrade.html)
+   y [supported_versions.html](https://www.odoo.com/documentation/20.0/administration/supported_versions.html).
 5. **Bases neutralizadas** para pruebas seguras (sin correos ni pagos reales).
 6. Gestión de usuarios y costos de licencia: cómo se cuentan, qué es un usuario de portal, IAP.
 

@@ -1,4 +1,5 @@
-id,name,auto_apply,country_id/id,tax_ids/id
-andina.fp_exonerado,Cliente exonerado (Amazonía),False,,"andina.tax_exo_v,andina.tax_exo_c"
-andina.fp_inafecto,Operación inafecta,False,,andina.tax_ina_v
-andina.fp_export,Exportación,True,base.pe,andina.tax_ina_v
+id,name,sequence,auto_apply,country_id/id,tax_ids/id
+andina.fp_local,Local Perú,10,True,base.pe,
+andina.fp_exonerado,Cliente exonerado (Amazonía),20,False,,"andina.tax_exo_v,andina.tax_exo_c"
+andina.fp_inafecto,Operación inafecta,30,False,,andina.tax_ina_v
+andina.fp_export,Exportación,40,True,,andina.tax_ina_v

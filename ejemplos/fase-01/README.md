@@ -3,9 +3,9 @@
 Casos prácticos ejecutables para [`../../fases/fase-01-fundamentos.md`](../../fases/fase-01-fundamentos.md).
 Todo gira alrededor de **ANDINA GOURMET S.A.C.** y usa datos listos para importar.
 
-> **Versión objetivo:** Odoo 19 / saas-19.4. Los nombres técnicos de campos usados en los CSV fueron
-> verificados contra el código fuente de esta versión (ver [`guias/E4-campos-tecnicos-v19.md`](guias/E4-campos-tecnicos-v19.md)):
-> varios cambiaron respecto de v16–v18 y los archivos de tutoriales antiguos **ya no funcionan**.
+> **Versión objetivo:** Odoo 20 / 20.0. Los nombres técnicos de campos usados en los CSV fueron
+> verificados contra el código fuente de esta versión (ver [`guias/E4-campos-tecnicos-v20.md`](guias/E4-campos-tecnicos-v20.md)):
+> varios cambiaron respecto de v16–v18, algunos otra vez en v20, y los archivos de tutoriales antiguos **ya no funcionan**.
 
 ---
 
@@ -14,7 +14,7 @@ Todo gira alrededor de **ANDINA GOURMET S.A.C.** y usa datos listos para importa
 | Archivo | Qué es |
 |---|---|
 | `datos/01-etiquetas-contacto.csv` | 10 etiquetas de segmentación de contactos |
-| `datos/02-clientes.csv` | 25 clientes con RUC válido, ciudad, teléfono, etiquetas |
+| `datos/02-clientes.csv` | 25 clientes con RUC válido (dígito verificador correcto: v20 lo comprueba al importar), ciudad, teléfono, etiquetas |
 | `datos/03-proveedores.csv` | 15 proveedores clasificados por tipo de suministro |
 | `datos/04-contactos-hijos.csv` | 10 contactos hijos: personas, direcciones de entrega y de facturación |
 | `datos/05-categorias-producto.csv` | 11 categorías de producto en jerarquía de 3 niveles |
@@ -24,19 +24,31 @@ Todo gira alrededor de **ANDINA GOURMET S.A.C.** y usa datos listos para importa
 | `guias/E1-matriz-de-permisos.md` | Los 4 usuarios de la fase, sus grupos y las pruebas de acceso |
 | `guias/E2-ejercicios-busqueda-reportes.md` | 15 ejercicios de filtros, agrupaciones y pivote |
 | `guias/E3-errores-de-importacion.md` | Síntoma → causa → solución de cada error provocado |
-| `guias/E4-campos-tecnicos-v19.md` | Chuleta de nombres técnicos verificados en v19 |
+| `guias/E4-campos-tecnicos-v20.md` | Chuleta de nombres técnicos verificados en v20 |
 | `soluciones/` | Respuestas de los ejercicios y del cuestionario de la fase |
 
 ## Antes de empezar
 
 1. Base de datos **`LAB`**, creada **sin datos demo**, idioma español, país Perú.
 2. Apps instaladas: **Contactos, Ventas, Inventario, Compras**.
-3. **Modo desarrollador activado** (Ajustes → Herramientas para desarrolladores).
+3. **Modo desarrollador activado** (Ajustes → Herramientas de desarrollador).
 4. Descarga esta carpeta `datos/` a tu equipo: los archivos se suben desde el diálogo de importación.
 
 > **Codificación:** los CSV están en **UTF-8 sin BOM**. Si los abres y guardas con Excel en Windows,
 > revisa que los acentos no se rompan; en el diálogo de importación de Odoo, el campo *Codificación*
 > debe decir `utf-8`. Es el error más tonto y más frecuente de una migración.
+>
+> **Elige `utf-8` a mano en cada importación, no te fíes de la detección.** Al subir un archivo, Odoo
+> **adivina** la codificación (la opción *Codificación* empieza vacía) y en archivos cortos con pocos
+> acentos adivina mal. Verificado en v20: siete CSV del curso se detectan como otra codificación
+> (`02-etapas-crm.csv` de la Fase 2 como GB2312; `01-almacen-arequipa.csv` y `02-ubicaciones-lima.csv`
+> de la Fase 3, `02-diarios.csv`, `05-planes-analiticos.csv` y `06-cuentas-analiticas.csv` de la
+> Fase 4 y `04-horarios.csv` de la Fase 7 como MacRoman o ISO-8859) y se importan **sin error pero con
+> los acentos rotos**: *«Almac√©n Arequipa»*, *«CÃ¡mara refrigerada»*, *«Negociaci贸n»*. Si ya
+> ocurrió, vuelve a importar el mismo archivo con `utf-8`: gracias al ID externo corrige los nombres
+> sin duplicar (en un campo traducible solo se corrige el idioma con el que importas), pero lo que
+> Odoo **derivó** del nombre roto —las rutas y secuencias que crea un almacén nuevo— se queda roto y
+> hay que corregirlo a mano.
 
 ---
 
@@ -49,7 +61,7 @@ Todo gira alrededor de **ANDINA GOURMET S.A.C.** y usa datos listos para importa
 3. Instala **Encuestas**. Observa: aparece un menú nuevo, pero el producto no cambió.
 4. Instala **Compras**. Vuelve al producto: ahora hay pestaña **Compra**, con el campo *Proveedores*
    y el control de facturas. **Un módulo añadió campos a un modelo que ya existía.**
-   *(Nota v19: el antiguo campo "Unidad de medida de compra" ya no existe; ver `guias/E4-campos-tecnicos-v19.md`.)*
+   *(Nota: desde v19 el antiguo campo "Unidad de medida de compra" ya no existe, y en v20 sigue sin existir; ver `guias/E4-campos-tecnicos-v20.md`.)*
 5. Desinstala **Encuestas** y responde en tu bitácora: ¿qué pasó con las encuestas que había?
 
 **Qué debes poder explicar al terminar:** por qué instalar Contabilidad cambia el formulario de Producto,
@@ -75,10 +87,12 @@ Configura en **Ajustes → Usuarios y compañías → Compañías**:
 | Idioma | Español |
 | Zona horaria | America/Lima |
 
-Luego, en **Ajustes → Configuración general**:
-- Activa **Múltiples monedas** (la usarás en la Fase 4 para las compras en USD).
-- Activa **Unidades de medida** y **Variantes de producto** (Inventario / Ventas).
-- Revisa el formato de números y fechas del idioma español.
+Luego, en **Ajustes**:
+- **Multimoneda:** ya no es una casilla. Activa la moneda **USD** (*Ajustes → Facturación → Monedas →
+  botón Monedas*, o *Facturación → Configuración → Monedas*) y Odoo activa solo el grupo
+  *multimoneda* en cuanto hay dos monedas activas. La usarás en la Fase 4 para las compras en USD.
+- En *Ajustes → Inventario → Productos*, activa **Unidades de medida y embalajes** y **Variantes**.
+- Revisa el formato de números y fechas del idioma español (modo desarrollador: *Ajustes → Traducciones → Idiomas*).
 
 **Verificación:** crea un presupuesto vacío y comprueba que el importe sale como `S/ 0.00`.
 Si sale `$`, la moneda de la compañía está mal y **todo** lo que hagas después estará mal.
@@ -108,8 +122,8 @@ un grupo (qué menús ve) y una regla de registro (qué filas ve)** con el caso
 ```
 
 Para cada archivo:
-1. Abre la lista del modelo correspondiente (Contactos, o Ajustes → Técnico → Etiquetas de contacto).
-2. **Favoritos → Importar registros → Subir archivo**.
+1. Abre la lista del modelo correspondiente (Contactos, o *Contactos → Configuración → Etiquetas de contacto*).
+2. Menú de acciones (el **engranaje** junto al título de la vista) → **Importar** → **Subir** el archivo.
 3. Verifica que la codificación sea `utf-8` y el separador `,`.
 4. **Probar importación** antes de importar. Lee los mensajes. Solo entonces, **Importar**.
 
@@ -123,8 +137,8 @@ clientes la referencian. Fíjate en la columna `id`: son **identificadores exter
 | Columna | Por qué está así |
 |---|---|
 | `id` | ID externo propio (`andina.cli_001`) → permite reimportar y **actualizar** |
-| *(sin columna empresa/persona)* | En v19 `company_type` no existe e `is_company` es **calculado**: Odoo marca como empresa a todo contacto sin padre que tenga `vat`. Por eso los 25 clientes salen como empresas **sin declararlo** |
-| `vat` | RUC. Sin la localización peruana instalada **no se valida** (eso llega en la Fase 10) |
+| *(sin columna empresa/persona)* | Desde v19 `company_type` no existe e `is_company` es **calculado** (sigue así en v20): Odoo marca como empresa a todo contacto sin padre que tenga `vat` (distinto de vacío, `/` o `NA`). Por eso los 25 clientes salen como empresas **sin declararlo** |
+| `vat` | RUC. **En v20 se valida siempre** (la validación de NIF que antes estaba en el módulo `base_vat` pasó al núcleo): como el contacto tiene país Perú, Odoo comprueba el dígito verificador **al importar**. Un RUC mal tecleado rechaza la fila. Los 25 del archivo son válidos |
 | `country_id/id` | `base.pe` → referencia por **ID externo**, inmune al idioma de la base |
 | `category_id/id` | Many2many: varios IDs externos separados por coma, entre comillas |
 | `customer_rank` | `1` marca el contacto como cliente. Es lo que lo hace aparecer en Ventas |
@@ -154,14 +168,14 @@ Orden: `05-categorias-producto.csv` → `06-productos.csv`.
 | Conservas, snacks, harinas, bebidas | 48 | `sale_ok=True`, con código de barras EAN-13 válido y peso |
 | Materia prima y aditivos | 13 | En **kg** y **litros**, con proveedor, precio y plazo de entrega |
 | Envases y embalajes | 12 | Compra por unidad, con cantidad mínima de pedido |
-| Servicios | 6 | `type=service`, `is_storable` vacío — no hay stock de un servicio |
+| Servicios | 6 | `type=service`, `is_storable=False` — no hay stock de un servicio |
 
 ### Columnas que enseñan algo
 
 | Columna | Lección |
 |---|---|
-| `type` | En **v19** solo acepta `consu`, `service` o `combo`. El valor `product` de versiones anteriores **ya no existe** |
-| `is_storable` | Es lo que reemplaza al antiguo "producto almacenable". Requiere Inventario instalado |
+| `type` | Desde v18 y también en **v20** solo acepta `consu`, `service` o `combo`. El valor `product` de versiones anteriores **ya no existe** |
+| `is_storable` | Es lo que reemplaza al antiguo "producto almacenable" (*Rastrear inventario* en la interfaz). El campo está en el módulo `product`, pero solo tiene efecto con Inventario instalado |
 | `uom_id/id` | `uom.product_uom_unit`, `uom.product_uom_kgm`, `uom.product_uom_litre` — por ID externo |
 | `categ_id/id` | Apunta a las categorías del archivo 05, no a las de Odoo |
 | `seller_ids/partner_id/id` | Importa una **línea One2many** (el proveedor) desde el mismo CSV |
@@ -202,7 +216,8 @@ Las 9 filas contienen 8 errores distintos (uno se repite en dos filas):
 | 8 | Conserva de Higo | Compara su código de barras con el del producto `andina.prod_001` |
 | 9 | Barra de Maca | Mira `is_storable` |
 
-> **La trampa del ejercicio.** Odoo **no rechaza el archivo entero**: verificado en v19, solo avisa
+> **La trampa del ejercicio.** Odoo **no rechaza el archivo entero**: verificado en v19 y sin cambios
+> en el importador de v20, solo avisa
 > de **5 de los 8 errores**. Los otros 3 se importan mal en silencio —un precio cien veces mayor, un
 > producto que desaparece y un booleano inventado— y ninguno se ve en la pantalla de resultados.
 >
@@ -272,7 +287,7 @@ Estos datos **no se tiran**: la base `LAB` sigue creciendo sobre ellos.
 | 3 — Inventario | Los 79 productos, sus proveedores, plazos y cantidades mínimas |
 | 4 — Contabilidad | Las ventas y compras generadas sobre estos maestros |
 | 5 — Manufactura | Insumos y envases como componentes de la lista de materiales |
-| 10 — Localización PE | Los RUC (que **entonces sí** se validarán) |
+| 10 — Localización PE | Los RUC (ya validados al importar; con la localización, además, se reportan a SUNAT como documento tipo 6) |
 
 
 
@@ -282,7 +297,8 @@ Estos datos **no se tiran**: la base `LAB` sigue creciendo sobre ellos.
 
 ### Cybrosys — libro de Odoo 19 y artículos
 
-Enlaces verificados uno a uno. Todos están **en inglés**.
+Enlaces verificados uno a uno. Todos están **en inglés** y son de **v19**: Cybrosys aún no publica
+el libro de Odoo 20 ni artículos equivalentes para v20, así que se mantienen como referencia.
 
 **Capítulos del [libro de Odoo 19](https://www.cybrosys.com/odoo/odoo-books/v19/)**: [Contacts](https://www.cybrosys.com/odoo/odoo-books/v19/contacts/)
 
@@ -301,6 +317,6 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
 > anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

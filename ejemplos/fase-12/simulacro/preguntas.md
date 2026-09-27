@@ -22,7 +22,7 @@ c) Los presupuestos están archivados d) Necesita el modo desarrollador
 a) Para ordenar los registros b) Para que la importación actualice en vez de duplicar
 c) Para traducir los nombres d) Para asignar permisos
 
-**3.** En Odoo 19, un producto físico que se controla en inventario se configura como:
+**3.** En Odoo 20, un producto físico que se controla en inventario se configura como:
 a) `type = product` b) `type = consu` con `is_storable = True`
 c) `type = storable` d) `type = goods`
 
@@ -60,13 +60,16 @@ c) La global, por ser más antigua d) Depende de la cantidad
 **11.** ¿Qué campo determina si una plantilla de cotización exige firma en línea?
 a) `require_signature` b) `signature_required` c) `is_signed` d) `sign_ok`
 
-**12.** En Odoo 19, los productos opcionales de una plantilla de cotización son:
+**12.** En Odoo 20, los productos opcionales de una plantilla de cotización son:
 a) Un modelo aparte (`sale.order.template.option`) b) Líneas de la plantilla con `is_optional = True`
 c) Productos con `optional = True` d) No existen
 
-**13.** El cierre de una sesión de punto de venta genera:
-a) Una factura por cada ticket b) Un asiento contable resumen de la sesión
-c) Nada, hasta que se facture d) Solo un reporte
+**13.** En Odoo 20, con la contabilización del punto de venta en su modo por defecto (*Daily*), los
+tickets que no se facturaron uno a uno se contabilizan:
+a) Con una factura por cada ticket, al cobrarlo
+b) Una vez al día, a la hora configurada: una factura resumen al cliente por defecto del PdV (y una
+nota de crédito aparte para las devoluciones), aunque la sesión siga abierta
+c) Nada, hasta que alguien los facture d) Solo al cierre de mes
 
 **14.** ¿Qué es el MRR en Suscripciones?
 a) El margen sobre ingreso recurrente b) El ingreso recurrente mensual normalizado
@@ -76,7 +79,7 @@ c) La tasa de renovación d) El costo de retención
 a) Modificar la factura emitida b) Agregar la línea al pedido y generar factura adicional
 c) Cancelar todo y rehacer d) No es posible
 
-**16.** Las etapas del embudo de CRM en Odoo 19 se relacionan con los equipos mediante:
+**16.** Las etapas del embudo de CRM en Odoo 20 se relacionan con los equipos mediante:
 a) `team_id` (Many2one) b) `team_ids` (Many2many)
 c) No se relacionan d) Un campo calculado
 
@@ -109,10 +112,10 @@ a) 8 500 b) 11 500 c) 10 000 d) 500
 **23.** FEFO ordena la salida de mercancía por:
 a) Fecha de entrada b) Fecha de caducidad c) Costo d) Ubicación
 
-**24.** En Odoo 19, el modelo de lotes se llama:
+**24.** En Odoo 20, el modelo de lotes se llama:
 a) `stock.production.lot` b) `stock.lot` c) `stock.serial` d) `product.lot`
 
-**25.** En Odoo 19, con valoración perpetua (*Perpetual (at invoicing)*) y PEPS, **validar la
+**25.** En Odoo 20, con valoración perpetua (*Perpetual (at invoicing)*) y PEPS, **validar la
 recepción** de la mercancía:
 a) Debita valoración de existencias y acredita entrada de existencias
 b) No genera ningún asiento: la contabilidad espera a la factura de compra
@@ -133,7 +136,7 @@ c) Genera un asiento de gasto d) Requiere aprobación
 **29.** ¿Qué método de costo recalcula el costo unitario de todo el stock en cada compra?
 a) Estándar b) PEPS c) Promedio ponderado (AVCO) d) UEPS
 
-**30.** En Odoo 19, la valoración de una categoría puede ser:
+**30.** En Odoo 20, la valoración de una categoría puede ser:
 a) `manual_periodic` o `real_time` b) `periodic` o `real_time`
 c) `manual` o `automatic` d) `fifo` o `average`
 
@@ -150,7 +153,7 @@ b) Solo afecta a usuarios normales c) Solo afecta a facturas d) Es reversible si
 a) Cambiar el impuesto del producto b) Asignarle una posición fiscal
 c) Editar el impuesto en cada factura d) Crear un producto duplicado
 
-**34.** En Odoo 19, el mapeo de impuestos de una posición fiscal se define:
+**34.** En Odoo 20, el mapeo de impuestos de una posición fiscal se define:
 a) En líneas de la posición (`account.fiscal.position.tax`)
 b) En el impuesto destino, con `original_tax_ids` y `fiscal_position_ids`
 c) En el producto d) En el cliente
@@ -233,7 +236,7 @@ c) Reasigna el ticket automáticamente d) Notifica al cliente
 a) Son lo mismo b) Asistencia registra cuándo estuvo; la hoja de horas, en qué trabajó
 c) La asistencia es para obreros d) La hoja de horas no se puede facturar
 
-**53.** En Odoo 19, los datos laborales del empleado (salario, horario, fechas de contrato) viven en:
+**53.** En Odoo 20, los datos laborales del empleado (salario, horario, fechas de contrato) viven en:
 a) `hr.contract` b) `hr.version` c) `hr.employee` directamente d) `hr.job`
 
 **54.** Una asignación de ausencias por acumulación (accrual):
@@ -257,7 +260,7 @@ c) No se puede guardar d) Solo envía un mensaje
 a) Cotizar desarrollo b) Preguntarse si el requerimiento es real o costumbre del proceso anterior
 c) Buscar un módulo de terceros d) Usar Studio
 
-**59.** Al importar productos con variantes en Odoo 19 se puede usar la columna:
+**59.** Al importar productos con variantes en Odoo 20 se puede usar la columna:
 a) `attribute_line_ids` b) `import_attribute_values` con formato `Atributo:Valor`
 c) `variant_ids` d) No se pueden importar variantes
 

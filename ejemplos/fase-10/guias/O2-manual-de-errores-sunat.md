@@ -24,8 +24,8 @@
 |---|---|
 | **Síntoma** | El comprobante es rechazado; el mensaje menciona el tipo de documento del receptor |
 | **Causa** | Factura emitida a un cliente con DNI, o boleta a un cliente con RUC por encima del monto permitido |
-| **Solución** | Corregir el tipo de documento del cliente o emitir el comprobante correcto |
-| **Prevención** | Validar los tipos de documento en la migración; capacitar al facturador en la regla RUC→factura / DNI→boleta |
+| **Solución** | Corregir la identificación del cliente (en v20: RUC en su campo, DNI como identificador adicional) o emitir el comprobante correcto |
+| **Prevención** | Validar las identificaciones en la migración; capacitar al facturador en la regla RUC→factura / DNI→boleta. Odoo ya ayuda: a un cliente sin RUC solo le ofrece tipos de documento de boleta |
 
 ## 2. RUC inexistente o no habilitado
 

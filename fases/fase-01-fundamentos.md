@@ -19,7 +19,7 @@ Los laboratorios de abajo tienen sus datos y casos ya preparados en
 | `guias/E1` | Los 4 usuarios con su matriz de permisos y **12 pruebas de acceso** |
 | `guias/E2` | 15 ejercicios de filtros, agrupación y pivote |
 | `guias/E3` | Diagnóstico de cada error de importación: síntoma → causa → solución |
-| `guias/E4` | **Chuleta de nombres técnicos verificados en v19** (varios cambiaron: `uom_po_id` eliminado, `type=product` ya no existe, `mobile` eliminado, `groups_id`→`group_ids`) |
+| `guias/E4` | **Chuleta de nombres técnicos verificados en v20** (varios cambiaron: `uom_po_id` eliminado, `type=product` ya no existe, `mobile` eliminado, `groups_id`→`group_ids`; y en v20, `tracking` sin valor `none`, RUC validado siempre, rol *ligero* de usuario) |
 | `soluciones/` | Respuestas de los ejercicios y del cuestionario |
 
 Trabaja los 8 ejemplos guiados en orden: cubren los bloques 1.1 a 1.7 y dejan el laboratorio
@@ -41,21 +41,21 @@ Al terminar debes poder:
 
 | # | Tema | Documentación oficial |
 |---|---|---|
-| 1.1 | Panorama general de la documentación de usuario | [applications.html](https://www.odoo.com/documentation/saas-19.4/es/applications.html) |
-| 1.2 | Fundamentos de Odoo (esenciales) | [essentials.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials.html) |
-| 1.3 | Búsqueda, filtros y agrupaciones | [essentials/search.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/search.html) |
-| 1.4 | Reportes y vistas de análisis | [essentials/reporting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/reporting.html) |
-| 1.5 | Actividades y chatter | [essentials/activities.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/activities.html) |
-| 1.6 | Contactos | [essentials/contacts.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/contacts.html) |
-| 1.7 | Exportar e importar datos | [essentials/export_import_data.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/export_import_data.html) |
-| 1.8 | Compras dentro de la aplicación (IAP) | [essentials/in_app_purchase.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/in_app_purchase.html) |
-| 1.9 | Ajustes generales | [general.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general.html) |
-| 1.10 | Usuarios y grupos de acceso | [general/users.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/users.html) |
-| 1.11 | Compañías y multiempresa | [general/companies.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/companies.html) · [multi_company.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/companies/multi_company.html) |
-| 1.12 | Aplicaciones y módulos (instalar/desinstalar) | [general/apps_modules.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/apps_modules.html) |
-| 1.13 | Comunicación por correo (servidores, alias, plantillas) | [general/email_communication.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/email_communication.html) |
-| 1.14 | Modo desarrollador | [general/developer_mode.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/developer_mode.html) |
-| 1.15 | Hosting: Online, Odoo.sh, On-premise | [administration.html](https://www.odoo.com/documentation/saas-19.4/es/administration.html) · [hosting.html](https://www.odoo.com/documentation/saas-19.4/es/administration/hosting.html) |
+| 1.1 | Panorama general de la documentación de usuario | [applications.html](https://www.odoo.com/documentation/20.0/applications.html) |
+| 1.2 | Fundamentos de Odoo (esenciales) | [essentials.html](https://www.odoo.com/documentation/20.0/applications/essentials.html) |
+| 1.3 | Búsqueda, filtros y agrupaciones | [essentials/search.html](https://www.odoo.com/documentation/20.0/applications/essentials/search.html) |
+| 1.4 | Reportes y vistas de análisis | [essentials/reporting.html](https://www.odoo.com/documentation/20.0/applications/essentials/reporting.html) |
+| 1.5 | Actividades y chatter | [essentials/activities.html](https://www.odoo.com/documentation/20.0/applications/essentials/activities.html) |
+| 1.6 | Contactos | [essentials/contacts.html](https://www.odoo.com/documentation/20.0/applications/essentials/contacts.html) |
+| 1.7 | Exportar e importar datos | [essentials/export_import_data.html](https://www.odoo.com/documentation/20.0/applications/essentials/export_import_data.html) |
+| 1.8 | Compras dentro de la aplicación (IAP) | [essentials/in_app_purchase.html](https://www.odoo.com/documentation/20.0/applications/essentials/in_app_purchase.html) |
+| 1.9 | Ajustes generales | [general.html](https://www.odoo.com/documentation/20.0/applications/general.html) |
+| 1.10 | Usuarios y grupos de acceso | [general/users.html](https://www.odoo.com/documentation/20.0/applications/general/users.html) |
+| 1.11 | Compañías y multiempresa | [general/companies.html](https://www.odoo.com/documentation/20.0/applications/general/companies.html) · [multi_company.html](https://www.odoo.com/documentation/20.0/applications/general/companies/multi_company.html) |
+| 1.12 | Aplicaciones y módulos (instalar/desinstalar) | [general/apps_modules.html](https://www.odoo.com/documentation/20.0/applications/general/apps_modules.html) |
+| 1.13 | Comunicación por correo (servidores, alias, plantillas) | [general/email_communication.html](https://www.odoo.com/documentation/20.0/applications/general/email_communication.html) |
+| 1.14 | Modo desarrollador | [general/developer_mode.html](https://www.odoo.com/documentation/20.0/applications/general/developer_mode.html) |
+| 1.15 | Hosting: Online, Odoo.sh, On-premise | [administration.html](https://www.odoo.com/documentation/20.0/administration.html) · [hosting.html](https://www.odoo.com/documentation/20.0/administration/hosting.html) |
 
 **Refuerzo audiovisual:** curso *Odoo Essentials / Getting Started* en <https://www.odoo.com/slides/all>
 y el canal oficial <https://www.youtube.com/@odoo>. Máximo 1 h de video por cada 3 h de configuración.
@@ -100,10 +100,14 @@ y el canal oficial <https://www.youtube.com/@odoo>. Máximo 1 h de video por cad
 3. Activar idiomas adicionales y **traducir** un término de la interfaz para ver cómo funciona.
 4. Crear 4 usuarios con perfiles distintos (vendedor, comprador, almacenero, gerente) y asignar
    grupos de acceso. Entrar con cada uno (usar navegación privada) y **documentar qué ve y qué no**.
+   En v20 el formulario de usuario trae además un **rol** de tres niveles —*ligero*, *usuario* y
+   *administrador*—: el usuario ligero solo puede tener permisos "ligeros" (pedir ausencias, marcar
+   asistencia…) y no ve apps como Contactos o Ventas. Los 4 de este laboratorio son de rol *usuario*.
 5. Configurar formatos: separador de miles, formato de fecha, primer día de la semana.
 6. Revisar Ajustes → Técnico (modo desarrollador): secuencias, plantillas de correo, acciones planificadas.
 
-> **Romper a propósito:** quitar a un usuario el grupo *Ventas: Ver solo lo propio* → *Ver todo*
+> **Romper a propósito:** cambiar a un usuario el grupo de Ventas de *Usuario: solo mostrar documentos propios*
+> a *Usuario: todos los documentos*
 > y observar cómo cambia su lista de pedidos. Documentar la diferencia entre **grupos** (qué menús ve)
 > y **reglas de registro** (qué filas ve).
 
@@ -134,10 +138,10 @@ y el canal oficial <https://www.youtube.com/@odoo>. Máximo 1 h de video por cad
 > reimportar y corregir. Sin ID externo, cada corrección crea duplicados.
 
 ### Bloque 1.7 — Ediciones, hosting y ciclo de vida (2 h)
-1. Leer [hosting.html](https://www.odoo.com/documentation/saas-19.4/es/administration/hosting.html)
+1. Leer [hosting.html](https://www.odoo.com/documentation/20.0/administration/hosting.html)
    y comparar Odoo Online / Odoo.sh / On-premise en una tabla propia:
    control, costo, módulos de terceros, acceso a base de datos, actualizaciones.
-2. Entender qué es una **base neutralizada** ([neutralized_database.html](https://www.odoo.com/documentation/saas-19.4/es/administration/neutralized_database.html))
+2. Entender qué es una **base neutralizada** ([neutralized_database.html](https://www.odoo.com/documentation/20.0/administration/neutralized_database.html))
    y por qué importa antes de probar en una copia (no se envían correos ni pagos reales).
 3. Anotar la diferencia Community vs. Enterprise y hacer la **lista de apps que solo existen en Enterprise**
    (te la preguntarán en cada preventa).

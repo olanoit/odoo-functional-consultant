@@ -4,11 +4,14 @@ Casos prácticos ejecutables para [`../../fases/fase-02-ventas-crm.md`](../../fa
 Continúa sobre la base `LAB` que dejaste lista en la [Fase 1](../fase-01/README.md): los 25 clientes
 y los 79 productos de ANDINA GOURMET son la materia prima de todo lo que sigue.
 
-> **Versión objetivo:** Odoo 19 / saas-19.4. Campos verificados contra el código fuente
-> ([`guias/G5-campos-tecnicos-v19-ventas.md`](guias/G5-campos-tecnicos-v19-ventas.md)).
-> En esta área hay tres cambios de v19 que rompen material antiguo: las etapas de CRM ahora se
-> comparten entre equipos (`team_ids` es Many2many), los productos opcionales de una plantilla de
-> cotización son líneas normales con `is_optional`, y existe un mecanismo nuevo para **importar variantes**.
+> **Versión objetivo:** Odoo 20 (20.0). Campos verificados contra el código fuente
+> ([`guias/G5-campos-tecnicos-v20-ventas.md`](guias/G5-campos-tecnicos-v20-ventas.md)).
+> Desde v19 las etapas de CRM se comparten entre equipos (`team_ids` es Many2many), los productos
+> opcionales de una plantilla de cotización son líneas normales con `is_optional` y existe un mecanismo
+> para **importar variantes**. En v20 se suman tres cambios más que rompen material de v19: las reglas
+> de lista de precios pasan a ser **Descuento / Recargo / Precio fijo** (`percent_price` y el tipo
+> *Fórmula* desaparecen), `require_payment` ya no existe (el pago en línea se exige cuando el
+> porcentaje de anticipo es mayor que cero) y el cierre del PdV emite una **factura resumen**.
 
 ---
 
@@ -30,21 +33,26 @@ y los 79 productos de ANDINA GOURMET son la materia prima de todo lo que sigue.
 | `guias/G2` | **Laboratorio de listas de precios**: 18 casos a predecir antes de probar |
 | `guias/G3` | Políticas de facturación: 6 escenarios con su resultado esperado |
 | `guias/G4` | Guion de la demo comercial de 15 minutos (entregable D de la fase) |
-| `guias/G5` | Chuleta de campos técnicos de Ventas/CRM en v19 |
+| `guias/G5` | Chuleta de campos técnicos de Ventas/CRM en v20 |
 | `soluciones/` | Respuestas del laboratorio de precios y del cuestionario |
 
 ## Antes de empezar
 
 1. Base `LAB` con la Fase 1 terminada (respaldo `LAB_fase01` restaurado si hiciste otras pruebas).
 2. Apps instaladas: **CRM**, **Ventas**, **Inventario**, **Compras**, **Contactos**.
-3. En *Ventas → Configuración*, activa: **Listas de precios**, **Descuentos**,
-   **Plantillas de cotización**, **Variantes de producto**, **Unidades de medida**.
+3. En *Ventas → Configuración → Ajustes*, activa: **Listas de precios**, **Descuentos**,
+   **Variantes** y **Unidades y embalajes**. Las plantillas de cotización no tienen ajuste:
+   vienen activas con la app Ventas (*Ventas → Configuración → Plantillas de cotización*).
 4. En *Ajustes → Configuración general*, activa **Múltiples monedas** y crea la tasa
    **1 USD = 3.75 PEN** (fecha de hoy). Sin esa tasa, la lista de exportación no calcula.
 
 > **Sobre las fechas:** los datos usan el segundo semestre de **2026**. Si estudias en otro año,
 > abre los CSV y desplaza el año — o acepta ver las oportunidades como vencidas, que también
 > es un escenario didáctico (así se ve un embudo mal mantenido).
+
+> **Codificación:** en el diálogo de importación elige **`utf-8`** a mano. Odoo adivina la
+> codificación y con `02-etapas-crm.csv` se equivoca (verificado en v20): se detecta como otra codificación y
+> los acentos entran rotos sin ningún aviso. Detalle en la [Fase 1](../fase-01/README.md#antes-de-empezar).
 
 ---
 
@@ -66,19 +74,28 @@ Esa decisión no es técnica: depende de cuánta basura entra por el canal.
 sobre el nombre de la etapa en el kanban. Es la diferencia entre un embudo que sirve y uno decorativo:
 sin criterio escrito, cada vendedor mueve las tarjetas con su propio criterio y el pronóstico miente.
 
-La columna `rotting_threshold_days` (novedad de v19) marca en el kanban las oportunidades que llevan
+La columna `rotting_threshold_days` (existe desde v19; en la interfaz, *Días hasta la inactividad*) marca en el kanban las oportunidades que llevan
 demasiados días sin moverse. Configuramos 15 días en *Nuevo* y 10 en *Negociación*: una negociación
 parada 10 días está muerta y hay que saberlo.
 
-> **Nota v19:** las etapas ya no pertenecen a un equipo (`team_id`), sino que se comparten
+> **Desde v19** las etapas ya no pertenecen a un equipo (`team_id`), sino que se comparten
 > (`team_ids`, Many2many). Dejamos la columna vacía a propósito → las 5 etapas quedan disponibles
 > para todos los equipos. Si un equipo necesitara un embudo distinto, se asignan ahí.
+>
+> **Novedad de v20:** el kanban del flujo trae un **selector de equipo** junto a la ruta de navegación
+> (aparece cuando hay al menos 2 equipos con flujo). Al elegir un equipo se ven sus oportunidades, las
+> que no tienen equipo, y solo las etapas de ese equipo más las compartidas.
+>
+> **Ojo con las etapas de fábrica:** la app CRM ya trae 4 etapas compartidas (*Nuevo*, *Calificado*,
+> *Propuesta*, *Ganado*), y el CSV no las reemplaza: crea las suyas con otro ID externo. Tras importar,
+> el kanban muestra **9 columnas**, tres con el nombre repetido (verificado en v20). Archiva las 4 de
+> fábrica —no tienen oportunidades— para quedarte con el embudo de 5 etapas que diseñaste.
 
 **Oportunidades** (`crm.lead`). Observa que traen `expected_revenue`, `probability` y `date_deadline`:
 son las tres columnas de las que vive el **pronóstico**. `priority` es la estrella (0–3).
 
 **Verificaciones:**
-1. Kanban del equipo B2B agrupado por etapa: **12 oportunidades** que suman **S/ 810 700** de ingreso
+1. Kanban del equipo B2B (elígelo en el selector de equipo) agrupado por etapa: **12 oportunidades** que suman **S/ 810 700** de ingreso
    esperado (S/ 310 000 ponderado por probabilidad). El embudo completo son 20 oportunidades y S/ 906 200.
 2. Reporte de **previsión**: en septiembre vencen 8 cierres por S/ 167 300 (S/ 106 985 ponderados).
    ¿Coincide tu lectura del reporte con esos números?
@@ -134,21 +151,31 @@ y *Tienda / Público* al resto. Comprueba en una cotización que el precio sale 
 
 Importa `09-variantes.csv` sobre el modelo **Productos**.
 
-Este archivo usa un mecanismo propio de Odoo 19: la columna **`import_attribute_values`** con el
+Este archivo usa un mecanismo que existe desde Odoo 19 y sigue igual en v20: la columna **`import_attribute_values`** con el
 formato `Atributo:Valor` (varios separados por coma). Al importar:
 
 - Las filas con el **mismo `name`** se agrupan en **una sola plantilla de producto**.
-- Los atributos y valores que no existan (**Tamaño**, **Presentación**, **Sabor**) **se crean solos**.
-- Cada fila se convierte en una **variante** con su propia referencia, precio y coste.
+- Los atributos y valores que no existan **se crean solos**: aquí, **Presentación** y **Sabor**.
+  **Tamaño** no se crea: el módulo `product` ya trae ese atributo (*Size* / *Tamaño*, junto con
+  *Marca*, *Color*, *Material* y *Patrón*) y el importador lo reutiliza por nombre, añadiéndole los
+  valores *Pequeña*, *Mediana* y *Grande*.
+- Cada fila se convierte en una **variante** con su propia referencia, coste **y precio de venta**:
+  en v20 el precio de venta de la variante (`lst_price`) se guarda en la propia variante, así que
+  la canasta queda a 45.00 / 78.00 / 135.00 y el pack a 4.50 / 4.20 / 7.88 / 7.35, tal como vienen
+  en el archivo. El `list_price` de la **plantilla** se queda con el de la última fila del grupo
+  (135.00 y 7.35), y el **precio extra** de cada variante es la diferencia entre ambos.
 
 Resultado esperado: 2 plantillas — *Canasta Andina de Regalo* (3 variantes por tamaño) y
 *Pack Degustación Snacks* (4 variantes: 2 presentaciones × 2 sabores).
 
 **Verificaciones:**
 1. Abre *Canasta Andina de Regalo* → pestaña **Atributos y variantes** → botón *Variantes*: 3.
-2. Cotiza una *Canasta Grande*: el precio debe ser S/ 135.00, no el de la plantilla.
-3. Revisa *Ventas → Configuración → Atributos*: los atributos creados quedaron como
-   **"Creación de variantes: dinámicamente"**. Entiende qué significa y cuándo cambiarlo a *"al instante"*.
+2. Cotiza una *Canasta Pequeña* y una *Canasta Grande* con la lista *Tienda / Público*: deben salir a
+   S/ 45.00 y S/ 135.00, el precio de cada fila del archivo. Con la lista *Mayorista B2B* salen con el
+   15 % de descuento aplicado sobre el precio de **cada variante**.
+3. Revisa *Ventas → Configuración → Atributos*: los atributos creados por la importación
+   (*Presentación* y *Sabor*) quedaron como **"Creación de variantes: De forma dinámica"**; *Tamaño*,
+   que ya existía, sigue **"Al instante"**. Entiende qué significa y cuándo cambiar uno por otro.
 
 **La pregunta que decide el diseño:** ¿variantes o productos separados?
 Regla práctica: variantes cuando comparten descripción, imagen y proceso de venta y solo cambia un
@@ -167,11 +194,14 @@ Importa `08-plantilla-cotizacion.csv` en *Ventas → Configuración → Plantill
 - **Una nota** (`line_note`) visible para el cliente.
 - **3 líneas opcionales** (`is_optional = True`): flete, góndola y asesoría. **No suman al total**
   hasta que el cliente las agrega desde el portal.
-- `require_signature`, `require_payment` y `prepayment_percent = 0.30`: firma en línea y **30 % de anticipo**.
+- `require_signature` y `prepayment_percent = 0.30`: firma en línea y **30 % de anticipo**.
+  En v20 el campo `require_payment` ya no existe: el pago en línea se exige cuando el anticipo es
+  mayor que cero, y la plantilla *Pack degustación retail* (anticipo 0) no pide pago.
 - `number_of_days = 15`: validez de la oferta.
 
-> **Nota v19:** en versiones anteriores los opcionales vivían en un modelo aparte
-> (`sale.order.template.option`). Ahora son líneas normales marcadas con `is_optional`.
+> **Desde v19** los opcionales ya no viven en un modelo aparte (`sale.order.template.option`):
+> son líneas normales marcadas con `is_optional`. En v20 las líneas de plantilla admiten además
+> atributos configurables y cantidad por sección.
 
 **Ejecuta el flujo completo** con *Distribuidora Sol de Oro S.A.C.*:
 1. Nueva cotización → aplicar la plantilla → verificar que el precio sale de la lista Mayorista.
@@ -212,8 +242,9 @@ listas de precios y equipos.
 > **Verificación importante al importar:** el archivo **no trae precios**, a propósito.
 > Odoo debe calcularlos con la lista de precios de cada pedido. Abre `andina.so_010`
 > (1 200 conservas de aguaymanto para Piura): el precio unitario debe ser **S/ 8.50**, el precio fijo
-> negociado. Si aparece 12.50 o 0.00, la lista de precios no se aplicó — revisa que el pedido tenga
-> asignada la lista *Mayorista B2B* y vuelve a añadir la línea.
+> negociado. Si aparece 12.50 o 0.00, la lista de precios no se aplicó — asigna la lista
+> *Mayorista B2B* al pedido: en v20 cambiar la lista **recalcula al instante** los precios de todas
+> las líneas (el botón *Actualizar precios* de v19 desapareció).
 
 Confirma al menos 8 de los 12 pedidos (los reportes de ventas solo cuentan pedidos confirmados)
 y responde con la interfaz:
@@ -240,9 +271,12 @@ El PdV se configura a mano porque casi todo son opciones de sesión y hardware:
    - 1 devolución de un producto vendido antes.
 3. Aplica un descuento manual en un ticket y observa cómo se refleja.
 4. **Cierra la sesión** declarando un efectivo **distinto** al teórico (por ejemplo S/ 10 menos):
-   ese es el momento que más quejas genera en tienda. Anota qué muestra Odoo y dónde queda la diferencia.
-5. Con el modo desarrollador, busca el **asiento contable** que generó el cierre. Aún no hace falta
-   entenderlo del todo — lo desarmarás en la Fase 4 —, pero localízalo hoy.
+   ese es el momento que más quejas genera en tienda. Anota qué muestra Odoo y dónde queda la diferencia
+   (pista: una línea de corrección en el extracto de caja, contra la cuenta de pérdidas del diario de efectivo).
+5. Busca la contabilización que generó el cierre. En v20 no es un asiento suelto: es una **factura
+   resumen** al *Cliente por defecto* del PdV en su *Diario de cierre* (y una nota de crédito aparte
+   por la devolución). Por defecto el PdV la genera **cada día a las 04:00** aunque la sesión siga
+   abierta. Aún no hace falta entenderla del todo — la desarmarás en la Fase 4 —, pero localízala hoy.
 
 **Para la bitácora:** ¿qué pasa si se cae internet a mitad de sesión? Pruébalo desconectando la red
 del navegador unos minutos y siguiendo con las ventas.
@@ -312,7 +346,7 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior, y los artículos de Cybrosys son de v19: contrasta los nombres de campo contra
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

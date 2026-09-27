@@ -33,22 +33,34 @@ Conserva de Aguaymanto 400 g  (LdM: 1 000 unidades)
 azúcar 4.20/kg · sorbato 34.00/kg · frasco 1.35 · tapa 0.28 · etiquetas 0.12 y 0.10 · caja 1.85.
 
 **Costos por hora de los centros de trabajo** (archivo `02-centros-trabajo.csv`), con sus tiempos
-de preparación y limpieza:
+de preparación y limpieza y su **eficiencia de tiempo**:
 
-| Centro | S//hora | Preparación | Limpieza |
-|---|---|---|---|
-| Recepción y lavado | 18.00 | 10 min | 15 min |
-| Pulpeado y pasteurizado | 42.50 | 20 min | 30 min |
-| Cocina de almíbar | 35.00 | 15 min | 20 min |
-| Envasado y sellado | 56.00 | 25 min | 25 min |
-| Etiquetado y empaque | 22.00 | 10 min | 10 min |
+| Centro | S//hora | Preparación | Limpieza | Eficiencia |
+|---|---|---|---|---|
+| Recepción y lavado | 18.00 | 10 min | 15 min | 95 % |
+| Pulpeado y pasteurizado | 42.50 | 20 min | 30 min | 90 % |
+| Cocina de almíbar | 35.00 | 15 min | 20 min | 92 % |
+| Envasado y sellado | 56.00 | 25 min | 25 min | 88 % |
+| Etiquetado y empaque | 22.00 | 10 min | 10 min | 95 % |
+
+**Cómo calcula Odoo la duración de una operación** (`mrp.routing.workcenter`, campo `time_total`):
+
+```
+duración = preparación + limpieza + ciclos × tiempo del ciclo × 100 / eficiencia
+costo    = duración / 60 × costo por hora          (redondeado a céntimos por operación)
+```
+
+Los **ciclos** son la cantidad a fabricar dividida entre la capacidad del centro, redondeada hacia
+arriba; sin capacidad configurada, la capacidad es la cantidad de la propia LdM, así que una orden
+del tamaño de la LdM es **1 ciclo**. La eficiencia **alarga** el tiempo de ciclo: con 88 %, 240
+minutos teóricos se convierten en 272.73.
 
 ## 2. Calcula (antes de abrir Odoo)
 
 | # | Pregunta | Tu respuesta |
 |---|---|---|
 | 1 | Costo de materiales de **100 kg de pulpa** | |
-| 2 | Costo de mano de obra de esa orden (incluye preparación y limpieza) | |
+| 2 | Costo de mano de obra de esa orden (incluye preparación, limpieza y eficiencia) | |
 | 3 | **Costo por kg de pulpa** | |
 | 4 | Costo por litro de **almíbar** | |
 | 5 | Costo de materiales de **1 000 conservas** | |
@@ -58,7 +70,11 @@ de preparación y limpieza:
 | 9 | Diferencia con el costo estándar de S/ 6.80 cargado en la Fase 1 | |
 | 10 | Si el aguaymanto sube a S/ 12.00/kg, ¿cuál es el nuevo costo unitario? | |
 
-Después compara con el reporte **Estructura y costo** de la lista de materiales en Odoo.
+Después compara con el informe **Resumen de la LdM** (*BoM Overview*) de la lista de materiales en
+Odoo. Ojo: para la conserva, ese informe despliega la pulpa y el almíbar **para la cantidad exacta que
+se necesita** (240 kg = 3 ciclos de la LdM de 100 kg, con una sola preparación y limpieza), no a partir
+del costo por kg de una orden de 100 kg; por eso su total difiere unos céntimos del tuyo (ver la
+solución).
 
 ## 3. Lo que enseña el resultado
 
@@ -72,7 +88,10 @@ Cuando termines, tendrás una conversación real que ofrecer a un cliente:
 ## 4. Segunda parte: costo real vs. teórico
 
 1. Ejecuta una orden de fabricación de 1 000 conservas **exactamente** como dice la LdM.
-   El costo real debe coincidir con el teórico. Si no coincide, revisa la configuración.
+   El costo real debe coincidir con el teórico. Si no coincide, revisa la configuración. Recuerda que,
+   por defecto, las operaciones se costean con el **tiempo real registrado** (campo *Coste basado
+   en* de la operación = *Actual time*, traducido como «Hora actual»); para que coincida al céntimo,
+   registra la duración esperada o cambia la operación a *Theoretical time*.
 2. Ejecuta una segunda orden con desviaciones deliberadas:
    - consume 260 kg de pulpa en vez de 240 (merma),
    - la operación de envasado toma 300 minutos en vez de 240,
@@ -84,15 +103,25 @@ Cuando termines, tendrás una conversación real que ofrecer a un cliente:
 
 ## 5. Tercera parte: el asiento contable de la producción
 
-Con valoración perpetua (Fase 4), una orden de fabricación terminada genera:
+Con valoración perpetua (Fase 4), una orden de fabricación terminada **solo genera asientos si la
+ubicación virtual *Producción* tiene cuenta de valoración** (una cuenta de producción en proceso,
+*WIP*). Es la misma regla de la Fase 4: desde v19, y también en v20, un movimiento de existencias
+contabiliza en el momento solo cuando toca una ubicación con cuenta propia
+(`stock_account/models/stock_move.py`, `_should_create_account_move`; `mrp_account`, `_post_labour`).
+Con esa cuenta configurada:
 
 | Movimiento | Efecto contable |
 |---|---|
-| Consumo de componentes | Sale valor de existencias (componentes) hacia producción |
-| Absorción de mano de obra | Entra el costo de los centros de trabajo al producto |
-| Entrada del producto terminado | Aumenta existencias por el costo real total |
+| Consumo de componentes | Debe *WIP* / Haber existencias (componentes) |
+| Absorción de mano de obra | Debe *WIP* / Haber la *Cuenta de gastos* del centro de trabajo (o la de gastos del producto) |
+| Entrada del producto terminado | Debe existencias (producto terminado) / Haber *WIP*, por el costo real total |
 
-**Escríbelo a mano** con las cuentas de la Fase 4 antes de mirarlo en Odoo.
+Sin cuenta en la ubicación de producción, la orden **no genera ningún asiento**: el valor queda en
+los movimientos de existencias y llega al mayor con el asiento de cierre de existencias del informe de
+valoración (Fase 4, guía I4). Para órdenes que cruzan el cierre de mes, *Publicar asiento contable del
+trabajo en curso* (acción sobre las órdenes de fabricación) contabiliza el WIP a la fecha.
+
+**Escríbelo a mano** con las cuentas de la Fase 4 antes de mirarlo en Odoo, en las dos variantes.
 
 ## 6. Preguntas de diseño
 

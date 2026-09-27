@@ -9,7 +9,8 @@
 ## Parte A — Filtros y búsqueda
 
 **1. Clientes fuera de Lima y Callao → 14 de 25.**
-Cómo: *Contactos* → filtro **Clientes** → buscar por etiqueta *Zona Provincia*.
+Cómo: *Contactos* → filtro **Facturas de cliente** (es el que selecciona `customer_rank > 0`, es decir,
+los clientes) → buscar por etiqueta *Zona Provincia*.
 Alternativa: agrupar por Ciudad y sumar todas menos Lima y Callao.
 La etiqueta existe justamente para no depender del texto de la ciudad (que un usuario escribirá
 "LIMA", "lima" o "Lima Cercado"). **Lección de datos maestros: lo que se filtra, se etiqueta.**
@@ -24,15 +25,19 @@ con **Y**. Es el error de búsqueda más frecuente de un usuario nuevo.
 Muestra que empresa y persona son **el mismo modelo** (`res.partner`) con distinto `type`.
 
 **4. Direcciones de entrega → 5.**
-Cómo: agrupar por **Tipo de dirección** (o filtrar por él). Las direcciones no aparecen por defecto en
-la lista principal de Contactos: hay que quitar el filtro por defecto o agrupar.
+Cómo: *Agrupar por → Grupo personalizado → **Tipo de dirección***. En v20 la búsqueda de Contactos no
+trae un filtro por tipo, pero la lista muestra **todos** los contactos (empresas, personas y direcciones),
+así que agrupar basta para aislar las 5 de tipo *Entrega*.
 
 **5. Cliente con más de una dirección de entrega → *Comercial Los Andes E.I.R.L.*** (Tienda Cayma y
 Tienda Cerro Colorado). En la Fase 2 verás que al cotizar se elige **cuál** de las dos recibe la mercancía.
 
 **6. Favorito compartido *"Clientes mayoristas de provincia"* → 9 clientes.**
-Cómo: aplicar los dos filtros de etiqueta → *Favoritos → Guardar búsqueda actual* → marcar
-**Compartir con todos los usuarios**. Verifica entrando con el usuario Ana: debe verlo.
+Cómo: aplicar los dos filtros de etiqueta → en el panel de búsqueda, *Favoritos → Guardar búsqueda*
+(*Save search* si aún sale en inglés; en v19 se llamaba *Guardar búsqueda actual*) → escribir el nombre →
+**Editar**. En el formulario del filtro, **vacía el campo *Compartido con*** (queda el marcador
+*Todos los usuarios*): un favorito sin usuarios se comparte con todos. Ya no hay casilla *Compartir con todos los usuarios*. Verifica entrando con el
+usuario Ana: debe verlo.
 
 ## Parte B — Agrupaciones
 
@@ -78,7 +83,7 @@ precios unitarios de artículos distintos, sin cantidades vendidas. Sirve para a
 vista pivote, no para decidir. El margen real se mide sobre líneas de venta facturadas (Fase 2) y
 sobre coste real de producción (Fase 5). **Saber cuándo un número no sirve es parte del oficio.**
 
-**12.** Vista gráfico de barras → orden descendente → *Favoritos → Guardar búsqueda actual*
+**12.** Vista gráfico de barras → orden descendente → *Favoritos → Guardar búsqueda*
 como *"Catálogo por categoría"*.
 
 ## Parte D — Preguntas de gerencia

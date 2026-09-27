@@ -10,7 +10,7 @@
 
 | Módulo | Edición | Qué aporta |
 |---|---|---|
-| `l10n_pe` | Community | Plan contable peruano, impuestos, **11 tipos de identificación** (RUC, DNI, documento no domiciliado, carné diplomático…), 60 tipos de documento, **196 ciudades** y **1 874 distritos** (ubigeo) |
+| `l10n_pe` | Community | Plan contable peruano, impuestos, **identificadores peruanos** del contacto (DNI, documento no domiciliado, carné diplomático…) con su código SUNAT, 60 tipos de documento, **196 ciudades** y **1 874 distritos** (ubigeo) |
 | `l10n_pe_edi` | Enterprise | Facturación electrónica: envío a SUNAT/OSE, CDR, anulaciones |
 | `l10n_pe_edi_stock` | Enterprise | Guía de remisión electrónica |
 | `l10n_pe_pos` / `l10n_pe_edi_pos` | — | Punto de venta con comprobantes peruanos |
@@ -30,7 +30,7 @@ existen— está en [O0](O0-guia-completa-localizacion-pe.md#2-los-módulos-lo-q
 4. Certificado digital y credenciales del proveedor de envío
 5. Modo de PRUEBA activado (l10n_pe_edi_test_env)
 6. Diarios por tipo de comprobante, con serie y correlativo
-7. Clientes con tipo de documento y número validado
+7. Clientes con RUC o DNI (identificador adicional) validado
 8. Productos con su configuración tributaria
 9. Recién entonces: emitir
 ```
@@ -40,9 +40,8 @@ existen— está en [O0](O0-guia-completa-localizacion-pe.md#2-los-módulos-lo-q
 | Campo | Valor para ANDINA GOURMET |
 |---|---|
 | Nombre | ANDINA GOURMET S.A.C. |
-| Tipo de identificación | **RUC** |
-| RUC | 20510211015 |
-| *(No busques un campo «tipo de contribuyente»:* | *no existe en v19)* |
+| RUC (campo `vat`) | 20510211015 |
+| *(No busques los campos «tipo de identificación» ni «tipo de contribuyente»:* | *no existen en v20)* |
 | Dirección | Av. Los Frutales 1250, **distrito** Ate, Lima, Perú |
 | Código de establecimiento | `0000` (el que SUNAT tenga registrado) |
 | Proveedor de firma | IAP / **Estela (antes Digiflow)** / SUNAT directo |
@@ -51,20 +50,19 @@ existen— está en [O0](O0-guia-completa-localizacion-pe.md#2-los-módulos-lo-q
 > El **distrito** (`l10n_pe_district`) no es un campo decorativo: forma parte del ubigeo que se
 > reporta a SUNAT. Cargar solo "Lima" sin distrito genera rechazos.
 
-## 4. Clientes: tipo de documento
+## 4. Clientes: RUC y DNI
 
-El archivo `01-clientes-pe.csv` trae 8 empresas con **RUC** y 4 personas con **DNI**, usando los
-ID externos reales de la localización:
+En v20 ya no hay «tipo de identificación» en el contacto (desaparece `l10n_latam_base`). El archivo
+`01-clientes-pe.csv` trae 8 empresas con **RUC** y 4 personas con **DNI**, cargados así:
 
-| Tipo | ID externo |
-|---|---|
-| RUC | `l10n_pe.it_RUC` |
-| DNI | `l10n_pe.it_DNI` |
+| Documento | Columna del CSV | Resultado |
+|---|---|---|
+| RUC | `vat` | Código SUNAT `6`; el contacto queda como **empresa** |
+| DNI | `additional_identifiers` → `{"PE_DNI": "40012411"}` | Código SUNAT `1`; el contacto queda como **persona** |
 
-> **No hay «carné de extranjería»** entre los tipos peruanos de v19, y el **pasaporte** no es de la
-> localización: es `l10n_latam_base.it_pass`, genérico para Latinoamérica y **sin país asignado**.
-> Para un extranjero domiciliado se usa `l10n_pe.it_IDCR` (documento del país de residencia) o
-> `l10n_pe.it_CPP`. La lista completa está en [O0](O0-guia-completa-localizacion-pe.md#41-tipos-de-identificación--los-11-reales).
+> El **pasaporte** es el identificador genérico `PASSPORT` (código SUNAT `7`), y para un extranjero
+> domiciliado se usa `PE_IDCR` (documento del país de residencia) o `PE_CPP`. La lista completa de
+> claves y códigos está en [O0](O0-guia-completa-localizacion-pe.md#41-identificación-del-contacto--el-gran-cambio-de-v20).
 
 **Ejercicio de ruptura:** intenta emitir una factura a un cliente con DNI y una boleta a uno con RUC.
 Anota qué permite Odoo, qué avisa y qué diría SUNAT. Esa distinción —**factura para RUC, boleta para
@@ -95,6 +93,10 @@ deliberadamente distintos para que configures cada uno:
 | Libro recetario | **Exonerado** | Los libros tienen exoneración |
 | Bolsa plástica | Gravado + **ICBPER** | Impuesto al consumo de bolsas plásticas |
 
+> La localización **no trae un impuesto ICBPER listo**: créalo copiando uno de venta y ponle el
+> código de tributo SUNAT `7152` (*ICBPER - Plastic bag tax*, campo `l10n_pe_edi_tax_code`). Sin ese
+> código, SUNAT lo rechaza (ver [O0 §4.3](O0-guia-completa-localizacion-pe.md#43-impuestos-y-sus-campos-edi)).
+
 **Ejercicio:** configura los cinco casos y emite una factura con todos en la misma boleta.
 Revisa cómo se agrupan los tributos en el PDF y en el XML.
 
@@ -106,7 +108,7 @@ Revisa cómo se agrupan los tributos en el PDF y en el XML.
 - [ ] Credenciales del proveedor probadas.
 - [ ] **Entorno de prueba activado** (`l10n_pe_edi_test_env`).
 - [ ] Series creadas y autorizadas.
-- [ ] Clientes con tipo y número de documento válidos.
+- [ ] Clientes con RUC o DNI válidos (el RUC en su campo; el DNI como identificador adicional).
 - [ ] Productos con afectación tributaria revisada uno por uno.
 - [ ] Impuestos con sus líneas de repartición y cuentas (Fase 4).
 - [ ] Un comprobante de cada tipo emitido y **aceptado** en prueba.

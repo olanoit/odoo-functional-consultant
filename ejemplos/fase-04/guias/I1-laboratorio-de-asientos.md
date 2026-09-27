@@ -10,29 +10,40 @@
 **Supuestos:** IGV 18 %, valoración **perpetua** (`real_time`) con PEPS en conservas,
 moneda de la compañía PEN, tipo de cambio 1 USD = 3.75 PEN.
 
-> ### ⚠ Antes de empezar: en Odoo 19 el inventario se contabiliza al facturar
+> ### ⚠ Antes de empezar: desde Odoo 19 el inventario se contabiliza al facturar
 >
-> Este es **el cambio contable más importante de la versión** y el que más veces vas a tener que
-> explicar. Hasta v18, con valoración perpetua cada movimiento de existencias generaba su propio
+> Es **el cambio contable más importante de las últimas versiones** (llegó en v19 y v20 lo mantiene)
+> y el que más veces vas a tener que explicar. Hasta v18, con valoración perpetua cada movimiento de existencias generaba su propio
 > asiento en el momento de validarlo, contra una cuenta transitoria de *entrada de existencias*.
 >
-> En v19 eso desapareció. Las dos opciones de valoración se llaman ahora, literalmente:
+> Desde v19 eso desapareció. Las dos opciones de valoración se llaman, literalmente:
 >
 > | Valor del campo | Etiqueta en la interfaz | Cuándo se contabiliza |
 > |---|---|---|
 > | `real_time` | **Perpetual (at invoicing)** | Al **validar la factura** |
 > | `periodic` | **Periodic (at closing)** | Al **cierre del período** |
 >
-> Consecuencias, verificadas ejecutando las operaciones en saas~19.4:
+> Consecuencias, verificadas ejecutando las operaciones en Odoo 20 (código en
+> `stock_account/models/stock_move.py` y `account/models/account_move.py`):
 >
 > - Validar una **recepción** no genera ningún asiento. Cero.
 > - Validar una **entrega** no genera ningún asiento. Cero.
-> - Un **ajuste de inventario** tampoco genera asiento en el momento.
-> - La **factura de venta** trae el ingreso **y** el costo de ventas en el **mismo** asiento.
+> - Un **ajuste de inventario** tampoco genera asiento en el momento (salvo que la ubicación virtual
+>   *Ajuste de inventario* tenga su propia cuenta de valoración; ver solución 7).
+> - La **factura de venta** trae el ingreso **y** el costo de ventas en el **mismo** asiento. El costo
+>   va a la **cuenta de gastos** de la categoría (no hay una cuenta de costo de ventas aparte).
 > - La **factura de compra** carga directamente la cuenta de valoración de existencias.
 > - La cuenta transitoria de *entrada de existencias* (`property_stock_account_input_categ_id`)
->   **ya no existe**; en su lugar la categoría tiene `account_stock_variation_id`, que es la cuenta
->   de **variación de existencias** que usa el asiento de cierre periódico.
+>   **ya no existe**; en su lugar la cuenta de valoración tiene `account_stock_variation_id` (visible
+>   también en la categoría), que es la cuenta de **variación de existencias** que usa el asiento de
+>   cierre de existencias.
+>
+> **Novedad de v20:** estos campos de valoración (`property_valuation`, `property_cost_method`,
+> cuentas y diario de existencias) pasaron de `stock_account` al módulo `account`, y el informe de
+> valoración (`account.stock.valuation.report`) muestra ahora los **devengos** —recepciones y entregas
+> sin facturar— y los contabiliza con su reversión al pulsar *Generate Entries*. Si facturas **antes**
+> de entregar, el costo de ventas de la factura se calcula con el costo vigente y, al validar la
+> entrega, Odoo **recalcula esas mismas líneas** de la factura publicada: no crea otro asiento.
 >
 > Por eso los casos 2, 5 y 7 de la tabla siguiente tienen una respuesta que sorprende. Predícelos
 > igual: saber que **no hay asiento** vale tanto como saber escribirlo.
@@ -58,7 +69,7 @@ moneda de la compañía PEN, tipo de cambio 1 USD = 3.75 PEN.
 
 ## Preguntas que acompañan al laboratorio
 
-**A.** En v18 las operaciones 1 y 2 eran **dos asientos**; en v19 son **uno solo**. ¿Qué problema
+**A.** En v18 las operaciones 1 y 2 eran **dos asientos**; desde v19 son **uno solo**. ¿Qué problema
 de descuadre entre períodos resuelve ese cambio, y qué problema nuevo crea cuando se entrega en
 agosto y se factura en septiembre?
 
@@ -76,14 +87,15 @@ genera asiento en el momento? ¿Dónde acaba reflejándose cada uno?
 **E.** En la operación 11, ¿la diferencia de cambio es realizada o no realizada? ¿Y si al cierre del
 mes la factura siguiera pendiente de cobro?
 
-**F.** ¿Por qué el cierre de PdV genera **un solo asiento** y no uno por ticket? ¿Qué se pierde y
-qué se gana con eso?
+**F.** ¿Por qué el cierre de PdV genera **una sola factura resumen** (y no un asiento por ticket)?
+¿Qué se pierde y qué se gana con eso?
 
 ## Cómo encontrar cualquier asiento en Odoo
 
 1. Desde el documento: botón *Apuntes contables* / *Asiento contable* en la parte superior.
-2. Desde el producto: *Inventario → Reportes → Valoración*. En v19 es un informe dedicado
-   (`stock_account.stock.valuation.report`), no la antigua lista de capas de valoración.
+2. Desde la valoración: *Contabilidad → Revisión → Inventario → Valoración del inventario*
+   (Enterprise). En v20 es un informe del módulo `account` (`account.stock.valuation.report`; en v19
+   era `stock_account.stock.valuation.report`), no la antigua lista de capas de valoración.
 3. Desde la contabilidad: *Contabilidad → Contabilidad → Asientos contables*, filtrando por diario y fecha.
 4. Con modo desarrollador: en cualquier registro, menú de desarrollador → *Ver metadatos* / campos.
 

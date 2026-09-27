@@ -24,11 +24,13 @@ de forma controlada.
 
 Para cada tema, se consultan en este orden:
 
-1. **Documentación oficial ES** (fuente de verdad de *qué configura cada opción*).
+1. **Documentación oficial 20.0** (fuente de verdad de *qué configura cada opción*). Por ahora está
+   solo en inglés; la versión en español más cercana es la saas-19.4 (ver [`recursos.md`](recursos.md)).
 2. **eLearning oficial de Odoo** (`odoo.com/slides`) o video (fuente de *cómo se ve el flujo real*).
 3. **La base de datos** (fuente de *qué pasa de verdad en esta versión*).
 
-Cuando 1 y 3 se contradicen, **gana 3** (la doc puede ir por detrás de la versión) — y eso se anota
+Cuando 1 y 3 se contradicen, **gana 3** (la doc puede ir por detrás de la versión, y la de saas-19.4
+en español describe una versión anterior) — y eso se anota
 en la bitácora como hallazgo. Cuando 2 contradice a 1 y 3, el video probablemente es de otra versión: descartarlo.
 
 ## 3. Entorno de práctica
@@ -58,11 +60,12 @@ Ventajas: modo desarrollador sin restricciones, acceso a logs, pruebas de import
 posibilidad de instalar módulos de terceros (`apps.odoo.com`) para el análisis GAP.
 
 - Fuentes y paquetes: <https://nightly.odoo.com/>
-- Guía oficial de instalación: <https://www.odoo.com/documentation/saas-19.4/es/administration/on_premise.html>
+- Guía oficial de instalación: <https://www.odoo.com/documentation/20.0/administration/on_premise.html>
 - Para ver una versión ya montada sin instalar nada: <https://runbot.odoo.com/> (bases efímeras de todas las ramas).
 
 > **Nota sobre ediciones:** algunas apps son **Odoo Enterprise** (Studio, Contabilidad completa,
-> Suscripciones, Nómina, Firma, Documentos, PLM, Calidad, Servicio de campo, IoT).
+> Suscripciones, Nómina, Firma, Documentos, PLM, Calidad, Servicio de campo, IoT). En v20, Servicio de
+> campo ya no es el módulo `industry_fsm`: es `planning_field_service`, construido sobre Planeación.
 > Si trabajas en Community, esas fases requieren una prueba Enterprise o Odoo Online.
 > El consultor funcional **debe** conocerlas: son argumento de venta y de alcance.
 
@@ -131,8 +134,8 @@ Registrar cada repaso en `seguimiento.md`.
 
 ## 9. Modo desarrollador (herramienta funcional, no técnica)
 
-Actívalo desde el primer día: *Ajustes → Herramientas para desarrolladores → Activar el modo de desarrollador*
-(<https://www.odoo.com/documentation/saas-19.4/es/applications/general/developer_mode.html>).
+Actívalo desde el primer día: *Ajustes → Herramientas de desarrollador → Activar el modo de desarrollador*
+(<https://www.odoo.com/documentation/20.0/applications/general/developer_mode.html>).
 
 Un consultor funcional lo usa para:
 - Ver el **nombre técnico** de campos y modelos (indispensable para hablar con desarrolladores e importar datos).

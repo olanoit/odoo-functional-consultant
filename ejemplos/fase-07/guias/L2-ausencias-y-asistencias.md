@@ -29,20 +29,28 @@ horas salen mal, y hay que rehacer las solicitudes ya aprobadas.
 | Planta turno tarde | Segundo turno | 8 | 48 |
 | Medio tiempo | Contabilidad de apoyo | 5 | 25 |
 
-**Ejercicio:** carga `04-horarios.csv`, luego **completa a mano las franjas horarias**
-(`attendance_ids`) de cada uno; el CSV solo crea la cabecera.
+**Ejercicio:** carga `04-horarios.csv`, luego **corrige a mano las franjas horarias**
+(`attendance_ids`) de cada uno: al crear el horario, Odoo le copia las franjas del horario de la
+empresa (por defecto L-V, 8 h/día), no las que indica su nombre.
 
-> **v19:** `resource.calendar` **ya no tiene campo `tz`**. La zona horaria se fija en cada empleado
-> (`hr.employee.tz`, heredado de `resource.resource`), no en el horario. Revisa que los 18 empleados
-> queden en `America/Lima`: con la zona mal puesta, las horas de asistencia se desplazan 5 horas.
- Añade los feriados peruanos del
-segundo semestre: 28 y 29 de julio, 30 de agosto, 8 de octubre, 1 de noviembre, 8 y 25 de diciembre.
+> **Desde v19 (vigente en v20):** `resource.calendar` **no tiene campo `tz`**. La zona horaria se fija
+> en cada empleado (`hr.employee.tz`, que se guarda en su versión, `hr.version`), no en el horario.
+> Revisa que los 18 empleados queden en `America/Lima`: con la zona mal puesta, las horas de
+> asistencia se desplazan 5 horas.
+
+> **v20:** el horario tiene un **horario de referencia** (`reference_calendar_id`, por defecto el de la
+> empresa) del que sale el *Equivalente a tiempo completo*. Si la empresa sigue con 40 h, el
+> administrativo de 48 h aparecerá al 120 %: define bien la referencia antes de seguir.
+
+Añade los feriados peruanos del segundo semestre: 28 y 29 de julio, 30 de agosto, 8 de octubre,
+1 de noviembre, 8 y 25 de diciembre.
 
 ## 3. Los seis tipos de ausencia
 
 Del archivo `03-tipos-ausencia.csv`, que se importa en el modelo **`hr.work.entry.type`**
-(en v19 `hr.leave.type` ya no existe: los tipos de ausencia y los tipos de entrada de trabajo
-son el mismo modelo). Menú: *Ausencias → Configuración → Tipos de ausencia*.
+(desde v19 `hr.leave.type` ya no existe: los tipos de ausencia y los tipos de entrada de trabajo
+son el mismo modelo; en v20 sigue igual). Menú: *Ausencias → Configuración → Time Types*
+(en es_419, «Tipos de permisos»).
 
 | Tipo | ¿Requiere asignación? | Aprobación | Unidad | Documento |
 |---|---|---|---|---|
@@ -57,9 +65,14 @@ son el mismo modelo). Menú: *Ausencias → Configuración → Tipos de ausencia
 no `absence`. No es una ausencia: la persona está trabajando, solo que fuera. Confundirlo distorsiona
 los reportes de ausentismo.
 
-> **v19:** el campo se llamaba `time_type` (`leave` / `other`) y ahora es **`count_as`**
+> **Desde v19:** el campo se llamaba `time_type` (`leave` / `other`) y ahora es **`count_as`**
 > (`absence` / `working_time`). Además `code` es **obligatorio** —es el código de nómina— y
 > `time_off_selectable = True` es lo que hace que el tipo aparezca en el menú de Ausencias.
+>
+> **Unidad, dos campos:** `unit_of_measure` (*Unidad*: en qué se asigna y acumula el saldo, días u
+> horas; **por defecto, horas**) y `request_unit` (*Tipo de duración*: `day` día completo, `half_day`
+> medio día, `hour` horas personalizadas). Si importas solo `request_unit = day`, las vacaciones se
+> asignarían en horas: por eso el CSV trae las dos columnas.
 
 **Ejercicio de diseño:** ¿por qué el permiso sin goce lleva **doble** aprobación y el descanso médico
 solo una? Escribe la razón de negocio, no la técnica.
@@ -76,7 +89,8 @@ Dos formas de dar saldo:
 **Ejercicio:** crea un plan de acumulación que otorgue **2.5 días al mes** (30 al año) y aplícalo a
 los 18 empleados. Después responde:
 1. ¿Qué pasa con el saldo de alguien que entró en septiembre?
-2. ¿El saldo se pierde a fin de año o se arrastra? ¿Dónde se configura?
+2. ¿El saldo se pierde a fin de año o se arrastra? ¿Dónde se configura? (Pista: en cada nivel del
+   plan, *acción con las acumulaciones no usadas* y el tope de arrastre `max_carriedover_duration`.)
 3. ¿Puede pedirse vacaciones a cuenta de días no devengados todavía?
 
 ## 5. El ciclo completo (ejecutar)
@@ -103,7 +117,12 @@ Cada resultado va a tu bitácora: son las preguntas literales que hará RR. HH. 
 
 1. Configura el **modo kiosco** con PIN para los 8 operarios y almaceneros.
 2. Registra una semana de entradas y salidas, incluyendo una jornada con horas extra.
-3. Revisa cómo se calculan las horas extra contra el horario configurado.
+3. Revisa cómo se calculan las horas extra contra el horario configurado. **v20:** se definen como
+   **reglas de tiempo** en *Asistencias → Configuración → Automatic Rules* (`hr.time.rule`; reemplazan
+   a las reglas de horas extra de v19): umbral por día o semana, tolerancias, tipo de entrada de
+   trabajo para el exceso y, si quieres, abono a *Compensatorio por horas extra* (*Allocate to*).
+   Si en los ajustes exiges aprobación de asistencias (`attendance_validation`), valida las
+   pendientes (estado *Borrador → Validado*); por defecto se aprueban solas.
 4. Compara el reporte de asistencias con las **hojas de horas** de la Fase 6 y explica la diferencia:
    asistencia = *cuándo estuvo*; hoja de horas = *en qué trabajó*. Un cliente puede necesitar ambas,
    una o ninguna.

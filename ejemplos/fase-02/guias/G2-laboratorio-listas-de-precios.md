@@ -12,7 +12,7 @@
 ## 1. Cómo resuelve Odoo el precio (el algoritmo real)
 
 Odoo toma **todas** las reglas de la lista que apliquen al producto, a la cantidad y a la fecha,
-las ordena y **usa la primera**. El orden es (verificado en el código de v19):
+las ordena y **usa la primera**. El orden es (verificado en el código de v20; no cambió respecto de v19):
 
 ```
 applied_on ascendente , min_quantity DESCENDENTE , categoría , id
@@ -30,6 +30,17 @@ Traducido a lenguaje de negocio, gana la regla **más específica**:
 y dentro del mismo nivel, **la de mayor cantidad mínima que el pedido alcance**.
 
 Si **ninguna** regla aplica, el precio es el **precio de venta del producto** (`list_price`).
+
+> **En v20 ya no eliges `applied_on`:** Odoo lo calcula según lo que llenes en la regla —categoría,
+> producto o variante; vacío = todos los productos—. Y cada regla es de uno de tres tipos:
+> **Descuento** (% sobre el precio de venta u otra lista), **Recargo** (% sobre el costo, el precio de
+> venta u otra lista) o **Precio fijo**. El tipo *Fórmula* de v19 desapareció: el redondeo, la tarifa
+> adicional y los márgenes se configuran ahora dentro de Descuento o Recargo.
+>
+> **Cómo leer el precio en la cotización:** con el ajuste *Descuentos* activo, una regla de descuento
+> puro se muestra como **precio de lista + % de descuento** en la línea (p. ej. 12.50 con 15 %). Lo que
+> predices en este laboratorio es el **precio neto** unitario. Sin ese ajuste, v20 muestra el precio
+> neto **sin redondear a 2 decimales** (p. ej. 10.625); el redondeo al céntimo se aplica en el subtotal.
 
 > Consecuencia práctica que debes poder explicar: una regla de *producto* con 15 % de descuento
 > **le gana** a una de *categoría* con 30 %, aunque el cliente compre mucho. La especificidad manda
@@ -100,8 +111,8 @@ o un descuento de línea? Argumenta con criterio de mantenimiento a 2 años.
 **C.** El gerente quiere que la promoción de diciembre **no** se acumule con el descuento mayorista.
 Con estas listas, ¿se acumula o no? ¿Por qué?
 
-**D.** ¿Cuándo usarías `compute_price = formula` (descuento + margen + redondeo) en lugar de un
-porcentaje simple? Da un caso de ANDINA GOURMET.
+**D.** ¿Cuándo usarías una regla de **Recargo** (`compute_price = markup`) sobre el costo, con redondeo
+y margen mínimo, en lugar de un descuento simple? Da un caso de ANDINA GOURMET.
 
 **E.** El vendedor pone un descuento manual del 10 % en una línea que ya trae precio de lista.
 ¿Sobre qué importe se calcula? ¿Cómo lo controlas?

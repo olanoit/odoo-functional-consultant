@@ -41,7 +41,7 @@
 | Quinta categoría con proyección | ❌ | Cálculo específico peruano |
 
 > **Verifica siempre el estado actual** en el índice de
-> [localizaciones fiscales](https://www.odoo.com/documentation/saas-19.4/es/applications/finance/fiscal_localizations.html)
+> [localizaciones fiscales](https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations.html)
 > y en [apps.odoo.com](https://apps.odoo.com/apps/modules) antes de responderle a un cliente: la
 > disponibilidad de localizaciones cambia entre versiones.
 

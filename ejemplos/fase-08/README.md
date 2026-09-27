@@ -48,7 +48,12 @@ Importa `01-categorias-tienda.csv` → `02-productos-publicados.csv` → `00-pro
 > **escribe** el `list_price` del producto asociado. Si enlazas el método de envío a un producto que ya
 > vendes (por ejemplo *Flete Lima – Arequipa*, S/ 850), Odoo le cambia el precio a la tarifa de envío
 > y te destroza el catálogo sin avisar. Los productos de transporte se crean **aparte y solo para eso**:
-> es la razón por la que Odoo trae su propio *Delivery Product*.
+> es la razón por la que Odoo trae su propio producto de envío (*Standard delivery*).
+>
+> **Publicación:** los métodos de envío también se publican (`is_published`, por defecto *falso*); sin
+> esa columna la tienda no los ofrece en el checkout. El retiro en tienda se modela aquí como tarifa
+> fija 0; si instalas *Click & Collect* (`website_sale_collect`), existe el proveedor
+> *Pick up in store*, que además muestra el stock de la tienda.
 
 Fíjate en la diferencia entre los dos árboles de categorías:
 
@@ -145,6 +150,6 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
 > anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

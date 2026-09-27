@@ -33,25 +33,25 @@ app propia.
 
 | # | Tema | Documentación |
 |---|---|---|
-| 9.1 | Conversaciones (Discuss) | [productivity/discuss.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/discuss.html) |
-| 9.2 | Calendario | [productivity/calendar.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/calendar.html) |
-| 9.3 | Conocimiento | [productivity/knowledge.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/knowledge.html) |
-| 9.4 | Documentos | [productivity/documents.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/documents.html) |
-| 9.5 | Firma electrónica | [productivity/sign.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/sign.html) |
-| 9.6 | Hojas de cálculo | [productivity/spreadsheet.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/spreadsheet.html) · [spreadsheet/insert.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/spreadsheet/insert.html) |
-| 9.7 | VoIP | [productivity/voip.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/voip.html) |
-| 9.8 | WhatsApp | [productivity/whatsapp.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/whatsapp.html) |
-| 9.9 | Limpieza de datos | [productivity/data_cleaning.html](https://www.odoo.com/documentation/saas-19.4/es/applications/productivity/data_cleaning.html) |
-| 9.10 | **Studio** (índice) | [applications/studio.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio.html) |
-| 9.11 | Studio · Campos | [studio/fields.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/fields.html) |
-| 9.12 | Studio · Vistas | [studio/views.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/views.html) |
-| 9.13 | Studio · Modelos, módulos y apps | [studio/models_modules_apps.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/models_modules_apps.html) |
-| 9.14 | Studio · Acciones automatizadas | [studio/automated_actions.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/automated_actions.html) |
-| 9.15 | Studio · Reportes PDF | [studio/pdf_reports.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/pdf_reports.html) |
-| 9.16 | Studio · Reglas de aprobación | [studio/approval_rules.html](https://www.odoo.com/documentation/saas-19.4/es/applications/studio/approval_rules.html) |
-| 9.17 | Importación/exportación (repaso profundo) | [essentials/export_import_data.html](https://www.odoo.com/documentation/saas-19.4/es/applications/essentials/export_import_data.html) |
-| 9.18 | Integraciones y IoT | [general/integrations.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/integrations.html) · [general/iot.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/iot.html) |
-| 9.19 | Derechos de acceso y usuarios de portal | [users/access_rights.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/users/access_rights.html) · [users/portal.html](https://www.odoo.com/documentation/saas-19.4/es/applications/general/users/portal.html) |
+| 9.1 | Conversaciones (Discuss) | [productivity/discuss.html](https://www.odoo.com/documentation/20.0/applications/productivity/discuss.html) |
+| 9.2 | Calendario | [productivity/calendar.html](https://www.odoo.com/documentation/20.0/applications/productivity/calendar.html) |
+| 9.3 | Conocimiento | [productivity/knowledge.html](https://www.odoo.com/documentation/20.0/applications/productivity/knowledge.html) |
+| 9.4 | Documentos | [productivity/documents.html](https://www.odoo.com/documentation/20.0/applications/productivity/documents.html) |
+| 9.5 | Firma electrónica | [productivity/sign.html](https://www.odoo.com/documentation/20.0/applications/productivity/sign.html) |
+| 9.6 | Hojas de cálculo | [productivity/spreadsheet.html](https://www.odoo.com/documentation/20.0/applications/productivity/spreadsheet.html) · [spreadsheet/insert.html](https://www.odoo.com/documentation/20.0/applications/productivity/spreadsheet/insert.html) |
+| 9.7 | VoIP | [productivity/voip.html](https://www.odoo.com/documentation/20.0/applications/productivity/voip.html) |
+| 9.8 | WhatsApp | [productivity/whatsapp.html](https://www.odoo.com/documentation/20.0/applications/productivity/whatsapp.html) |
+| 9.9 | Limpieza de datos | [productivity/data_cleaning.html](https://www.odoo.com/documentation/20.0/applications/productivity/data_cleaning.html) |
+| 9.10 | **Studio** (índice) | [applications/studio.html](https://www.odoo.com/documentation/20.0/applications/studio.html) |
+| 9.11 | Studio · Campos | [studio/fields.html](https://www.odoo.com/documentation/20.0/applications/studio/fields.html) |
+| 9.12 | Studio · Vistas | [studio/views.html](https://www.odoo.com/documentation/20.0/applications/studio/views.html) |
+| 9.13 | Studio · Modelos, módulos y apps | [studio/models_modules_apps.html](https://www.odoo.com/documentation/20.0/applications/studio/models_modules_apps.html) |
+| 9.14 | Studio · Acciones automatizadas | [studio/automated_actions.html](https://www.odoo.com/documentation/20.0/applications/studio/automated_actions.html) |
+| 9.15 | Studio · Reportes PDF | [studio/pdf_reports.html](https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html) |
+| 9.16 | Studio · Reglas de aprobación | [studio/approval_rules.html](https://www.odoo.com/documentation/20.0/applications/studio/approval_rules.html) |
+| 9.17 | Importación/exportación (repaso profundo) | [essentials/export_import_data.html](https://www.odoo.com/documentation/20.0/applications/essentials/export_import_data.html) |
+| 9.18 | Integraciones y IoT | [general/integrations.html](https://www.odoo.com/documentation/20.0/applications/general/integrations.html) · [general/iot.html](https://www.odoo.com/documentation/20.0/applications/general/iot.html) |
+| 9.19 | Derechos de acceso y usuarios de portal | [users/access_rights.html](https://www.odoo.com/documentation/20.0/applications/general/users/access_rights.html) · [users/portal.html](https://www.odoo.com/documentation/20.0/applications/general/users/portal.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -60,8 +60,9 @@ app propia.
 2. **Calendario**: sincronización, tipos de reunión, disponibilidad y agendamiento en línea (citas).
 3. **Conocimiento**: construir el manual interno de ANDINA GOURMET con artículos anidados, plantillas,
    vistas incrustadas de Odoo y artículos compartidos con el cliente. **Úsalo para tu propia documentación.**
-4. **Documentos**: espacios de trabajo, etiquetas, reglas de clasificación, flujos de aprobación,
-   digitalización de facturas de proveedor (enlace con Fase 4).
+4. **Documentos**: carpetas (los antiguos «espacios de trabajo»), etiquetas, acciones de carpeta
+   (acciones de servidor incrustadas, que sustituyen a las antiguas reglas de flujo de trabajo),
+   solicitudes de documentos y digitalización de facturas de proveedor (enlace con Fase 4).
 5. **Firma**: plantillas con campos, roles de firmantes, orden de firma, validez y trazabilidad.
    Caso: contrato de distribuidor y contrato de trabajo (Fase 7).
 

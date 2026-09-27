@@ -19,7 +19,7 @@ Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
 | `guias/H2` | **Laboratorio de rutas**: 10 escenarios a predecir + 5 diagnósticos de soporte real |
 | `guias/H3` | **Laboratorio de valoración**: estándar vs. PEPS vs. promedio con las mismas operaciones |
 | `guias/H4` | Trazabilidad, FEFO y simulacro de recall cronometrado |
-| `guias/H5` | Chuleta v19 (`stock.lot`, `periodic`, `qty_multiple` eliminado, `inventory_quantity_auto_apply`) |
+| `guias/H5` | Chuleta v20 (valoración en el módulo `account`, `tracking` sin `none` + `store_by`, lotes/olas en `stock`, `inventory_quantity_auto_apply`) |
 | `soluciones/` | Respuestas de ambos laboratorios y del cuestionario |
 
 ## 1. Resultados de aprendizaje
@@ -29,7 +29,7 @@ Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
 3. Explicar **rutas, reglas de abastecimiento (pull) y reglas de stock (push)** con un ejemplo real.
 4. Configurar reabastecimiento: reglas de reordenamiento, fabricar/comprar bajo pedido (MTO), plazos de entrega.
 5. Implementar trazabilidad por **lote/número de serie** con fechas de vencimiento y estrategia FEFO.
-6. Explicar la **valoración de inventario** (manual vs. automática, estándar/PEPS/promedio) y su asiento contable.
+6. Explicar la **valoración de inventario** (periódica vs. perpetua, estándar/PEPS/promedio) y su asiento contable.
 7. Leer los reportes de existencias y previsión, y diagnosticar por qué un producto "no está disponible".
 
 ## 2. Mapa de contenidos y fuentes
@@ -37,23 +37,23 @@ Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
 ### Compras
 | # | Tema | Documentación |
 |---|---|---|
-| 3.1 | Compras (visión general: RFQ, acuerdos, control de facturas) | [inventory_and_mrp/purchase.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/purchase.html) |
+| 3.1 | Compras (visión general: RFQ, acuerdos, control de facturas) | [inventory_and_mrp/purchase.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase.html) |
 
 ### Inventario
 | # | Tema | Documentación |
 |---|---|---|
-| 3.2 | Inventario (índice) | [inventory.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory.html) |
-| 3.3 | Gestión de productos (tipos, UdM, paquetes, embalaje) | [inventory/product_management.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/product_management.html) |
-| 3.4 | Seguimiento: lotes, series, caducidad | [product_management/product_tracking.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/product_management/product_tracking.html) |
-| 3.5 | Almacenes y ubicaciones, ajustes y conteos cíclicos | [warehouses_storage/inventory_management.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management.html) |
-| 3.6 | Reabastecimiento (reglas de reordenamiento, MTO, plazos, interalmacén) | [warehouses_storage/replenishment.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html) |
-| 3.7 | Reportes de inventario (previsión, niveles, tableros) | [warehouses_storage/reporting.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/warehouses_storage/reporting.html) |
-| 3.8 | Operaciones diarias: rutas, push/pull, multi-paso, ubicación de destino, dropshipping, consignación | [shipping_receiving/daily_operations.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations.html) |
-| 3.9 | Métodos de reserva (al confirmar, manual, programada) | [shipping_receiving/reservation_methods.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/shipping_receiving/reservation_methods.html) |
-| 3.10 | Métodos de preparación (lote, clúster, oleada) | [shipping_receiving/picking_methods.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/shipping_receiving/picking_methods.html) |
-| 3.11 | Estrategias de remoción (PEPS, UEPS, FEFO, cercanía) | [shipping_receiving/removal_strategies.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/shipping_receiving/removal_strategies.html) |
-| 3.12 | Valoración de inventario (incl. costos en destino, chatarra) | [inventory/inventory_valuation.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/inventory/inventory_valuation.html) |
-| 3.13 | Código de barras | [inventory_and_mrp/barcode.html](https://www.odoo.com/documentation/saas-19.4/es/applications/inventory_and_mrp/barcode.html) |
+| 3.2 | Inventario (índice) | [inventory.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory.html) |
+| 3.3 | Gestión de productos (tipos, UdM, paquetes, embalaje) | [inventory/product_management.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management.html) |
+| 3.4 | Seguimiento: lotes, series, caducidad | [product_management/product_tracking.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/product_tracking.html) |
+| 3.5 | Almacenes y ubicaciones, ajustes y conteos cíclicos | [warehouses_storage/inventory_management.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management.html) |
+| 3.6 | Reabastecimiento (reglas de reordenamiento, MTO, plazos, interalmacén) | [warehouses_storage/replenishment.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html) |
+| 3.7 | Reportes de inventario (previsión, niveles, tableros) | [warehouses_storage/reporting.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/reporting.html) |
+| 3.8 | Operaciones diarias: rutas, push/pull, multi-paso, ubicación de destino, dropshipping, consignación | [shipping_receiving/daily_operations.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations.html) |
+| 3.9 | Métodos de reserva (al confirmar, manual, programada) | [shipping_receiving/reservation_methods.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/reservation_methods.html) |
+| 3.10 | Métodos de preparación (lote, clúster, oleada) | [shipping_receiving/picking_methods.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/picking_methods.html) |
+| 3.11 | Estrategias de remoción (PEPS, UEPS, FEFO, cercanía) | [shipping_receiving/removal_strategies.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/removal_strategies.html) |
+| 3.12 | Valoración de inventario (incl. costos en destino, chatarra) | [inventory/inventory_valuation.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/inventory_valuation.html) |
+| 3.13 | Código de barras | [inventory_and_mrp/barcode.html](https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/barcode.html) |
 
 ## 3. Ruta de estudio paso a paso
 
@@ -95,7 +95,9 @@ Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
 > de Arequipa cuyo producto está en Lima y no hay stock — incluyendo qué documento crea qué.
 
 ### Bloque 3.4 — Reabastecimiento y planificación (6 h)
-1. **Reglas de reordenamiento** (mín/máx, multiplicador de cantidad) y el reporte de reabastecimiento.
+1. **Reglas de reordenamiento** (mín/máx, múltiplo por unidad o empaque) y el reporte de reabastecimiento.
+   En v20 la regla guarda además la **demanda diaria** y puede **sugerir** mín./máx. a partir del histórico
+   (últimos 7/30 días, 3/12 meses, mismo mes del año anterior…).
 2. **MTO** (bajo pedido) vs. **MTS** (contra existencias): configurar ambos y comparar qué documento se dispara.
 3. **Plazos de entrega**: del proveedor, de fabricación, de seguridad, de compra, de entrega al cliente.
    Calcular a mano la fecha planificada y verificar contra Odoo.
@@ -115,20 +117,23 @@ Datos y casos en **[`../ejemplos/fase-03/`](../ejemplos/fase-03/README.md)**:
 ### Bloque 3.6 — Valoración de inventario (7 h) ← *puente con la Fase 4*
 1. Métodos de costo: **estándar**, **PEPS (FIFO)** y **promedio ponderado (AVCO)**. Crear tres productos,
    uno con cada método, y comprarlos a precios distintos. Comparar el costo resultante.
-2. Valoración **manual (periódica)** vs. **automática (perpetua)**: qué asientos genera cada una y cuándo.
-3. Configurar las cuentas de valoración en la categoría de producto (entrada de stock, salida, valoración,
-   diferencia de precio) y rastrear el asiento de una recepción y de una entrega.
+2. Valoración **periódica (al cierre)** vs. **perpetua (al facturar)**: qué asientos genera cada una y cuándo.
+3. Configurar las cuentas de valoración en la pestaña *Contabilidad* de la categoría de producto
+   (existencias, variación de existencias, diferencia de precio) y rastrear dónde aparece el asiento:
+   desde v19 no está en la recepción ni en la entrega, sino en la **factura** (o en el cierre, si es periódica).
 4. **Costos en destino (landed costs)**: distribuir flete e impuestos de importación sobre el costo de los productos.
 5. **Chatarra (scrap)** y su impacto contable.
 6. Revalorización manual de inventario.
 
-> **Regla:** un consultor que no sabe explicar el asiento de una recepción con valoración automática
+> **Regla:** un consultor que no sabe explicar dónde queda el asiento de una recepción con valoración perpetua
 > **no puede** implementar contabilidad. Este bloque se repasa en la Fase 4.
 
 ### Bloque 3.7 — Código de barras y operación en piso (4 h)
 1. Configurar la app de Código de barras: nomenclatura, códigos de ubicación y de producto.
 2. Ejecutar recepción, transferencia interna y entrega con el escáner (o con el simulador de teclado).
-3. Métodos de preparación: lote, clúster y oleada — cuándo recomendar cada uno.
+3. Métodos de preparación: lote, clúster y oleada — cuándo recomendar cada uno. En v20 ya no son un
+   módulo aparte: se activan en *Inventario → Configuración → Ajustes* con *Traslados por lote, olas y
+   por preparación de varias órdenes*.
 4. Impresión de etiquetas de producto, lote y ubicación.
 
 ## 4. Laboratorio integrador
@@ -141,7 +146,7 @@ Construir en `LAB`:
 2. Ruta de reabastecimiento Lima → Arequipa con ubicación de tránsito.
 3. 10 productos con lote y caducidad, estrategia FEFO, y stock inicial cargado por importación.
 4. Reglas de reordenamiento en 5 insumos con plazos de proveedor reales.
-5. Valoración automática con PEPS en una categoría y promedio en otra, con cuentas configuradas.
+5. Valoración perpetua con PEPS en una categoría y promedio en otra, con cuentas configuradas.
 6. Un caso de **costos en destino** con flete distribuido por peso.
 7. Un ejercicio de *recall* documentado: lote → clientes afectados en < 3 minutos.
 8. Reporte de previsión explicando por qué un pedido concreto está en espera.
@@ -164,8 +169,9 @@ Construir en `LAB`:
 ## 6. Criterios de validación (gate)
 
 - [ ] **A. A ciegas (120 min):** en base nueva — crear 2 almacenes, entrega en 2 pasos, un producto
-      con lote y FEFO, una regla de reordenamiento, valoración automática con cuentas, y ejecutar
-      compra → recepción → venta → entrega mostrando el asiento de valoración.
+      con lote y FEFO, una regla de reordenamiento, valoración perpetua con cuentas, y ejecutar
+      compra → recepción → factura de proveedor → venta → entrega → factura, mostrando dónde aparece
+      el asiento de valoración.
 - [ ] **B.** ≥ 10/12 en preguntas.
 - [ ] **C. Entregable:** *"Diseño logístico de ANDINA GOURMET"*: diagrama de almacenes, ubicaciones,
       rutas y matriz de decisión (por qué 3 pasos, por qué FEFO, por qué PEPS).
@@ -178,7 +184,7 @@ Construir en `LAB`:
 |---|---|
 | Activar multi-etapa "porque se ve profesional" | Cada paso extra es trabajo humano diario. Se justifica por control real, no por estética. |
 | Ignorar la valoración hasta la fase contable | El contador descubre en el go-live que el inventario no cuadra. Es el defecto más caro. |
-| Cambiar método de costo con movimientos existentes | Genera diferencias imposibles de explicar. Se decide **antes** de operar. |
+| Cambiar método de costo con movimientos existentes | En v20 Odoo revalúa hacia atrás todos los movimientos desde el último cierre de inventario: el valor y el costo de ventas cambian de golpe. Se decide **antes** de operar. |
 | Cargar stock inicial a mano | En un cliente real son miles de líneas y lotes. Siempre por importación. |
 | Confundir "a mano" con "disponible" | La reserva es la clave; el 80 % de los tickets de soporte de almacén son esto. |
 | Prometer código de barras sin probar el hardware | La nomenclatura y el lector dan sorpresas; se prueba en preventa. |

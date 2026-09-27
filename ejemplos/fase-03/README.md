@@ -4,10 +4,14 @@ Casos prácticos para [`../../fases/fase-03-compras-inventario.md`](../../fases/
 Continúa sobre la base `LAB` con los 79 productos de la Fase 1 y las **entregas pendientes** que
 dejaron los 12 pedidos de la Fase 2.
 
-> **Versión objetivo:** Odoo 19. Aquí hay cuatro cambios que rompen material antiguo:
-> `stock.production.lot` → **`stock.lot`**, valoración `manual_periodic` → **`periodic`**,
-> `qty_multiple` **eliminado** en reglas de reordenamiento, y `product.packaging` → `uom_ids`.
-> Detalle en [`guias/H5-campos-tecnicos-v19-inventario.md`](guias/H5-campos-tecnicos-v19-inventario.md).
+> **Versión objetivo:** Odoo 20 (20.0). Desde v19 rigen `stock.lot` (antes `stock.production.lot`),
+> la valoración **`periodic`** / `real_time` (sin asiento al validar movimientos), `qty_multiple`
+> eliminado y `uom_ids` en lugar de `product.packaging`. En v20 se suman: los campos de valoración de la
+> categoría pasan al módulo **`account`** (mismos nombres), `tracking` pierde el valor `none` (lo reemplaza
+> el nuevo campo **`store_by`**), las transferencias por lotes/olas vienen **dentro de Inventario**, las
+> reglas de reordenamiento **sugieren mín./máx.** desde la demanda y cambiar el método de costo
+> **revalúa hacia atrás** los movimientos.
+> Detalle en [`guias/H5-campos-tecnicos-v20-inventario.md`](guias/H5-campos-tecnicos-v20-inventario.md).
 
 ---
 
@@ -27,17 +31,23 @@ dejaron los 12 pedidos de la Fase 2.
 | `guias/H2` | **Laboratorio de rutas**: 10 escenarios + 5 diagnósticos |
 | `guias/H3` | **Laboratorio de valoración**: 3 métodos, mismas operaciones |
 | `guias/H4` | Trazabilidad y simulacro de retiro de producto |
-| `guias/H5` | Chuleta de campos v19 de Inventario y Compras |
+| `guias/H5` | Chuleta de campos v20 de Inventario y Compras |
 | `soluciones/` | Rutas, valoración y cuestionario |
 
 ## Antes de empezar
 
 1. Apps: **Inventario**, **Compras**, **Ventas**, **Contabilidad** (para las cuentas de valoración).
-2. En *Inventario → Configuración* activa: **Ubicaciones de almacenamiento**, **Rutas de varios pasos**,
-   **Lotes y números de serie**, **Fechas de caducidad**, **Múltiples almacenes**,
-   **Costos en destino**, **Estrategias de remoción**.
+2. En *Inventario → Configuración → Ajustes* activa: **Ubicaciones de almacenamiento**, **Rutas multietapa**,
+   **Números de serie y lote**, **Fechas de caducidad**, **Costos en destino** y **Traslados por lote,
+   olas y por preparación de varias órdenes**. No hay ajuste de "múltiples almacenes" (se habilita solo al
+   crear el segundo almacén) ni de estrategias de remoción (se eligen en la ubicación o en la categoría
+   una vez activas las ubicaciones de almacenamiento).
 3. Configura el almacén de Lima a **3 pasos** de recepción y **3 pasos** de entrega
-   (a mano: es el almacén por defecto y no tiene ID externo propio).
+   (a mano, en el formulario del almacén: es el almacén por defecto, `stock.warehouse0`).
+
+> **Codificación:** en el diálogo de importación elige **`utf-8`** a mano. Odoo adivina la
+> codificación y con `01-almacen-arequipa.csv` y `02-ubicaciones-lima.csv` se equivoca (verificado en v20): se detectan como otra codificación y
+> los acentos entran rotos sin ningún aviso. Detalle en la [Fase 1](../fase-01/README.md#antes-de-empezar).
 
 ---
 
@@ -62,7 +72,7 @@ registro por registro después de importar. Es el truco que convierte una carga 
 líneas en un solo archivo.
 
 **Verificaciones:**
-1. Existencias totales: 14 líneas con lote y 15 sin lote, repartidas en 4 ubicaciones.
+1. Existencias totales: 14 líneas con lote y 15 sin lote, repartidas en 3 ubicaciones (estantes A, B y C).
 2. Abre *Conserva de Aguaymanto 400 g*: 4 lotes con caducidades de feb, abr, jun y ago de 2028.
 3. El ajuste generó movimientos desde la ubicación **virtual de inventario**: búscalos y explícalos.
 4. Comprueba que el valor del inventario ya no es cero (lo cuadrarás en la Fase 4).
@@ -104,8 +114,11 @@ Fase 1). Luego:
 5. Calcula a mano la fecha planificada de una entrega usando los plazos del proveedor, de compra y de
    seguridad; luego compárala con la que muestra Odoo.
 
-> **Nota v19:** el campo `qty_multiple` (múltiplo de compra) **ya no existe**. Ahora hay
-> `qty_to_order` calculado y `qty_to_order_manual` para forzar una cantidad.
+> **Desde v19** el campo `qty_multiple` (múltiplo de compra) **ya no existe**: el múltiplo es una unidad
+> o empaque (`replenishment_uom_id`, columna *Múltiple*), `qty_to_order` es calculado y
+> `qty_to_order_manual` sirve para forzar una cantidad. **Novedad de v20:** la regla guarda la
+> **demanda diaria** (`daily_demand`) y puede **sugerir** mín./máx. a partir del histórico
+> (`min_max_based_on`: últimos 7/30 días, 3/12 meses, mismo mes del año anterior…).
 
 ## Ejemplo 6 — Valoración de inventario
 *(Bloque 3.6 · 90 min)* ← **el puente con la Fase 4**
@@ -131,6 +144,7 @@ usarás en preventa con cualquier cliente de alimentos.
 2. Imprime (o genera en PDF) etiquetas de producto, de lote y de ubicación.
 3. Ejecuta una recepción completa **solo con el escáner** (o simulando con el teclado).
 4. Prueba una preparación por **lotes** (varias entregas a la vez) y compárala con la individual.
+   En v20 las transferencias por lotes y olas ya no son un módulo aparte: vienen en Inventario.
 5. Anota el tiempo de cada método: ese dato es el argumento para justificar la inversión en lectores.
 
 ---
@@ -166,7 +180,7 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 | Artículo | Para qué en esta fase | Fecha |
 |---|---|---|
-| [A Complete Guide to Inventory Valuation in Odoo 19](https://www.cybrosys.com/blog/a-complete-guide-to-inventory-valuation-in-odoo-19) | **Confirma el cambio de v19**: con valoración perpetua los asientos se generan al facturar, no al validar el movimiento | *may 2026* |
+| [A Complete Guide to Inventory Valuation in Odoo 19](https://www.cybrosys.com/blog/a-complete-guide-to-inventory-valuation-in-odoo-19) | **Confirma el cambio de v19** (sigue vigente en v20): con valoración perpetua los asientos se generan al facturar, no al validar el movimiento | *may 2026* |
 | [Complete Guide to Inventory Flow in Odoo 19: Routes, Rules & Setup](https://www.cybrosys.com/blog/complete-guide-to-inventory-flow-in-odoo-19-routes-rules-and-setup) | Rutas y reglas — el laboratorio H2 | *abr 2026* |
 
 ### Odoo en Español — YouTube
@@ -178,7 +192,7 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 > vídeos. El canal completo está en <https://www.youtube.com/@OdooSpanish>.
 
 > **Úsalos para el concepto, no para la configuración.** Todo lo marcado con ⚠️ es de una versión
-> anterior, y aun en los artículos de v19 conviene contrastar los nombres de campo: verifica contra
-> la documentación 19.4, contra [la tabla de cambios de v19](../fase-12/README.md#los-cambios-de-v19-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
+> anterior, y los artículos de Cybrosys son de v19: contrasta los nombres de campo contra
+> la documentación 20.0, contra [la tabla de cambios de v20](../fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen) y contra tu propia base.
 
 El catálogo completo de recursos verificados está en [`../../recursos.md`](../../recursos.md).

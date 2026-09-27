@@ -11,8 +11,8 @@
 
 Material en **[`../ejemplos/fase-12/`](../ejemplos/fase-12/README.md)**: guion día a día de las
 4 semanas del capstone con sus gates, y un **simulacro de 60 preguntas** con clave, explicaciones de
-las más falladas y mapa de repaso por fase. Incluye el resumen de **todos los cambios de v19**
-documentados a lo largo del plan, para llevarlos frescos al examen.
+las más falladas y mapa de repaso por fase. Incluye el resumen de **los cambios de v20** (y de los de v19 que
+siguen vigentes) documentados a lo largo del plan, para llevarlos frescos al examen.
 
 ## Parte A — Proyecto integrador
 
@@ -85,9 +85,17 @@ Alcance obligatorio:
 Odoo ofrece una **certificación funcional** oficial, en línea, que valida el conocimiento del producto
 a nivel transversal. Es el aval reconocido por partners y clientes.
 
-- Certificación funcional de Odoo 19: <https://www.odoo.com/slides/odoo-19-functional-certification-502>
 - Listado de certificaciones: <https://www.odoo.com/slides?slide_category=certification>
-- **Examen de muestra (gratuito, hazlo antes)**: <https://www.odoo.com/slides/odoo-functional-certification-sample-test-50>
+- Certificación funcional de Odoo 19 (la vigente como referencia): <https://www.odoo.com/slides/odoo-19-functional-certification-502>
+  · versión en español: <https://www.odoo.com/slides/certificacion-funcional-de-odoo-19-espanol-517>
+- **Examen de muestra (gratuito, hazlo antes)**: <https://www.odoo.com/slides/odoo-certification-sample-test-50>
+
+> **Odoo 20 aún no tiene certificación publicada** (comprobado el 27-09-2026: el listado llega hasta
+> la de Odoo 19). Antes de inscribirte, revisa el
+> [listado de certificaciones](https://www.odoo.com/slides?slide_category=certification): cuando
+> aparezca la de Odoo 20, es la que corresponde a este plan. Si rindes la de v19 mientras tanto,
+> repasa en la [tabla de cambios del cuaderno](../ejemplos/fase-12/README.md#los-cambios-de-v20-que-hay-que-llevar-frescos-al-examen)
+> qué es distinto entre ambas versiones: el examen de v19 pregunta por el comportamiento de v19.
 
 ### B.2 Formato del examen (verifícalo siempre en la página oficial antes de inscribirte)
 
@@ -124,10 +132,10 @@ a nivel transversal. Es el aval reconocido por partners y clientes.
 
 - Publicar la credencial (perfil profesional, CV, firma de correo).
 - Mantenerla: cada versión mayor trae cambios; la doc de
-  [versiones soportadas](https://www.odoo.com/documentation/saas-19.4/es/administration/supported_versions.html)
+  [versiones soportadas](https://www.odoo.com/documentation/20.0/administration/supported_versions.html)
   te dice cuándo conviene recertificar.
 - Siguiente paso natural: especializarte (contabilidad + localización, manufactura, o retail/PdV)
-  y/o dar el salto técnico con los [tutoriales de desarrollador](https://www.odoo.com/documentation/saas-19.4/es/developer/tutorials.html).
+  y/o dar el salto técnico con los [tutoriales de desarrollador](https://www.odoo.com/documentation/20.0/developer/tutorials.html).
 
 ---
 
