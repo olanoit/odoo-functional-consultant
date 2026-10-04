@@ -36,7 +36,7 @@ puedes implementar de punta a punta.
 3. Repasa los cuestionarios B de las 12 fases en una sola sesión.
 4. Refuerza los temas que la Fase 12 marca como los más fallados.
 5. Agenda el examen. La certificación de **Odoo 20 aún no está publicada** (comprobado el
-   27-09-2026): revisa el [listado de certificaciones](https://www.odoo.com/slides?slide_category=certification).
+   04-10-2026): revisa el [listado de certificaciones](https://www.odoo.com/slides?slide_category=certification).
    Mientras tanto, la vigente es la de Odoo 19:
    <https://www.odoo.com/slides/odoo-19-functional-certification-502> · en español:
    <https://www.odoo.com/slides/certificacion-funcional-de-odoo-19-espanol-517>
@@ -160,7 +160,10 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 ### Odoo en Español — YouTube
 
-[**Buscar «Odoo 19 novedades» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=Odoo+19+novedades) — vídeos en español sobre las novedades de Odoo 19.
+[**Conoce Odoo 20**](https://www.youtube.com/watch?v=9QW4XNqkLys) — presentación oficial de la versión 20 en Odoo Experience América Latina, en español. 
+[**Odoo 20: novedades del sector servicios**](https://www.youtube.com/watch?v=QO8YRa_1kv0) — proyecto, servicio de campo y planeación en v20. 
+[**Buscar «Odoo 20» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=Odoo+20) — el resto de vídeos de la versión, a medida que se publiquen. 
+[**Notas de lanzamiento de Odoo 20 (en español)**](https://www.odoo.com/es/odoo-20-release-notes) — el resumen oficial de novedades, app por app: léelo junto con la tabla de cambios de arriba.
 
 > El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
 > canal**: siempre devuelve lo que haya publicado sobre el tema, aunque renombre o reordene sus

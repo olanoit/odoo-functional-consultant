@@ -90,7 +90,7 @@ a nivel transversal. Es el aval reconocido por partners y clientes.
   · versión en español: <https://www.odoo.com/slides/certificacion-funcional-de-odoo-19-espanol-517>
 - **Examen de muestra (gratuito, hazlo antes)**: <https://www.odoo.com/slides/odoo-certification-sample-test-50>
 
-> **Odoo 20 aún no tiene certificación publicada** (comprobado el 27-09-2026: el listado llega hasta
+> **Odoo 20 aún no tiene certificación publicada** (comprobado el 04-10-2026: el listado llega hasta
 > la de Odoo 19). Antes de inscribirte, revisa el
 > [listado de certificaciones](https://www.odoo.com/slides?slide_category=certification): cuando
 > aparezca la de Odoo 20, es la que corresponde a este plan. Si rindes la de v19 mientras tanto,

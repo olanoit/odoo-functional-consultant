@@ -1,10 +1,10 @@
 # Recursos — catálogo verificado
 
-> Enlaces comprobados en septiembre de 2026 contra la versión **20.0**.
+> Enlaces comprobados el 4 de octubre de 2026 contra la versión **20.0**.
 >
 > **Idioma de la documentación oficial.** Todos los enlaces de `/documentation/20.0/` apuntan a la
 > versión **en inglés**: la traducción al español de la 20.0 aún no está publicada (verificado el
-> 27-09-2026: `/documentation/20.0/es/` da 404). Cuando salga, basta insertar `/es/` tras `/20.0/`
+> 04-10-2026: `/documentation/20.0/es/` sigue dando 404). Cuando salga, basta insertar `/es/` tras `/20.0/`
 > en la URL. Mientras tanto, la versión en español más cercana es la **saas-19.4**
 > (<https://www.odoo.com/documentation/saas-19.4/es/>): sirve para leer el concepto en español,
 > pero contrasta siempre con la 20.0 y con tu base.
@@ -16,6 +16,7 @@
 | Recurso | URL |
 |---|---|
 | Portada de la documentación 20.0 (EN) | <https://www.odoo.com/documentation/20.0/> |
+| **Notas de lanzamiento de Odoo 20 (ES)** | <https://www.odoo.com/es/odoo-20-release-notes> |
 | Documentación saas-19.4 en español (la más cercana en ES) | <https://www.odoo.com/documentation/saas-19.4/es/> |
 | Documentos para el usuario (todas las apps) | <https://www.odoo.com/documentation/20.0/applications.html> |
 | Fundamentos de Odoo | <https://www.odoo.com/documentation/20.0/applications/essentials.html> |
@@ -40,6 +41,7 @@
 | Odoo.sh | <https://www.odoo.com/documentation/20.0/administration/odoo_sh.html> |
 | Actualización de versión | <https://www.odoo.com/documentation/20.0/administration/upgrade.html> |
 | Versiones soportadas | <https://www.odoo.com/documentation/20.0/administration/supported_versions.html> |
+| Servicio de actualización de bases (upgrade) | <https://upgrade.odoo.com> |
 | Documentación de desarrollador (para entender los límites) | <https://www.odoo.com/documentation/20.0/developer/tutorials.html> |
 
 ## 2. Formación oficial (eLearning)
@@ -68,6 +70,8 @@
 | Curso Odoo desde cero en español (playlist) | <https://www.youtube.com/playlist?list=PL9KT1AOP2NPSvWYGoGiQaByOJx2G0na9q> | Comunidad; verifica la versión que usa |
 | Tutoriales y trucos de Odoo en español (playlist) | <https://www.youtube.com/playlist?list=PLmH4mrtD1T8R1nTsCdUdHfXruMMA_rjHY> | Comunidad |
 | Contabilidad en Odoo (playlist en español) | <https://www.youtube.com/playlist?list=PLmH4mrtD1T8R5MUXM0J_7OPFjXD82-XVi> | Comunidad; contrastar con la doc oficial |
+| **Conoce Odoo 20** — Odoo Experience América Latina (Odoo Español) | <https://www.youtube.com/watch?v=9QW4XNqkLys> | Presentación oficial de la versión 20, en español |
+| **Odoo 20: novedades del sector servicios** (Odoo Español) | <https://www.youtube.com/watch?v=QO8YRa_1kv0> | Proyecto, hojas de horas, servicio de campo y planeación en v20 (Fase 6) |
 
 > **Advertencia sobre videos y blogs de comunidad:** buena parte del material está grabado o escrito
 > para versiones anteriores (15–18). Sirve para entender el *concepto* y el *flujo*, nunca para copiar
@@ -80,7 +84,7 @@
 | Recurso | URL | Notas |
 |---|---|---|
 | Foro oficial (ayuda) | <https://www.odoo.com/forum/ayuda-1> | Preguntas resueltas por la comunidad y por empleados de Odoo |
-| Odoo Apps Store (módulos de terceros) | <https://apps.odoo.com/apps/modules> | Filtra por versión 20 antes de proponer nada a un cliente. *(En septiembre de 2026 el sitio da error y redirige a odoo.com; reintenta más tarde)* |
+| Odoo Apps Store (módulos de terceros) | <https://apps.odoo.com/apps/modules/browse?series=20.0> | Ya filtrado por la serie 20.0: no propongas a un cliente un módulo que no esté publicado para su versión |
 | OCA — Odoo Community Association (módulos abiertos) | <https://github.com/OCA> | Módulos libres; revisa la rama 20.0 de cada repositorio (si aún no existe, el módulo no está migrado) |
 | Runbot (bases de prueba de todas las ramas) | <https://runbot.odoo.com/> | Bases desechables de cualquier rama, útiles para comparar versiones |
 | **Cybrosys — libro de Odoo 19** | <https://www.cybrosys.com/odoo/odoo-books/v19/> | Manual por módulos **escrito para v19**, con un capítulo por app. Sigue siendo la referencia de terceros más fiable de este catálogo, pero es de la versión anterior: contrasta cada nombre de campo con la 20.0 |

@@ -132,6 +132,8 @@ Enlaces verificados uno a uno. Todos están **en inglés**.
 
 ### Odoo en Español — YouTube
 
+[**Odoo 20: ¿Cuáles son las novedades del sector servicios?**](https://www.youtube.com/watch?v=QO8YRa_1kv0) — vídeo oficial en español sobre lo que cambia en v20 para proyectos, servicio de campo y planeación: el complemento directo de esta fase.
+
 [**Buscar «proyectos hoja de horas» en el canal**](https://www.youtube.com/@OdooSpanish/search?query=proyectos+hoja+de+horas) — vídeos en español sobre proyectos y hojas de horas.
 
 > El canal no publica un índice enlazable por tema, así que el enlace abre la **búsqueda dentro del
